@@ -1,0 +1,126 @@
+{
+  "header": {
+    "siteTitle": "PESKAS™",
+    "primaryLinks": [
+      {
+        "label": "How it works",
+        "href": "/how-it-works",
+        "iconClass": "fi-rr-settings-sliders"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog",
+        "iconClass": "fi-rr-book"
+      }
+    ],
+    "countriesMenu": {
+      "label": "Countries",
+      "iconClass": "fi-rr-globe",
+      "items": [
+        {
+          "label": "Timor-Leste",
+          "href": "https://timor.peskas.org/",
+          "external": true,
+          "flagSrc": "https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor.svg",
+          "flagAlt": "Timor Flag"
+        },
+        {
+          "label": "Malaysia",
+          "href": "/under-costruction",
+          "external": false,
+          "flagSrc": "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg",
+          "flagAlt": "Malaysia Flag"
+        },
+        {
+          "label": "Kenya",
+          "href": "https://digitalfisheries.kenya.peskas.org/en",
+          "external": true,
+          "flagSrc": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg",
+          "flagAlt": "Kenyan Flag"
+        },
+        {
+          "label": "Zanzibar",
+          "href": "https://zanzibar.peskas.org",
+          "external": true,
+          "flagSrc": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Zanzibar.svg",
+          "flagAlt": "Zanzibar Flag"
+        },
+        {
+          "label": "Mozambique",
+          "href": "https://peskas-dashboard-mozambique.vercel.app",
+          "external": true,
+          "flagSrc": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique.svg",
+          "flagAlt": "Mozambique Flag"
+        },
+        {
+          "label": "Malawi",
+          "href": "https://malawi.peskas.org/",
+          "external": true,
+          "flagSrc": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Malawi.svg",
+          "flagAlt": "Malawi Flag"
+        }
+      ]
+    },
+    "resourcesMenu": {
+      "label": "Resources",
+      "iconClass": "fi-rr-folder",
+      "items": [
+        {
+          "label": "Publications and data",
+          "href": "/data-resources",
+          "iconSrc": "/assets/imgs/page/homepage1/data.svg",
+          "iconAlt": "data"
+        },
+        {
+          "label": "Licences and policies",
+          "href": "/page-terms",
+          "iconSrc": "/assets/imgs/page/homepage1/story.svg",
+          "iconAlt": "documentation"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "PESKAS™ 2025",
+    "contactEmails": [
+      "peskas.platform@gmail.com",
+      "a.tilley@cgiar.org",
+      "l.longobardi@cgiar.org"
+    ],
+    "columns": [
+      {
+        "title": "Contact",
+        "links": []
+      },
+      {
+        "title": "About Us",
+        "links": [
+          { "label": "Mission and Vision", "href": "/under-costruction" },
+          { "label": "Our Team", "href": "/under-costruction" }
+        ]
+      },
+      {
+        "title": "Discover",
+        "links": [
+          { "label": "Our Blog", "href": "/blog" },
+          { "label": "Knowledge Base", "href": "/under-costruction" },
+          { "label": "News and Events", "href": "/under-costruction" },
+          { "label": "Media", "href": "/under-costruction" }
+        ]
+      },
+      {
+        "title": "Useful links",
+        "links": [
+          { "label": "How it works", "href": "/how-it-works" },
+          { "label": "Stories", "href": "/under-costruction" }
+        ]
+      }
+    ]
+  },
+  "blog": {
+    "title": "Peskas Blog",
+    "description": "Technical and not so technical musings about the Peskas platform",
+    "latestPostsCount": 3,
+    "postsPerPage": 10
+  }
+}

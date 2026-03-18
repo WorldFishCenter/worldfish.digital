@@ -1,0 +1,17 @@
+.card-homepage {
+    margin-bottom: 26px;
+    > div {
+        height: 100%;
+    }
+}
+
+.card-link {
+    cursor: pointer;
+    /* transition: border 0.3s;
+    box-sizing: border-box; */
+    /* &:hover {
+        .card-grid-1 {
+            border: 4px solid #6c757d57;
+        }
+    } */
+}

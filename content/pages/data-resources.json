@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Explore PESKAS resources",
+    "subtitle": "Access a growing repository of data and scientific publications, advancing fisheries research annually."
+  },
+  "publications": {
+    "title": "Scientific publications",
+    "description": "A curated collection of research papers and articles detailing the advances made possible by PESKAS.",
+    "airtableUrl": "https://airtable.com/embed/appr5nF2863yuTobW/shruU0GhlMox1whQt?backgroundColor=redDusty&viewControls=on"
+  },
+  "data": {
+    "title": "Data",
+    "description": "Explore the latest datasets and insights from PESKAS, conveniently accessible through our integrated Harvard Dataverse portal."
+  }
+}

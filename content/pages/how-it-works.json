@@ -1,0 +1,215 @@
+{
+  "hero": {
+    "title": "How Peskas works",
+    "subtitle": "Peskas turns daily catch records and vessel tracks into decision-ready indicators for small-scale fisheries - with open methods and clear quality control."
+  },
+  "pipeline": {
+    "title": "From landing site to insight",
+    "subtitle": "A single pipeline that starts with fishers and ends with trusted information for managers, scientists, and communities. Built in Timor-Leste, now powering implementations in East Africa and Southeast Asia.",
+    "stages": [
+      {
+        "kicker": "Collect",
+        "title": "On-the-ground reporting",
+        "description": "Enumerators capture standardized trip data and link it with GPS tracks so every record is traceable."
+      },
+      {
+        "kicker": "Process",
+        "title": "Automated, audited pipeline",
+        "description": "Cleaning, harmonization, and quality flags ensure each dataset is consistent across time, fleets, and locations."
+      },
+      {
+        "kicker": "Share",
+        "title": "Decision tools",
+        "description": "Dashboards, briefs, and downloads translate the data into practical guidance for policy and daily operations."
+      }
+    ]
+  },
+  "workflow": {
+    "title": "The workflow",
+    "subtitle": "Each stage is repeatable, documented, and aligned with partner agencies so results remain credible over time.",
+    "steps": [
+      {
+        "id": "01",
+        "title": "Field data capture",
+        "summary": "Enumerators collect trip, catch, and price information at landing sites using a standard survey form.",
+        "items": [
+          "Species, weight, gear, crew, and effort recorded on mobile devices",
+          "Landing location and trip timing georeferenced",
+          "Data synced daily to a secure, versioned database"
+        ]
+      },
+      {
+        "id": "02",
+        "title": "Vessel tracking",
+        "summary": "Solar GPS units log vessel positions to complement survey data with verified time at sea and fishing grounds.",
+        "items": [
+          "Automatic polling creates continuous tracks",
+          "Fishing activity inferred from speed and location",
+          "Tracking data linked to trips for effort estimates"
+        ]
+      },
+      {
+        "id": "03",
+        "title": "Ingestion and standardization",
+        "summary": "All inputs are cleaned, harmonized, and matched to reference tables before analysis.",
+        "items": [
+          "Species names reconciled to FishBase and FAO codes",
+          "Weights estimated from lengths when needed",
+          "Currency, units, and categories normalized"
+        ]
+      },
+      {
+        "id": "04",
+        "title": "Quality control",
+        "summary": "Automated rules and 21 quality flags check completeness, plausibility, and consistency.",
+        "items": [
+          "Duplicates removed; outliers flagged for review",
+          "Gear, location, and season cross-checks",
+          "Audit trail for every accepted or corrected record"
+        ]
+      },
+      {
+        "id": "05",
+        "title": "Analytics and indicators",
+        "summary": "Standard scripts calculate core metrics for fisheries management and nutrition.",
+        "items": [
+          "Catch-per-unit-effort and production estimates by fleet, gear, and area",
+          "Trends in value, prices, and revenue",
+          "Nutritional contribution and species composition"
+        ]
+      },
+      {
+        "id": "06",
+        "title": "Publication and feedback",
+        "summary": "Decision-ready outputs are shared with partners, with regular feedback into the field programme.",
+        "items": [
+          "Public dashboards and downloadable datasets",
+          "Briefings for government partners and communities",
+          "Continuous refinement of forms, devices, and QA rules"
+        ]
+      }
+    ]
+  },
+  "modules": {
+    "title": "Platform modules",
+    "subtitle": "The core components that keep the pipeline reliable, transparent, and reusable.",
+    "items": [
+      {
+        "title": "Data collection and tracking",
+        "icon": "/assets/imgs/page/homepage1/discover.svg",
+        "body": "Landing-site monitoring, onboard tracking, and fisher self-reporting combine to create a traceable effort-and-catch record.",
+        "items": [
+          "Standardized digital catch monitoring for species, weight, gear, crew, and price",
+          "GPS vessel tracking (solar and other devices) for routes, speed, and time at sea",
+          "Tracks app for fisher-entered trips and catches, online or offline"
+        ]
+      },
+      {
+        "title": "Data preprocessing",
+        "icon": "/assets/imgs/page/homepage1/simplify.svg",
+        "body": "Cleaning, harmonization, and versioned storage keep inputs analysis-ready across forms, fleets, and time.",
+        "items": [
+          "Species names reconciled to FishBase and FAO codes",
+          "Length–weight conversions and unit normalization",
+          "Currency, gear, and effort categories aligned across surveys"
+        ]
+      },
+      {
+        "title": "Analytics engine",
+        "icon": "/assets/imgs/page/homepage1/analytics.svg",
+        "body": "Scripted pipelines generate fisheries indicators using linked trip, tracking, and catch data.",
+        "items": [
+          "Catch-per-unit-effort and production estimates by fleet, gear, and area",
+          "Revenue and price trends, plus species composition and nutrition metrics",
+          "Automated reruns so indicators stay current as new data arrive"
+        ]
+      },
+      {
+        "title": "Quality assurance",
+        "icon": "/assets/imgs/page/homepage1/check.svg",
+        "body": "Real-time validation and audit trails ensure every record is trusted before publication.",
+        "items": [
+          "21 automated quality flags with alerting and manual review flow",
+          "Outlier detection for catch, effort, and location",
+          "Enumerator and device performance tracking to target support"
+        ]
+      },
+      {
+        "title": "Dashboards and decision tools",
+        "icon": "/assets/imgs/page/homepage1/report.svg",
+        "body": "Multilingual dashboards and briefs make data usable for managers, communities, and partners.",
+        "items": [
+          "Interactive maps and time series, including regional views (e.g., Western Indian Ocean)",
+          "Customizable visuals and automated briefings for meetings and reports",
+          "Access controls by role so sensitive data stay protected"
+        ]
+      },
+      {
+        "title": "Open publication",
+        "icon": "/assets/imgs/page/homepage1/users.svg",
+        "body": "Scheduled releases with documentation so others can verify and reuse the data responsibly.",
+        "items": [
+          "Monthly exports to open repositories (e.g., Harvard Dataverse) when permitted",
+          "Restructured datasets for dashboard integration and public download",
+          "Clear data ownership: providers govern access; individual-level data stay private"
+        ]
+      }
+    ]
+  },
+  "keyFeatures": {
+    "title": "Key features",
+    "items": [
+      "Open-source code that adapts to different fisheries contexts",
+      "User-friendly dashboards for spatial and temporal analysis",
+      "Standardized data and terminology aligned with FAO and national protocols",
+      "Cloud-hosted architecture for secure, near real-time access",
+      "Co-designed workflows that build on existing systems and capacity"
+    ]
+  },
+  "resourceLinks": {
+    "title": "Resources and links",
+    "items": [
+      { "label": "Main platform", "href": "https://www.peskas.org" },
+      { "label": "Timor-Leste dashboard", "href": "https://timor.peskas.org" },
+      { "label": "Western Indian Ocean dashboard", "href": "https://coasts.peskas.org" },
+      { "label": "Tracks app demo", "href": "https://tracks.peskas.org" },
+      { "label": "Data resources and publications", "href": "https://peskas.org/data-resource" },
+      { "label": "Source code (GitHub)", "href": "https://github.com/orgs/WorldFishCenter/repositories?q=peskas" }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Straight answers on hardware, costs, data, and customization.",
+    "items": [
+      {
+        "q": "Is Peskas the solar powered tracking device gadget thing?",
+        "a": "No. Peskas ingests any vessel location data. We have used solar trackers from Pelagic Data Systems, but any compatible GPS hardware can be integrated."
+      },
+      {
+        "q": "What does Peskas cost?",
+        "a": "The software is free and open-source. WorldFish can support setup, form adaptation, training, and dashboards as a service."
+      },
+      {
+        "q": "How much does vessel monitoring cost?",
+        "a": "Hardware and service vary by volume"
+      },
+      {
+        "q": "Can I access and use Peskas data?",
+        "a": "Data belong to the fishers and agencies who collect them. Summaries are published to the Harvard Dataverse; individual-level or sensitive vessel tracks are not shared."
+      },
+      {
+        "q": "Can Peskas be customized for my country or project?",
+        "a": "Yes. The system is modular and adaptable. Technical documentation and support are available; contact a.tilley@cgiar.org or fill out the request form."
+      },
+      {
+        "q": "Do you have manuals and online training modules?",
+        "a": "Most deployments are co-designed and trained in person to avoid misinterpretation. Online modules are in progress."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to see it in your waters?",
+    "subtitle": "We co-design deployments with partners, train local teams, and keep the pipeline open so evidence stays current.",
+    "airtableUrl": "https://airtable.com/embed/appMMEJYlJdfSJEjm/pagDiqNCwLasUBKQi/form"
+  }
+}
