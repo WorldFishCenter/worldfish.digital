@@ -1,11 +1,12 @@
-import Link from "next/link";
-import Layout from "@/components/layout/Layout";
-import { getAllPosts } from "@/lib/posts";
-import { BLOG_CONFIG } from "@/lib/constants";
+import Link from 'next/link';
+import Layout from '@/components/layout/Layout';
+import BlogCoverImage from '@/components/content/BlogCoverImage';
+import { getAllPosts } from '@/lib/posts';
+import { BLOG_WORLD_FISH, WORLD_FISH_SITE } from '@/lib/constants';
 
 export const metadata = {
-    title: `${BLOG_CONFIG.title} - ${BLOG_CONFIG.description}`,
-    description: BLOG_CONFIG.description,
+    title: `${BLOG_WORLD_FISH.title} | ${WORLD_FISH_SITE.name}`,
+    description: BLOG_WORLD_FISH.description,
     robots: {
         index: true,
         follow: true,
@@ -18,30 +19,27 @@ export const metadata = {
 
 export default async function Blog() {
     const posts = getAllPosts();
-    
+
     return (
         <Layout>
-            <section className="section-box">
-                <div className="banner-hero banner-breadcrums bg-gray-100">
-                    <div className="container text-center">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <h1 className="text-display-3 color-gray-900 mb-20">{BLOG_CONFIG.title}</h1>
-                                <p className="text-heading-6 color-gray-600 mb-20">
-                                    {BLOG_CONFIG.description}
-                                </p>
-                            </div>
+            <section className="section-box wfSectionDark wfPadHeroSm">
+                <div className="container text-center">
+                    <div className="row">
+                        <div className="col-lg-10 mx-auto">
+                            <h1 className="display-3 wfTitleHeroTight wfTitleHeroMb">{BLOG_WORLD_FISH.title}</h1>
+                            <p className="wfLeadMdStatic">{BLOG_WORLD_FISH.description}</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="section-box">
-                <div className="container mt-90">
+            <section className="section-box wfSectionDark wfPadSection">
+                <div className="container">
                     {posts.length === 0 ? (
                         <div className="row">
                             <div className="col-lg-12 text-center">
-                                <p className="text-body-lead-large color-gray-600">
-                                    No blog posts yet. Add markdown files to the <code>posts/</code> directory to get started.
+                                <p className="wfMutedLg">
+                                    No blog posts yet. Add markdown files to the{' '}
+                                    <code className="wf-code-inline">posts/</code> directory to get started.
                                 </p>
                             </div>
                         </div>
@@ -55,7 +53,7 @@ export default async function Blog() {
                                                 {new Date(post.date).toLocaleDateString('en-US', {
                                                     year: 'numeric',
                                                     month: 'long',
-                                                    day: 'numeric'
+                                                    day: 'numeric',
                                                 })}
                                             </span>
                                         )}
@@ -63,20 +61,15 @@ export default async function Blog() {
                                             {post.title}
                                         </Link>
                                         {post.description && (
-                                            <p className="text-body-text color-gray-500 mt-15">
-                                                {post.description}
-                                            </p>
+                                            <p className="text-body-text color-gray-500 mt-15">{post.description}</p>
                                         )}
                                         {post.coverImage && (
                                             <div className="grid-4-img">
                                                 <Link href={`/blog/${post.slug}`}>
-                                                    <img
+                                                    <BlogCoverImage
                                                         src={post.coverImage}
                                                         alt={post.title}
-                                                        width={400}
-                                                        height={250}
-                                                        loading="lazy"
-                                                        style={{ width: '100%', height: 'auto' }}
+                                                        className="wfImgResponsive"
                                                     />
                                                 </Link>
                                             </div>

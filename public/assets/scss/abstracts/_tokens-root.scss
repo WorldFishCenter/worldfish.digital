@@ -1,0 +1,107 @@
+// Design tokens as CSS custom properties (SCSS-backed).
+// Font vars --chivo / --noto come from next/font on <html> (see app/layout.js).
+
+:root {
+  // Typography scale (px → usable as var in calc)
+  --wf-font-3xs: #{$font-3xs};
+  --wf-font-xxs: #{$font-xxs};
+  --wf-font-xs: #{$font-xs};
+  --wf-font-sm: #{$font-sm};
+  --wf-font-md: #{$font-md};
+  --wf-font-md-2: #{$font-md-2};
+  --wf-font-lg: #{$font-lg};
+  --wf-font-xl: #{$font-xl};
+  --wf-font-2xl: #{$font-2xl};
+  --wf-font-3xl: #{$font-3xl};
+
+  // Brand / neutral colors
+  --wf-color-primary: #{$color-primary};
+  --wf-color-secondary: #{$color-secondary};
+  --wf-color-success: #{$color-success};
+  --wf-color-danger: #{$color-danger};
+  --wf-color-warning: #{$color-warning};
+  --wf-color-info: #{$color-info};
+  --wf-color-white: #{$color-white};
+
+  --wf-color-gray-50: #{$color-gray-50};
+  --wf-color-gray-100: #{$color-gray-100};
+  --wf-color-gray-200: #{$color-gray-200};
+  --wf-color-gray-300: #{$color-gray-300};
+  --wf-color-gray-400: #{$color-gray-400};
+  --wf-color-gray-500: #{$color-gray-500};
+  --wf-color-gray-600: #{$color-gray-600};
+  --wf-color-gray-700: #{$color-gray-700};
+  --wf-color-gray-800: #{$color-gray-800};
+  --wf-color-gray-900: #{$color-gray-900};
+  --wf-color-gray-1000: #{$color-gray-1000};
+  --wf-color-gray-1100: #{$color-gray-1100};
+  --wf-color-gray-1200: #{$color-gray-1200};
+
+  --wf-color-green-900: #{$color-green-900};
+  --wf-color-green-500: #{$color-green-500};
+  --wf-color-green-100: #{$color-green-100};
+  --wf-color-green-1000: #{$color-green-1000};
+
+  --wf-color-orange-900: #{$color-orange-900};
+  --wf-color-orange-500: #{$color-orange-500};
+  --wf-color-orange-100: #{$color-orange-100};
+
+  // Backgrounds & surfaces
+  --wf-bg-white: #{$background-white};
+  --wf-bg-gray-100: #{$background-gray-100};
+  --wf-bg-gray-900: #{$background-gray-900};
+  --wf-bg-gray-900-50: #{$background-gray-900-50};
+
+  // Surfaces (app shell – header, mega menu, etc.)
+  --wf-surface-header: rgba(6, 10, 16, 0.65);
+  --wf-surface-header-scrolled: rgba(10, 14, 22, 0.88);
+  --wf-surface-header-blur: blur(20px) saturate(160%);
+  --wf-border-header: rgba(255, 255, 255, 0.07);
+  --wf-border-header-scrolled: rgba(255, 255, 255, 0.12);
+  --wf-surface-submenu: rgba(14, 18, 28, 0.92);
+  --wf-surface-deep: #00050a;
+  --wf-surface-panel: #020813;
+  --wf-color-accent: #57b3d1;
+  --wf-text-slate-50: #f8fafc;
+  --wf-text-slate-200: #e2e8f0;
+  --wf-text-slate-300: #cbd5e1;
+  --wf-text-slate-400: #94a3b8;
+  --wf-border-subtle: rgba(255, 255, 255, 0.05);
+  --wf-border-medium: rgba(255, 255, 255, 0.12);
+  --wf-border-control: rgba(255, 255, 255, 0.15);
+  --wf-border-strong: rgba(255, 255, 255, 0.2);
+  --wf-border-card: rgba(255, 255, 255, 0.08);
+  --wf-border-image: rgba(255, 255, 255, 0.1);
+  --wf-border-accent-soft: rgba(87, 179, 209, 0.15);
+  --wf-border-accent-medium: rgba(87, 179, 209, 0.4);
+  --wf-glow-accent: rgba(87, 179, 209, 0.15);
+  --wf-shadow-hero-media: 0 30px 60px rgba(0, 0, 0, 0.5);
+  --wf-gradient-hero: linear-gradient(180deg, #020813 0%, #00050a 100%);
+  --wf-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --wf-text-on-dark-muted: rgba(248, 250, 252, 0.88);
+  --wf-text-on-dark: #ffffff;
+  --wf-text-on-dark-soft: rgba(255, 255, 255, 0.78);
+  --wf-text-submenu: rgba(226, 232, 240, 0.95);
+  --wf-nav-cta-fg: #0a0f18;
+  --wf-nav-cta-bg: #ffffff;
+
+  // Shadows
+  --wf-shadow-1: #{$box-shadow-1};
+  --wf-shadow-2: #{$box-shadow-2};
+  --wf-shadow-3: #{$box-shadow-3};
+  --wf-shadow-4: #{$box-shadow-4};
+  --wf-shadow-5: #{$box-shadow-5};
+  --wf-shadow-inner: #{$box-shadow-inner};
+
+  // Layout
+  --wf-header-z: 1000;
+  --wf-header-submenu-z: 1001;
+  --wf-radius-sm: 8px;
+  --wf-radius-md: 12px;
+  --wf-radius-pill: 999px;
+
+  // Semantic aliases (prefer these in new CSS)
+  --wf-font-heading: var(--noto), ui-sans-serif, system-ui, sans-serif;
+  --wf-font-body: var(--chivo), ui-sans-serif, system-ui, sans-serif;
+}

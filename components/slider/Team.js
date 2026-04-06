@@ -55,7 +55,7 @@ const TeamSlider = () => {
 						className="swiper-wrapper pb-70 pt-5"
 					>
 						{data.map((item, i) => (
-							<SwiperSlide>
+							<SwiperSlide key={i}>
 								<div className="swiper-slide active">
 									<div className="row">
 										<div className="col-lg-3 col-md-6 col-sm-6">
@@ -64,7 +64,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-1.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-1.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -81,7 +82,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-2.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-2.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -98,7 +100,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-3.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-3.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -115,7 +118,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-4.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-4.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -132,7 +136,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-5.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-5.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -149,7 +154,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-6.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-6.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -166,7 +172,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-7.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-7.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">
@@ -183,7 +190,8 @@ const TeamSlider = () => {
 													width="0"
 													height="0"
 													sizes="100vw"
-													style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/about/1/team-8.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+													className="wfImgIntrinsic"
+													src="/assets/imgs/page/about/1/team-8.png" alt="Agon" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
 												<h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
 												<p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
 												<div className="social-bottom">

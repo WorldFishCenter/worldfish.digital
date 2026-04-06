@@ -1,6 +1,7 @@
 'use client'
-import Link from "next/link";
+import Link from 'next/link';
 import settingsData from '@/content/global/settings.json';
+import styles from './Footer.module.css';
 
 const Footer = () => {
     const { footer } = settingsData;
@@ -12,8 +13,8 @@ const Footer = () => {
                     <div className="footer-top">
                         <div className="row">
                             <div className="col-md-4 col-sm-6 text-center text-md-start">
-                                <Link href="/" className="d-flex display-6">
-                                    PESKAS™
+                                <Link href="/" className={`d-flex display-6 ${styles.brandLink}`}>
+                                    WorldFish Digital
                                 </Link>
                             </div>
                         </div>

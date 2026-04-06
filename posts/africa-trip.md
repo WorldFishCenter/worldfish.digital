@@ -3,6 +3,7 @@ title: "From little things, big things grow: Scaling Peskas in East Africa"
 author: "Alex Tilley"
 date: 2023-09-16T02:53:20+13:00
 draft: false
+channel: worldfish
 description: "Embarking on a transformative journey in East Africa, where Peskas leverages
 community insights and technology to foster sustainable fisheries and enhance livelihoods"
 tags: [ "East Africa", "Blue Economy", "Data-Driven Management" ] 

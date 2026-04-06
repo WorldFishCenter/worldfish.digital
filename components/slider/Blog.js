@@ -48,7 +48,7 @@ const BlogSlider = () => {
                                                 <div className="col-xl-6 col-lg-12">
                                                     <div className="img-news">
                                                         <Link href="/blog-single">
-                                                            <Image width="0" height="0" sizes="100vw" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/blog/1/img-1.png" alt="Agon" />
+                                                            <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" src="/assets/imgs/page/blog/1/img-1.png" alt="Agon" />
                                                         </Link>
                                                     </div>
                                                 </div>
@@ -62,7 +62,7 @@ const BlogSlider = () => {
                                                         <p className="text-body-text color-gray-500 text-desc-fix-h">Lorem ipsum dolor sit amet consectetur adipiscing elit interdum ullamcorper sed pharetra senectus donec nunc. Consequat semper viverra nam libero justo laoreet facilisis magna etiam.</p>
                                                         <div className="blog-img-user">
                                                             <div className="img-user img-user-round">
-                                                                <Image width="0" height="0" sizes="100vw" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/blog/2/user-1.png" alt="Agon" />
+                                                                <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" src="/assets/imgs/page/blog/2/user-1.png" alt="Agon" />
                                                             </div>
                                                             <h4 className="text-heading-6 color-gray-900">Jenny Wilson</h4>
                                                             <p className="text-body-small color-gray-500">August 25, 2026</p>

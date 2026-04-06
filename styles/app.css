@@ -1,0 +1,180 @@
+/**
+ * App layer — loaded after Agon theme (app/layout.js).
+ * Cross-cutting defaults and route-scoped shells. Use design tokens (--wf-*).
+ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wf-color-accent);
+  outline-offset: 2px;
+}
+
+/**
+ * Global site shell — set on <body> in app/layout.js.
+ * One token-driven surface for every route (modern single-theme app).
+ */
+body.wf-site {
+  background-color: var(--wf-surface-deep);
+  color: var(--wf-text-slate-300);
+}
+
+body.wf-site h1,
+body.wf-site h2,
+body.wf-site h3,
+body.wf-site h4,
+body.wf-site h5,
+body.wf-site h6 {
+  color: var(--wf-text-on-dark);
+}
+
+body.wf-site .text-body-lead-large {
+  color: var(--wf-text-slate-300) !important;
+}
+
+/* Blog listing cards (legacy Agon component on dark shell) */
+body.wf-site .card-grid-style-4 {
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-medium);
+  border-radius: 16px;
+  padding: 24px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+body.wf-site .card-grid-style-4:hover {
+  border-color: var(--wf-border-accent-medium);
+}
+
+body.wf-site .card-grid-style-4 .text-heading-4 {
+  color: var(--wf-text-on-dark) !important;
+}
+
+body.wf-site .card-grid-style-4 .tag-dot {
+  color: var(--wf-color-accent);
+}
+
+/* Blog / legal prose inside markdown */
+body.wf-site .wf-prose,
+body.wf-site .blog-content {
+  color: var(--wf-text-slate-300);
+}
+
+body.wf-site .wf-prose a,
+body.wf-site .blog-content a {
+  color: var(--wf-color-accent);
+}
+
+body.wf-site .wf-prose code,
+body.wf-site .blog-content code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+body.wf-site .single-detail .wf-prose,
+body.wf-site .single-detail .text-body-text {
+  color: var(--wf-text-slate-300) !important;
+}
+
+body.wf-site .btn.btn-black {
+  background: var(--wf-text-on-dark);
+  color: var(--wf-surface-deep);
+  border-color: transparent;
+}
+
+body.wf-site .bd-top {
+  border-top-color: var(--wf-border-subtle) !important;
+}
+
+body.wf-site .tag-dot {
+  color: var(--wf-color-accent);
+}
+
+/* Legacy Agon utility classes used in leftover markup */
+body.wf-site .color-gray-900,
+body.wf-site .text-display-3.color-gray-900 {
+  color: var(--wf-text-on-dark) !important;
+}
+
+body.wf-site .color-gray-600,
+body.wf-site .color-gray-500,
+body.wf-site .text-heading-6.color-gray-600 {
+  color: var(--wf-text-slate-300) !important;
+}
+
+body.wf-site .text-body-text.color-gray-600,
+body.wf-site .text-body-text.color-gray-500 {
+  color: var(--wf-text-slate-400) !important;
+}
+
+body.wf-site .banner-hero.bg-gray-100,
+body.wf-site .bg-gray-100 {
+  background-color: var(--wf-surface-deep) !important;
+  background-image: none !important;
+}
+
+body.wf-site .footer {
+  background-color: transparent;
+  border-top: 1px solid var(--wf-border-subtle);
+}
+
+body.wf-site .footer .text-heading-5,
+body.wf-site .footer h4 {
+  color: var(--wf-text-on-dark) !important;
+}
+
+body.wf-site .footer .menu-footer a {
+  color: var(--wf-text-slate-300);
+}
+
+body.wf-site .footer .menu-footer a:hover {
+  color: var(--wf-text-on-dark);
+}
+
+body.wf-site .footer .color-gray-600 {
+  color: var(--wf-text-slate-400) !important;
+}
+
+body.wf-site .footer .color-gray-400 {
+  color: var(--wf-text-slate-400) !important;
+}
+
+body.wf-site .table-of-content h6,
+body.wf-site .text-heading-1 {
+  color: var(--wf-text-on-dark) !important;
+}
+
+body.wf-site .table-of-content a {
+  color: var(--wf-text-slate-300);
+}
+
+body.wf-site .table-of-content a:hover {
+  color: var(--wf-color-accent);
+}
+
+body.wf-site .single-detail h6 {
+  color: var(--wf-text-on-dark) !important;
+}

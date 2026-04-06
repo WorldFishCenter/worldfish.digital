@@ -1,113 +1,69 @@
 {
   "hero": {
-    "headline": "Open-source digital platform for",
-    "headlineHighlight": "small-scale fisheries",
-    "subtitle": "Peskas is an open-source, modular platform that turns fisheries data into decision-ready insights. Built with co-design principles, it scales from landing-site monitoring to national dashboards across Asia and Africa.",
-    "ctaLabel": "Watch the video"
+    "headline": "Digital tools for",
+    "headlineHighlight": "transforming aquatic food systems",
+    "subtitle": "WorldFish Digital is an open-source, modular ecosystem that turns fisheries data into decision-ready insights. Built with co-design principles, our platforms scale from landing-site monitoring to national dashboards.",
+    "ctaLabel": "Explore Data Infrastructure"
   },
   "stats": [
     {
-      "count": 8,
-      "suffix": "",
-      "label": "Years of operation"
-    },
-    {
       "count": 6,
       "suffix": "",
-      "label": "Countries active"
+      "label": "Countries deployed"
     },
     {
       "count": 140,
       "suffix": "k",
-      "label": "Fishing trips tracked"
+      "label": "Fisheries monitored"
     },
     {
-      "count": 300,
-      "suffix": "",
-      "label": "Tonnes of catch recorded"
+      "count": 100,
+      "suffix": "+",
+      "label": "Data streams integrated"
     }
   ],
-  "regionsSection": {
-    "title": "Transforming fisheries management across Asia and Africa",
-    "subtitle": "From Timor-Leste to East Africa, Peskas helps partners collect, verify, and visualize small-scale fisheries data so communities and agencies can act on evidence.",
-    "wioPrompt": "Explore the Western Indian Ocean regional view",
-    "wioHref": "https://coasts.peskas.org",
-    "wioCta": "coasts.peskas.org"
-  },
   "features": [
     {
-      "title": "Open and modular",
-      "description": "Open-source code, modular services, and clear standards so you can adapt Peskas to your fishery.",
-      "bgClass": "bg-business"
+      "title": "PESKAS",
+      "description": "An open-source ecosystem that turns fisheries data into decision-ready insights.",
+      "bgClass": "bg-business",
+      "ctaHref": "/products/peskas"
     },
     {
-      "title": "Built with partners",
-      "description": "Co-designed workflows that layer onto existing systems and capacity instead of replacing them.",
-      "bgClass": "bg-local"
+      "title": "TASEGURU",
+      "description": "Safety-at-sea app with real-time early warning capabilities and emergency SOS tools.",
+      "bgClass": "bg-local",
+      "ctaHref": "/under-costruction"
     },
     {
-      "title": "Secure and timely",
-      "description": "Cloud-hosted pipelines with quality for near real-time access. Keep sensitive trip data protected.",
-      "bgClass": "bg-social"
-    },
-    {
-      "title": "From boats to dashboards",
-      "description": "Standardized data and terminology ready for national, regional, and FAO-aligned reporting.",
-      "bgClass": "bg-social"
+      "title": "TRACKS-EXP",
+      "description": "Vessel tracking insights paired with catch reports to monitor small-scale fishing trips.",
+      "bgClass": "bg-social",
+      "ctaHref": "https://tracks.peskas.org/"
     }
   ],
   "about": {
-    "title": "Transforming small-scale fisheries through digital innovation.",
-    "subtitle": "Peskas bridges the data gap in small-scale fisheries, empowering communities and governments with evidence-based insights for sustainable resource management, improved livelihoods, and food security.",
+    "title": "Platforms & Infrastructure",
+    "subtitle": "Asia Digital Hub & Digital Lab. Our digital architecture empowers partnerships by providing open, secure, and standardized data pipelines for research, governments, and small-scale fishing communities.",
     "image": "/assets/imgs/page/homepage1/fishing.png",
     "features": [
       {
-        "title": "Evidence-Based Management",
-        "description": "Real-time data enables informed decisions for sustainable fisheries"
+        "title": "Digital Architecture",
+        "description": "APIs, cloud infrastructure and data pipelines for seamless integration."
       },
       {
-        "title": "Community Empowerment",
-        "description": "Local enumerators and fishers become key stakeholders in data collection"
+        "title": "Data Standards",
+        "description": "Compliant with Open ArtFish, FAO, and Agrovoc ontologies, ensuring data interoperability."
       },
       {
-        "title": "Open Science Principles",
-        "description": "Free, open-source platform ensuring accessibility and transparency"
-      },
-      {
-        "title": "Scalable Solutions",
-        "description": "Modular design adapts to diverse fisheries contexts and needs"
+        "title": "AI & Analytics",
+        "description": "AI-ready machine learning pipelines and automated decision-support systems."
       }
     ]
   },
-  "cta": {
-    "title": "Bring Peskas to your fishery",
-    "subtitle": "Tell us about your context and goals. We'll respond with a tailored setup plan and timelines.",
-    "ctaLabel": "Request Peskas",
-    "ctaHref": "https://airtable.com/appMMEJYlJdfSJEjm/pagDiqNCwLasUBKQi/form"
-  },
-  "tracks": {
-    "title": "Peskas Tracks: a digital window into small-scale fishing trips",
-    "subtitle": "Built by WorldFish through the Asia-Africa BlueTech Superhighway, Peskas Tracks is a mobile and web app that fishers install to pair vessel tracking with their own catch reports, making movements, productivity, and safety visible in near real time.",
-    "col1Title": "What fishers and managers see",
-    "col1Items": [
-      "Live and offline trip logging: position, route, speed, time at sea",
-      "Trip heatmaps by day, week, or month with effort summaries",
-      "Catch entries linked to trips for a full record of effort and catch",
-      "Password-protected data per vessel; English, Portuguese, Swahili interfaces"
-    ],
-    "col2Title": "Pilots and impact",
-    "col2Items": [
-      "100+ fishers across Kenya, Tanzania, and Mozambique",
-      "Heatmaps and stats help plan routes and fuel use",
-      "When a vessel stalled, Tracks helped locate it quickly, boosting safety"
-    ],
-    "ctaLabel": "See the demo",
-    "ctaHref": "https://tracks.peskas.org/"
-  },
-  "videoYoutubeId": "962qilVnTZ0",
   "blogSection": {
-    "title": "Latest News",
-    "subtitle": "From Our Peskas™ blog",
-    "ctaLabel": "View More"
+    "title": "News",
+    "subtitle": "Updates across WorldFish Digital and Peskas—releases, partnerships, pilots, and platform work.",
+    "ctaLabel": "View all news"
   }
 }

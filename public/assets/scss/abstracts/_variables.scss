@@ -1,13 +1,14 @@
 //1.FONT
 @font-face {
     font-family: "uicons-regular-rounded";
+    font-display: swap;
     src: url("../fonts/uicons/uicons-regular-rounded.eot#iefix") format("embedded-opentype"),
     url("../fonts/uicons/uicons-regular-rounded.woff2") format("woff2"),
     url("../fonts/uicons/uicons-regular-rounded.woff") format("woff");
 }
-@import url(https://fonts.bunny.net/css?family=chivo:400,700|noto-sans:400,700);
-$font-heading: "Noto Sans", sans-serif;
-$font-text: "Chivo", sans-serif;
+// Fonts: loaded via next/font in app/layout.js (--chivo, --noto on <html>).
+$font-heading: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+$font-text: var(--chivo), "Chivo", ui-sans-serif, system-ui, sans-serif;
 $font-3xs: 10px;
 $font-xxs: 12px;
 $font-xs: 13px;

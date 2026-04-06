@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useRef } from 'react';
-import Layout from "@/components/layout/Layout";
-import RichText from "@/components/content/RichText";
-import data from "@/content/pages/data-resources.json";
+import Layout from '@/components/layout/Layout';
+import RichText from '@/components/content/RichText';
+import data from '@/content/pages/data-resources.json';
 
 export default function DataResources() {
     const dataverseRef = useRef(null);
@@ -25,7 +25,8 @@ export default function DataResources() {
         script.onerror = () => {
             console.error('Failed to load Dataverse widget');
             if (currentRef) {
-                currentRef.innerHTML = '<p class="text-body-text color-gray-600">Unable to load Dataverse widget. Please try refreshing the page.</p>';
+                currentRef.innerHTML =
+                    '<p class="wf-muted-inline">Unable to load Dataverse widget. Please try refreshing the page.</p>';
             }
         };
 
@@ -40,70 +41,48 @@ export default function DataResources() {
     }, []);
 
     return (
-        <>
-            <Layout>
-                <section className="section-box">
-                    <div className="banner-hero banner-breadcrums bg-gray-100">
-                        <div className="container text-center">
-                            <div className="row">
-                                <div className="col-lg-12">
-                                    <h1 className="text-display-3 color-gray-900 mb-20">{data.hero.title}</h1>
-                                    <RichText
-                                        content={data.hero.subtitle}
-                                        className="text-heading-6 color-gray-600 mb-20"
-                                    />
-                                </div>
-                            </div>
+        <Layout>
+            <section className="section-box wfSectionDark wfPadHeroSm">
+                <div className="container text-center">
+                    <div className="row">
+                        <div className="col-lg-10 mx-auto">
+                            <h1 className="display-3 wfTitleHeroTight wfTitleHeroMb">{data.hero.title}</h1>
+                            <RichText content={data.hero.subtitle} className="wfLead" />
                         </div>
                     </div>
-                </section>
-                <div className="section-box mt-90">
-                    <div className="container">
-                        <h2 className="text-heading-1 color-gray-900">{data.publications.title}</h2>
-                        <div className="row">
-                            <div className="col-lg-6">
-                                <RichText
-                                    content={data.publications.description}
-                                    className="text-body-lead-large color-gray-600 mt-20"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <section className="section-box">
-                        <div className="container mt-40">
-                            <iframe
-                                className="airtable-embed"
-                                src={data.publications.airtableUrl}
-                                frameBorder="0"
-                                width="100%"
-                                height="533"
-                                style={{ background: 'transparent', border: '1px solid #ccc' }}
-                            ></iframe>
-                        </div>
-                        <div className="container mt-40">
-                            <h2 className="text-heading-1 color-gray-900">{data.data.title}</h2>
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <RichText
-                                        content={data.data.description}
-                                        className="text-body-lead-large color-gray-600 mt-20"
-                                    />
-                                </div>
-                            </div>
-                            <div className="container mt-40">
-                                <div
-                                    ref={dataverseRef}
-                                    style={{
-                                        minHeight: '600px',
-                                        width: '100%',
-                                        position: 'relative',
-                                    }}
-                                ></div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
-            </Layout>
-        </>
+            </section>
+
+            <section className="section-box wfSectionDark wfPadSectionMd border-0">
+                <div className="container">
+                    <h2 className="display-5 wfTitleHeroTight mb-30">{data.publications.title}</h2>
+                    <div className="row">
+                        <div className="col-lg-8">
+                            <RichText content={data.publications.description} className="wfLeadMdStatic mb-40" />
+                        </div>
+                    </div>
+                    <iframe
+                        title="Publications"
+                        className="airtable-embed wfDataResourceCard wf-rounded-iframe"
+                        src={data.publications.airtableUrl}
+                        frameBorder="0"
+                        width="100%"
+                        height="533"
+                    />
+                </div>
+            </section>
+
+            <section className="section-box wfSectionDark wfPadSectionMdBottom">
+                <div className="container">
+                    <h2 className="display-5 wfTitleHeroTight mb-30">{data.data.title}</h2>
+                    <div className="row">
+                        <div className="col-lg-8">
+                            <RichText content={data.data.description} className="wfLeadMdStatic mb-40" />
+                        </div>
+                    </div>
+                    <div ref={dataverseRef} className="wfDataverseHost wf-dataverse-frame" />
+                </div>
+            </section>
+        </Layout>
     );
 }

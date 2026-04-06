@@ -3,6 +3,7 @@ title: "Nutritional Insights in Fisheries: The Peskas Evolution"
 date: 2022-01-27T18:09:41+13:00
 author: "Lorenzo Longobardi"
 draft: false
+channel: peskas
 description: "Harnessing the Power of Data to Enhance Nutritional Insights in Small-Scale Fisheries Through Peskas"
 tags: [ "Micronutrients", "Data-Driven Management", "Nutritional Policy" ] 
 ShowToc: false 

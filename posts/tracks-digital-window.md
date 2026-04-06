@@ -3,6 +3,7 @@ title: "Tracks: A Digital Window into the Journeys of Small-Scale Fishers"
 author: "WorldFish"
 date: 2025-11-27T10:53:35Z
 draft: false
+channel: peskas
 description: "Tracks combines vessel tracking and self-reported catch data to bring visibility to small-scale fishers."
 tags: [ "Tracks", "Small-scale Fisheries", "Digital Tools", "AABS" ]
 ShowToc: false

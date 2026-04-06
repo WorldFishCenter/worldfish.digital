@@ -24,6 +24,18 @@ export default function sitemap() {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/blog/peskas`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.75,
+        },
+        {
+            url: `${baseUrl}/products/peskas`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.85,
+        },
+        {
             url: `${baseUrl}/how-it-works`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

@@ -1,6 +1,6 @@
 {
   "header": {
-    "siteTitle": "PESKAS™",
+    "siteTitle": "WorldFish Digital",
     "primaryLinks": [
       {
         "label": "How it works",
@@ -81,9 +81,9 @@
     }
   },
   "footer": {
-    "copyright": "PESKAS™ 2025",
+    "copyright": "WorldFish Digital 2026",
     "contactEmails": [
-      "peskas.platform@gmail.com",
+      "contact@worldfishcenter.org",
       "a.tilley@cgiar.org",
       "l.longobardi@cgiar.org"
     ],
@@ -118,8 +118,8 @@
     ]
   },
   "blog": {
-    "title": "Peskas Blog",
-    "description": "Technical and not so technical musings about the Peskas platform",
+    "title": "WorldFish Digital Updates",
+    "description": "Technical and not so technical musings about the WorldFish Digital platform",
     "latestPostsCount": 3,
     "postsPerPage": 10
   }

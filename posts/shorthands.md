@@ -3,6 +3,7 @@ title: "A Day with a Small-Scale Fishing Community at Kanamai Beach, Kenya"
 author: "Jerome Bossuet"
 date: "2024-01-16T02:53:20+13:00"
 draft: false
+channel: worldfish
 description: A Day with a Small-Scale Fishing Community at Kanamai Beach, Kenya
 tags:
 - East Africa

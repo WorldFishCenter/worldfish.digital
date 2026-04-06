@@ -1,5 +1,4 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-package-lock.json
 yarn.lock
 
 # dependencies
@@ -35,10 +34,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# TinaCMS — generated at build time, do not commit
-/public/admin
-/tina/__generated__
 
 #vscode settings
 .vscode

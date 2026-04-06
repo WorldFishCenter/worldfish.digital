@@ -1,6 +1,5 @@
 
 'use client'
-/* eslint-disable @next/next/no-img-element */
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import RichText from "@/components/content/RichText"
@@ -11,12 +10,12 @@ function Terms() {
 	return (
 		<>
 			<Layout>
-				<section className="section-box mt-50 mb-50">
+				<section className="section-box wfSectionDark wfPadHeroSm">
 					<div className="container text-center">
-						<h1 className="text-heading-1">{data.hero.title}</h1>
+						<h1 className="display-4 wfTitleHeroTight">{data.hero.title}</h1>
 					</div>
 				</section>
-				<section className="section-box mt-50">
+				<section className="section-box wfSectionDark wfPadSectionMdBottom">
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-12 mx-auto">
@@ -34,11 +33,11 @@ function Terms() {
 										</div>
 									</div>
 									<div className="col-lg-8">
-										<div className="single-detail">
+										<div className="single-detail wf-prose">
 											{data.sections.map((section) => (
 												<div key={section.id}>
 													<h6 className="mt-35 mb-25" id={section.id}>{section.title}</h6>
-													<RichText content={section.body} />
+													<RichText content={section.body} className="wf-prose" />
 												</div>
 											))}
 											{data.footerNote && (
@@ -77,11 +76,11 @@ function Terms() {
 												width="0"
 												height="0"
 												sizes="100vw"
-												style={{ width: "auto", height: "auto" }} src="/assets/imgs/template/chart.png" alt="Agon" /></div><Image
+												className="wfImgIntrinsic" src="/assets/imgs/template/chart.png" alt="Agon" /></div><Image
 												width="0"
 												height="0"
 												sizes="100vw"
-												style={{ width: "auto", height: "auto" }} className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Agon" />
+												className="img-responsive img-newsletter wfImgIntrinsic" src="/assets/imgs/template/img-newsletter.png" alt="Agon" />
 										</div>
 									</div>
 								</div>

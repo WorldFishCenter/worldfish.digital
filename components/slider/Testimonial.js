@@ -66,7 +66,7 @@ const TestimonialSlider = () => {
                       width="0"
                       height="0"
                       sizes="100vw"
-                      style={{ width: "auto", height: "auto" }}
+                      className="wfImgIntrinsic"
                       src={`/assets/imgs/page/homepage1/user-${item.avatar}`}
                       alt={item.name}
                     />
