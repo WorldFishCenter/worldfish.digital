@@ -1,0 +1,262 @@
+.siteHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--wf-header-z);
+  padding: 14px 0;
+  background-color: var(--wf-surface-header);
+  backdrop-filter: var(--wf-surface-header-blur);
+  -webkit-backdrop-filter: var(--wf-surface-header-blur);
+  border-bottom: 1px solid var(--wf-border-header);
+  box-shadow: none;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.siteHeader[data-scrolled="true"] {
+  background-color: var(--wf-surface-header-scrolled);
+  border-bottom-color: var(--wf-border-header-scrolled);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.headerInner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.headerLogo {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.navMain {
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 8px;
+}
+
+.megaListReset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Agon overrides: .siteHeader and .header-langgraph share the same <header> node */
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu) {
+  width: auto !important;
+  float: none !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu .main-menu) {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding-top: 0 !important;
+  float: none !important;
+  list-style: none;
+  margin: 0;
+}
+
+.siteHeader:global(.header-langgraph) :global(.main-menu > li) {
+  float: none !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.main-menu > li > .sub-menu) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: var(--wf-header-submenu-z);
+}
+
+.siteHeader:global(.header-langgraph) :global(.main-menu > li:hover > .sub-menu) {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.main-menu > li.has-children > a::after) {
+  opacity: 0.55;
+  font-size: 13px !important;
+  margin-left: 5px !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu > ul > li > a) {
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  color: var(--wf-text-on-dark-muted) !important;
+  font-family: var(--wf-font-heading) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  border-radius: var(--wf-radius-sm);
+}
+
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu > ul > li > a:hover) {
+  color: var(--wf-text-on-dark) !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.siteHeader :global(.header-logo-link) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.08;
+  text-decoration: none !important;
+  font-family: var(--wf-font-body);
+  letter-spacing: -0.035em;
+}
+
+.siteHeader :global(.header-logo-line1) {
+  font-size: clamp(1.2rem, 2.1vw, 1.45rem);
+  font-weight: 700;
+  color: var(--wf-text-on-dark);
+}
+
+.siteHeader :global(.header-logo-line2) {
+  font-size: clamp(1rem, 1.65vw, 1.15rem);
+  font-weight: 600;
+  color: var(--wf-text-on-dark-soft);
+  margin-top: 2px;
+}
+
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu .sub-menu) {
+  background: var(--wf-surface-submenu) !important;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--wf-border-medium) !important;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset !important;
+  border-radius: var(--wf-radius-md) !important;
+  padding: 10px !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu .sub-menu > li > a),
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu .sub-menu ul li a) {
+  color: var(--wf-text-submenu) !important;
+  font-family: var(--wf-font-heading) !important;
+  font-size: 14px !important;
+  padding: 10px 14px !important;
+  border-radius: var(--wf-radius-sm);
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu .sub-menu > li > a:hover),
+.siteHeader:global(.header-langgraph) :global(.nav-main-menu .sub-menu ul li a:hover) {
+  color: var(--wf-text-on-dark) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.mega-menu) {
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px !important;
+  width: max-content;
+}
+
+.siteHeader:global(.header-langgraph) :global(.mega-menu-column) {
+  display: flex;
+  flex-direction: column;
+  min-width: 196px;
+}
+
+.siteHeader:global(.header-langgraph) :global(.mega-menu-heading) {
+  color: var(--wf-text-slate-50) !important;
+  font-family: var(--wf-font-body) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  padding: 6px 14px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/*
+ * Agon theme: .main-menu li ul { opacity:0; visibility:hidden } and only li:hover > ul
+ * fixes that. Mega menu uses div.sub-menu + inner ul, so those lists never unhide.
+ */
+.siteHeader:global(.header-langgraph) :global(.mega-menu ul) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  z-index: auto !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.mega-menu ul li) {
+  float: none !important;
+  width: auto !important;
+}
+
+.siteHeader:global(.header-langgraph) :global(.btn-nav-primary) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wf-nav-cta-bg);
+  color: var(--wf-nav-cta-fg) !important;
+  padding: 11px 22px !important;
+  border-radius: var(--wf-radius-pill);
+  font-weight: 600 !important;
+  font-family: var(--wf-font-heading) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  margin-left: 0;
+  white-space: nowrap;
+}
+
+.siteHeader:global(.header-langgraph) :global(.btn-nav-primary:hover) {
+  opacity: 0.96;
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.burgerBtn {
+  background: none;
+  border: none;
+  padding: 6px 4px;
+  margin: 0;
+  cursor: pointer;
+  line-height: 0;
+  border-radius: var(--wf-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.burgerBtn:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.burgerBtn:focus-visible {
+  outline: 2px solid var(--wf-text-on-dark-muted);
+  outline-offset: 2px;
+}

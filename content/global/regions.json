@@ -5,7 +5,7 @@
       "desc": "The flagship implementation of Peskas since 2016, officially adopted as the national fisheries monitoring system in 2019. In partnership with the Ministry of Agriculture and Fisheries, Peskas has collected over 59,000 fishing trips and 298 tonnes of catch data, enabling the first national fisheries production estimates and supporting evidence-based policy development for sustainable small-scale fisheries management.",
       "ctaLabel": "Open dashboard",
       "ctaHref": "https://timor.peskas.org/",
-      "image": "assets/imgs/page/homepage1/timor-dash.png"
+      "image": "/assets/imgs/page/homepage1/timor-dash.png"
     },
     {
       "title": "Malaysia",
@@ -19,28 +19,28 @@
       "desc": "Part of Peskas' East African expansion, the Kenya implementation focuses on coastal small-scale fisheries. Working with local communities and government partners, this initiative aims to improve fisheries data collection and management practices along Kenya's rich coastal waters, supporting both food security and sustainable livelihoods.",
       "ctaLabel": "Open dashboard",
       "ctaHref": "https://digitalfisheries.kenya.peskas.org/en",
-      "image": "assets/imgs/page/homepage1/kenya-dash.png"
+      "image": "/assets/imgs/page/homepage1/kenya-dash.png"
     },
     {
       "title": "Zanzibar",
       "desc": "Leveraging Zanzibar's strategic importance in Indian Ocean fisheries, Peskas is being adapted to support the island's vibrant fishing communities. The implementation emphasizes community-based resource management and the integration of traditional fishing knowledge with modern data collection techniques.",
       "ctaLabel": "Open dashboard",
       "ctaHref": "https://zanzibar.peskas.org",
-      "image": "assets/imgs/page/homepage1/zanzibar-dash.png"
+      "image": "/assets/imgs/page/homepage1/zanzibar-dash.png"
     },
     {
       "title": "Mozambique",
       "desc": "Mozambique's extensive coastline and significant small-scale fisheries sector make it a key location for Peskas expansion. The implementation focuses on supporting artisanal fishing communities while building local capacity for sustainable fisheries management and marine resource conservation.",
       "ctaLabel": "Open dashboard",
       "ctaHref": "https://peskas-dashboard-mozambique.vercel.app",
-      "image": "assets/imgs/page/homepage1/mozambique-dash.png"
+      "image": "/assets/imgs/page/homepage1/mozambique-dash.png"
     },
     {
       "title": "Malawi",
       "desc": "Extending Peskas to inland fisheries, Malawi represents an important expansion into freshwater aquatic food systems. The Lake Malawi implementation adapts the platform's methodologies for inland small-scale fisheries, addressing unique challenges of freshwater ecosystems and community-based fisheries management.",
       "ctaLabel": "Open dashboard",
       "ctaHref": "https://malawi.peskas.org/",
-      "image": "assets/imgs/page/homepage1/malawi-dash.png"
+      "image": "/assets/imgs/page/homepage1/malawi-dash.png"
     }
   ]
 }

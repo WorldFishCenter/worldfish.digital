@@ -39,7 +39,7 @@ class ErrorBoundary extends React.Component {
                                 Something went wrong
                             </h1>
                             <p className="text-body-lead-large color-gray-600 mb-40">
-                                We're sorry, but something unexpected happened. Please try refreshing the page.
+                                We&apos;re sorry, but something unexpected happened. Please try refreshing the page.
                             </p>
                             <div className="d-flex gap-15 justify-content-center">
                                 <button
@@ -59,14 +59,14 @@ class ErrorBoundary extends React.Component {
                                 </button>
                             </div>
                             {process.env.NODE_ENV === 'development' && this.state.error && (
-                                <details className="mt-40 text-start" style={{ maxWidth: '800px', margin: '40px auto 0' }}>
-                                    <summary style={{ cursor: 'pointer', color: '#dc3545' }}>
+                                <details className="mt-40 text-start wfErrorDetails">
+                                    <summary className="wfErrorSummary">
                                         Error Details (Development Only)
                                     </summary>
-                                    <pre style={{ marginTop: '20px', padding: '20px', background: '#f5f5f5', borderRadius: '4px', overflow: 'auto' }}>
+                                    <pre className="wfErrorPre">
                                         {this.state.error.toString()}
                                         {this.state.error.stack && (
-                                            <div style={{ marginTop: '10px' }}>
+                                            <div className="wfErrorStack">
                                                 {this.state.error.stack}
                                             </div>
                                         )}

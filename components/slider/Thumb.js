@@ -44,7 +44,8 @@ const ThumbSlider = () => {
 										width="0"
 										height="0"
 										sizes="100vw"
-										style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp.jpg" alt="product image" />
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp.jpg" alt="product image" />
 								</figure>
 							</SwiperSlide>
 							<SwiperSlide>
@@ -53,7 +54,8 @@ const ThumbSlider = () => {
 										width="0"
 										height="0"
 										sizes="100vw"
-										style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp2.jpg" alt="product image" />
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp2.jpg" alt="product image" />
 								</figure>
 							</SwiperSlide>
 							<SwiperSlide>
@@ -62,7 +64,8 @@ const ThumbSlider = () => {
 										width="0"
 										height="0"
 										sizes="100vw"
-										style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp3.jpg" alt="product image" />
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp3.jpg" alt="product image" />
 								</figure>
 							</SwiperSlide>
 							<SwiperSlide>
@@ -71,7 +74,8 @@ const ThumbSlider = () => {
 										width="0"
 										height="0"
 										sizes="100vw"
-										style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp4.jpg" alt="product image" />
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp4.jpg" alt="product image" />
 								</figure>
 							</SwiperSlide>
 						</Swiper>
@@ -91,22 +95,26 @@ const ThumbSlider = () => {
 							width="0"
 							height="0"
 							sizes="100vw"
-							style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp.jpg" alt="product image" /></div></SwiperSlide>
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp.jpg" alt="product image" /></div></SwiperSlide>
 						<SwiperSlide><div><Image
 							width="0"
 							height="0"
 							sizes="100vw"
-							style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp2.jpg" alt="product image" /></div></SwiperSlide>
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp2.jpg" alt="product image" /></div></SwiperSlide>
 						<SwiperSlide><div><Image
 							width="0"
 							height="0"
 							sizes="100vw"
-							style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp3.jpg" alt="product image" /></div></SwiperSlide>
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp3.jpg" alt="product image" /></div></SwiperSlide>
 						<SwiperSlide><div><Image
 							width="0"
 							height="0"
 							sizes="100vw"
-							style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/single-product/img-sp4.jpg" alt="product image" /></div></SwiperSlide>
+										className="wfImgIntrinsic"
+										src="/assets/imgs/page/single-product/img-sp4.jpg" alt="product image" /></div></SwiperSlide>
 					</Swiper>
 				</div>
 
@@ -125,70 +133,80 @@ const ThumbSlider = () => {
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-1.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-1.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-2.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-2.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-3.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-3.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-4.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-4.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-5.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-5.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-6.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-6.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-7.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-7.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-8.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-8.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-9.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-9.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-10.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-10.jpg" />
                 </SwiperSlide>
             </Swiper>
             <Swiper
@@ -205,70 +223,80 @@ const ThumbSlider = () => {
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-1.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-1.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-2.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-2.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-3.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-3.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-4.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-4.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-5.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-5.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-6.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-6.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-7.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-7.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-8.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-8.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-9.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-9.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
     width="0"
     height="0"
     sizes="100vw"
-    style={{ width: "auto", height: "auto" }} src="https://swiperjs.com/demos/images/nature-10.jpg" />
+										className="wfImgIntrinsic"
+										src="https://swiperjs.com/demos/images/nature-10.jpg" />
                 </SwiperSlide>
             </Swiper> */}
 

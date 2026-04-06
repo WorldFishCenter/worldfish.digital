@@ -42,7 +42,7 @@ const Intro2 = () => {
                                         </div>
                                         <div className="grid-image-bottom">
                                             <Link href="#">
-                                                <Image width="0" height="0" sizes="100vw" alt="Agon" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage6/img-2.png" />
+                                                <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" alt="Agon" src="/assets/imgs/page/homepage6/img-2.png" />
                                             </Link>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@ const Intro2 = () => {
                                         </div>
                                         <div className="grid-image-bottom">
                                             <Link href="#">
-                                                <Image width="0" height="0" alt="Agon" sizes="100vw" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage6/img-3.png" />
+                                                <Image width="0" height="0" alt="Agon" sizes="100vw" className="wfImgIntrinsic" src="/assets/imgs/page/homepage6/img-3.png" />
                                             </Link>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@ const Intro2 = () => {
                                         </div>
                                         <div className="grid-image-bottom">
                                             <Link href="#">
-                                                <Image width="0" height="0" sizes="100vw" alt="Agon" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage6/img-4.png" />
+                                                <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" alt="Agon" src="/assets/imgs/page/homepage6/img-4.png" />
                                             </Link>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@ const Intro2 = () => {
                                         </div>
                                         <div className="grid-image-bottom">
                                             <Link href="#">
-                                                <Image width="0" height="0" sizes="100vw" alt="Agon" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage6/img-2.png" />
+                                                <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" alt="Agon" src="/assets/imgs/page/homepage6/img-2.png" />
                                             </Link>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@ const Intro2 = () => {
                                         </div>
                                         <div className="grid-image-bottom">
                                             <Link href="#">
-                                                <Image width="0" height="0" alt="Agon" sizes="100vw" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage6/img-3.png" />
+                                                <Image width="0" height="0" alt="Agon" sizes="100vw" className="wfImgIntrinsic" src="/assets/imgs/page/homepage6/img-3.png" />
                                             </Link>
                                         </div>
                                     </div>
@@ -155,7 +155,7 @@ const Intro2 = () => {
                                         </div>
                                         <div className="grid-image-bottom">
                                             <Link href="#">
-                                                <Image width="0" height="0" sizes="100vw" alt="Agon" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage6/img-4.png" />
+                                                <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" alt="Agon" src="/assets/imgs/page/homepage6/img-4.png" />
                                             </Link>
                                         </div>
                                     </div>

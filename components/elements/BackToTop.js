@@ -20,7 +20,7 @@ function BackToTop() {
     return (
         <>
             {hasScrolled && (
-                <a id="scrollUp" href="#top" style={{ position: 'fixed', zIndex: 2147483647 }}>
+                <a id="scrollUp" href="#top" className="wfBackToTop">
                     <i className="fi-rr-arrow-small-up" />
                 </a>
 

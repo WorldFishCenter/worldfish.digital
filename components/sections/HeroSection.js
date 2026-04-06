@@ -1,60 +1,57 @@
+import Link from 'next/link';
+import { publicAssetUrl } from '@/lib/publicAssetUrl';
 import RichText from '../content/RichText';
 
 function HeroSection({ data, onWatchVideo }) {
     const { headline, headlineHighlight, subtitle, ctaLabel } = data;
 
     return (
-        <section className="section-box">
-            <div className="banner-hero banner-1">
-                <div className="container">
-                    <div className="row" style={{ paddingBottom: 40 }}>
-                        <div className="col-lg-7">
-                            <h1 className="text-display-3">
-                                {headline}
-                                <span className="color-green-900">
-                                    {' '}
-                                    {headlineHighlight}
-                                </span>
-                            </h1>
-                            <RichText
-                                content={subtitle}
-                                className="text-body-lead-large color-gray-500 mt-40 pr-40"
-                            />
-                            <div className="mt-40 d-flex flex-wrap gap-3">
-                                <button
-                                    type="button"
-                                    className="btn btn-black icon-arrow-right-white"
-                                    onClick={onWatchVideo}
-                                    aria-label="Open video modal to watch Peskas platform demonstration"
-                                >
-                                    {ctaLabel}
-                                </button>
-                            </div>
-                        </div>
-                        <div
-                            className="col-lg-5 d-none d-lg-block"
-                            style={{ position: 'relative' }}
-                        >
-                            <video
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                aria-label="Peskas platform demonstration video"
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    position: 'absolute',
-                                    objectFit: 'cover',
-                                    borderRadius: 15,
-                                }}
+        <section className="section-box wfSectionDark wfPadHero">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-6 mb-50">
+                        <h1 className="display-3 wfTitleHero">
+                            {headline}
+                            <span className="wfAccentLine">{headlineHighlight}</span>
+                        </h1>
+                        <RichText
+                            content={subtitle}
+                            className="wfLead wfLeadMt"
+                        />
+                        <div className="mt-50 d-flex flex-wrap gap-3">
+                            <button
+                                type="button"
+                                className="wfBtnPrimary"
+                                onClick={onWatchVideo}
+                                aria-label="Open presentation modal"
                             >
-                                <source
-                                    src="assets/imgs/page/homepage1/TL_tracks.mp4"
-                                    type="video/mp4"
+                                {ctaLabel} ↗
+                            </button>
+                            <Link href="/how-it-works" className="wfBtnGhost">
+                                How it works ↗
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 d-none d-lg-block">
+                        <div className="wfMediaFrame">
+                            {data.videoFile ? (
+                                <video
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="wfMediaInner"
+                                >
+                                    <source src={publicAssetUrl(data.videoFile)} type="video/mp4" />
+                                    <track kind="captions" srcLang="en" label="English captions" />
+                                </video>
+                            ) : (
+                                <img
+                                    src={publicAssetUrl(data.imageFile) || '/assets/imgs/page/homepage1/banner.png'}
+                                    alt="Platform demonstration"
+                                    className="wfMediaInner"
                                 />
-                                <track kind="captions" srcLang="en" label="English captions" />
-                            </video>
+                            )}
                         </div>
                     </div>
                 </div>

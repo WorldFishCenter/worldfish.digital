@@ -1,34 +1,32 @@
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
-const RichText = ({ content, className }) => {
-    if (!content) return null;
+const RichText = ({ content, className, style }) => {
+    if (content == null) return null;
 
     const wrapperClass =
         className && className.length > 0
             ? className
-            : "text-body-text color-gray-600";
+            : 'text-body-text color-gray-600';
 
-    // Legacy / markdown-string content: render as Markdown
-    if (typeof content === "string") {
-        return (
-            <div className={wrapperClass}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {content}
-                </ReactMarkdown>
-            </div>
-        );
+    const text =
+        typeof content === 'string' || typeof content === 'number'
+            ? String(content)
+            : null;
+
+    if (text == null) {
+        if (process.env.NODE_ENV === 'development') {
+            // Legacy Tina rich-text objects are no longer supported — use markdown strings in JSON.
+            console.warn('[RichText] Expected a string or number; got', typeof content);
+        }
+        return null;
     }
 
-    // Rich-text AST from Tina
     return (
-        <div className={wrapperClass}>
-            <TinaMarkdown content={content} />
+        <div className={wrapperClass} style={style}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
         </div>
     );
 };
 
 export default RichText;
-
-

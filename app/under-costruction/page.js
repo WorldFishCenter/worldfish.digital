@@ -3,21 +3,21 @@ import Link from "next/link";
 import Layout from "@/components/layout/Layout";
 
 export const metadata = {
-    title: 'Page Under Development - Peskas',
+    title: 'Page Under Development - WorldFish Digital',
 };
 
 export default function UnderConstruction() {
     return (
         <Layout>
-            <section className="section-box mt-10">
+            <section className="section-box wfSectionDark wfPadSection">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 text-center mt-10">
-                           <img className="img-responsive" src="/assets/imgs/page/homepage1/under-costruction.svg" style={{ width: '17%', height: 'auto', marginRight: '5px', verticalAlign: 'middle' }} alt="Under Construction" />
-                            <h2 className="text-heading-1 color-gray-900 mb-20 mt-50">
+                           <img className="img-responsive wfUnderConstructionIcon" src="/assets/imgs/page/homepage1/under-costruction.svg" alt="Under Construction" />
+                            <h2 className="display-5 wfTitleHeroTight mb-20 mt-50">
                                 Page Under Development
                             </h2>
-                            <p className="text-heading-5 color-gray-600 mt-30 mb-70">
+                            <p className="wfLeadMdStatic mt-30 mb-70">
                                 Content Update in Progress
                             </p>
                             <div className="text-center mb-50">

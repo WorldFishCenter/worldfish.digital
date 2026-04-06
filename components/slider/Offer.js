@@ -54,7 +54,8 @@ const OfferSlider = () => {
 												width="0"
 												height="0"
 												sizes="100vw"
-												style={{ width: "auto", height: "auto" }} src={`/assets/imgs/page/homepage1/${item.img}`} alt="Agon" />
+												className="wfImgIntrinsic"
+												src={`/assets/imgs/page/homepage1/${item.img}`} alt="Agon" />
 										</div>
 										<h3 className="text-heading-5 mt-20">{item.title}</h3>
 										<p className="text-body-text color-gray-600 mt-20">{item.text}</p>

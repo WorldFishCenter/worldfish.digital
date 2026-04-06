@@ -2,9 +2,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { POST_CHANNELS } from "@/lib/constants";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import { blogPostSanitizeSchema } from '@/lib/blogPostSanitizeSchema';
 import Layout from "../layout/Layout";
 
 export default function BlogPostClient({ post }) {
@@ -134,18 +137,20 @@ export default function BlogPostClient({ post }) {
 
     if (!post) return null;
 
+    const listHref = post.channel === POST_CHANNELS.peskas ? '/blog/peskas' : '/blog';
+    const listLabel = post.channel === POST_CHANNELS.peskas ? '← Back to Peskas news' : '← Back to News';
+
     return (
         <Layout>
-            <section className="section-box">
-                <div className="banner-hero banner-breadcrums bg-gray-100">
-                    <div className="container text-center">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <Link href="/blog" className="text-body-text color-gray-600 mb-10 d-inline-block">
-                                    ← Back to Blog
-                                </Link>
-                                <h1 className="text-display-3 color-gray-900 mb-20">{post.title}</h1>
-                                <div className="text-heading-6 color-gray-600 mb-20">
+            <section className="section-box wfSectionDark wfPadHeroSm">
+                <div className="container text-center">
+                    <div className="row">
+                        <div className="col-lg-10 mx-auto">
+                            <Link href={listHref} className="wfLinkMono mb-20 d-inline-block">
+                                {listLabel}
+                            </Link>
+                            <h1 className="display-3 wfTitleHeroTight wfTitleHeroMb">{post.title}</h1>
+                            <div className="wfLeadMdStatic mb-20">
                                     {post.date && (
                                         <span>
                                             {new Date(post.date).toLocaleDateString('en-US', {
@@ -162,13 +167,12 @@ export default function BlogPostClient({ post }) {
                                         </span>
                                     )}
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="section-box">
-                <div className="container mt-100">
+            <section className="section-box wfSectionDark wfPadSectionMdBottom">
+                <div className="container mt-50">
                     <div className="row">
                         <div className="col-lg-1 col-sm-1 col-12" />
                         <div className="col-lg-10 col-sm-10 col-12">
@@ -177,17 +181,17 @@ export default function BlogPostClient({ post }) {
                                     <img
                                         src={post.coverImage.replace(/^\/img\//, '/assets/imgs/page/blog/')}
                                         alt={post.title}
-                                        style={{ width: '100%', height: 'auto', borderRadius: '16px' }}
+                                        className="wfImgCoverHero"
                                     />
                                 </div>
                             )}
                             {post.description && (
-                                <p className="text-body-lead-large color-gray-600 mb-40">{post.description}</p>
+                                <p className="wfLeadMdStatic mb-40">{post.description}</p>
                             )}
-                            <div className="blog-content text-body-text color-gray-600">
+                            <div className="blog-content wf-prose">
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
-                                    rehypePlugins={[rehypeRaw]}
+                                    rehypePlugins={[rehypeRaw, [rehypeSanitize, blogPostSanitizeSchema]]}
                                     components={{
                                         code: ({ node, inline, className, children, ...props }) => {
                                             const match = /language-(\w+)/.exec(className || '');
@@ -203,13 +207,13 @@ export default function BlogPostClient({ post }) {
                                             }
                                             return <pre className={className} {...props}><code>{children}</code></pre>;
                                         },
-                                        script: ({ node, ...props }) => <div data-script-src={props.src} style={{ minHeight: '100px' }} className="script-placeholder" />,
+                                        script: ({ node, ...props }) => <div data-script-src={props.src} className="script-placeholder wfScriptPlaceholder" />,
                                         img: ({ node, ...props }) => (
                                             <img
                                                 {...props}
                                                 src={props.src?.replace(/^\/img\//, '/assets/imgs/page/blog/')}
                                                 alt={props.alt || ''}
-                                                style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', margin: '2rem 0' }}
+                                                className="wfMarkdownImg"
                                             />
                                         ),
                                     }}
@@ -225,7 +229,9 @@ export default function BlogPostClient({ post }) {
                                 </div>
                             )}
                             <div className="mt-40 pt-40 bd-top">
-                                <Link href="/blog" className="btn btn-black icon-arrow-right-white">Back to Blog</Link>
+                                <Link href={listHref} className="btn btn-black icon-arrow-right-white">
+                                    {post.channel === POST_CHANNELS.peskas ? 'Back to Peskas news' : 'Back to News'}
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-1 col-sm-1 col-12" />

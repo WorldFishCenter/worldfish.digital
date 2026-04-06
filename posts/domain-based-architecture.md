@@ -3,6 +3,7 @@ title: "Peskas: scalable, resilient, secure"
 date: 2020-10-05T18:09:41+13:00
 author: "Fernando Cagua"
 draft: false
+channel: peskas
 description: "In Peskas we are moving from a monolith towards a domain-based data-architecture. We want to enable the sustainable growth of the platform*."
 tags: [ "architecture", "tech" ] 
 ShowToc: false 

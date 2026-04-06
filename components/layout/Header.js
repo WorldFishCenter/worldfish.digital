@@ -1,171 +1,132 @@
 'use client'
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import styles from './Header.module.css';
+import navigation from '@/content/global/navigation.json';
 
-const Header = ({ handleOpen, headerStyle }) => {
-    const [scroll, setScroll] = useState(0);
+const Header = ({ menuOpen, onMobileNavToggle, headerStyle }) => {
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        document.addEventListener('scroll', () => {
-            const scrollCheck = window.scrollY > 100;
-            if (scrollCheck !== scroll) {
-                setScroll(scrollCheck);
-            }
-        });
-    });
-    return (
-        <>
-            <header
-                className={
-                    scroll
-                        ? `${headerStyle} header sticky-bar stick `
-                        : `${headerStyle} header sticky-bar`
-                }
-            >
-                <div className="container">
-                    <div className="main-header">
-                        <div className="header-left">
-                            <div className="header-logo">
-                                <Link href="/" className="d-flex display-6">
-                                    PESKAS™
-                                </Link>
-                            </div>
-                            <div className="header-nav">
-                                <nav className="nav-main-menu d-none d-xl-block text-end" role="navigation" aria-label="Main navigation">
-                                    <ul className="main-menu" role="menubar">
-                                        <li>
-                                            <Link href="/how-it-works">
-                                                <i className="fi-rr-settings-sliders" style={{ marginRight: 6, opacity: 1, color: 'inherit' }}></i>
-                                                How it works
-                                            </Link>
-                                        </li>
+        const onScroll = () => setIsScrolled(window.scrollY > 20);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
-                                        <li className="has-children">
-                                            <Link href="#">
-                                                <i className="fi-rr-globe" style={{ marginRight: 6, opacity: 1, color: 'inherit' }}></i>
-                                                Countries
-                                            </Link>
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <a href="https://timor.peskas.org/" target="_blank" rel="noopener noreferrer">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor.svg" alt="Timor Flag" width={20} height={15} style={{ marginRight: '5px', verticalAlign: 'middle' }} loading="lazy" />
-                                                        Timor-Leste
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <div className="hr">
-                                                        <span />
-                                                    </div>
-                                                    <Link href="/under-costruction">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg" alt="Malaysia Flag" width={20} height={13} style={{ marginRight: '5px', verticalAlign: 'middle' }} loading="lazy" />
-                                                        Malaysia
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <div className="hr">
-                                                        <span />
-                                                    </div>
-                                                    <a href="https://digitalfisheries.kenya.peskas.org/en" target="_blank" rel="noopener noreferrer">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg" alt="Kenyan Flag" width={20} height={13} style={{ marginRight: '5px', verticalAlign: 'middle' }} loading="lazy" />
-                                                        Kenya
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://zanzibar.peskas.org" target="_blank" rel="noopener noreferrer">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Zanzibar.svg" alt="Zanzibar Flag" width={20} height={13} style={{ marginRight: '5px', verticalAlign: 'middle' }} loading="lazy" />
-                                                        Zanzibar
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://peskas-dashboard-mozambique.vercel.app" target="_blank" rel="noopener noreferrer">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique.svg" alt="Mozambique Flag" width={20} height={13} style={{ marginRight: '5px', verticalAlign: 'middle' }} loading="lazy" />
-                                                        Mozambique
-                                                    </a>
-                                                </li>
-                                                 <li>
-                                                    <a href="https://malawi.peskas.org/" target="_blank" rel="noopener noreferrer">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Malawi.svg" alt="Malawi Flag" width={20} height={13} style={{ marginRight: '5px', verticalAlign: 'middle' }} loading="lazy" />
-                                                        Malawi
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <Link href="/blog">
-                                                <i className="fi-rr-book" style={{ marginRight: 6, opacity: 1, color: 'inherit' }}></i>
-                                                Blog
-                                            </Link>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link href="#">
-                                                <i className="fi-rr-folder" style={{ marginRight: 6, opacity: 1, color: 'inherit' }}></i>
-                                                Resources
-                                            </Link>
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link href="/data-resources">
-                                                        <img
-                                                            src="/assets/imgs/page/homepage1/data.svg"
-                                                            alt="data"
-                                                            style={{
-                                                                width: '20px',
-                                                                height: 'auto',
-                                                                marginRight: '5px',
-                                                                verticalAlign: 'middle',
-                                                            }}
-                                                        />
-                                                        Publications and data
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/page-terms">
-                                                        <img
-                                                            src="/assets/imgs/page/homepage1/story.svg"
-                                                            alt="documentation"
-                                                            style={{
-                                                                width: '20px',
-                                                                height: 'auto',
-                                                                marginRight: '5px',
-                                                                verticalAlign: 'middle',
-                                                            }}
-                                                        />
-                                                        Licences and policies
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        {/* <li className="has-children">
-                                            <Link href="#" legacyBehavior>
-                                                <a>About</a>
-                                            </Link>
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link href="/under-costruction" legacyBehavior>
-                                                        <a>
-                                                            <img src="/assets/imgs/page/homepage1/story.svg" alt="story" style={{ width: '20px', height: 'auto', marginRight: '5px', verticalAlign: 'middle' }} />
-                                                            Our Story
-                                                        </a>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </li> */}
-                                    </ul>
-                                </nav>
-                                <div
-                                    className="burger-icon burger-icon-white d-xl-none"
-                                    onClick={handleOpen}
-                                >
-                                    <span className="burger-icon-top" />
-                                    <span className="burger-icon-mid" />
-                                    <span className="burger-icon-bottom" />
-                                </div>
-                            </div>
+    return (
+        <header
+            className={`${headerStyle} header header-langgraph ${styles.siteHeader}`}
+            data-scrolled={isScrolled ? 'true' : 'false'}
+        >
+            <div className="container">
+                <div className="main-header">
+                    <div className={`header-left header-langgraph-inner ${styles.headerInner}`}>
+                        <div className={`header-logo ${styles.headerLogo}`}>
+                            <Link href="/" className="header-logo-link">
+                                <span className="header-logo-line1">WorldFish</span>
+                                <span className="header-logo-line2">Digital</span>
+                            </Link>
                         </div>
+                        <nav
+                            className={`nav-main-menu d-none d-xl-flex ${styles.navMain}`}
+                            role="navigation"
+                            aria-label="Main navigation"
+                        >
+                            <ul className="main-menu" role="menubar">
+                                <li><Link href="/">Home</Link></li>
+                                <li className="has-children">
+                                    <Link href="#">Products</Link>
+                                    <div className="sub-menu mega-menu">
+                                        <div className="mega-menu-column">
+                                            <div className="mega-menu-heading">{navigation.productsMega.peskasEcosystem.heading}</div>
+                                            <ul className={styles.megaListReset}>
+                                                {navigation.productsMega.peskasEcosystem.items.map((item) => (
+                                                    <li key={item.href + item.label}>
+                                                        {item.external ? (
+                                                            <a href={item.href} target="_blank" rel="noopener noreferrer">
+                                                                {item.label}
+                                                            </a>
+                                                        ) : (
+                                                            <Link href={item.href}>{item.label}</Link>
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="mega-menu-column">
+                                            <div className="mega-menu-heading">{navigation.productsMega.otherSolutions.heading}</div>
+                                            <ul className={styles.megaListReset}>
+                                                {navigation.productsMega.otherSolutions.items.map((item) => (
+                                                    <li key={item.href + item.label}>
+                                                        {item.external ? (
+                                                            <a href={item.href} target="_blank" rel="noopener noreferrer">
+                                                                {item.label}
+                                                            </a>
+                                                        ) : (
+                                                            <Link href={item.href}>{item.label}</Link>
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="has-children">
+                                    <Link href="/under-costruction">Platforms</Link>
+                                    <ul className="sub-menu">
+                                        <li><Link href="/under-costruction">Asia Digital Hub</Link></li>
+                                        <li><Link href="/under-costruction">Digital Architecture</Link></li>
+                                        <li><Link href="/under-costruction">Data Standards</Link></li>
+                                        <li><Link href="/under-costruction">AI & Analytics</Link></li>
+                                    </ul>
+                                </li>
+                                <li className="has-children">
+                                    <Link href="/under-costruction">Research</Link>
+                                    <ul className="sub-menu">
+                                        <li><Link href="/under-costruction">Digital fisheries monitoring research</Link></li>
+                                        <li><Link href="/under-costruction">AI for aquatic foods</Link></li>
+                                        <li><Link href="/under-costruction">Behaviour change & digital adoption</Link></li>
+                                        <li><Link href="/under-costruction">Digital governance tools</Link></li>
+                                    </ul>
+                                </li>
+                                <li className="has-children">
+                                    <Link href="#">Resources</Link>
+                                    <ul className="sub-menu">
+                                        <li><Link href="/data-resources">Documentation</Link></li>
+                                        <li><Link href="/page-terms">Policies</Link></li>
+                                        <li><Link href="/under-costruction">Licenses</Link></li>
+                                        <li><Link href="/under-costruction">Media & Downloads</Link></li>
+                                    </ul>
+                                </li>
+                                <li className="has-children">
+                                    <Link href="/under-costruction">Community</Link>
+                                    <ul className="sub-menu">
+                                        <li><Link href="/under-costruction">Governments using tools</Link></li>
+                                        <li><Link href="/under-costruction">Partner organisations</Link></li>
+                                        <li><Link href="/under-costruction">Training programs</Link></li>
+                                        <li><Link href="/under-costruction">Developer community</Link></li>
+                                        <li><Link href="/under-costruction">Events & workshops</Link></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <button
+                            type="button"
+                            className={`burger-icon burger-icon-white d-xl-none ${styles.burgerBtn}`}
+                            onClick={onMobileNavToggle}
+                            aria-expanded={menuOpen}
+                            aria-controls="wf-mobile-nav"
+                            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                        >
+                            <span className="burger-icon-top" />
+                            <span className="burger-icon-mid" />
+                            <span className="burger-icon-bottom" />
+                        </button>
                     </div>
                 </div>
-            </header>
-        </>
+            </div>
+        </header>
     );
 };
 

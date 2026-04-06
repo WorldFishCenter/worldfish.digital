@@ -1,0 +1,222 @@
+/* How it works page — dark UI (body.wf-page-home set client-side) */
+
+.stage-card {
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-accent-soft);
+  border-radius: 16px;
+  padding: 30px;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.stage-card:hover {
+  border-color: var(--wf-border-accent-medium);
+  background-color: #080d1a;
+  transform: translateY(-5px);
+}
+
+.stage-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--wf-radius-pill);
+  background: rgba(87, 179, 209, 0.1);
+  color: var(--wf-color-accent);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-family: var(--wf-font-mono);
+  border: 1px solid rgba(87, 179, 209, 0.2);
+}
+
+.hidden-invert {
+  filter: invert(1) brightness(1.5);
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 992px) {
+  .timeline-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.timeline-card {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  padding: 30px;
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  align-items: start;
+  transition: border-color 0.3s ease;
+}
+
+.timeline-card:hover {
+  border-color: rgba(87, 179, 209, 0.3);
+}
+
+.timeline-index {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(87, 179, 209, 0.1);
+  color: var(--wf-color-accent);
+  font-weight: 700;
+  font-size: 18px;
+  font-family: var(--wf-font-mono);
+  border: 1px solid rgba(87, 179, 209, 0.2);
+}
+
+.hiwCheckedList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hiwCheckedList li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  color: var(--wf-text-slate-300);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.hiwCheckedList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--wf-color-accent);
+  font-weight: bold;
+}
+
+.module-accordion .accordion-item {
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.module-accordion .accordion-item:hover {
+  border-color: rgba(87, 179, 209, 0.2);
+}
+
+.module-accordion .accordion-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  background: transparent !important;
+  color: var(--wf-text-slate-50);
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: none !important;
+}
+
+.module-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+.module-accordion .accordion-button:not(.collapsed) {
+  color: var(--wf-color-accent);
+  border-bottom: 1px solid var(--wf-border-subtle);
+}
+
+.module-accordion .accordion-body {
+  padding: 20px 25px 25px;
+  background: var(--wf-surface-panel);
+}
+
+.module-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--wf-radius-sm);
+}
+
+.module-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-list li {
+  margin-bottom: 16px;
+}
+
+.resource-list a {
+  color: var(--wf-text-slate-300);
+  font-family: var(--wf-font-mono);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.resource-list a:hover {
+  color: var(--wf-color-accent);
+  text-decoration: underline;
+}
+
+.info-card {
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-card);
+  border-radius: 16px;
+  padding: 40px;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.airtable-embed-wrapper {
+  border: 1px solid var(--wf-border-card);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--wf-surface-panel);
+}
+
+.hiw-stage-title {
+  color: var(--wf-text-on-dark);
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.hiw-accordion-rich {
+  margin-bottom: 15px;
+}
+
+.hiw-accordion-rich :where(p:last-child) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .timeline-card {
+    grid-template-columns: 50px 1fr;
+    padding: 20px;
+  }
+}

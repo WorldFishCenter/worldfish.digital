@@ -3,6 +3,7 @@ title: "World Fisheries Day: Celebrating the people behind the numbers"
 author: "Alex Tilley"
 date: "2023-11-20T18:09:41+13:00"
 draft: no
+channel: worldfish
 description: Let’s celebrate the people behind the numbers
 tags: [ "Sustainable Fisheries", "Global Food Security", "Inclusive Blue Economy", "Fisheries Data Technology", "GFSS23" ]
 ShowToc: no

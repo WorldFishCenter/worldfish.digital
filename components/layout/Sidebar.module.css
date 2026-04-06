@@ -1,0 +1,233 @@
+.menuIcon {
+  margin-right: 8px;
+  opacity: 1;
+  color: inherit;
+  font-size: 1.05em;
+  vertical-align: -0.125em;
+}
+
+/* Solid panel: do not use translucent header token (hero showed through) */
+.wfDrawer {
+  --wf-drawer-bg: var(--wf-surface-panel);
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(380px, 92vw) !important;
+  max-width: min(380px, 92vw) !important;
+  height: 100vh !important;
+  max-height: 100dvh !important;
+  min-height: 0 !important;
+  background-color: var(--wf-drawer-bg) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-left: 1px solid var(--wf-border-medium) !important;
+  box-shadow: -12px 0 48px rgba(0, 0, 0, 0.55) !important;
+  z-index: calc(var(--wf-header-z) + 15) !important;
+  isolation: isolate;
+}
+
+/* Full-width sheet: one surface, no duplicate header visible beside drawer */
+@media (max-width: 1199.98px) {
+  .wfDrawer:global(.mobile-header-wrapper-style) {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-left: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wfDrawer {
+    transition: none !important;
+  }
+}
+
+.drawerHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--wf-border-medium);
+  background-color: var(--wf-drawer-bg);
+}
+
+.drawerWordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.08;
+  text-decoration: none !important;
+  font-family: var(--wf-font-body);
+  letter-spacing: -0.035em;
+  min-width: 0;
+}
+
+.drawerWordmarkLine1 {
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+  font-weight: 700;
+  color: var(--wf-text-on-dark);
+}
+
+.drawerWordmarkLine2 {
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  font-weight: 600;
+  color: var(--wf-text-on-dark-soft);
+  margin-top: 2px;
+}
+
+.closeBtn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--wf-radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--wf-text-on-dark);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.closeIcon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+
+.closeIcon::before,
+.closeIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.closeIcon::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.closeIcon::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.drawerPs {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  max-height: calc(100dvh - 64px) !important;
+  height: auto !important;
+}
+
+.drawerPs:global(.mobile-header-wrapper-inner) {
+  padding: 0 !important;
+  background-color: var(--wf-drawer-bg) !important;
+}
+
+.drawerContent:global(.mobile-header-content-area) {
+  padding: 12px 8px 28px 16px !important;
+  background-color: var(--wf-drawer-bg) !important;
+}
+
+.scrollInner:global(.perfect-scroll) {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  position: relative !important;
+}
+
+/* Nav items — match desktop shell */
+.wfDrawer :global(.mobile-menu > li) {
+  padding: 4px 0 !important;
+}
+
+.wfDrawer :global(.mobile-menu > li > a) {
+  color: var(--wf-text-on-dark-muted) !important;
+  font-family: var(--wf-font-heading) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em;
+  text-transform: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  padding: 10px 44px 10px 0 !important;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.wfDrawer :global(.mobile-menu > li:hover > a),
+.wfDrawer :global(.mobile-menu > li > a:hover) {
+  color: var(--wf-text-on-dark) !important;
+  padding-left: 0 !important;
+}
+
+.wfDrawer :global(.mobile-menu > li ul) {
+  padding: 4px 0 8px 8px !important;
+}
+
+.wfDrawer :global(.mobile-menu > li ul li) {
+  padding: 2px 0 !important;
+}
+
+.wfDrawer :global(.mobile-menu > li ul li a) {
+  color: var(--wf-text-submenu) !important;
+  font-family: var(--wf-font-heading) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  display: block !important;
+  padding: 10px 12px !important;
+  min-height: 44px;
+  box-sizing: border-box;
+  text-transform: none !important;
+}
+
+.wfDrawer :global(.mobile-menu > li ul li a:hover) {
+  color: var(--wf-text-on-dark) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: var(--wf-radius-sm);
+  padding-left: 12px !important;
+}
+
+.wfDrawer :global(.has-children .menu-expand) {
+  top: 8px !important;
+  right: 0 !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  line-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: var(--wf-radius-sm) !important;
+  background: transparent !important;
+  color: var(--wf-text-on-dark-muted) !important;
+  cursor: pointer;
+}
+
+.wfDrawer :global(.has-children .menu-expand i) {
+  opacity: 0.85 !important;
+  font-size: 16px !important;
+}
+
+.wfDrawer :global(.has-children.active > .menu-expand) {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.wfDrawer :global(.has-children.active > .menu-expand i) {
+  opacity: 1 !important;
+}

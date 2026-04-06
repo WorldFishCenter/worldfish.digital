@@ -1,0 +1,26 @@
+{
+  "productsMega": {
+    "peskasEcosystem": {
+      "heading": "Peskas ecosystem",
+      "items": [
+        { "label": "PESKAS", "href": "/products/peskas" },
+        { "label": "TRACKS-EXP", "href": "https://tracks.peskas.org/", "external": true },
+        { "label": "Peskas blog", "href": "/blog/peskas" }
+      ]
+    },
+    "otherSolutions": {
+      "heading": "Other solutions",
+      "items": [
+        { "label": "Taseguru", "href": "/under-costruction" },
+        { "label": "PondCube", "href": "/under-costruction" }
+      ]
+    }
+  },
+  "productsMobile": [
+    { "label": "PESKAS", "href": "/products/peskas" },
+    { "label": "TRACKS-EXP", "href": "https://tracks.peskas.org/", "external": true },
+    { "label": "Peskas blog", "href": "/blog/peskas" },
+    { "label": "Taseguru", "href": "/under-costruction" },
+    { "label": "PondCube", "href": "/under-costruction" }
+  ]
+}

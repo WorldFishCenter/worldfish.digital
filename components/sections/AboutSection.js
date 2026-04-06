@@ -4,34 +4,37 @@ function AboutSection({ data }) {
     const { title, subtitle, image, features } = data;
 
     return (
-        <section className="section-box">
-            <div className="container mt-100">
-                <div className="row">
-                    <div className="col-lg-6 col-sm-12 block-img-we-do">
+        <section className="section-box wfSectionDark wfPadSection">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-6 mb-40">
                         <img
-                            className="bdrd-16 img-responsive"
                             src={image}
                             alt="Small-scale fisheries"
-                            width={764}
-                            height={885}
+                            className="wfImageRounded"
                             loading="lazy"
                         />
                     </div>
-                    <div className="col-lg-6 col-sm-12 block-we-do">
-                        <h3 className="text-heading-1 mt-30">{title}</h3>
+                    <div className="col-lg-6 pl-lg-50">
+                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">{title}</h3>
                         <RichText
                             content={subtitle}
-                            className="text-body-lead-large color-gray-600 mt-30"
+                            className="wfLeadMdStatic wfMbBottomLg"
                         />
-                        <div className="line-bd-green mt-50" />
+                        <div className="wfDivider" />
                         <div className="row">
                             {features.map((feature, index) => (
-                                <div key={index} className="col-lg-6 col-sm-6 col-12 mt-50">
-                                    <h4 className="text-heading-6 icon-leaf">{feature.title}</h4>
-                                    <RichText
-                                        content={feature.description}
-                                        className="text-body-excerpt color-gray-600 mt-15"
-                                    />
+                                <div key={index} className="col-lg-6 mb-30 px-3">
+                                    <div className="wfAboutCard">
+                                        <h4 className="wfHeading5">
+                                            <svg className="wfIconInline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                            {feature.title}
+                                        </h4>
+                                        <RichText
+                                            content={feature.description}
+                                            className="wfAboutBody"
+                                        />
+                                    </div>
                                 </div>
                             ))}
                         </div>

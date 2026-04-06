@@ -34,7 +34,7 @@ const FeaturedSlider = () => {
                                         <div className="product-item-2 hover-up">
                                             <Link href={`/shop/${item.id}`}>
                                                 <div className="product-image">
-                                                    <Image width="0" height="0" sizes="100vw" style={{ width: "auto", height: "auto" }} className="img-fluid" src={`/assets/imgs/page/homepage5/${item.img}`} alt="" />
+                                                    <Image width="0" height="0" sizes="100vw" className="img-fluid wfImgIntrinsic" src={`/assets/imgs/page/homepage5/${item.img}`} alt="" />
                                                 </div>
                                             </Link>
 
@@ -53,9 +53,9 @@ const FeaturedSlider = () => {
                                                 <div className="rating mt-10">
                                                     <div className="box-rating">
                                                         {[...Array(4)].map((_, idx) => (
-                                                            <Image key={idx} width="0" height="0" sizes="100vw" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage5/star-active.svg" alt="agon" />
+                                                            <Image key={idx} width="0" height="0" sizes="100vw" className="wfImgIntrinsic" src="/assets/imgs/page/homepage5/star-active.svg" alt="agon" />
                                                         ))}
-                                                        <Image width="0" height="0" sizes="100vw" style={{ width: "auto", height: "auto" }} src="/assets/imgs/page/homepage5/star.svg" alt="agon" />
+                                                        <Image width="0" height="0" sizes="100vw" className="wfImgIntrinsic" src="/assets/imgs/page/homepage5/star.svg" alt="agon" />
                                                     </div>
                                                     <span className="text-semibold">
                                                         (<span>{item.rating}</span>&nbsp;rates)

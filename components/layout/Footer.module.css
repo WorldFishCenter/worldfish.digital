@@ -1,0 +1,8 @@
+.brandLink {
+  color: var(--wf-text-on-dark);
+  text-decoration: none;
+}
+
+.brandLink:hover {
+  color: var(--wf-color-accent);
+}
