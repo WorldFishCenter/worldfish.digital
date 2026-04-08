@@ -20,7 +20,8 @@ export default function BlogCoverImage({ src, alt, className, sizes, priority = 
                     fill
                     src={s}
                     alt={alt || ''}
-                    sizes={sizes ?? '(max-width: 992px) 100vw, 400px'}
+                    sizes={sizes ?? '(max-width: 576px) 100vw, (max-width: 992px) 50vw, 30vw'}
+                    quality={68}
                     className={className}
                     priority={priority}
                 />
@@ -33,7 +34,8 @@ export default function BlogCoverImage({ src, alt, className, sizes, priority = 
                 alt={alt || ''}
                 width={800}
                 height={500}
-                sizes={sizes ?? '(max-width: 768px) 100vw, 400px'}
+                sizes={sizes ?? '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+                quality={72}
                 className={className}
                 priority={priority}
             />

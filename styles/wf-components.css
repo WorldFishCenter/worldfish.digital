@@ -1076,3 +1076,113 @@ body.mobile-menu-active .wf-mobile-nav-backdrop {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* Modal styles (migrated from public/assets/css/modal.css to reduce extra CSS request) */
+.modal__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 28, 28, 0.5);
+  backdrop-filter: blur(6px);
+  opacity: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+  animation-name: modal-video;
+  transition: opacity 0.3s ease-out;
+  z-index: 100;
+}
+
+.modal__align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal__content {
+  width: 800px;
+  height: 500px;
+  box-shadow:
+    0 100px 80px rgba(184, 184, 184, 0.07),
+    0 25.8162px 19px 4px rgba(178, 178, 178, 0.0456112),
+    0 7.779px 7.30492px rgba(0, 0, 0, 0.035),
+    0 1.48838px 2.0843px rgba(0, 0, 0, 0.0243888);
+  border-radius: 8px;
+  background: transparent;
+  color: #000;
+  margin: 0 4rem;
+}
+
+.modal__video-align {
+  display: flex;
+  position: relative;
+  bottom: 37px;
+}
+
+.modal__video-style {
+  border-radius: 8px;
+  z-index: 10000;
+  overflow: hidden;
+  border: 8px solid #fff3ea;
+  background-color: #fff3ea;
+}
+
+.modal__spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -50px;
+  animation: spin 2s linear infinite;
+  font-size: 30px;
+  color: var(--wf-color-accent) !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modal__content {
+    margin: 0 1rem;
+    width: 100%;
+  }
+  .modal__video-style {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .modal__content {
+    background: transparent;
+    height: auto;
+  }
+  .modal__video-align {
+    bottom: 0;
+  }
+  .modal__video-style {
+    height: auto;
+  }
+}
+
+/* Swiper utility overrides (migrated from public/assets/css/swiper-custom.css) */
+.slider-nav-thumbnails .swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-nav-thumbnails .swiper-slide {
+  min-width: 177px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--wf-color-green-1000);
+}
