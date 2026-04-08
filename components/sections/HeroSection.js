@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { publicAssetUrl } from '@/lib/publicAssetUrl';
 import RichText from '../content/RichText';
 
@@ -50,10 +51,21 @@ function HeroSection({ data, onWatchVideo }) {
                                 className="wfBtnPrimary"
                                 onClick={onWatchVideo}
                                 aria-label="Open presentation modal"
+                                data-analytics-event="cta_click"
+                                data-analytics-category="hero"
+                                data-analytics-label="peskas_watch_video"
+                                data-analytics-location="peskas_hero"
                             >
                                 {ctaLabel} ↗
                             </button>
-                            <Link href="/how-it-works" className="wfBtnGhost">
+                            <Link
+                                href="/how-it-works"
+                                className="wfBtnGhost"
+                                data-analytics-event="cta_click"
+                                data-analytics-category="hero"
+                                data-analytics-label="peskas_how_it_works"
+                                data-analytics-location="peskas_hero"
+                            >
                                 How it works ↗
                             </Link>
                         </div>
@@ -72,10 +84,12 @@ function HeroSection({ data, onWatchVideo }) {
                                     <track kind="captions" srcLang="en" label="English captions" />
                                 </video>
                             ) : (
-                                <img
+                                <Image
                                     src={publicAssetUrl(data.imageFile) || '/assets/imgs/page/homepage1/banner.png'}
                                     alt="Platform demonstration"
                                     className="wfMediaInner"
+                                    width={1200}
+                                    height={760}
                                 />
                             )}
                         </div>

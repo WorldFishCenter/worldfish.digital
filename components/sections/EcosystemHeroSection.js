@@ -30,12 +30,26 @@ function EcosystemHeroSection({ data }) {
 
                         <div className="d-flex flex-wrap gap-3">
                             <Link href="#platforms">
-                                <button type="button" className="wfBtnPrimary">
+                                <button
+                                    type="button"
+                                    className="wfBtnPrimary"
+                                    data-analytics-event="cta_click"
+                                    data-analytics-category="hero"
+                                    data-analytics-label="homepage_explore_platforms"
+                                    data-analytics-location="homepage_hero"
+                                >
                                     Explore Platforms
                                 </button>
                             </Link>
                             <Link href="/under-costruction">
-                                <button type="button" className="wfBtnGhostAlt">
+                                <button
+                                    type="button"
+                                    className="wfBtnGhostAlt"
+                                    data-analytics-event="cta_click"
+                                    data-analytics-category="hero"
+                                    data-analytics-label="homepage_view_data_standards"
+                                    data-analytics-location="homepage_hero"
+                                >
                                     View Data Standards ↗
                                 </button>
                             </Link>

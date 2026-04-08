@@ -6,6 +6,7 @@ import '../styles/wf-components.css'
 import { Chivo, Noto_Sans } from 'next/font/google'
 import Script from 'next/script'
 import WowInit from '@/components/elements/WowInit'
+import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
 import ErrorBoundaryWrapper from '@/components/layout/ErrorBoundaryWrapper'
 import { DEFAULT_METADATA, GA_ENABLED, GA_ID, WORLD_FISH_SITE } from '@/lib/constants'
 
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className="wf-site">
                 <WowInit />
+                {GA_ENABLED ? <AnalyticsTracker /> : null}
                 <ErrorBoundaryWrapper>
                     {children}
                 </ErrorBoundaryWrapper>

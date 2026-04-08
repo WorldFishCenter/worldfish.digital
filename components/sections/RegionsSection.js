@@ -36,6 +36,10 @@ function RegionsSection({ regions, section }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="wfCtaBtnMd"
+                        data-analytics-event="cta_click"
+                        data-analytics-category="regions"
+                        data-analytics-label="regions_wio_view"
+                        data-analytics-location="regions_section"
                     >
                         {section.wioCta} ↗
                     </a>
@@ -50,6 +54,10 @@ function RegionsSection({ regions, section }) {
                                     type="button"
                                     className={`wfChip ${activeIndex === index ? 'wfChipActive' : ''}`}
                                     onClick={() => setActiveIndex(index)}
+                                    data-analytics-event="region_filter_click"
+                                    data-analytics-category="regions"
+                                    data-analytics-label={region.title}
+                                    data-analytics-location="regions_tabs"
                                 >
                                     {region.title}
                                 </button>
@@ -71,6 +79,10 @@ function RegionsSection({ regions, section }) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="wfLinkMono"
+                                    data-analytics-event="region_cta_click"
+                                    data-analytics-category="regions"
+                                    data-analytics-label={activeRegion.title}
+                                    data-analytics-location="regions_active_card"
                                 >
                                     {activeRegion.ctaLabel} ↗
                                 </a>

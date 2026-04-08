@@ -40,6 +40,10 @@ function TracksHeroSection({ data }) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="wfCtaBtnMd"
+                                    data-analytics-event="cta_click"
+                                    data-analytics-category="tracks"
+                                    data-analytics-label="tracks_exp_open"
+                                    data-analytics-location="tracks_hero"
                                 >
                                     {ctaLabel} ↗
                                 </a>

@@ -31,11 +31,27 @@ function FeaturesSection({ features }) {
                             <div key={index} className="col-lg-3 col-sm-12 mb-30 d-flex">
                                 {href ? (
                                     isExternal ? (
-                                        <a href={href} className="wfBlockFull" target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            href={href}
+                                            className="wfBlockFull"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            data-analytics-event="feature_click"
+                                            data-analytics-category="features"
+                                            data-analytics-label={feature.title}
+                                            data-analytics-location="features_section"
+                                        >
                                             {CardContent}
                                         </a>
                                     ) : (
-                                        <Link href={href} className="wfBlockFull">
+                                        <Link
+                                            href={href}
+                                            className="wfBlockFull"
+                                            data-analytics-event="feature_click"
+                                            data-analytics-category="features"
+                                            data-analytics-label={feature.title}
+                                            data-analytics-location="features_section"
+                                        >
                                             {CardContent}
                                         </Link>
                                     )

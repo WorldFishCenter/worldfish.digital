@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import RichText from '../content/RichText';
+import { publicAssetUrl } from '@/lib/publicAssetUrl';
 
 function AboutSection({ data }) {
     const { title, subtitle, image, features } = data;
@@ -8,11 +10,12 @@ function AboutSection({ data }) {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6 mb-40">
-                        <img
-                            src={image}
+                        <Image
+                            src={publicAssetUrl(image)}
                             alt="Small-scale fisheries"
                             className="wfImageRounded"
-                            loading="lazy"
+                            width={960}
+                            height={640}
                         />
                     </div>
                     <div className="col-lg-6 pl-lg-50">

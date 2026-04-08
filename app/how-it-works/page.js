@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 import RichText from '@/components/content/RichText';
 import data from '@/content/pages/how-it-works.json';
@@ -97,7 +98,7 @@ export default function HowItWorks() {
                                                     onClick={() => setActiveModule(isOpen ? '' : item.title)}
                                                 >
                                                     <span className="module-icon hidden-invert">
-                                                        <img src={item.icon} alt={item.title} />
+                                                        <Image src={item.icon} alt={item.title} width={20} height={20} />
                                                     </span>
                                                     {item.title}
                                                 </button>

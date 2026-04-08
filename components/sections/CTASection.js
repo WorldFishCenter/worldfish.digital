@@ -20,6 +20,10 @@ function CTASection({ data }) {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="wfCtaBtnLg"
+                            data-analytics-event="cta_click"
+                            data-analytics-category="cta"
+                            data-analytics-label="cta_section_primary"
+                            data-analytics-location="cta_section"
                         >
                             {ctaLabel} ↗
                         </a>

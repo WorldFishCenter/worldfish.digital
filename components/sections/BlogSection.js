@@ -17,7 +17,14 @@ function BlogSection({ latestPosts, data, viewAllHref = '/blog' }) {
                         />
                     </div>
                     <div className="col-lg-4 text-lg-end text-start pt-30">
-                        <Link href={viewAllHref} className="wfBtnPrimary">
+                        <Link
+                            href={viewAllHref}
+                            className="wfBtnPrimary"
+                            data-analytics-event="cta_click"
+                            data-analytics-category="blog"
+                            data-analytics-label="view_all_news"
+                            data-analytics-location="blog_section_header"
+                        >
                             {ctaLabel} ↗
                         </Link>
                     </div>
@@ -28,7 +35,14 @@ function BlogSection({ latestPosts, data, viewAllHref = '/blog' }) {
                     {latestPosts && latestPosts.length > 0 ? (
                         latestPosts.map((post) => (
                             <div key={post.slug} className="pr-30 mb-40">
-                                <Link href={`/blog/${post.slug}`} className="wfLinkBlog">
+                                <Link
+                                    href={`/blog/${post.slug}`}
+                                    className="wfLinkBlog"
+                                    data-analytics-event="blog_post_click"
+                                    data-analytics-category="blog"
+                                    data-analytics-label={post.slug}
+                                    data-analytics-location="blog_section_card"
+                                >
                                     <div className="wfBlogCard">
                                         {post.coverImage && (
                                             <div className="wfBlogThumb">
