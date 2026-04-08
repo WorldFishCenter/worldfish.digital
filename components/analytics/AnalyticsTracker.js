@@ -1,18 +1,16 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { trackEvent, trackPageView } from '@/lib/analytics';
 
 export default function AnalyticsTracker() {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
 
     useEffect(() => {
-        const query = searchParams?.toString();
-        const url = `${window.location.origin}${pathname}${query ? `?${query}` : ''}`;
+        const url = `${window.location.origin}${window.location.pathname}${window.location.search}`;
         trackPageView(url);
-    }, [pathname, searchParams]);
+    }, [pathname]);
 
     useEffect(() => {
         const onClick = (event) => {
