@@ -4,6 +4,16 @@
  */
 
 /* --- Dark sections --- */
+.wf-site ::selection {
+  background: var(--wf-color-accent);
+  color: var(--wf-surface-deep);
+}
+
+.wf-site ::-moz-selection {
+  background: var(--wf-color-accent);
+  color: var(--wf-surface-deep);
+}
+
 .wfSectionDark {
   background-color: var(--wf-surface-deep);
   border-bottom: 1px solid var(--wf-border-subtle);

@@ -6,7 +6,33 @@ function HeroSection({ data, onWatchVideo }) {
     const { headline, headlineHighlight, subtitle, ctaLabel } = data;
 
     return (
-        <section className="section-box wfSectionDark wfPadHero">
+        <section className="section-box wfSectionDark wfPadHero wfEcosystemHero">
+            <div className="wfEcosystemGlow" aria-hidden />
+            <div className="wfEcosystemGrid" aria-hidden />
+            <div className="wfEcosystemNetwork" aria-hidden>
+                <div className="wfNetBackbone" />
+                <div className="wfNetEdge wfNetEdgeA" />
+                <div className="wfNetEdge wfNetEdgeB" />
+                <div className="wfNetEdge wfNetEdgeC" />
+                <div className="wfNetEdge wfNetEdgeD" />
+                <div className="wfNetEdge wfNetEdgeE" />
+                <div className="wfNetCurrent wfNetCurrentA" />
+                <div className="wfNetCurrent wfNetCurrentB" />
+                <div className="wfNetAquaRing wfNetAquaRingA" />
+                <div className="wfNetAquaRing wfNetAquaRingB" />
+                <div className="wfNetVesselTrack wfNetVesselTrackA" />
+                <div className="wfNetVesselTrack wfNetVesselTrackB" />
+                <div className="wfNetVesselMark wfNetVesselMarkA" />
+                <div className="wfNetVesselMark wfNetVesselMarkB" />
+                <div className="wfNetNode wfNetNodeA" />
+                <div className="wfNetNode wfNetNodeB" />
+                <div className="wfNetNode wfNetNodeC" />
+                <div className="wfNetNode wfNetNodeD" />
+                <div className="wfNetNode wfNetNodeE" />
+                <div className="wfNetNode wfNetNodeF" />
+                <div className="wfNetPulse wfNetPulseA" />
+                <div className="wfNetPulse wfNetPulseB" />
+            </div>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6 mb-50">
