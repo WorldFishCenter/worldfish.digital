@@ -22,7 +22,7 @@ The Peskas API is our answer to that problem. It gives the owners of the data, a
 
 ## A reliable way to reach the data
 
-When we [redesigned Peskas around independent "domains"](/blog/domain-based-architecture), the idea was that each part of the system should produce a clear *product* that others can rely on, without needing to know how it was made. The API is that product. Behind it, the country pipelines still do the work of cleaning and validating the data. In front of it, reaching that data no longer means a one-off export.
+When we [redesigned Peskas around independent "domains"](/blog/domain-based-architecture), the idea was that each part of the system should produce a clear *product* that others can rely on, without needing to know how it was made. The API is that product — and its [source code and documentation](https://github.com/WorldFishCenter/peskas-api) are published openly, like the rest of the platform. Behind it, the country pipelines still do the work of cleaning and validating the data. In front of it, reaching that data no longer means a one-off export.
 
 Importantly, the API does not change who owns the data. Each country's data belongs to its national fisheries authority, and it is the government that decides who may access it. The API does not open the data to the world; it gives the data owners, and those they grant permission to, a dependable way to get to it.
 
@@ -48,11 +48,11 @@ You also ask only for what you need. Rather than downloading everything and sort
 
 Two things make this data easier to work with, particularly in a multi-country setting.
 
-The first is that every field is clearly defined. The API data are documented: what each variable means, their units, and the values to expect. Anyone interpreting fisheries data knows how much time is usually lost working out exactly what a column represents, and how often the same word means different things in different places. A shared, documented vocabulary removes much of that friction.
+The first is that every field is clearly defined. The API data are documented: what each variable means, its units, and the values to expect. That documentation is available programmatically through metadata endpoints, with full field definitions maintained in the [Peskas API repository](https://github.com/WorldFishCenter/peskas-api). Anyone interpreting fisheries data knows how much time is usually lost working out exactly what a column represents, and how often the same word means different things in different places. A shared, documented vocabulary removes much of that friction.
 
 The second is that the data arrives in a single, consistent shape. Kenya, Mozambique and Zanzibar each collect their data in their own way, from different raw sources. The API brings those sources together into one common structure and uses standard international codes for places and species, so the data lines up with other datasets instead of standing apart. It is an early but concrete step towards harmonised small-scale fisheries data across the region.
 
-The data is also validated by default. Unless you deliberately ask for the raw version, the numbers you receive are the ones that have already passed our checks, and the API always returns the most recent version. And because it returns data in formats that drop straight into tools like R and Python, or into a web application, people can work with it where they already work to directly develop new analyses or tools.
+The data is also validated by default. Unless you deliberately ask for the raw version, the numbers you receive are the ones that have already passed our checks, and the API always returns the most recent version. And because it returns data in formats that drop straight into tools like R and Python, or into a web application, people can work with it where they already work to directly develop new analyses or tools. The [repository](https://github.com/WorldFishCenter/peskas-api) includes integration examples for R, Python and JavaScript, along with endpoint documentation and query-parameter reference.
 
 ## Closer to the people who manage fisheries
 
@@ -68,4 +68,4 @@ As more data sources and countries come into Peskas, the same approach should le
 
 ## Get involved
 
-The Peskas API is open-source, like the rest of the platform. Get in touch if you would like to talk to us about putting the Peskas API to use.
+The Peskas API is open-source, like the rest of the platform. Explore the [Peskas API repository](https://github.com/WorldFishCenter/peskas-api) for endpoint documentation, field metadata, and integration guides. Get in touch if you would like to talk to us about putting the Peskas API to use, or if you would like to contribute to the codebase.
