@@ -11,8 +11,8 @@
     "otherSolutions": {
       "heading": "Other solutions",
       "items": [
-        { "label": "Taseguru", "href": "/under-costruction" },
-        { "label": "PondCube", "href": "/under-costruction" }
+        { "label": "Taseguru", "href": "/under-construction" },
+        { "label": "PondCube", "href": "/under-construction" }
       ]
     }
   },
@@ -20,7 +20,7 @@
     { "label": "PESKAS", "href": "/products/peskas" },
     { "label": "TRACKS-EXP", "href": "https://tracks.peskas.org/", "external": true },
     { "label": "Peskas blog", "href": "/blog/peskas" },
-    { "label": "Taseguru", "href": "/under-costruction" },
-    { "label": "PondCube", "href": "/under-costruction" }
+    { "label": "Taseguru", "href": "/under-construction" },
+    { "label": "PondCube", "href": "/under-construction" }
   ]
 }

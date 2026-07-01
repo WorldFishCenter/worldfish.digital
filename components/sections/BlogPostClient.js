@@ -96,8 +96,8 @@ export default function BlogPostClient({ post }) {
                     startOnLoad: false,
                     theme: 'neutral',
                     securityLevel: 'loose',
-                    fontFamily: 'Roboto Condensed',
-                    fontSize: '14px',
+                    fontFamily: 'Chivo',
+                    fontSize: 14,
                 });
                 setMermaidLoaded(true);
             });

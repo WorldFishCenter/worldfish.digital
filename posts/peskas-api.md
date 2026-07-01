@@ -27,7 +27,7 @@ When we [redesigned Peskas around independent "domains"](/blog/domain-based-arch
 Importantly, the API does not change who owns the data. Each country's data belongs to its national fisheries authority, and it is the government that decides who may access it. The API does not open the data to the world; it gives the data owners, and those they grant permission to, a dependable way to get to it.
 
 {{<mermaid>}}
-%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Roboto Condensed', 'fontSize': '14px'}}}%%
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Chivo', 'fontSize': '14px'}}}%%
 flowchart LR
   A([Fisher catch<br>& trip data]) --> B[Cleaning &<br>validation]
   B --> C[(Validated<br>country data)]
