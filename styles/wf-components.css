@@ -55,6 +55,11 @@
   line-height: 1.1;
 }
 
+/* Peskas product hero only — 5px smaller than the shared .display-3 fluid size */
+.wfTitleHeroPeskas {
+  font-size: calc(1.525rem + 3.3vw - 5px);
+}
+
 .wfTitleHeroTight {
   color: var(--wf-text-slate-50);
   font-weight: 600;

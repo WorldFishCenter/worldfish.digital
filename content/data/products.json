@@ -444,14 +444,13 @@
       "slug": "aquatic-food-ontology",
       "name": "Aquatic Food Ontology",
       "type": "Data Product",
-      "status": "Retired",
+      "status": "Published",
       "leadDev": null,
-      "url": null,
+      "url": "https://agroportal.eu/ontologies/AQFO",
       "countrySlugs": ["global"],
       "projectSlugs": ["raqfs-aquadata-initiative", "aquatic-food-ontology-project"],
       "themeSlugs": ["data-infrastructure"],
-      "description": "A machine-readable controlled vocabulary for fisheries and aquaculture data systems — \"the digital language of fisheries and aquaculture.\"",
-      "archived": true
+      "description": "A machine-readable controlled vocabulary for fisheries and aquaculture data systems — \"the digital language of fisheries and aquaculture.\""
     }
   ]
 }

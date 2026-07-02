@@ -37,7 +37,7 @@ function HeroSection({ data, onWatchVideo }) {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6 mb-50">
-                        <h1 className="display-3 wfTitleHero">
+                        <h1 className="display-3 wfTitleHero wfTitleHeroPeskas">
                             {headline}
                             <span className="wfAccentLine">{headlineHighlight}</span>
                         </h1>
