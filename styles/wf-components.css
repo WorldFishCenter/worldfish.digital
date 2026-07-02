@@ -66,13 +66,13 @@
 }
 
 .wfAccentLine {
-  color: var(--wf-color-accent);
+  color: var(--wf-color-accent-title);
   display: block;
   margin-top: 10px;
 }
 
 .wfAccentLineTight {
-  color: var(--wf-color-accent);
+  color: var(--wf-color-accent-title);
   display: block;
   margin-top: 4px;
 }
@@ -224,14 +224,14 @@
 }
 
 .wfImpactTagline {
-  color: var(--wf-color-accent);
+  color: var(--wf-color-accent-title);
   font-weight: 500;
   letter-spacing: -0.02em;
   font-size: 22px;
 }
 
 .wfEcosystemKicker {
-  color: var(--wf-color-accent);
+  color: var(--wf-color-accent-title);
   font-family: var(--wf-font-mono);
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -445,7 +445,6 @@
 }
 
 .wfSubtitleWide {
-  max-width: 600px;
   line-height: 1.6;
   font-size: 20px;
   color: var(--wf-text-slate-300);
@@ -456,7 +455,7 @@
   position: relative;
   border-radius: 24px;
   border: 1px solid var(--wf-border-medium);
-  background: linear-gradient(90deg, rgba(87, 179, 209, 0.08), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(90deg, rgba(88, 171, 71, 0.08), rgba(255, 255, 255, 0.02));
   padding: 60px;
   overflow: hidden;
   box-shadow: var(--wf-shadow-hero-media);
@@ -471,8 +470,8 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--wf-border-accent-medium);
-  box-shadow: 0 0 40px rgba(87, 179, 209, 0.1);
-  background-image: radial-gradient(ellipse at top left, rgba(87, 179, 209, 0.1), transparent 50%);
+  box-shadow: 0 0 40px rgba(88, 171, 71, 0.1);
+  background-image: radial-gradient(ellipse at top left, rgba(88, 171, 71, 0.1), transparent 50%);
 }
 
 .wfCtaMax {
@@ -891,6 +890,8 @@
 
 /* --- Feature cards (home) --- */
 .wfFeatureCard {
+  position: relative;
+  overflow: hidden;
   padding: 30px 25px;
   width: 100%;
   height: 100%;
@@ -913,6 +914,53 @@
   transform: translateY(-2px);
 }
 
+.wfCardBgImage {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.wfCardBgOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(2, 8, 19, 0.4) 0%, rgba(2, 8, 19, 0.92) 80%);
+}
+
+.wfCardContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wfGroupPanel {
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-card);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.wfGroupPanelTitle {
+  color: var(--wf-text-on-dark);
+  margin-bottom: 30px;
+}
+
+.wfAvatarPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--wf-border-accent-soft);
+  border: 1px solid var(--wf-border-accent-medium);
+  color: var(--wf-color-accent);
+  font-family: var(--wf-font-heading);
+  font-weight: 600;
+  font-size: 18px;
+}
+
 .wfFeatureBody {
   color: var(--wf-text-slate-300);
   font-size: 14px;
@@ -926,7 +974,7 @@
   border-radius: 16px;
   background-color: var(--wf-surface-panel);
   border: 1px solid var(--wf-border-accent-soft);
-  background-image: radial-gradient(circle at top left, rgba(87, 179, 209, 0.05), transparent 60%);
+  background-image: radial-gradient(circle at top left, rgba(88, 171, 71, 0.05), transparent 60%);
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -935,7 +983,7 @@
 
 .wfPlatformCard:hover {
   border-color: var(--wf-border-accent-medium);
-  box-shadow: 0 0 40px rgba(87, 179, 209, 0.1);
+  box-shadow: 0 0 40px rgba(88, 171, 71, 0.1);
 }
 
 .wfPlatformDesc {

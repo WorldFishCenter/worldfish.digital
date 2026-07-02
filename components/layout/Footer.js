@@ -13,8 +13,13 @@ const Footer = () => {
                     <div className="footer-top">
                         <div className="row">
                             <div className="col-md-4 col-sm-6 text-center text-md-start">
-                                <Link href="/" className={`d-flex display-6 ${styles.brandLink}`}>
-                                    WorldFish Digital
+                                <Link href="/" className={`d-flex ${styles.brandLink}`}>
+                                    <img
+                                        src="/assets/imgs/brand/worldfish-logo-white.svg"
+                                        alt="WorldFish"
+                                        className={styles.brandLogoImg}
+                                    />
+                                    <span className={styles.brandSuffix}>Digital</span>
                                 </Link>
                             </div>
                         </div>
@@ -32,45 +37,18 @@ const Footer = () => {
                                 ))}
                             </ul>
                         </div>
-                        <div className="col-lg-3 width-20 mb-30">
-                            <h4 className="text-heading-5">About Us</h4>
-                            <ul className="menu-footer mt-20">
-                                <li>
-                                    <Link href="/under-costruction">Mission and Vision</Link>
-                                </li>
-                                <li>
-                                    <Link href="/under-costruction">Our Team</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-lg-3 width-20 mb-30">
-                            <h4 className="text-heading-5">Discover</h4>
-                            <ul className="menu-footer mt-20">
-                                <li>
-                                    <Link href="/blog">Our Blog</Link>
-                                </li>
-                                <li>
-                                    <Link href="under-costruction">Knowledge Base</Link>
-                                </li>
-                                <li>
-                                    <Link href="under-costruction">News and Events</Link>
-                                </li>
-                                <li>
-                                    <Link href="/under-costruction">Media</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-lg-3 width-16">
-                            <h4 className="text-heading-5">Useful links</h4>
-                            <ul className="menu-footer mt-20">
-                                <li>
-                                    <Link href="/how-it-works">How it works</Link>
-                                </li>
-                                <li>
-                                    <Link href="/under-costruction">Stories</Link>
-                                </li>
-                            </ul>
-                        </div>
+                        {footer.columns.map((column) => (
+                            <div key={column.title} className="col-lg-3 width-20 mb-30">
+                                <h4 className="text-heading-5">{column.title}</h4>
+                                <ul className="menu-footer mt-20">
+                                    {column.links.map((link) => (
+                                        <li key={link.href + link.label}>
+                                            <Link href={link.href}>{link.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                     <div className="footer-bottom mt-20">
                         <div className="row">

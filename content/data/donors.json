@@ -1,0 +1,20 @@
+{
+  "donors": [
+    { "slug": "dfat-australia", "name": "DFAT Australia", "projectSlugs": ["aabs", "ikanadapt", "nsfm", "ikan-ba-futuru"] },
+    { "slug": "norway-norad", "name": "Norway / NORAD", "projectSlugs": ["peskas-service", "fssp2"] },
+    { "slug": "nanmo-fcdo", "name": "Nanmo / FCDO", "projectSlugs": ["casa", "fasa"] },
+    { "slug": "usaid", "name": "USAID", "projectSlugs": [] },
+    { "slug": "gates-foundation", "name": "Bill & Melinda Gates Foundation", "projectSlugs": ["gates"] },
+    { "slug": "world-bank-afdb", "name": "World Bank / AfDB", "projectSlugs": ["profishblue"] },
+    { "slug": "swiss-philanthropy-foundation", "name": "Swiss Philanthropy Foundation", "projectSlugs": ["ssf-voice"] },
+    { "slug": "oak-foundation", "name": "Oak Foundation", "projectSlugs": ["ssf-voice"] },
+    { "slug": "minderoo-foundation", "name": "Minderoo Foundation", "projectSlugs": ["fssp2"] },
+    { "slug": "aciar", "name": "ACIAR", "projectSlugs": ["fssp2"] },
+    { "slug": "eu-cgiar", "name": "EU / CGIAR", "projectSlugs": ["saaf"] },
+    { "slug": "uae-govt", "name": "UAE Government", "projectSlugs": ["uae"], "pipeline": true },
+    { "slug": "worldfish-cgiar", "name": "WorldFish / CGIAR", "projectSlugs": ["dd-science-team", "dta"] },
+    { "slug": "cgiar-raqfs", "name": "CGIAR RAqFS Initiative (Alliance Bioversity-CIAT)", "projectSlugs": ["raqfs-aquadata-initiative", "aquatic-food-ontology-project"] },
+    { "slug": "fao", "name": "FAO", "projectSlugs": ["ict4ssf"] },
+    { "slug": "swedbio", "name": "Swedbio", "projectSlugs": ["fssp2"] }
+  ]
+}

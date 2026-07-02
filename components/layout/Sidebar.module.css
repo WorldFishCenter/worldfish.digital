@@ -53,26 +53,25 @@
 
 .drawerWordmark {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1.08;
+  align-items: center;
+  gap: 8px;
   text-decoration: none !important;
-  font-family: var(--wf-font-body);
-  letter-spacing: -0.035em;
   min-width: 0;
 }
 
-.drawerWordmarkLine1 {
-  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
-  font-weight: 700;
-  color: var(--wf-text-on-dark);
+.drawerLogoImg {
+  display: block;
+  height: 28px;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .drawerWordmarkLine2 {
+  font-family: var(--wf-font-body);
   font-size: clamp(0.95rem, 3vw, 1.05rem);
   font-weight: 600;
   color: var(--wf-text-on-dark-soft);
-  margin-top: 2px;
+  letter-spacing: -0.02em;
 }
 
 .closeBtn {

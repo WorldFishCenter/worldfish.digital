@@ -1,0 +1,457 @@
+{
+  "products": [
+    {
+      "slug": "peskas",
+      "name": "Peskas",
+      "type": "Platform",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://timor.peskas.org/home",
+      "countrySlugs": ["timor-leste"],
+      "projectSlugs": ["fssp2", "peskas-service"],
+      "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
+      "description": "Open-source, modular platform that turns fisheries data into decision-ready insights, scaling from landing-site monitoring to national dashboards.",
+      "flagship": true,
+      "rich": {
+        "hero": {
+          "headline": "Open-source digital platform for",
+          "headlineHighlight": "small-scale fisheries",
+          "subtitle": "Peskas is an open-source, modular platform that turns fisheries data into decision-ready insights. Built with co-design principles, it scales from landing-site monitoring to national dashboards across Asia and Africa.",
+          "ctaLabel": "Watch the video",
+          "videoFile": "/assets/imgs/page/homepage1/TL_tracks.mp4"
+        },
+        "stats": [
+          { "count": 8, "suffix": "", "label": "Years of operation" },
+          { "count": 6, "suffix": "", "label": "Countries active" },
+          { "count": 140, "suffix": "k", "label": "Fishing trips tracked" },
+          { "count": 300, "suffix": "", "label": "Tonnes of catch recorded" }
+        ],
+        "regionsSection": {
+          "title": "Transforming fisheries management across Asia and Africa",
+          "subtitle": "From Timor-Leste to East Africa, Peskas helps partners collect, verify, and visualize small-scale fisheries data so communities and agencies can act on evidence.",
+          "wioPrompt": "Explore the Western Indian Ocean regional view",
+          "wioHref": "https://coasts.peskas.org",
+          "wioCta": "coasts.peskas.org"
+        },
+        "regions": [
+          {
+            "title": "Timor-Leste",
+            "desc": "The flagship implementation of Peskas since 2016, officially adopted as the national fisheries monitoring system in 2019. In partnership with the Ministry of Agriculture and Fisheries, Peskas has collected over 59,000 fishing trips and 298 tonnes of catch data, enabling the first national fisheries production estimates and supporting evidence-based policy development for sustainable small-scale fisheries management.",
+            "ctaLabel": "Open dashboard",
+            "ctaHref": "https://timor.peskas.org/",
+            "image": "/assets/imgs/page/homepage1/timor-dash.png"
+          },
+          {
+            "title": "Malaysia",
+            "desc": "Peskas is being adapted for Malaysia's diverse coastal and marine fisheries systems. Building on lessons learned from Timor-Leste, the Malaysian implementation focuses on integrating with existing fisheries management frameworks while maintaining the platform's core open-source principles and user-centered design approach.",
+            "ctaLabel": "",
+            "ctaHref": "",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg"
+          },
+          {
+            "title": "Kenya",
+            "desc": "Part of Peskas' East African expansion, the Kenya implementation focuses on coastal small-scale fisheries. Working with local communities and government partners, this initiative aims to improve fisheries data collection and management practices along Kenya's rich coastal waters, supporting both food security and sustainable livelihoods.",
+            "ctaLabel": "Open dashboard",
+            "ctaHref": "https://digitalfisheries.kenya.peskas.org/en",
+            "image": "/assets/imgs/page/homepage1/kenya-dash.png"
+          },
+          {
+            "title": "Zanzibar",
+            "desc": "Leveraging Zanzibar's strategic importance in Indian Ocean fisheries, Peskas is being adapted to support the island's vibrant fishing communities. The implementation emphasizes community-based resource management and the integration of traditional fishing knowledge with modern data collection techniques.",
+            "ctaLabel": "Open dashboard",
+            "ctaHref": "https://zanzibar.peskas.org",
+            "image": "/assets/imgs/page/homepage1/zanzibar-dash.png"
+          },
+          {
+            "title": "Mozambique",
+            "desc": "Mozambique's extensive coastline and significant small-scale fisheries sector make it a key location for Peskas expansion. The implementation focuses on supporting artisanal fishing communities while building local capacity for sustainable fisheries management and marine resource conservation.",
+            "ctaLabel": "Open dashboard",
+            "ctaHref": "https://peskas-dashboard-mozambique.vercel.app",
+            "image": "/assets/imgs/page/homepage1/mozambique-dash.png"
+          },
+          {
+            "title": "Malawi",
+            "desc": "Extending Peskas to inland fisheries, Malawi represents an important expansion into freshwater aquatic food systems. The Lake Malawi implementation adapts the platform's methodologies for inland small-scale fisheries, addressing unique challenges of freshwater ecosystems and community-based fisheries management.",
+            "ctaLabel": "Open dashboard",
+            "ctaHref": "https://malawi.peskas.org/",
+            "image": "/assets/imgs/page/homepage1/malawi-dash.png"
+          }
+        ],
+        "features": [
+          {
+            "title": "Open and modular",
+            "description": "Open-source code, modular services, and clear standards so you can adapt Peskas to your fishery.",
+            "bgClass": "bg-business"
+          },
+          {
+            "title": "Built with partners",
+            "description": "Co-designed workflows that layer onto existing systems and capacity instead of replacing them.",
+            "bgClass": "bg-local"
+          },
+          {
+            "title": "Secure and timely",
+            "description": "Cloud-hosted pipelines with quality for near real-time access. Keep sensitive trip data protected.",
+            "bgClass": "bg-social"
+          },
+          {
+            "title": "From boats to dashboards",
+            "description": "Standardized data and terminology ready for national, regional, and FAO-aligned reporting.",
+            "bgClass": "bg-social"
+          }
+        ],
+        "about": {
+          "title": "Transforming small-scale fisheries through digital innovation.",
+          "subtitle": "Peskas bridges the data gap in small-scale fisheries, empowering communities and governments with evidence-based insights for sustainable resource management, improved livelihoods, and food security.",
+          "image": "/assets/imgs/page/homepage1/fishing.png",
+          "features": [
+            { "title": "Evidence-Based Management", "description": "Real-time data enables informed decisions for sustainable fisheries" },
+            { "title": "Community Empowerment", "description": "Local enumerators and fishers become key stakeholders in data collection" },
+            { "title": "Open Science Principles", "description": "Free, open-source platform ensuring accessibility and transparency" },
+            { "title": "Scalable Solutions", "description": "Modular design adapts to diverse fisheries contexts and needs" }
+          ]
+        },
+        "cta": {
+          "title": "Bring Peskas to your fishery",
+          "subtitle": "Tell us about your context and goals. We'll respond with a tailored setup plan and timelines.",
+          "ctaLabel": "Request Peskas",
+          "ctaHref": "https://airtable.com/appMMEJYlJdfSJEjm/pagDiqNCwLasUBKQi/form"
+        },
+        "tracks": {
+          "title": "Peskas Tracks: a digital window into small-scale fishing trips",
+          "subtitle": "Built by WorldFish through the Asia-Africa BlueTech Superhighway, Peskas Tracks is a mobile and web app that fishers install to pair vessel tracking with their own catch reports, making movements, productivity, and safety visible in near real time.",
+          "col1Title": "What fishers and managers see",
+          "col1Items": [
+            "Live and offline trip logging: position, route, speed, time at sea",
+            "Trip heatmaps by day, week, or month with effort summaries",
+            "Catch entries linked to trips for a full record of effort and catch",
+            "Password-protected data per vessel; English, Portuguese, Swahili interfaces"
+          ],
+          "col2Title": "Pilots and impact",
+          "col2Items": [
+            "100+ fishers across Kenya, Tanzania, and Mozambique",
+            "Heatmaps and stats help plan routes and fuel use",
+            "When a vessel stalled, Tracks helped locate it quickly, boosting safety"
+          ],
+          "ctaLabel": "See the demo",
+          "ctaHref": "https://tracks.peskas.org/"
+        },
+        "videoYoutubeId": "962qilVnTZ0",
+        "blogSection": { "title": "Latest News", "subtitle": "From Our Peskas™ blog", "ctaLabel": "View More", "channel": "peskas" }
+      }
+    },
+    {
+      "slug": "coasts-app",
+      "name": "COASTS App",
+      "type": "Dashboard",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/coasts",
+      "countrySlugs": ["zanzibar", "kenya", "mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "tracks-app",
+      "name": "Tracks App",
+      "type": "Application",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/tracks-explorer",
+      "countrySlugs": ["zanzibar", "kenya", "mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "fasa-feed-formulation-app",
+      "name": "FASA feed formulation app",
+      "type": "Application",
+      "status": "Ideation",
+      "leadDev": "Mountain Dev",
+      "url": null,
+      "countrySlugs": ["kenya", "nigeria", "zambia"],
+      "projectSlugs": ["fasa"],
+      "themeSlugs": ["aquaculture", "climate-adaptation"],
+      "description": null
+    },
+    {
+      "slug": "wcs-wf-app",
+      "name": "WCS-WF App",
+      "type": "Dashboard",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas-next",
+      "countrySlugs": ["kenya"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "nutrient-profiles",
+      "name": "Nutrient profiles",
+      "type": "Data Product",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": null,
+      "countrySlugs": ["timor-leste"],
+      "projectSlugs": ["nsfm"],
+      "themeSlugs": ["nutrition-food-systems"],
+      "description": null
+    },
+    {
+      "slug": "validation-app",
+      "name": "Validation App",
+      "type": "Module",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas.validation",
+      "countrySlugs": ["zanzibar", "kenya", "mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "kenya-data-pipeline",
+      "name": "Kenya Data Pipeline",
+      "type": "Data Pipeline",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas.kenya.data.pipeline",
+      "countrySlugs": ["kenya"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "tracks-effort-model",
+      "name": "Tracks effort model",
+      "type": "Model",
+      "status": "Draft",
+      "leadDev": "Hamza Altarturi",
+      "url": null,
+      "countrySlugs": ["zanzibar", "kenya", "mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "peskaas-timor-validation-portal",
+      "name": "PeskAAS Timor validation portal",
+      "type": "Application",
+      "status": "Draft",
+      "leadDev": null,
+      "url": null,
+      "countrySlugs": ["timor-leste"],
+      "projectSlugs": [],
+      "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "lo2s-model",
+      "name": "LO2s model",
+      "type": "Model",
+      "status": "Ideation",
+      "leadDev": "Mandible",
+      "url": null,
+      "countrySlugs": ["malaysia"],
+      "projectSlugs": [],
+      "themeSlugs": ["data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "aquadata",
+      "name": "Aquadata",
+      "type": "Application",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://aquadata.worldfishcenter.org/search",
+      "countrySlugs": [],
+      "projectSlugs": ["saaf"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "coasts-data-pipeline",
+      "name": "COASTS Data Pipeline",
+      "type": "Data Pipeline",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas.coasts",
+      "countrySlugs": ["zanzibar", "kenya", "mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "casa-app",
+      "name": "CASA app",
+      "type": "Application",
+      "status": "Ideation",
+      "leadDev": "Mountain Dev",
+      "url": null,
+      "countrySlugs": [],
+      "projectSlugs": ["casa"],
+      "themeSlugs": ["aquaculture"],
+      "description": null
+    },
+    {
+      "slug": "peskas-api",
+      "name": "Peskas API",
+      "type": "API",
+      "status": "Draft",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas-api",
+      "countrySlugs": ["zanzibar", "kenya", "mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "fishing-gear-prediction",
+      "name": "Fishing gear prediction",
+      "type": "Model",
+      "status": "Draft",
+      "leadDev": "Hamza Altarturi",
+      "url": null,
+      "countrySlugs": [],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "phenofish",
+      "name": "Phenofish",
+      "type": "Application",
+      "status": "Ideation",
+      "leadDev": "Lorenzo Longobardi",
+      "url": null,
+      "countrySlugs": ["zambia"],
+      "projectSlugs": ["dta"],
+      "themeSlugs": ["aquaculture", "data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "mozambique-data-pipeline",
+      "name": "Mozambique Data Pipeline",
+      "type": "Data Pipeline",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas.mozambique.data.pipeline",
+      "countrySlugs": ["mozambique"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "malawi-ssf-data-pipeline",
+      "name": "Malawi SSF data pipeline",
+      "type": "Data Pipeline",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": null,
+      "countrySlugs": ["malawi"],
+      "projectSlugs": ["profishblue"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "peskas-app",
+      "name": "Peskas App",
+      "type": "Application",
+      "status": "Draft",
+      "leadDev": "Mountain Dev",
+      "url": null,
+      "countrySlugs": ["timor-leste"],
+      "projectSlugs": ["ikanadapt"],
+      "themeSlugs": ["small-scale-fisheries", "climate-adaptation"],
+      "description": null
+    },
+    {
+      "slug": "zanzibar-data-pipeline",
+      "name": "Zanzibar Data Pipeline",
+      "type": "Data Pipeline",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas.zanzibar.data.pipeline",
+      "countrySlugs": ["zanzibar"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "pondcube",
+      "name": "PondCube",
+      "type": "Data Pipeline",
+      "status": "Ideation",
+      "leadDev": "Lorenzo Longobardi",
+      "url": null,
+      "countrySlugs": [],
+      "projectSlugs": ["dta"],
+      "themeSlugs": ["aquaculture", "data-infrastructure"],
+      "description": "Harmonised digital collection method and data pipeline for pond books data on aquaculture — tracking inputs, outputs, pond conditions, and occurrences and enabling cross-country analysis and visualisations of trends and results."
+    },
+    {
+      "slug": "peskas-training-course",
+      "name": "Peskas training course",
+      "type": "Application",
+      "status": "Published",
+      "leadDev": "Lorenzo Longobardi",
+      "url": null,
+      "countrySlugs": ["malawi"],
+      "projectSlugs": ["profishblue"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "zanzibar-app",
+      "name": "Zanzibar App",
+      "type": "Dashboard",
+      "status": "Draft",
+      "leadDev": "Lorenzo Longobardi",
+      "url": "https://github.com/WorldFishCenter/peskas.zanzibar.app",
+      "countrySlugs": ["zanzibar"],
+      "projectSlugs": ["aabs"],
+      "themeSlugs": ["small-scale-fisheries"],
+      "description": null
+    },
+    {
+      "slug": "fishbasepro",
+      "name": "FishBasePro",
+      "type": "Platform",
+      "status": "Ideation",
+      "leadDev": null,
+      "url": "https://www.fishbase.org",
+      "countrySlugs": ["global"],
+      "projectSlugs": ["gates"],
+      "themeSlugs": ["data-infrastructure"],
+      "description": null
+    },
+    {
+      "slug": "aquadata-portal",
+      "name": "AquaData Portal",
+      "type": "Platform",
+      "status": "Retired",
+      "leadDev": null,
+      "url": null,
+      "countrySlugs": ["global", "ghana"],
+      "projectSlugs": ["raqfs-aquadata-initiative"],
+      "themeSlugs": ["data-infrastructure"],
+      "description": "Predecessor of the current Aquadata product, built under the CGIAR RAqFS Initiative.",
+      "archived": true
+    },
+    {
+      "slug": "aquatic-food-ontology",
+      "name": "Aquatic Food Ontology",
+      "type": "Data Product",
+      "status": "Retired",
+      "leadDev": null,
+      "url": null,
+      "countrySlugs": ["global"],
+      "projectSlugs": ["raqfs-aquadata-initiative", "aquatic-food-ontology-project"],
+      "themeSlugs": ["data-infrastructure"],
+      "description": "A machine-readable controlled vocabulary for fisheries and aquaculture data systems — \"the digital language of fisheries and aquaculture.\"",
+      "archived": true
+    }
+  ]
+}

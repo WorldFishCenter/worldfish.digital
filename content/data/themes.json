@@ -1,0 +1,84 @@
+{
+  "themes": [
+    {
+      "slug": "small-scale-fisheries",
+      "name": "Small-Scale Fisheries",
+      "tagline": "Monitoring, catch data, MCS, coastal surveillance",
+      "description": "Digital tools that turn landing-site and vessel data into decision-ready evidence for small-scale fisheries management, from mobile catch reporting to national dashboards.",
+      "projectSlugs": ["aabs", "saaf", "profishblue", "ikanadapt", "ikan-ba-futuru", "fssp2", "peskas-service"],
+      "productSlugs": [
+        "peskas",
+        "coasts-app",
+        "tracks-app",
+        "aquadata",
+        "malawi-ssf-data-pipeline",
+        "peskas-app",
+        "zanzibar-app",
+        "wcs-wf-app",
+        "validation-app",
+        "peskas-api",
+        "kenya-data-pipeline",
+        "zanzibar-data-pipeline",
+        "mozambique-data-pipeline",
+        "coasts-data-pipeline",
+        "peskaas-timor-validation-portal",
+        "peskas-training-course"
+      ],
+      "countrySlugs": ["timor-leste", "kenya", "zanzibar", "mozambique", "malawi", "colombia", "guatemala"],
+      "donorSlugs": ["dfat-australia", "world-bank-afdb", "eu-cgiar"],
+      "personaSlugs": ["government-fisheries-officer", "field-enumerator", "researcher-scientist", "donor-investor"]
+    },
+    {
+      "slug": "aquaculture",
+      "name": "Aquaculture",
+      "tagline": "Production, GIFT genetics, feeds, extension, pond management",
+      "description": "Tools supporting smallholder aquaculture production, feed formulation, pond management, and extension service delivery.",
+      "projectSlugs": ["casa", "fasa", "dta"],
+      "productSlugs": ["casa-app", "fasa-feed-formulation-app", "pondcube", "phenofish"],
+      "countrySlugs": ["kenya", "nigeria", "zambia", "timor-leste"],
+      "donorSlugs": ["nanmo-fcdo", "usaid", "worldfish-cgiar"],
+      "personaSlugs": ["aquaculture-farmer", "extension-officer", "researcher-scientist", "private-sector"]
+    },
+    {
+      "slug": "nutrition-food-systems",
+      "name": "Nutrition & Food Systems",
+      "tagline": "Post-harvest, nutrient data, value chains, gender equity",
+      "description": "Data products connecting fisheries and aquaculture output to nutrition outcomes, post-harvest value chains, and gender-equitable food systems.",
+      "projectSlugs": ["nsfm", "ikan-ba-futuru"],
+      "productSlugs": ["nutrient-profiles"],
+      "countrySlugs": ["timor-leste"],
+      "donorSlugs": ["dfat-australia"],
+      "personaSlugs": ["government-fisheries-officer", "researcher-scientist", "extension-officer"]
+    },
+    {
+      "slug": "climate-adaptation",
+      "name": "Climate Adaptation",
+      "tagline": "Adaptive management, climate information services, resilience",
+      "description": "Adaptive management and climate information tools helping fishers and farmers plan around a changing climate.",
+      "projectSlugs": ["ikanadapt", "fasa", "abu-dhabi-coe", "uae"],
+      "productSlugs": ["peskas-app", "fasa-feed-formulation-app"],
+      "countrySlugs": ["timor-leste", "kenya", "nigeria", "zambia", "global"],
+      "donorSlugs": ["dfat-australia", "uae-govt", "usaid"],
+      "personaSlugs": ["aquaculture-farmer", "government-fisheries-officer", "extension-officer"]
+    },
+    {
+      "slug": "data-infrastructure",
+      "name": "Data Infrastructure",
+      "tagline": "FishBase, global data standards, data interoperability, data science R&D, global public goods",
+      "description": "Global public goods for aquatic food systems data: standards, ontologies, APIs, and modeling infrastructure shared across every other theme.",
+      "projectSlugs": ["gates", "dta", "dd-science-team", "fishbase-consortium", "raqfs-aquadata-initiative"],
+      "productSlugs": [
+        "fishbasepro",
+        "peskas-api",
+        "lo2s-model",
+        "tracks-effort-model",
+        "fishing-gear-prediction",
+        "aquatic-food-ontology",
+        "aquadata-portal"
+      ],
+      "countrySlugs": ["global", "malaysia"],
+      "donorSlugs": ["gates-foundation", "worldfish-cgiar", "cgiar-raqfs"],
+      "personaSlugs": ["researcher-scientist", "government-fisheries-officer", "donor-investor", "private-sector"]
+    }
+  ]
+}

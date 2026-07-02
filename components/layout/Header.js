@@ -23,9 +23,13 @@ const Header = ({ menuOpen, onMobileNavToggle, headerStyle }) => {
                 <div className="main-header">
                     <div className={`header-left header-langgraph-inner ${styles.headerInner}`}>
                         <div className={`header-logo ${styles.headerLogo}`}>
-                            <Link href="/" className="header-logo-link">
-                                <span className="header-logo-line1">WorldFish</span>
-                                <span className="header-logo-line2">Digital</span>
+                            <Link href="/" className={`header-logo-link ${styles.logoLink}`}>
+                                <img
+                                    src="/assets/imgs/brand/worldfish-logo-white.svg"
+                                    alt="WorldFish"
+                                    className={styles.logoImg}
+                                />
+                                <span className={styles.logoSuffix}>Digital</span>
                             </Link>
                         </div>
                         <nav
@@ -35,80 +39,56 @@ const Header = ({ menuOpen, onMobileNavToggle, headerStyle }) => {
                         >
                             <ul className="main-menu" role="menubar">
                                 <li><Link href="/">Home</Link></li>
-                                <li className="has-children">
-                                    <Link href="#">Products</Link>
-                                    <div className="sub-menu mega-menu">
-                                        <div className="mega-menu-column">
-                                            <div className="mega-menu-heading">{navigation.productsMega.peskasEcosystem.heading}</div>
-                                            <ul className={styles.megaListReset}>
-                                                {navigation.productsMega.peskasEcosystem.items.map((item) => (
-                                                    <li key={item.href + item.label}>
-                                                        {item.external ? (
-                                                            <a href={item.href} target="_blank" rel="noopener noreferrer">
-                                                                {item.label}
-                                                            </a>
-                                                        ) : (
-                                                            <Link href={item.href}>{item.label}</Link>
-                                                        )}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="mega-menu-column">
-                                            <div className="mega-menu-heading">{navigation.productsMega.otherSolutions.heading}</div>
-                                            <ul className={styles.megaListReset}>
-                                                {navigation.productsMega.otherSolutions.items.map((item) => (
-                                                    <li key={item.href + item.label}>
-                                                        {item.external ? (
-                                                            <a href={item.href} target="_blank" rel="noopener noreferrer">
-                                                                {item.label}
-                                                            </a>
-                                                        ) : (
-                                                            <Link href={item.href}>{item.label}</Link>
-                                                        )}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="has-children">
-                                    <Link href="/under-costruction">Platforms</Link>
-                                    <ul className="sub-menu">
-                                        <li><Link href="/under-costruction">Asia Digital Hub</Link></li>
-                                        <li><Link href="/under-costruction">Digital Architecture</Link></li>
-                                        <li><Link href="/under-costruction">Data Standards</Link></li>
-                                        <li><Link href="/under-costruction">AI & Analytics</Link></li>
-                                    </ul>
-                                </li>
-                                <li className="has-children">
-                                    <Link href="/under-costruction">Research</Link>
-                                    <ul className="sub-menu">
-                                        <li><Link href="/under-costruction">Digital fisheries monitoring research</Link></li>
-                                        <li><Link href="/under-costruction">AI for aquatic foods</Link></li>
-                                        <li><Link href="/under-costruction">Behaviour change & digital adoption</Link></li>
-                                        <li><Link href="/under-costruction">Digital governance tools</Link></li>
-                                    </ul>
-                                </li>
-                                <li className="has-children">
-                                    <Link href="#">Resources</Link>
-                                    <ul className="sub-menu">
-                                        <li><Link href="/data-resources">Documentation</Link></li>
-                                        <li><Link href="/page-terms">Policies</Link></li>
-                                        <li><Link href="/under-costruction">Licenses</Link></li>
-                                        <li><Link href="/under-costruction">Media & Downloads</Link></li>
-                                    </ul>
-                                </li>
-                                <li className="has-children">
-                                    <Link href="/under-costruction">Community</Link>
-                                    <ul className="sub-menu">
-                                        <li><Link href="/under-costruction">Governments using tools</Link></li>
-                                        <li><Link href="/under-costruction">Partner organisations</Link></li>
-                                        <li><Link href="/under-costruction">Training programs</Link></li>
-                                        <li><Link href="/under-costruction">Developer community</Link></li>
-                                        <li><Link href="/under-costruction">Events & workshops</Link></li>
-                                    </ul>
-                                </li>
+                                {navigation.primary.map((item) => {
+                                    if (item.mega) {
+                                        return (
+                                            <li key={item.label} className="has-children">
+                                                <Link href={item.href}>{item.label}</Link>
+                                                <div className="sub-menu mega-menu">
+                                                    {item.mega.map((column) => (
+                                                        <div key={column.heading} className="mega-menu-column">
+                                                            <div className="mega-menu-heading">{column.heading}</div>
+                                                            <ul className={styles.megaListReset}>
+                                                                {column.items.map((subItem) => (
+                                                                    <li key={subItem.href + subItem.label}>
+                                                                        {subItem.external ? (
+                                                                            <a href={subItem.href} target="_blank" rel="noopener noreferrer">
+                                                                                {subItem.label}
+                                                                            </a>
+                                                                        ) : (
+                                                                            <Link href={subItem.href}>{subItem.label}</Link>
+                                                                        )}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </li>
+                                        );
+                                    }
+
+                                    if (item.submenu) {
+                                        return (
+                                            <li key={item.label} className="has-children">
+                                                <Link href={item.href}>{item.label}</Link>
+                                                <ul className="sub-menu">
+                                                    {item.submenu.map((subItem) => (
+                                                        <li key={subItem.href + subItem.label}>
+                                                            <Link href={subItem.href}>{subItem.label}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </li>
+                                        );
+                                    }
+
+                                    return (
+                                        <li key={item.label}>
+                                            <Link href={item.href}>{item.label}</Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </nav>
                         <button

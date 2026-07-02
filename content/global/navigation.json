@@ -1,26 +1,39 @@
 {
-  "productsMega": {
-    "peskasEcosystem": {
-      "heading": "Peskas ecosystem",
-      "items": [
-        { "label": "PESKAS", "href": "/products/peskas" },
-        { "label": "TRACKS-EXP", "href": "https://tracks.peskas.org/", "external": true },
-        { "label": "Peskas blog", "href": "/blog/peskas" }
+  "primary": [
+    { "label": "Work Areas", "href": "/our-work" },
+    {
+      "label": "Tools & Products",
+      "href": "/products",
+      "mega": [
+        {
+          "heading": "Peskas ecosystem",
+          "items": [
+            { "label": "PESKAS", "href": "/products/peskas" },
+            { "label": "TRACKS-EXP", "href": "https://tracks.peskas.org/", "external": true },
+            { "label": "Peskas blog", "href": "/blog/peskas" }
+          ]
+        },
+        {
+          "heading": "Browse",
+          "items": [
+            { "label": "All products", "href": "/products" },
+            { "label": "Taseguru", "href": "/under-costruction" },
+            { "label": "PondCube", "href": "/products/pondcube" }
+          ]
+        }
       ]
     },
-    "otherSolutions": {
-      "heading": "Other solutions",
-      "items": [
-        { "label": "Taseguru", "href": "/under-construction" },
-        { "label": "PondCube", "href": "/under-construction" }
+    { "label": "Countries", "href": "/countries" },
+    { "label": "For Partners", "href": "/for-partners" },
+    {
+      "label": "Resources",
+      "href": "/data-resources",
+      "submenu": [
+        { "label": "How it works", "href": "/how-it-works" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Publications & data", "href": "/data-resources" },
+        { "label": "Terms & policies", "href": "/page-terms" }
       ]
     }
-  },
-  "productsMobile": [
-    { "label": "PESKAS", "href": "/products/peskas" },
-    { "label": "TRACKS-EXP", "href": "https://tracks.peskas.org/", "external": true },
-    { "label": "Peskas blog", "href": "/blog/peskas" },
-    { "label": "Taseguru", "href": "/under-construction" },
-    { "label": "PondCube", "href": "/under-construction" }
   ]
 }

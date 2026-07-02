@@ -1,8 +1,8 @@
 {
   "hero": {
-    "headline": "Digital tools for",
-    "headlineHighlight": "transforming aquatic food systems",
-    "subtitle": "WorldFish Digital is an open-source, modular ecosystem that turns fisheries data into decision-ready insights. Built with co-design principles, our platforms scale from landing-site monitoring to national dashboards.",
+    "headline": "Digital Innovation for",
+    "headlineHighlight": "Aquatic Food Systems",
+    "subtitle": "Leveraging cutting edge digital innovation and data science to improve lives and sustainability in Aquatic Food Systems",
     "ctaLabel": "Explore Data Infrastructure"
   },
   "stats": [
@@ -20,26 +20,6 @@
       "count": 100,
       "suffix": "+",
       "label": "Data streams integrated"
-    }
-  ],
-  "features": [
-    {
-      "title": "PESKAS",
-      "description": "An open-source ecosystem that turns fisheries data into decision-ready insights.",
-      "bgClass": "bg-business",
-      "ctaHref": "/products/peskas"
-    },
-    {
-      "title": "TASEGURU",
-      "description": "Safety-at-sea app with real-time early warning capabilities and emergency SOS tools.",
-      "bgClass": "bg-local",
-      "ctaHref": "/under-costruction"
-    },
-    {
-      "title": "TRACKS-EXP",
-      "description": "Vessel tracking insights paired with catch reports to monitor small-scale fishing trips.",
-      "bgClass": "bg-social",
-      "ctaHref": "https://tracks.peskas.org/"
     }
   ],
   "about": {

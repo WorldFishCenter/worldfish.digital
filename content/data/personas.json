@@ -1,0 +1,60 @@
+{
+  "personas": [
+    {
+      "slug": "government-fisheries-officer",
+      "name": "Government Fisheries Officer",
+      "tagline": "Policy, MCS, national fisheries reporting",
+      "themeSlugs": ["small-scale-fisheries", "climate-adaptation", "data-infrastructure"],
+      "keyProductSlugs": ["peskas", "coasts-app", "wcs-wf-app", "aquadata", "nutrient-profiles"],
+      "needs": ["Aggregated catch data", "Policy briefs", "Management evidence", "MCS tools"]
+    },
+    {
+      "slug": "field-enumerator",
+      "name": "Field Enumerator / Data Collector",
+      "tagline": "Data collection at landing sites or farms",
+      "themeSlugs": ["small-scale-fisheries", "aquaculture"],
+      "keyProductSlugs": ["tracks-app", "validation-app", "peskas-app", "casa-app"],
+      "needs": ["Simple mobile tools", "Offline capability", "Local language support", "Low-data use"]
+    },
+    {
+      "slug": "researcher-scientist",
+      "name": "Researcher / Scientist",
+      "tagline": "Analysis, modelling, academic outputs",
+      "themeSlugs": ["small-scale-fisheries", "aquaculture", "data-infrastructure"],
+      "keyProductSlugs": ["aquadata", "fishbasepro", "nutrient-profiles"],
+      "needs": ["Open data access", "APIs", "Reproducible methods", "Citable datasets"]
+    },
+    {
+      "slug": "aquaculture-farmer",
+      "name": "Aquaculture Farmer",
+      "tagline": "Smallholder fish producer",
+      "themeSlugs": ["aquaculture", "climate-adaptation"],
+      "keyProductSlugs": ["casa-app", "fasa-feed-formulation-app", "pondcube"],
+      "needs": ["Advisory services", "Feed formulation", "Climate alerts", "Market links"]
+    },
+    {
+      "slug": "extension-officer",
+      "name": "Extension Officer / NGO",
+      "tagline": "Farmer support, training delivery",
+      "themeSlugs": ["aquaculture", "nutrition-food-systems", "climate-adaptation"],
+      "keyProductSlugs": ["fasa-feed-formulation-app", "peskas-training-course", "casa-app"],
+      "needs": ["Training materials", "Digital decision-support tools", "Farmer-facing content"]
+    },
+    {
+      "slug": "donor-investor",
+      "name": "Donor / Investor",
+      "tagline": "Program funder, strategic partner",
+      "themeSlugs": ["small-scale-fisheries", "aquaculture", "nutrition-food-systems", "climate-adaptation", "data-infrastructure"],
+      "keyProductSlugs": ["fishbasepro"],
+      "needs": ["Portfolio overview", "Results data", "Scale narratives", "Investment cases"]
+    },
+    {
+      "slug": "private-sector",
+      "name": "Private Sector",
+      "tagline": "Feed producers, agri-business, tech companies",
+      "themeSlugs": ["aquaculture", "data-infrastructure"],
+      "keyProductSlugs": ["fasa-feed-formulation-app", "fishbasepro"],
+      "needs": ["Commercial data", "Market intelligence", "Partnership models"]
+    }
+  ]
+}
