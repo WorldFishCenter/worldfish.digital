@@ -2,7 +2,32 @@ import Link from 'next/link';
 import Layout from '../layout/Layout';
 import EntityCard from '../elements/EntityCard';
 
+function ProductGrid({ products }) {
+    return (
+        <div className="row">
+            {products.map((product) => (
+                <div key={product.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
+                    <EntityCard
+                        href={`/products/${product.slug}`}
+                        eyebrow={[product.type, product.status].filter(Boolean).join(' · ')}
+                        title={product.name}
+                        description={product.description}
+                    />
+                </div>
+            ))}
+        </div>
+    );
+}
+
 export default function ThemeDetailClient({ theme, projects, products, countries, personas }) {
+    const featuredSlugs = theme.featuredProductSlugs;
+    const featuredProducts = featuredSlugs
+        ? products.filter((product) => featuredSlugs.includes(product.slug))
+        : [];
+    const otherProducts = featuredSlugs
+        ? products.filter((product) => !featuredSlugs.includes(product.slug))
+        : products;
+
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
@@ -17,24 +42,32 @@ export default function ThemeDetailClient({ theme, projects, products, countries
                 </div>
             </section>
 
-            {products.length > 0 && (
+            {featuredSlugs ? (
                 <section className="section-box wfSectionDark wfPadSection">
                     <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Products</h3>
-                        <div className="row">
-                            {products.map((product) => (
-                                <div key={product.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                                    <EntityCard
-                                        href={`/products/${product.slug}`}
-                                        eyebrow={[product.type, product.status].filter(Boolean).join(' · ')}
-                                        title={product.name}
-                                        description={product.description}
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                        {featuredProducts.length > 0 && (
+                            <div className="wfGroupPanel mb-40">
+                                <h2 className="text-heading-3 wfGroupPanelTitle">Featured Products</h2>
+                                <ProductGrid products={featuredProducts} />
+                            </div>
+                        )}
+                        {otherProducts.length > 0 && (
+                            <div className="wfGroupPanel">
+                                <h2 className="text-heading-3 wfGroupPanelTitle">Related Products</h2>
+                                <ProductGrid products={otherProducts} />
+                            </div>
+                        )}
                     </div>
                 </section>
+            ) : (
+                products.length > 0 && (
+                    <section className="section-box wfSectionDark wfPadSection">
+                        <div className="container">
+                            <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Products</h3>
+                            <ProductGrid products={products} />
+                        </div>
+                    </section>
+                )
             )}
 
             {projects.length > 0 && (

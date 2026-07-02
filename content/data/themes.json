@@ -57,6 +57,12 @@
       "description": "Adaptive management and climate information tools helping fishers and farmers plan around a changing climate.",
       "projectSlugs": ["ikanadapt", "fasa", "abu-dhabi-coe", "uae"],
       "productSlugs": ["peskas-app", "fasa-feed-formulation-app"],
+      "featuredProductSlugs": [
+        "adaptation-solution-bank",
+        "innovation-database",
+        "climate-resilience-scoring-tool",
+        "climate-risk-profiles"
+      ],
       "countrySlugs": ["timor-leste", "kenya", "nigeria", "zambia", "global"],
       "donorSlugs": ["dfat-australia", "uae-govt", "usaid"],
       "personaSlugs": ["aquaculture-farmer", "government-fisheries-officer", "extension-officer"]
