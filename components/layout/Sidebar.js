@@ -26,11 +26,7 @@ const Sidebar = ({ openClass, onClose }) => {
         >
             <div className={styles.drawerHeader}>
                 <Link href="/" className={styles.drawerWordmark} onClick={onClose}>
-                    <img
-                        src="/assets/imgs/brand/worldfish-logo-white.svg"
-                        alt="WorldFish"
-                        className={styles.drawerLogoImg}
-                    />
+                    <span className={styles.drawerWordmarkLine1}>WorldFish</span>
                     <span className={styles.drawerWordmarkLine2}>Digital</span>
                 </Link>
                 <button

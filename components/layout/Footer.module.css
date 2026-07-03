@@ -1,24 +1,8 @@
 .brandLink {
-  align-items: center;
-  gap: 10px;
   color: var(--wf-text-on-dark);
   text-decoration: none;
 }
 
-.brandLogoImg {
-  display: block;
-  height: 40px;
-  width: auto;
-}
-
-.brandSuffix {
-  font-family: var(--wf-font-body);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--wf-text-on-dark-soft);
-  letter-spacing: -0.02em;
-}
-
-.brandLink:hover .brandSuffix {
+.brandLink:hover {
   color: var(--wf-color-accent);
 }

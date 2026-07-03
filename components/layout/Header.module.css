@@ -108,25 +108,41 @@
   background-color: rgba(255, 255, 255, 0.06) !important;
 }
 
-.logoLink {
+.siteHeader :global(.header-logo-link) {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  line-height: 1.08;
   text-decoration: none !important;
-}
-
-.logoImg {
-  display: block;
-  height: 96px;
-  width: auto;
-}
-
-.logoSuffix {
   font-family: var(--wf-font-body);
+  letter-spacing: -0.035em;
+}
+
+.headerMark {
+  display: block;
+  height: 38px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.headerLogoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.siteHeader :global(.header-logo-line1) {
+  font-size: clamp(1.2rem, 2.1vw, 1.45rem);
+  font-weight: 700;
+  color: var(--wf-text-on-dark);
+}
+
+.siteHeader :global(.header-logo-line2) {
   font-size: clamp(1rem, 1.65vw, 1.15rem);
   font-weight: 600;
   color: var(--wf-text-on-dark-soft);
-  letter-spacing: -0.02em;
+  margin-top: 2px;
 }
 
 .siteHeader:global(.header-langgraph) :global(.nav-main-menu .sub-menu) {

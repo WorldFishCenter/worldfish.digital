@@ -23,13 +23,17 @@ const Header = ({ menuOpen, onMobileNavToggle, headerStyle }) => {
                 <div className="main-header">
                     <div className={`header-left header-langgraph-inner ${styles.headerInner}`}>
                         <div className={`header-logo ${styles.headerLogo}`}>
-                            <Link href="/" className={`header-logo-link ${styles.logoLink}`}>
+                            <Link href="/" className="header-logo-link">
                                 <img
-                                    src="/assets/imgs/brand/worldfish-logo-white.svg"
-                                    alt="WorldFish"
-                                    className={styles.logoImg}
+                                    src="/assets/imgs/brand/worldfish-mark-white.svg"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className={styles.headerMark}
                                 />
-                                <span className={styles.logoSuffix}>Digital</span>
+                                <span className={styles.headerLogoText}>
+                                    <span className="header-logo-line1">WorldFish</span>
+                                    <span className="header-logo-line2">Digital</span>
+                                </span>
                             </Link>
                         </div>
                         <nav

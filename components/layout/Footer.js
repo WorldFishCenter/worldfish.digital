@@ -13,13 +13,8 @@ const Footer = () => {
                     <div className="footer-top">
                         <div className="row">
                             <div className="col-md-4 col-sm-6 text-center text-md-start">
-                                <Link href="/" className={`d-flex ${styles.brandLink}`}>
-                                    <img
-                                        src="/assets/imgs/brand/worldfish-logo-white.svg"
-                                        alt="WorldFish"
-                                        className={styles.brandLogoImg}
-                                    />
-                                    <span className={styles.brandSuffix}>Digital</span>
+                                <Link href="/" className={`d-flex display-6 ${styles.brandLink}`}>
+                                    WorldFish Digital
                                 </Link>
                             </div>
                         </div>

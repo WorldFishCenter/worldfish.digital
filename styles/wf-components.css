@@ -55,11 +55,6 @@
   line-height: 1.1;
 }
 
-/* Peskas product hero only — 5px smaller than the shared .display-3 fluid size */
-.wfTitleHeroPeskas {
-  font-size: calc(1.525rem + 3.3vw - 5px);
-}
-
 .wfTitleHeroTight {
   color: var(--wf-text-slate-50);
   font-weight: 600;
@@ -71,13 +66,13 @@
 }
 
 .wfAccentLine {
-  color: var(--wf-color-accent-title);
+  color: var(--wf-color-accent);
   display: block;
   margin-top: 10px;
 }
 
 .wfAccentLineTight {
-  color: var(--wf-color-accent-title);
+  color: var(--wf-color-accent);
   display: block;
   margin-top: 4px;
 }
@@ -229,14 +224,14 @@
 }
 
 .wfImpactTagline {
-  color: var(--wf-color-accent-title);
+  color: var(--wf-color-accent);
   font-weight: 500;
   letter-spacing: -0.02em;
   font-size: 22px;
 }
 
 .wfEcosystemKicker {
-  color: var(--wf-color-accent-title);
+  color: var(--wf-color-accent);
   font-family: var(--wf-font-mono);
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -450,6 +445,7 @@
 }
 
 .wfSubtitleWide {
+  max-width: 600px;
   line-height: 1.6;
   font-size: 20px;
   color: var(--wf-text-slate-300);
@@ -460,7 +456,7 @@
   position: relative;
   border-radius: 24px;
   border: 1px solid var(--wf-border-medium);
-  background: linear-gradient(90deg, rgba(88, 171, 71, 0.08), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(90deg, rgba(87, 179, 209, 0.08), rgba(255, 255, 255, 0.02));
   padding: 60px;
   overflow: hidden;
   box-shadow: var(--wf-shadow-hero-media);
@@ -475,8 +471,8 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--wf-border-accent-medium);
-  box-shadow: 0 0 40px rgba(88, 171, 71, 0.1);
-  background-image: radial-gradient(ellipse at top left, rgba(88, 171, 71, 0.1), transparent 50%);
+  box-shadow: 0 0 40px rgba(87, 179, 209, 0.1);
+  background-image: radial-gradient(ellipse at top left, rgba(87, 179, 209, 0.1), transparent 50%);
 }
 
 .wfCtaMax {
@@ -979,7 +975,7 @@
   border-radius: 16px;
   background-color: var(--wf-surface-panel);
   border: 1px solid var(--wf-border-accent-soft);
-  background-image: radial-gradient(circle at top left, rgba(88, 171, 71, 0.05), transparent 60%);
+  background-image: radial-gradient(circle at top left, rgba(87, 179, 209, 0.05), transparent 60%);
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -988,7 +984,7 @@
 
 .wfPlatformCard:hover {
   border-color: var(--wf-border-accent-medium);
-  box-shadow: 0 0 40px rgba(88, 171, 71, 0.1);
+  box-shadow: 0 0 40px rgba(87, 179, 209, 0.1);
 }
 
 .wfPlatformDesc {
