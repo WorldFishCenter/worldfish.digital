@@ -11,6 +11,72 @@ import AboutSection from './AboutSection';
 import BlogSection from './BlogSection';
 import VideoModal from './VideoModal';
 import Layout from '../layout/Layout';
+import EntityCard from '../elements/EntityCard';
+
+function FocusAreas({ product }) {
+    const thematic = product.thematicAreas || [];
+    const impact = product.impactAreas || [];
+    if (thematic.length === 0 && impact.length === 0) return null;
+
+    return (
+        <section className="section-box wfSectionDark wfPadSection">
+            <div className="container">
+                <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Focus areas</h3>
+                {thematic.length > 0 && (
+                    <>
+                        <p className="wfMuted mb-10">Thematic</p>
+                        <ul className="wfChipList mb-30">
+                            {thematic.map((area) => (
+                                <li key={area}>
+                                    <span className="wfChip">{area}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+                {impact.length > 0 && (
+                    <>
+                        <p className="wfMuted mb-10">Impact</p>
+                        <ul className="wfChipList">
+                            {impact.map((area) => (
+                                <li key={area}>
+                                    <span className="wfChip">{area}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+            </div>
+        </section>
+    );
+}
+
+function RelatedTools({ related }) {
+    if (!related || related.length === 0) return null;
+
+    return (
+        <section className="section-box wfSectionDark wfPadSection">
+            <div className="container">
+                <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Related tools</h3>
+                <div className="row">
+                    {related.map(({ label, product }) => (
+                        <div
+                            key={`${label}-${product.slug}`}
+                            className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex"
+                        >
+                            <EntityCard
+                                href={`/products/${product.slug}`}
+                                eyebrow={label}
+                                title={product.name}
+                                description={product.description}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
 
 function ThinProductHero({ product }) {
     const meta = [product.type, product.status].filter(Boolean).join(' · ');
@@ -47,7 +113,7 @@ function ThinProductHero({ product }) {
     );
 }
 
-export default function ProductPageClient({ product, latestPosts }) {
+export default function ProductPageClient({ product, latestPosts, related }) {
     const [modal, setModal] = useState(false);
     const [videoLoading, setVideoLoading] = useState(true);
     const rich = product.rich;
@@ -60,6 +126,8 @@ export default function ProductPageClient({ product, latestPosts }) {
         return (
             <Layout>
                 <ThinProductHero product={product} />
+                <FocusAreas product={product} />
+                <RelatedTools related={related} />
             </Layout>
         );
     }
@@ -89,6 +157,7 @@ export default function ProductPageClient({ product, latestPosts }) {
                     youtubeId={rich.videoYoutubeId}
                 />
             )}
+            <RelatedTools related={related} />
         </Layout>
     );
 }

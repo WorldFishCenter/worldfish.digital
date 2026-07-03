@@ -10,7 +10,7 @@ export default function TeamPageClient({ team }) {
                         <div className="col-lg-8">
                             <h1 className="display-3 wfTitleHero">Team</h1>
                             <p className="wfLead wfLeadMt">
-                                The people building and maintaining WorldFish Digital's platforms.
+                                The people building and maintaining WorldFish Digital&apos;s platforms.
                             </p>
                         </div>
                     </div>

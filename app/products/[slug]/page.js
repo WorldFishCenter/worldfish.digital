@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import ProductPageClient from '@/components/sections/ProductPageClient';
-import { getProduct, getProducts } from '@/lib/content';
+import { getProduct, getProducts, getRelatedProducts } from '@/lib/content';
 import { getLatestPostsByChannel } from '@/lib/posts';
 import { DEFAULT_METADATA, BLOG_PESKAS } from '@/lib/constants';
 
@@ -28,6 +28,7 @@ export default async function ProductPage({ params }) {
     const latestPosts = product.rich?.blogSection?.channel
         ? getLatestPostsByChannel(product.rich.blogSection.channel, BLOG_PESKAS.latestPostsCount)
         : [];
+    const related = getRelatedProducts(product.slug);
 
-    return <ProductPageClient product={product} latestPosts={latestPosts} />;
+    return <ProductPageClient product={product} latestPosts={latestPosts} related={related} />;
 }

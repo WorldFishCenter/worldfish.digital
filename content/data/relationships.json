@@ -1,0 +1,16 @@
+{
+  "_comment": "Directed product-to-product edges, mirroring the Airtable 'Relationships' table (from -> type -> to). 'type' must be a member of taxonomy.relationshipTypes. Seed set below covers architecturally-obvious edges only; complete from the Airtable Relationships table.",
+  "relationships": [
+    { "from": "coasts-data-pipeline", "type": "feeds into", "to": "peskas-api" },
+    { "from": "kenya-data-pipeline", "type": "feeds into", "to": "peskas-api" },
+    { "from": "zanzibar-data-pipeline", "type": "feeds into", "to": "peskas-api" },
+    { "from": "mozambique-data-pipeline", "type": "feeds into", "to": "peskas-api" },
+    { "from": "peskas-api", "type": "enables", "to": "coasts-app" },
+    { "from": "peskas-api", "type": "enables", "to": "tracks-app" },
+    { "from": "peskas-api", "type": "enables", "to": "zanzibar-app" },
+    { "from": "peskas-api", "type": "enables", "to": "wcs-wf-app" },
+    { "from": "validation-app", "type": "depends on", "to": "coasts-data-pipeline" },
+    { "from": "tracks-effort-model", "type": "depends on", "to": "tracks-app" },
+    { "from": "fishing-gear-prediction", "type": "depends on", "to": "peskas-api" }
+  ]
+}

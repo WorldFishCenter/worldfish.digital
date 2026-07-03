@@ -10,7 +10,8 @@
       "ctaHref": "https://timor.peskas.org/",
       "themeSlugs": ["small-scale-fisheries", "nutrition-food-systems", "climate-adaptation", "data-infrastructure"],
       "productSlugs": ["peskas", "nutrient-profiles", "peskas-app", "peskaas-timor-validation-portal"],
-      "projectSlugs": ["nsfm", "ikanadapt", "peskas-service", "ikan-ba-futuru", "fssp2"]
+      "projectSlugs": ["nsfm", "ikanadapt", "peskas-service", "ikan-ba-futuru", "fssp2"],
+      "airtableCountry": "Timor-Leste"
     },
     {
       "slug": "kenya",
@@ -22,7 +23,8 @@
       "ctaHref": "https://digitalfisheries.kenya.peskas.org/en",
       "themeSlugs": ["small-scale-fisheries", "aquaculture", "climate-adaptation", "data-infrastructure"],
       "productSlugs": ["coasts-app", "tracks-app", "wcs-wf-app", "validation-app", "kenya-data-pipeline", "tracks-effort-model", "coasts-data-pipeline", "peskas-api", "fishing-gear-prediction", "casa-app", "fasa-feed-formulation-app"],
-      "projectSlugs": ["aabs", "casa", "fasa"]
+      "projectSlugs": ["aabs", "casa", "fasa"],
+      "airtableCountry": "Kenya"
     },
     {
       "slug": "zanzibar",
@@ -34,7 +36,8 @@
       "ctaHref": "https://zanzibar.peskas.org",
       "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
       "productSlugs": ["coasts-app", "tracks-app", "validation-app", "tracks-effort-model", "coasts-data-pipeline", "peskas-api", "zanzibar-data-pipeline", "zanzibar-app"],
-      "projectSlugs": ["aabs"]
+      "projectSlugs": ["aabs"],
+      "airtableCountry": "Zanzibar"
     },
     {
       "slug": "mozambique",
@@ -46,7 +49,8 @@
       "ctaHref": "https://peskas-dashboard-mozambique.vercel.app",
       "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
       "productSlugs": ["coasts-app", "tracks-app", "validation-app", "tracks-effort-model", "coasts-data-pipeline", "peskas-api", "mozambique-data-pipeline"],
-      "projectSlugs": ["aabs"]
+      "projectSlugs": ["aabs"],
+      "airtableCountry": "Mozambique"
     },
     {
       "slug": "malawi",
@@ -58,7 +62,8 @@
       "ctaHref": "https://malawi.peskas.org/",
       "themeSlugs": ["small-scale-fisheries"],
       "productSlugs": ["malawi-ssf-data-pipeline", "peskas-training-course"],
-      "projectSlugs": ["profishblue"]
+      "projectSlugs": ["profishblue"],
+      "airtableCountry": "Malawi"
     },
     {
       "slug": "malaysia",
@@ -70,7 +75,8 @@
       "ctaHref": "",
       "themeSlugs": ["data-infrastructure", "small-scale-fisheries"],
       "productSlugs": ["lo2s-model"],
-      "projectSlugs": ["ssf-voice"]
+      "projectSlugs": ["ssf-voice"],
+      "airtableCountry": "Malaysia"
     },
     {
       "slug": "nigeria",
@@ -82,7 +88,8 @@
       "ctaHref": "",
       "themeSlugs": ["aquaculture", "climate-adaptation", "small-scale-fisheries"],
       "productSlugs": ["fasa-feed-formulation-app"],
-      "projectSlugs": ["fasa", "ssf-voice"]
+      "projectSlugs": ["fasa", "ssf-voice"],
+      "airtableCountry": "Nigeria"
     },
     {
       "slug": "zambia",
@@ -94,7 +101,8 @@
       "ctaHref": "",
       "themeSlugs": ["aquaculture", "climate-adaptation", "data-infrastructure"],
       "productSlugs": ["fasa-feed-formulation-app", "phenofish"],
-      "projectSlugs": ["fasa", "dta"]
+      "projectSlugs": ["fasa", "dta"],
+      "airtableCountry": "Zambia"
     },
     {
       "slug": "eritrea",
@@ -106,7 +114,8 @@
       "ctaHref": "",
       "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
       "productSlugs": [],
-      "projectSlugs": ["eritrea-peskas-assessment"]
+      "projectSlugs": ["eritrea-peskas-assessment"],
+      "airtableCountry": "Other"
     },
     {
       "slug": "ghana",
@@ -118,7 +127,8 @@
       "ctaHref": "",
       "themeSlugs": ["data-infrastructure", "small-scale-fisheries", "aquaculture"],
       "productSlugs": ["aquadata-portal"],
-      "projectSlugs": ["raqfs-aquadata-initiative"]
+      "projectSlugs": ["raqfs-aquadata-initiative"],
+      "airtableCountry": "Other"
     },
     {
       "slug": "solomon-islands",
@@ -130,7 +140,8 @@
       "ctaHref": "",
       "themeSlugs": [],
       "productSlugs": [],
-      "projectSlugs": []
+      "projectSlugs": [],
+      "airtableCountry": "Other"
     },
     {
       "slug": "colombia",
@@ -143,7 +154,8 @@
       "themeSlugs": ["small-scale-fisheries"],
       "productSlugs": [],
       "projectSlugs": ["ssf-voice"],
-      "pipeline": true
+      "pipeline": true,
+      "airtableCountry": "Other"
     },
     {
       "slug": "namibia",
@@ -156,7 +168,8 @@
       "themeSlugs": ["small-scale-fisheries"],
       "productSlugs": [],
       "projectSlugs": ["ssf-voice"],
-      "pipeline": true
+      "pipeline": true,
+      "airtableCountry": "Other"
     },
     {
       "slug": "guatemala",
@@ -169,7 +182,8 @@
       "themeSlugs": ["small-scale-fisheries"],
       "productSlugs": [],
       "projectSlugs": [],
-      "pipeline": true
+      "pipeline": true,
+      "airtableCountry": "Other"
     },
     {
       "slug": "west-africa-caopa",
@@ -181,7 +195,8 @@
       "ctaHref": "",
       "themeSlugs": ["small-scale-fisheries"],
       "productSlugs": [],
-      "projectSlugs": ["ssf-voice"]
+      "projectSlugs": ["ssf-voice"],
+      "airtableCountry": "Other"
     },
     {
       "slug": "global",
@@ -193,7 +208,8 @@
       "ctaHref": "",
       "themeSlugs": ["data-infrastructure", "climate-adaptation"],
       "productSlugs": ["fishbasepro"],
-      "projectSlugs": ["dta", "gates", "uae", "dd-science-team", "fishbase-consortium", "raqfs-aquadata-initiative", "ict4ssf", "aquatic-food-ontology-project"]
+      "projectSlugs": ["dta", "gates", "uae", "dd-science-team", "fishbase-consortium", "raqfs-aquadata-initiative", "ict4ssf", "aquatic-food-ontology-project"],
+      "airtableCountry": "Global"
     }
   ]
 }

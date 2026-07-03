@@ -20,6 +20,7 @@
         "title": "Tools & Products",
         "links": [
           { "label": "All products", "href": "/products" },
+          { "label": "Projects", "href": "/projects" },
           { "label": "Peskas", "href": "/products/peskas" },
           { "label": "Countries", "href": "/countries" },
           { "label": "For Partners", "href": "/for-partners" }

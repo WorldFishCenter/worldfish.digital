@@ -77,12 +77,14 @@ export default function ThemeDetailClient({ theme, projects, products, countries
                         <div className="row">
                             {projects.map((project) => (
                                 <div key={project.slug} className="col-lg-6 mb-20">
-                                    <div className="wfFeatureCard">
-                                        <div className="wfFlexBetween">
-                                            <h4 className="wfHeadingFeature">{project.name}</h4>
-                                            <p className="wfMuted">{project.status}</p>
+                                    <Link href={`/projects/${project.slug}`} className="wfBlockFull">
+                                        <div className="wfFeatureCard">
+                                            <div className="wfFlexBetween">
+                                                <h4 className="wfHeadingFeature">{project.name}</h4>
+                                                <p className="wfMuted">{project.status}</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             ))}
                         </div>

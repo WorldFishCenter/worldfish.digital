@@ -1,0 +1,72 @@
+{
+  "_comment": "Controlled vocabularies mirroring the Airtable 'Products' base option sets. Every tag value used in projects.json / products.json / themes.json must be a member of the matching list here. A future Airtable sync becomes a value-for-value mapping; validate-content.js enforces membership.",
+  "thematicAreas": [
+    "Climate",
+    "Fisheries",
+    "Aquaculture",
+    "Livestock",
+    "Nutrition",
+    "Biosciences & Genetics",
+    "Gender & Social Inclusion",
+    "Policy",
+    "Digital & AI",
+    "Other"
+  ],
+  "impactAreas": [
+    "Sustainable Fisheries",
+    "Productive Aquaculture",
+    "Nutrition Security",
+    "Climate Adaptation",
+    "Resilient Livelihoods",
+    "Better Governance"
+  ],
+  "programmes": [
+    "Peskas ecosystem",
+    "Digital Aquatic Food Systems Program",
+    "Standalone",
+    "Other"
+  ],
+  "componentTypes": [
+    "Data Pipeline",
+    "Dashboard",
+    "Application",
+    "Data Product",
+    "API",
+    "Model",
+    "Algorithm",
+    "Module",
+    "Platform",
+    "Other"
+  ],
+  "projectStatuses": [
+    "Pipeline",
+    "Planned",
+    "Active",
+    "Completed",
+    "Cancelled"
+  ],
+  "productStatuses": [
+    "Ideation",
+    "Draft",
+    "Published",
+    "Retired"
+  ],
+  "countries": [
+    "Global",
+    "Timor-Leste",
+    "Malaysia",
+    "Kenya",
+    "Malawi",
+    "Nigeria",
+    "Zambia",
+    "Zanzibar",
+    "Mozambique",
+    "Other"
+  ],
+  "relationshipTypes": [
+    "depends on",
+    "feeds into",
+    "enables",
+    "pilot of"
+  ]
+}

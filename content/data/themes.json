@@ -6,27 +6,12 @@
       "tagline": "Monitoring, catch data, MCS, coastal surveillance",
       "description": "Digital tools that turn landing-site and vessel data into decision-ready evidence for small-scale fisheries management, from mobile catch reporting to national dashboards.",
       "projectSlugs": ["aabs", "saaf", "profishblue", "ikanadapt", "ikan-ba-futuru", "fssp2", "peskas-service"],
-      "productSlugs": [
-        "peskas",
-        "coasts-app",
-        "tracks-app",
-        "aquadata",
-        "malawi-ssf-data-pipeline",
-        "peskas-app",
-        "zanzibar-app",
-        "wcs-wf-app",
-        "validation-app",
-        "peskas-api",
-        "kenya-data-pipeline",
-        "zanzibar-data-pipeline",
-        "mozambique-data-pipeline",
-        "coasts-data-pipeline",
-        "peskaas-timor-validation-portal",
-        "peskas-training-course"
-      ],
+      "productSlugs": ["peskas", "coasts-app", "tracks-app", "aquadata", "malawi-ssf-data-pipeline", "peskas-app", "zanzibar-app", "wcs-wf-app", "validation-app", "peskas-api", "kenya-data-pipeline", "zanzibar-data-pipeline", "mozambique-data-pipeline", "coasts-data-pipeline", "peskaas-timor-validation-portal", "peskas-training-course"],
       "countrySlugs": ["timor-leste", "kenya", "zanzibar", "mozambique", "malawi", "colombia", "guatemala"],
       "donorSlugs": ["dfat-australia", "world-bank-afdb", "eu-cgiar"],
-      "personaSlugs": ["government-fisheries-officer", "field-enumerator", "researcher-scientist", "donor-investor"]
+      "personaSlugs": ["government-fisheries-officer", "field-enumerator", "researcher-scientist", "donor-investor"],
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "aquaculture",
@@ -37,7 +22,9 @@
       "productSlugs": ["casa-app", "fasa-feed-formulation-app", "pondcube", "phenofish"],
       "countrySlugs": ["kenya", "nigeria", "zambia", "timor-leste"],
       "donorSlugs": ["nanmo-fcdo", "usaid", "worldfish-cgiar"],
-      "personaSlugs": ["aquaculture-farmer", "extension-officer", "researcher-scientist", "private-sector"]
+      "personaSlugs": ["aquaculture-farmer", "extension-officer", "researcher-scientist", "private-sector"],
+      "thematicAreas": ["Aquaculture"],
+      "impactAreas": ["Productive Aquaculture"]
     },
     {
       "slug": "nutrition-food-systems",
@@ -48,24 +35,23 @@
       "productSlugs": ["nutrient-profiles"],
       "countrySlugs": ["timor-leste"],
       "donorSlugs": ["dfat-australia"],
-      "personaSlugs": ["government-fisheries-officer", "researcher-scientist", "extension-officer"]
+      "personaSlugs": ["government-fisheries-officer", "researcher-scientist", "extension-officer"],
+      "thematicAreas": ["Nutrition"],
+      "impactAreas": ["Nutrition Security"]
     },
     {
       "slug": "climate-adaptation",
       "name": "Climate Adaptation",
       "tagline": "Adaptive management, climate information services, resilience",
       "description": "Adaptive management and climate information tools helping fishers and farmers plan around a changing climate.",
-      "projectSlugs": ["ikanadapt", "fasa", "abu-dhabi-coe", "uae"],
+      "projectSlugs": ["ikanadapt", "fasa", "uae", "uae"],
       "productSlugs": ["peskas-app", "fasa-feed-formulation-app"],
-      "featuredProductSlugs": [
-        "adaptation-solution-bank",
-        "innovation-database",
-        "climate-resilience-scoring-tool",
-        "climate-risk-profiles"
-      ],
+      "featuredProductSlugs": ["adaptation-solution-bank", "innovation-database", "climate-resilience-scoring-tool", "climate-risk-profiles"],
       "countrySlugs": ["timor-leste", "kenya", "nigeria", "zambia", "global"],
       "donorSlugs": ["dfat-australia", "uae-govt", "usaid"],
-      "personaSlugs": ["aquaculture-farmer", "government-fisheries-officer", "extension-officer"]
+      "personaSlugs": ["aquaculture-farmer", "government-fisheries-officer", "extension-officer"],
+      "thematicAreas": ["Climate"],
+      "impactAreas": ["Climate Adaptation"]
     },
     {
       "slug": "data-infrastructure",
@@ -73,18 +59,12 @@
       "tagline": "FishBase, global data standards, data interoperability, data science R&D, global public goods",
       "description": "Global public goods for aquatic food systems data: standards, ontologies, APIs, and modeling infrastructure shared across every other theme.",
       "projectSlugs": ["gates", "dta", "dd-science-team", "fishbase-consortium", "raqfs-aquadata-initiative"],
-      "productSlugs": [
-        "fishbasepro",
-        "peskas-api",
-        "lo2s-model",
-        "tracks-effort-model",
-        "fishing-gear-prediction",
-        "aquatic-food-ontology",
-        "aquadata-portal"
-      ],
+      "productSlugs": ["fishbasepro", "peskas-api", "lo2s-model", "tracks-effort-model", "fishing-gear-prediction", "aquatic-food-ontology", "aquadata-portal"],
       "countrySlugs": ["global", "malaysia"],
       "donorSlugs": ["gates-foundation", "worldfish-cgiar", "cgiar-raqfs"],
-      "personaSlugs": ["researcher-scientist", "government-fisheries-officer", "donor-investor", "private-sector"]
+      "personaSlugs": ["researcher-scientist", "government-fisheries-officer", "donor-investor", "private-sector"],
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     }
   ]
 }

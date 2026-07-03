@@ -21,10 +21,26 @@
           "videoFile": "/assets/imgs/page/homepage1/TL_tracks.mp4"
         },
         "stats": [
-          { "count": 8, "suffix": "", "label": "Years of operation" },
-          { "count": 6, "suffix": "", "label": "Countries active" },
-          { "count": 140, "suffix": "k", "label": "Fishing trips tracked" },
-          { "count": 300, "suffix": "", "label": "Tonnes of catch recorded" }
+          {
+            "count": 8,
+            "suffix": "",
+            "label": "Years of operation"
+          },
+          {
+            "count": 6,
+            "suffix": "",
+            "label": "Countries active"
+          },
+          {
+            "count": 140,
+            "suffix": "k",
+            "label": "Fishing trips tracked"
+          },
+          {
+            "count": 300,
+            "suffix": "",
+            "label": "Tonnes of catch recorded"
+          }
         ],
         "regionsSection": {
           "title": "Transforming fisheries management across Asia and Africa",
@@ -104,10 +120,22 @@
           "subtitle": "Peskas bridges the data gap in small-scale fisheries, empowering communities and governments with evidence-based insights for sustainable resource management, improved livelihoods, and food security.",
           "image": "/assets/imgs/page/homepage1/fishing.png",
           "features": [
-            { "title": "Evidence-Based Management", "description": "Real-time data enables informed decisions for sustainable fisheries" },
-            { "title": "Community Empowerment", "description": "Local enumerators and fishers become key stakeholders in data collection" },
-            { "title": "Open Science Principles", "description": "Free, open-source platform ensuring accessibility and transparency" },
-            { "title": "Scalable Solutions", "description": "Modular design adapts to diverse fisheries contexts and needs" }
+            {
+              "title": "Evidence-Based Management",
+              "description": "Real-time data enables informed decisions for sustainable fisheries"
+            },
+            {
+              "title": "Community Empowerment",
+              "description": "Local enumerators and fishers become key stakeholders in data collection"
+            },
+            {
+              "title": "Open Science Principles",
+              "description": "Free, open-source platform ensuring accessibility and transparency"
+            },
+            {
+              "title": "Scalable Solutions",
+              "description": "Modular design adapts to diverse fisheries contexts and needs"
+            }
           ]
         },
         "cta": {
@@ -120,24 +148,22 @@
           "title": "Peskas Tracks: a digital window into small-scale fishing trips",
           "subtitle": "Built by WorldFish through the Asia-Africa BlueTech Superhighway, Peskas Tracks is a mobile and web app that fishers install to pair vessel tracking with their own catch reports, making movements, productivity, and safety visible in near real time.",
           "col1Title": "What fishers and managers see",
-          "col1Items": [
-            "Live and offline trip logging: position, route, speed, time at sea",
-            "Trip heatmaps by day, week, or month with effort summaries",
-            "Catch entries linked to trips for a full record of effort and catch",
-            "Password-protected data per vessel; English, Portuguese, Swahili interfaces"
-          ],
+          "col1Items": ["Live and offline trip logging: position, route, speed, time at sea", "Trip heatmaps by day, week, or month with effort summaries", "Catch entries linked to trips for a full record of effort and catch", "Password-protected data per vessel; English, Portuguese, Swahili interfaces"],
           "col2Title": "Pilots and impact",
-          "col2Items": [
-            "100+ fishers across Kenya, Tanzania, and Mozambique",
-            "Heatmaps and stats help plan routes and fuel use",
-            "When a vessel stalled, Tracks helped locate it quickly, boosting safety"
-          ],
+          "col2Items": ["100+ fishers across Kenya, Tanzania, and Mozambique", "Heatmaps and stats help plan routes and fuel use", "When a vessel stalled, Tracks helped locate it quickly, boosting safety"],
           "ctaLabel": "See the demo",
           "ctaHref": "https://tracks.peskas.org/"
         },
         "videoYoutubeId": "962qilVnTZ0",
-        "blogSection": { "title": "Latest News", "subtitle": "From Our Peskas™ blog", "ctaLabel": "View More", "channel": "peskas" }
-      }
+        "blogSection": {
+          "title": "Latest News",
+          "subtitle": "From Our Peskas™ blog",
+          "ctaLabel": "View More",
+          "channel": "peskas"
+        }
+      },
+      "thematicAreas": ["Fisheries", "Digital & AI"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "coasts-app",
@@ -149,7 +175,9 @@
       "countrySlugs": ["zanzibar", "kenya", "mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "tracks-app",
@@ -161,7 +189,9 @@
       "countrySlugs": ["zanzibar", "kenya", "mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "fasa-feed-formulation-app",
@@ -173,7 +203,9 @@
       "countrySlugs": ["kenya", "nigeria", "zambia"],
       "projectSlugs": ["fasa"],
       "themeSlugs": ["aquaculture", "climate-adaptation"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Aquaculture", "Climate"],
+      "impactAreas": ["Productive Aquaculture", "Climate Adaptation"]
     },
     {
       "slug": "wcs-wf-app",
@@ -185,7 +217,9 @@
       "countrySlugs": ["kenya"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "nutrient-profiles",
@@ -197,7 +231,9 @@
       "countrySlugs": ["timor-leste"],
       "projectSlugs": ["nsfm"],
       "themeSlugs": ["nutrition-food-systems"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Nutrition"],
+      "impactAreas": ["Nutrition Security"]
     },
     {
       "slug": "validation-app",
@@ -209,7 +245,9 @@
       "countrySlugs": ["zanzibar", "kenya", "mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "kenya-data-pipeline",
@@ -221,7 +259,9 @@
       "countrySlugs": ["kenya"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "tracks-effort-model",
@@ -233,7 +273,9 @@
       "countrySlugs": ["zanzibar", "kenya", "mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     },
     {
       "slug": "peskaas-timor-validation-portal",
@@ -245,7 +287,9 @@
       "countrySlugs": ["timor-leste"],
       "projectSlugs": [],
       "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries", "Digital & AI"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "lo2s-model",
@@ -257,7 +301,9 @@
       "countrySlugs": ["malaysia"],
       "projectSlugs": [],
       "themeSlugs": ["data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     },
     {
       "slug": "aquadata",
@@ -269,7 +315,9 @@
       "countrySlugs": [],
       "projectSlugs": ["saaf"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "coasts-data-pipeline",
@@ -281,7 +329,9 @@
       "countrySlugs": ["zanzibar", "kenya", "mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "casa-app",
@@ -293,7 +343,9 @@
       "countrySlugs": [],
       "projectSlugs": ["casa"],
       "themeSlugs": ["aquaculture"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Aquaculture"],
+      "impactAreas": ["Productive Aquaculture"]
     },
     {
       "slug": "peskas-api",
@@ -305,7 +357,9 @@
       "countrySlugs": ["zanzibar", "kenya", "mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries", "Digital & AI"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "fishing-gear-prediction",
@@ -317,7 +371,9 @@
       "countrySlugs": [],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     },
     {
       "slug": "phenofish",
@@ -329,7 +385,9 @@
       "countrySlugs": ["zambia"],
       "projectSlugs": ["dta"],
       "themeSlugs": ["aquaculture", "data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Aquaculture", "Digital & AI"],
+      "impactAreas": ["Productive Aquaculture"]
     },
     {
       "slug": "mozambique-data-pipeline",
@@ -341,7 +399,9 @@
       "countrySlugs": ["mozambique"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "malawi-ssf-data-pipeline",
@@ -353,7 +413,9 @@
       "countrySlugs": ["malawi"],
       "projectSlugs": ["profishblue"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "peskas-app",
@@ -365,7 +427,9 @@
       "countrySlugs": ["timor-leste"],
       "projectSlugs": ["ikanadapt"],
       "themeSlugs": ["small-scale-fisheries", "climate-adaptation"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries", "Climate"],
+      "impactAreas": ["Sustainable Fisheries", "Climate Adaptation"]
     },
     {
       "slug": "zanzibar-data-pipeline",
@@ -377,7 +441,9 @@
       "countrySlugs": ["zanzibar"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "pondcube",
@@ -389,7 +455,9 @@
       "countrySlugs": [],
       "projectSlugs": ["dta"],
       "themeSlugs": ["aquaculture", "data-infrastructure"],
-      "description": "Harmonised digital collection method and data pipeline for pond books data on aquaculture — tracking inputs, outputs, pond conditions, and occurrences and enabling cross-country analysis and visualisations of trends and results."
+      "description": "Harmonised digital collection method and data pipeline for pond books data on aquaculture — tracking inputs, outputs, pond conditions, and occurrences and enabling cross-country analysis and visualisations of trends and results.",
+      "thematicAreas": ["Aquaculture", "Digital & AI"],
+      "impactAreas": ["Productive Aquaculture"]
     },
     {
       "slug": "peskas-training-course",
@@ -401,7 +469,9 @@
       "countrySlugs": ["malawi"],
       "projectSlugs": ["profishblue"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "zanzibar-app",
@@ -413,7 +483,9 @@
       "countrySlugs": ["zanzibar"],
       "projectSlugs": ["aabs"],
       "themeSlugs": ["small-scale-fisheries"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Fisheries"],
+      "impactAreas": ["Sustainable Fisheries"]
     },
     {
       "slug": "fishbasepro",
@@ -425,7 +497,9 @@
       "countrySlugs": ["global"],
       "projectSlugs": ["gates"],
       "themeSlugs": ["data-infrastructure"],
-      "description": null
+      "description": null,
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     },
     {
       "slug": "aquadata-portal",
@@ -438,7 +512,9 @@
       "projectSlugs": ["raqfs-aquadata-initiative"],
       "themeSlugs": ["data-infrastructure"],
       "description": "Predecessor of the current Aquadata product, built under the CGIAR RAqFS Initiative.",
-      "archived": true
+      "archived": true,
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     },
     {
       "slug": "aquatic-food-ontology",
@@ -450,7 +526,9 @@
       "countrySlugs": ["global"],
       "projectSlugs": ["raqfs-aquadata-initiative", "aquatic-food-ontology-project"],
       "themeSlugs": ["data-infrastructure"],
-      "description": "A machine-readable controlled vocabulary for fisheries and aquaculture data systems — \"the digital language of fisheries and aquaculture.\""
+      "description": "A machine-readable controlled vocabulary for fisheries and aquaculture data systems — \"the digital language of fisheries and aquaculture.\"",
+      "thematicAreas": ["Digital & AI"],
+      "impactAreas": []
     },
     {
       "slug": "adaptation-solution-bank",
@@ -462,7 +540,9 @@
       "countrySlugs": [],
       "projectSlugs": [],
       "themeSlugs": ["climate-adaptation"],
-      "description": "A curated repository of proven climate adaptation practices and solutions for small-scale fisheries and aquaculture communities."
+      "description": "A curated repository of proven climate adaptation practices and solutions for small-scale fisheries and aquaculture communities.",
+      "thematicAreas": ["Climate"],
+      "impactAreas": ["Climate Adaptation"]
     },
     {
       "slug": "innovation-database",
@@ -474,7 +554,9 @@
       "countrySlugs": [],
       "projectSlugs": [],
       "themeSlugs": ["climate-adaptation"],
-      "description": "A searchable database cataloguing climate adaptation innovations across aquatic food systems."
+      "description": "A searchable database cataloguing climate adaptation innovations across aquatic food systems.",
+      "thematicAreas": ["Climate"],
+      "impactAreas": ["Climate Adaptation"]
     },
     {
       "slug": "climate-resilience-scoring-tool",
@@ -486,7 +568,9 @@
       "countrySlugs": [],
       "projectSlugs": [],
       "themeSlugs": ["climate-adaptation"],
-      "description": "An interactive tool for scoring the climate resilience of fisheries and aquaculture systems to guide investment and planning."
+      "description": "An interactive tool for scoring the climate resilience of fisheries and aquaculture systems to guide investment and planning.",
+      "thematicAreas": ["Climate"],
+      "impactAreas": ["Climate Adaptation"]
     },
     {
       "slug": "climate-risk-profiles",
@@ -498,7 +582,9 @@
       "countrySlugs": [],
       "projectSlugs": [],
       "themeSlugs": ["climate-adaptation"],
-      "description": "Country and site-level climate risk profiles for aquatic food systems, supporting adaptive management planning."
+      "description": "Country and site-level climate risk profiles for aquatic food systems, supporting adaptive management planning.",
+      "thematicAreas": ["Climate"],
+      "impactAreas": ["Climate Adaptation"]
     }
   ]
 }
