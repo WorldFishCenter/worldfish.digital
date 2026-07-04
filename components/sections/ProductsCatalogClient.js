@@ -1,7 +1,8 @@
 'use client'
 import { useMemo, useState } from 'react';
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import EntityLinkList from '../detail/EntityLinkList';
+import { groupProductsByType } from '../detail/meta';
 
 const ALL = 'All';
 
@@ -26,6 +27,13 @@ function FilterGroup({ label, options, active, onChange }) {
     );
 }
 
+const productItem = (product) => ({
+    href: `/products/${product.slug}`,
+    name: product.name,
+    sub: product.description || null,
+    status: product.status,
+});
+
 export default function ProductsCatalogClient({ products, themes }) {
     const [type, setType] = useState(ALL);
     const [theme, setTheme] = useState(ALL);
@@ -45,6 +53,16 @@ export default function ProductsCatalogClient({ products, themes }) {
         }
         return true;
     });
+
+    // Group by component type when the type facet is open; a single flat list once
+    // the user has already narrowed to one type.
+    const groups =
+        type === ALL
+            ? groupProductsByType(filtered).map((group) => ({
+                  title: group.title,
+                  items: group.items.map(productItem),
+              }))
+            : null;
 
     return (
         <Layout>
@@ -68,18 +86,11 @@ export default function ProductsCatalogClient({ products, themes }) {
 
                     <p className="wfMuted mt-30 mb-30">{filtered.length} products</p>
 
-                    <div className="row">
-                        {filtered.map((product) => (
-                            <div key={product.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                                <EntityCard
-                                    href={`/products/${product.slug}`}
-                                    eyebrow={[product.type, product.status].filter(Boolean).join(' · ')}
-                                    title={product.name}
-                                    description={product.description}
-                                />
-                            </div>
-                        ))}
-                    </div>
+                    {groups ? (
+                        <EntityLinkList groups={groups} />
+                    ) : (
+                        <EntityLinkList items={filtered.map(productItem)} />
+                    )}
                 </div>
             </section>
         </Layout>

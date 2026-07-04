@@ -1,5 +1,5 @@
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import ThemeIndexList from '../detail/ThemeIndexList';
 
 export default function ThemeIndexClient({ themes }) {
     return (
@@ -19,18 +19,7 @@ export default function ThemeIndexClient({ themes }) {
             </section>
             <section className="section-box wfSectionDark wfPadSection">
                 <div className="container">
-                    <div className="row">
-                        {themes.map((theme) => (
-                            <div key={theme.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                                <EntityCard
-                                    href={`/our-work/${theme.slug}`}
-                                    eyebrow={theme.tagline}
-                                    title={theme.name}
-                                    description={theme.description}
-                                />
-                            </div>
-                        ))}
-                    </div>
+                    <ThemeIndexList themes={themes} showStats />
                 </div>
             </section>
         </Layout>

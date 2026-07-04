@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Layout from '../layout/Layout';
+import ThemeIndexList from '../detail/ThemeIndexList';
 
 export default function ForPartnersClient({ themes, donors, contactEmails }) {
     return (
@@ -21,24 +22,7 @@ export default function ForPartnersClient({ themes, donors, contactEmails }) {
             <section className="section-box wfSectionDark wfPadSection">
                 <div className="container">
                     <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Portfolio by theme</h3>
-                    <div className="row">
-                        {themes.map((theme) => (
-                            <div key={theme.slug} className="col-lg-6 mb-30">
-                                <Link href={`/our-work/${theme.slug}`} className="wfBlockFull">
-                                    <div className="wfFeatureCard wfFeatureCardInteractive">
-                                        <div className="wfFlexBetween">
-                                            <h4 className="wfHeadingFeature">{theme.name}</h4>
-                                            <svg className="wfIconAccent" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                        </div>
-                                        <p className="wfFeatureBody">
-                                            {theme.projectSlugs.length} projects · {theme.productSlugs.length} products
-                                            {' '}· {theme.countrySlugs.length} countries
-                                        </p>
-                                    </div>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
+                    <ThemeIndexList themes={themes} showStats />
                 </div>
             </section>
 

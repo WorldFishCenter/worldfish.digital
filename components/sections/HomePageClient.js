@@ -2,24 +2,24 @@
 
 import EcosystemHeroSection from '../sections/EcosystemHeroSection';
 import ImpactStatsSection from '../sections/ImpactStatsSection';
-import FeaturesSection from '../sections/FeaturesSection';
 import PlatformsSection from '../sections/PlatformsSection';
 import PersonaRouter from '../sections/PersonaRouter';
 import BlogSection from '../sections/BlogSection';
 import Layout from '../layout/Layout';
+import ThemeIndexList from '../detail/ThemeIndexList';
 import { getPersonas, getThemes } from '@/lib/content';
-
-const themeFeatures = getThemes().map((theme) => ({
-    title: theme.name,
-    description: theme.tagline,
-    ctaHref: `/our-work/${theme.slug}`,
-}));
 
 export default function HomePageClient({ latestPosts, homepage }) {
     return (
         <Layout>
             <EcosystemHeroSection data={homepage.hero} />
-            <FeaturesSection features={themeFeatures} />
+            <section className="section-box wfSectionDark wfPadSection">
+                <div className="container">
+                    <p className="wfSectionKicker">Our work</p>
+                    <h2 className="wfSectionTitle">Five areas we build across</h2>
+                    <ThemeIndexList themes={getThemes()} />
+                </div>
+            </section>
             <PlatformsSection data={homepage.about} />
             <ImpactStatsSection stats={homepage.stats} />
             <PersonaRouter personas={getPersonas()} />

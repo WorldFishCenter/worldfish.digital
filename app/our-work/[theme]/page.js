@@ -7,6 +7,7 @@ import {
     getProductsByTheme,
     getCountriesByTheme,
     getPersonasByTheme,
+    getDonorsByTheme,
 } from '@/lib/content';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
@@ -38,6 +39,7 @@ export default async function ThemePage({ params }) {
             products={getProductsByTheme(theme.slug)}
             countries={getCountriesByTheme(theme.slug)}
             personas={getPersonasByTheme(theme.slug)}
+            donors={getDonorsByTheme(theme.slug)}
         />
     );
 }

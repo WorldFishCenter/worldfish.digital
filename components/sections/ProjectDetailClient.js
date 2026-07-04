@@ -1,18 +1,95 @@
-import Link from 'next/link';
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import DetailBlock from '../detail/DetailBlock';
+import EntityLinkList from '../detail/EntityLinkList';
+import FactSheet from '../detail/FactSheet';
+import { StatusPill, MetaPill, TagList, LinkTagList } from '../detail/Pills';
+import { groupProductsByType, countLabel } from '../detail/meta';
 
 export default function ProjectDetailClient({ project, themes, countries, products, donors }) {
-    const meta = [project.status, project.programme].filter(Boolean).join(' · ');
     const background = project.historicalNote || project.whatItWas;
+    const hasProducts = products.length > 0;
+    const hasBackground = Boolean(
+        background || project.note || (project.productsCreated && project.productsCreated.length > 0)
+    );
+    const hasMain = hasProducts || hasBackground;
+
+    const productGroups = groupProductsByType(products).map((group) => ({
+        title: group.title,
+        items: group.items.map((product) => ({
+            href: `/products/${product.slug}`,
+            name: product.name,
+            sub: product.description || null,
+            status: product.status,
+        })),
+    }));
+
+    const factRows = [
+        {
+            label: 'Lead',
+            value: project.lead ? <a href={`mailto:${project.lead}`}>{project.lead}</a> : null,
+        },
+        {
+            label: 'Work areas',
+            value: themes.length ? (
+                <LinkTagList items={themes.map((t) => ({ href: `/our-work/${t.slug}`, label: t.name }))} />
+            ) : null,
+        },
+        {
+            label: 'Countries',
+            value: countries.length ? (
+                <LinkTagList
+                    items={countries.map((c) => ({ href: `/countries/${c.slug}`, label: c.name }))}
+                />
+            ) : null,
+        },
+        { label: 'Funded by', value: donors.length ? <TagList items={donors.map((d) => d.name)} /> : null },
+        {
+            label: 'Thematic',
+            value: project.thematicAreas?.length ? <TagList items={project.thematicAreas} /> : null,
+        },
+        {
+            label: 'Impact',
+            value: project.impactAreas?.length ? <TagList items={project.impactAreas} /> : null,
+        },
+    ];
+
+    const mainColumn = (
+        <>
+            {hasProducts && (
+                <DetailBlock kicker={countLabel(products.length, 'tool')} title="Tools">
+                    <EntityLinkList groups={productGroups} />
+                </DetailBlock>
+            )}
+            {hasBackground && (
+                <DetailBlock title="Background">
+                    {background && (
+                        <div className="wfProse">
+                            <p>{background}</p>
+                        </div>
+                    )}
+                    {project.note && <p className="wfMuted mt-10">{project.note}</p>}
+                    {project.productsCreated && project.productsCreated.length > 0 && (
+                        <div className="mt-30">
+                            <p className="wfMuted mb-10">Outputs</p>
+                            <TagList items={project.productsCreated} />
+                        </div>
+                    )}
+                </DetailBlock>
+            )}
+        </>
+    );
 
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-8">
-                            {meta && <p className="wfMuted mb-10">{meta}</p>}
+                        <div className="col-lg-9">
+                            <p className="wfSectionKicker">Project</p>
+                            <div className="wfKickerRow">
+                                <StatusPill status={project.status} />
+                                {project.programme && <MetaPill>{project.programme}</MetaPill>}
+                            </div>
                             <h1 className="display-3 wfTitleHero">{project.name}</h1>
                             {project.fullName && <p className="wfLead wfLeadMt">{project.fullName}</p>}
                         </div>
@@ -20,128 +97,22 @@ export default function ProjectDetailClient({ project, themes, countries, produc
                 </div>
             </section>
 
-            {products.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Products</h3>
+            <section className="section-box wfSectionDark wfPadSection">
+                <div className="container">
+                    {hasMain ? (
                         <div className="row">
-                            {products.map((product) => (
-                                <div key={product.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                                    <EntityCard
-                                        href={`/products/${product.slug}`}
-                                        eyebrow={[product.type, product.status].filter(Boolean).join(' · ')}
-                                        title={product.name}
-                                        description={product.description}
-                                    />
+                            <div className="col-lg-8">{mainColumn}</div>
+                            <div className="col-lg-4">
+                                <div className="wfDetailAside">
+                                    <FactSheet rows={factRows} />
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {(themes.length > 0 ||
-                (project.thematicAreas && project.thematicAreas.length > 0) ||
-                (project.impactAreas && project.impactAreas.length > 0)) && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Focus areas</h3>
-                        {themes.length > 0 && (
-                            <>
-                                <p className="wfMuted mb-10">Work areas</p>
-                                <ul className="wfChipList mb-30">
-                                    {themes.map((theme) => (
-                                        <li key={theme.slug}>
-                                            <Link href={`/our-work/${theme.slug}`} className="wfChip">
-                                                {theme.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </>
-                        )}
-                        {project.thematicAreas && project.thematicAreas.length > 0 && (
-                            <>
-                                <p className="wfMuted mb-10">Thematic</p>
-                                <ul className="wfChipList mb-30">
-                                    {project.thematicAreas.map((area) => (
-                                        <li key={area}>
-                                            <span className="wfChip">{area}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </>
-                        )}
-                        {project.impactAreas && project.impactAreas.length > 0 && (
-                            <>
-                                <p className="wfMuted mb-10">Impact</p>
-                                <ul className="wfChipList">
-                                    {project.impactAreas.map((area) => (
-                                        <li key={area}>
-                                            <span className="wfChip">{area}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </>
-                        )}
-                    </div>
-                </section>
-            )}
-
-            {countries.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Countries</h3>
-                        <ul className="wfChipList">
-                            {countries.map((country) => (
-                                <li key={country.slug}>
-                                    <Link href={`/countries/${country.slug}`} className="wfChip">
-                                        {country.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            )}
-
-            {donors.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Funded by</h3>
-                        <ul className="wfChipList">
-                            {donors.map((donor) => (
-                                <li key={donor.slug}>
-                                    <span className="wfChip">{donor.name}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            )}
-
-            {(background || (project.productsCreated && project.productsCreated.length > 0)) && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Background</h3>
-                        <div className="row">
-                            <div className="col-lg-8">
-                                {background && <p className="wfLead wfLeadMt">{background}</p>}
-                                {project.note && <p className="wfMuted mt-10">{project.note}</p>}
                             </div>
                         </div>
-                        {project.productsCreated && project.productsCreated.length > 0 && (
-                            <ul className="wfChipList mt-30">
-                                {project.productsCreated.map((item) => (
-                                    <li key={item}>
-                                        <span className="wfChip">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                </section>
-            )}
+                    ) : (
+                        <FactSheet rows={factRows} variant="strip" />
+                    )}
+                </div>
+            </section>
         </Layout>
     );
 }

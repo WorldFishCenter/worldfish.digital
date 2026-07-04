@@ -1,16 +1,51 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import DetailBlock from '../detail/DetailBlock';
+import EntityLinkList from '../detail/EntityLinkList';
+import FactSheet from '../detail/FactSheet';
+import { LinkTagList } from '../detail/Pills';
+import { groupProductsByType, countLabel } from '../detail/meta';
 import { publicAssetUrl } from '@/lib/publicAssetUrl';
 
 export default function CountryDetailClient({ country, themes, products, projects }) {
+    const hasProducts = products.length > 0;
+    const hasProjects = projects.length > 0;
+    const hasMain = hasProducts || hasProjects;
+
+    const productGroups = groupProductsByType(products).map((group) => ({
+        title: group.title,
+        items: group.items.map((product) => ({
+            href: `/products/${product.slug}`,
+            name: product.name,
+            sub: product.description || null,
+            status: product.status,
+        })),
+    }));
+
+    const projectItems = projects.map((project) => ({
+        href: `/projects/${project.slug}`,
+        name: project.name,
+        sub: project.fullName || project.programme || null,
+        status: project.status,
+    }));
+
+    const factRows = [
+        { label: 'Engagement', value: country.pipeline ? 'Pipeline geography' : 'Active deployment' },
+        {
+            label: 'Work areas',
+            value: themes.length ? (
+                <LinkTagList items={themes.map((t) => ({ href: `/our-work/${t.slug}`, label: t.name }))} />
+            ) : null,
+        },
+    ];
+
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-7">
+                            <p className="wfSectionKicker">Country</p>
                             {country.flagSrc && (
                                 <Image
                                     src={country.flagSrc}
@@ -22,7 +57,6 @@ export default function CountryDetailClient({ country, themes, products, project
                                 />
                             )}
                             <h1 className="display-3 wfTitleHero">{country.name}</h1>
-                            {country.pipeline && <p className="wfMuted mt-10">Pipeline geography</p>}
                             <p className="wfLead wfLeadMt">{country.description}</p>
                             {country.ctaLabel && country.ctaHref && (
                                 <div className="mt-40">
@@ -34,6 +68,22 @@ export default function CountryDetailClient({ country, themes, products, project
                                     >
                                         {country.ctaLabel} ↗
                                     </a>
+                                </div>
+                            )}
+                            {(hasProducts || hasProjects) && (
+                                <div className="wfInlineStats">
+                                    {hasProducts && (
+                                        <div className="wfInlineStat">
+                                            <span className="wfInlineStatValue">{products.length}</span>
+                                            <span className="wfInlineStatLabel">Tools</span>
+                                        </div>
+                                    )}
+                                    {hasProjects && (
+                                        <div className="wfInlineStat">
+                                            <span className="wfInlineStatValue">{projects.length}</span>
+                                            <span className="wfInlineStatLabel">Projects</span>
+                                        </div>
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -52,64 +102,39 @@ export default function CountryDetailClient({ country, themes, products, project
                 </div>
             </section>
 
-            {themes.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Active themes</h3>
-                        <ul className="wfChipList">
-                            {themes.map((theme) => (
-                                <li key={theme.slug}>
-                                    <Link href={`/our-work/${theme.slug}`} className="wfChip">
-                                        {theme.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            )}
-
-            {products.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Products deployed</h3>
+            <section className="section-box wfSectionDark wfPadSection">
+                <div className="container">
+                    {hasMain ? (
                         <div className="row">
-                            {products.map((product) => (
-                                <div key={product.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                                    <EntityCard
-                                        href={`/products/${product.slug}`}
-                                        eyebrow={[product.type, product.status].filter(Boolean).join(' · ')}
-                                        title={product.name}
-                                        description={product.description}
-                                    />
+                            <div className="col-lg-8">
+                                {hasProducts && (
+                                    <DetailBlock
+                                        kicker={countLabel(products.length, 'tool')}
+                                        title="Tools deployed"
+                                    >
+                                        <EntityLinkList groups={productGroups} />
+                                    </DetailBlock>
+                                )}
+                                {hasProjects && (
+                                    <DetailBlock
+                                        kicker={countLabel(projects.length, 'project')}
+                                        title="Projects"
+                                    >
+                                        <EntityLinkList items={projectItems} />
+                                    </DetailBlock>
+                                )}
+                            </div>
+                            <div className="col-lg-4">
+                                <div className="wfDetailAside">
+                                    <FactSheet rows={factRows} />
                                 </div>
-                            ))}
+                            </div>
                         </div>
-                    </div>
-                </section>
-            )}
-
-            {projects.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Related projects</h3>
-                        <div className="row">
-                            {projects.map((project) => (
-                                <div key={project.slug} className="col-lg-6 mb-20">
-                                    <Link href={`/projects/${project.slug}`} className="wfBlockFull">
-                                        <div className="wfFeatureCard">
-                                            <div className="wfFlexBetween">
-                                                <h4 className="wfHeadingFeature">{project.name}</h4>
-                                                <p className="wfMuted">{project.status}</p>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
+                    ) : (
+                        <FactSheet rows={factRows} variant="strip" />
+                    )}
+                </div>
+            </section>
         </Layout>
     );
 }

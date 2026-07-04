@@ -1,7 +1,18 @@
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import EntityLinkList from '../detail/EntityLinkList';
+import { groupProjectsByStatus } from '../detail/meta';
 
 export default function ProjectsIndexClient({ projects }) {
+    const groups = groupProjectsByStatus(projects).map((group) => ({
+        title: group.title,
+        items: group.items.map((project) => ({
+            href: `/projects/${project.slug}`,
+            name: project.name,
+            sub: project.fullName || project.programme || null,
+            status: null, // status is the group header — no need to repeat it per row
+        })),
+    }));
+
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
@@ -21,17 +32,9 @@ export default function ProjectsIndexClient({ projects }) {
             <section className="section-box wfSectionDark wfPadSection">
                 <div className="container">
                     <div className="row">
-                        {projects.map((project) => (
-                            <div key={project.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                                <EntityCard
-                                    href={`/projects/${project.slug}`}
-                                    eyebrow={project.status}
-                                    title={project.name}
-                                    description={project.fullName}
-                                    meta={project.programme}
-                                />
-                            </div>
-                        ))}
+                        <div className="col-lg-9">
+                            <EntityLinkList groups={groups} />
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,128 +1,114 @@
-import Link from 'next/link';
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import DetailBlock from '../detail/DetailBlock';
+import EntityLinkList from '../detail/EntityLinkList';
+import FactSheet from '../detail/FactSheet';
+import { TagList, LinkTagList } from '../detail/Pills';
+import { groupProductsByType, countLabel } from '../detail/meta';
 
-function ProductGrid({ products }) {
-    return (
-        <div className="row">
-            {products.map((product) => (
-                <div key={product.slug} className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex">
-                    <EntityCard
-                        href={`/products/${product.slug}`}
-                        eyebrow={[product.type, product.status].filter(Boolean).join(' · ')}
-                        title={product.name}
-                        description={product.description}
-                    />
-                </div>
-            ))}
-        </div>
-    );
-}
+const productItem = (product) => ({
+    href: `/products/${product.slug}`,
+    name: product.name,
+    sub: product.description || null,
+    status: product.status,
+});
 
-export default function ThemeDetailClient({ theme, projects, products, countries, personas }) {
+export default function ThemeDetailClient({ theme, projects, products, countries, personas, donors = [] }) {
+    // Climate theme flags a handful of products as featured; lead with those,
+    // then group the remainder by component type.
     const featuredSlugs = theme.featuredProductSlugs;
-    const featuredProducts = featuredSlugs
-        ? products.filter((product) => featuredSlugs.includes(product.slug))
+    const featured = featuredSlugs
+        ? featuredSlugs.map((slug) => products.find((p) => p.slug === slug)).filter(Boolean)
         : [];
-    const otherProducts = featuredSlugs
-        ? products.filter((product) => !featuredSlugs.includes(product.slug))
-        : products;
+    const rest = featuredSlugs ? products.filter((p) => !featuredSlugs.includes(p.slug)) : products;
+
+    const productGroups = [
+        ...(featured.length > 0 ? [{ title: 'Featured', items: featured.map(productItem) }] : []),
+        ...groupProductsByType(rest).map((group) => ({
+            title: group.title,
+            items: group.items.map(productItem),
+        })),
+    ];
+
+    const projectItems = projects.map((project) => ({
+        href: `/projects/${project.slug}`,
+        name: project.name,
+        sub: project.fullName || project.programme || null,
+        status: project.status,
+    }));
+
+    const factRows = [
+        { label: 'Covers', value: theme.tagline },
+        {
+            label: 'Countries',
+            value: countries.length ? (
+                <LinkTagList
+                    items={countries.map((c) => ({ href: `/countries/${c.slug}`, label: c.name }))}
+                />
+            ) : null,
+        },
+        { label: 'Audience', value: personas.length ? <TagList items={personas.map((p) => p.name)} /> : null },
+        { label: 'Thematic', value: theme.thematicAreas?.length ? <TagList items={theme.thematicAreas} /> : null },
+        { label: 'Impact', value: theme.impactAreas?.length ? <TagList items={theme.impactAreas} /> : null },
+        { label: 'Funded by', value: donors.length ? <TagList items={donors.map((d) => d.name)} /> : null },
+    ];
 
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-8">
-                            <p className="wfMuted mb-10">{theme.tagline}</p>
+                        <div className="col-lg-9">
+                            <p className="wfSectionKicker">Work area</p>
                             <h1 className="display-3 wfTitleHero">{theme.name}</h1>
                             <p className="wfLead wfLeadMt">{theme.description}</p>
+                            <div className="wfInlineStats">
+                                <div className="wfInlineStat">
+                                    <span className="wfInlineStatValue">{products.length}</span>
+                                    <span className="wfInlineStatLabel">Tools</span>
+                                </div>
+                                <div className="wfInlineStat">
+                                    <span className="wfInlineStatValue">{projects.length}</span>
+                                    <span className="wfInlineStatLabel">Projects</span>
+                                </div>
+                                <div className="wfInlineStat">
+                                    <span className="wfInlineStatValue">{countries.length}</span>
+                                    <span className="wfInlineStatLabel">Countries</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {featuredSlugs ? (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        {featuredProducts.length > 0 && (
-                            <div className="wfGroupPanel mb-40">
-                                <h2 className="text-heading-3 wfGroupPanelTitle">Featured Products</h2>
-                                <ProductGrid products={featuredProducts} />
-                            </div>
-                        )}
-                        {otherProducts.length > 0 && (
-                            <div className="wfGroupPanel">
-                                <h2 className="text-heading-3 wfGroupPanelTitle">Related Products</h2>
-                                <ProductGrid products={otherProducts} />
-                            </div>
-                        )}
-                    </div>
-                </section>
-            ) : (
-                products.length > 0 && (
-                    <section className="section-box wfSectionDark wfPadSection">
-                        <div className="container">
-                            <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Products</h3>
-                            <ProductGrid products={products} />
+            <section className="section-box wfSectionDark wfPadSection">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8">
+                            {productGroups.length > 0 && (
+                                <DetailBlock
+                                    kicker={countLabel(products.length, 'tool')}
+                                    title="Tools & products"
+                                >
+                                    <EntityLinkList groups={productGroups} />
+                                </DetailBlock>
+                            )}
+                            {projectItems.length > 0 && (
+                                <DetailBlock
+                                    kicker={countLabel(projects.length, 'project')}
+                                    title="Projects"
+                                >
+                                    <EntityLinkList items={projectItems} />
+                                </DetailBlock>
+                            )}
                         </div>
-                    </section>
-                )
-            )}
-
-            {projects.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Projects</h3>
-                        <div className="row">
-                            {projects.map((project) => (
-                                <div key={project.slug} className="col-lg-6 mb-20">
-                                    <Link href={`/projects/${project.slug}`} className="wfBlockFull">
-                                        <div className="wfFeatureCard">
-                                            <div className="wfFlexBetween">
-                                                <h4 className="wfHeadingFeature">{project.name}</h4>
-                                                <p className="wfMuted">{project.status}</p>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            ))}
+                        <div className="col-lg-4">
+                            <div className="wfDetailAside">
+                                <FactSheet rows={factRows} />
+                            </div>
                         </div>
                     </div>
-                </section>
-            )}
-
-            {countries.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Countries active</h3>
-                        <ul className="wfChipList">
-                            {countries.map((country) => (
-                                <li key={country.slug}>
-                                    <Link href={`/countries/${country.slug}`} className="wfChip">
-                                        {country.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            )}
-
-            {personas.length > 0 && (
-                <section className="section-box wfSectionDark wfPadSection">
-                    <div className="container">
-                        <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Who this serves</h3>
-                        <ul className="wfChipList">
-                            {personas.map((persona) => (
-                                <li key={persona.slug}>
-                                    <span className="wfChip">{persona.name}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            )}
+                </div>
+            </section>
         </Layout>
     );
 }

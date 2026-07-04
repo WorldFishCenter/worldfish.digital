@@ -11,86 +11,33 @@ import AboutSection from './AboutSection';
 import BlogSection from './BlogSection';
 import VideoModal from './VideoModal';
 import Layout from '../layout/Layout';
-import EntityCard from '../elements/EntityCard';
+import DetailBlock from '../detail/DetailBlock';
+import FactSheet from '../detail/FactSheet';
+import RelationshipDiagram from '../detail/RelationshipDiagram';
+import { StatusPill, MetaPill, TagList, LinkTagList } from '../detail/Pills';
 
-function FocusAreas({ product }) {
-    const thematic = product.thematicAreas || [];
-    const impact = product.impactAreas || [];
-    if (thematic.length === 0 && impact.length === 0) return null;
-
-    return (
-        <section className="section-box wfSectionDark wfPadSection">
-            <div className="container">
-                <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Focus areas</h3>
-                {thematic.length > 0 && (
-                    <>
-                        <p className="wfMuted mb-10">Thematic</p>
-                        <ul className="wfChipList mb-30">
-                            {thematic.map((area) => (
-                                <li key={area}>
-                                    <span className="wfChip">{area}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-                )}
-                {impact.length > 0 && (
-                    <>
-                        <p className="wfMuted mb-10">Impact</p>
-                        <ul className="wfChipList">
-                            {impact.map((area) => (
-                                <li key={area}>
-                                    <span className="wfChip">{area}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-                )}
-            </div>
-        </section>
-    );
-}
-
-function RelatedTools({ related }) {
+function ConnectionsBlock({ product, related }) {
     if (!related || related.length === 0) return null;
-
     return (
-        <section className="section-box wfSectionDark wfPadSection">
-            <div className="container">
-                <h3 className="display-4 wfTitleHeroTight wfTitleHeroMb">Related tools</h3>
-                <div className="row">
-                    {related.map(({ label, product }) => (
-                        <div
-                            key={`${label}-${product.slug}`}
-                            className="col-lg-4 col-md-6 col-sm-12 mb-30 d-flex"
-                        >
-                            <EntityCard
-                                href={`/products/${product.slug}`}
-                                eyebrow={label}
-                                title={product.name}
-                                description={product.description}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <DetailBlock kicker="Ecosystem" title="How this connects">
+            <RelationshipDiagram product={product} related={related} />
+        </DetailBlock>
     );
 }
 
 function ThinProductHero({ product }) {
-    const meta = [product.type, product.status].filter(Boolean).join(' · ');
-
     return (
         <section className="section-box wfSectionDark wfPadHeroSm">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-8">
-                        {meta && <p className="wfMuted mb-10">{meta}</p>}
+                    <div className="col-lg-9">
+                        <p className="wfSectionKicker">Product</p>
+                        <div className="wfKickerRow">
+                            <MetaPill>{product.type}</MetaPill>
+                            <StatusPill status={product.status} />
+                        </div>
                         <h1 className="display-3 wfTitleHero">{product.name}</h1>
-                        {product.description && (
-                            <p className="wfLead wfLeadMt">{product.description}</p>
-                        )}
+                        {product.description && <p className="wfLead wfLeadMt">{product.description}</p>}
                         <div className="mt-40 d-flex flex-wrap gap-3">
                             {product.url && (
                                 <a
@@ -113,7 +60,52 @@ function ThinProductHero({ product }) {
     );
 }
 
-export default function ProductPageClient({ product, latestPosts, related }) {
+function ThinProductBody({ product, themes, countries, projects, related }) {
+    const factRows = [
+        { label: 'Lead developer', value: product.leadDev || null },
+        {
+            label: 'Work areas',
+            value: themes?.length ? (
+                <LinkTagList items={themes.map((t) => ({ href: `/our-work/${t.slug}`, label: t.name }))} />
+            ) : null,
+        },
+        {
+            label: 'Countries',
+            value: countries?.length ? (
+                <LinkTagList
+                    items={countries.map((c) => ({ href: `/countries/${c.slug}`, label: c.name }))}
+                />
+            ) : null,
+        },
+        {
+            label: 'In projects',
+            value: projects?.length ? (
+                <LinkTagList items={projects.map((p) => ({ href: `/projects/${p.slug}`, label: p.name }))} />
+            ) : null,
+        },
+        {
+            label: 'Thematic',
+            value: product.thematicAreas?.length ? <TagList items={product.thematicAreas} /> : null,
+        },
+        {
+            label: 'Impact',
+            value: product.impactAreas?.length ? <TagList items={product.impactAreas} /> : null,
+        },
+    ];
+
+    return (
+        <section className="section-box wfSectionDark wfPadSection">
+            <div className="container">
+                <div className="wfDetailBlock">
+                    <FactSheet rows={factRows} variant="strip" />
+                </div>
+                <ConnectionsBlock product={product} related={related} />
+            </div>
+        </section>
+    );
+}
+
+export default function ProductPageClient({ product, latestPosts, related, themes, countries, projects }) {
     const [modal, setModal] = useState(false);
     const [videoLoading, setVideoLoading] = useState(true);
     const rich = product.rich;
@@ -126,8 +118,13 @@ export default function ProductPageClient({ product, latestPosts, related }) {
         return (
             <Layout>
                 <ThinProductHero product={product} />
-                <FocusAreas product={product} />
-                <RelatedTools related={related} />
+                <ThinProductBody
+                    product={product}
+                    themes={themes}
+                    countries={countries}
+                    projects={projects}
+                    related={related}
+                />
             </Layout>
         );
     }
@@ -157,7 +154,13 @@ export default function ProductPageClient({ product, latestPosts, related }) {
                     youtubeId={rich.videoYoutubeId}
                 />
             )}
-            <RelatedTools related={related} />
+            {related && related.length > 0 && (
+                <section className="section-box wfSectionDark wfPadSection">
+                    <div className="container">
+                        <ConnectionsBlock product={product} related={related} />
+                    </div>
+                </section>
+            )}
         </Layout>
     );
 }
