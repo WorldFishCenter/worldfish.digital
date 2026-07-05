@@ -9,7 +9,12 @@
     "dev": "next dev",
     "sass:build": "sass public/assets/scss/style.scss public/assets/css/style.css --style=expanded --no-source-map",
     "sass": "sass --watch public/assets/scss/style.scss:public/assets/css/style.css --style=expanded --no-source-map",
-    "prebuild": "npm run sass:build",
+    "sync": "node scripts/sync-airtable.js",
+    "validate": "node scripts/validate-content.js",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version",
+    "prebuild": "npm run validate && npm run sass:build",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."

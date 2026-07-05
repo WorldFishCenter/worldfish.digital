@@ -1,7 +1,15 @@
+const { version } = require('./package.json')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  
+
+  // Expose the semantic version (single source of truth: package.json) to the
+  // app at build time. Read it anywhere via `@/lib/version`. See NEWS.md.
+  env: {
+    NEXT_PUBLIC_APP_VERSION: version,
+  },
+
   // Optimize images
   images: {
     formats: ['image/avif', 'image/webp'],

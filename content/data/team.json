@@ -1,36 +1,36 @@
 {
   "team": [
     {
-      "slug": "alex-tilley",
-      "name": "Alex Tilley",
-      "role": "Digital Innovation Lead",
-      "bio": "Leads WorldFish Digital's platform strategy, connecting data science and product development to real-world fisheries and aquaculture challenges.",
-      "email": "a.tilley@cgiar.org",
-      "initials": "AT"
-    },
-    {
       "slug": "lorenzo-longobardi",
       "name": "Lorenzo Longobardi",
-      "role": "Software Engineer",
-      "bio": "Builds and maintains the Peskas ecosystem and WorldFish Digital's core data infrastructure.",
+      "role": "Data Scientist",
       "email": "l.longobardi@cgiar.org",
+      "bio": "Builds and maintains the Peskas ecosystem and WorldFish Digital's core data infrastructure.",
       "initials": "LL"
     },
     {
-      "slug": "hamza",
-      "name": "Hamza",
-      "role": "Team member",
-      "bio": "Bio coming soon.",
-      "email": "hamza@example.com",
-      "initials": "H"
+      "slug": "alex-tilley",
+      "name": "Alex Tilley",
+      "role": "Digital Innovation Lead",
+      "email": "a.tilley@cgiar.org",
+      "bio": "Leads WorldFish Digital's platform strategy, connecting data science and product development to real-world fisheries and aquaculture challenges.",
+      "initials": "AT"
     },
     {
       "slug": "jerome",
       "name": "Jerome",
       "role": "Team member",
+      "email": null,
       "bio": "Bio coming soon.",
-      "email": "jerome@example.com",
       "initials": "J"
+    },
+    {
+      "slug": "hamza",
+      "name": "Hamza",
+      "role": "Team member",
+      "email": null,
+      "bio": "Bio coming soon.",
+      "initials": "H"
     }
   ]
 }

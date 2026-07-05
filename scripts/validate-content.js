@@ -16,6 +16,8 @@ const countries = read('countries.json').countries;
 const donors = read('donors.json').donors;
 const personas = read('personas.json').personas;
 const relationships = read('relationships.json').relationships;
+const partners = read('partners.json').partners;
+const initiatives = read('initiatives.json').initiatives;
 const tax = read('taxonomy.json');
 
 const errors = [];
@@ -27,6 +29,8 @@ const S = {
     country: setOf(countries),
     donor: setOf(donors),
     persona: setOf(personas),
+    partner: setOf(partners),
+    initiative: setOf(initiatives),
 };
 
 // --- referential integrity ---
@@ -40,11 +44,14 @@ projects.forEach((p) => {
     refs(`project/${p.slug}`, 'product', p.leadProductSlugs);
     refs(`project/${p.slug}`, 'theme', p.themeSlugs);
     refs(`project/${p.slug}`, 'donor', p.donorSlugs);
+    refs(`project/${p.slug}`, 'partner', p.partnerSlugs);
+    refs(`project/${p.slug}`, 'initiative', p.initiative ? [p.initiative] : []);
 });
 products.forEach((p) => {
     refs(`product/${p.slug}`, 'country', p.countrySlugs);
     refs(`product/${p.slug}`, 'project', p.projectSlugs);
     refs(`product/${p.slug}`, 'theme', p.themeSlugs);
+    refs(`product/${p.slug}`, 'initiative', p.initiative ? [p.initiative] : []);
 });
 themes.forEach((t) => {
     refs(`theme/${t.slug}`, 'project', t.projectSlugs);
@@ -64,6 +71,11 @@ personas.forEach((p) => {
     refs(`persona/${p.slug}`, 'theme', p.themeSlugs);
     refs(`persona/${p.slug}`, 'product', p.keyProductSlugs);
 });
+initiatives.forEach((i) => {
+    refs(`initiative/${i.slug}`, 'product', i.productSlugs);
+    refs(`initiative/${i.slug}`, 'project', i.projectSlugs);
+});
+partners.forEach((p) => refs(`partner/${p.slug}`, 'project', p.projectSlugs));
 relationships.forEach((r, i) => {
     refs(`relationship[${i}]`, 'product', [r.from, r.to]);
     if (!tax.relationshipTypes.includes(r.type))
@@ -95,6 +107,51 @@ themes.forEach((t) => {
 countries.forEach((c) => {
     inSet(`country/${c.slug}`, 'airtableCountry', [c.airtableCountry], tax.countries);
 });
+
+// --- transitive-reduction warnings (non-fatal) ---
+// A relationship should be DIRECT. Flag any edge A→C already implied by a longer
+// path A→…→C (e.g. "App depends on Pipeline" when App→API→Pipeline exists), so it
+// can be removed in Airtable. Non-fatal; does not affect the exit code.
+const FLOW_FORWARD = new Set(['feeds into', 'enables']);
+const flow = relationships.map((r) => ({
+    s: FLOW_FORWARD.has(r.type) ? r.from : r.to,
+    t: FLOW_FORWARD.has(r.type) ? r.to : r.from,
+    orig: r,
+}));
+const flowAdj = new Map();
+flow.forEach(({ s, t }) => {
+    if (!flowAdj.has(s)) flowAdj.set(s, []);
+    flowAdj.get(s).push(t);
+});
+const reachableViaLongerPath = (s, t) => {
+    const seen = new Set([s]);
+    const queue = [s];
+    while (queue.length) {
+        const n = queue.shift();
+        for (const m of flowAdj.get(n) || []) {
+            if (n === s && m === t) continue; // ignore the direct edge under test
+            if (m === t) return true;
+            if (!seen.has(m)) {
+                seen.add(m);
+                queue.push(m);
+            }
+        }
+    }
+    return false;
+};
+const warnings = [
+    ...new Set(
+        flow
+            .filter(({ s, t }) => reachableViaLongerPath(s, t))
+            .map(({ orig }) => `"${orig.from}" ${orig.type} "${orig.to}"`)
+    ),
+];
+if (warnings.length) {
+    console.warn(
+        `⚠ ${warnings.length} redundant "shortcut" relationship(s) — implied by a longer path, consider removing in Airtable:`
+    );
+    warnings.forEach((w) => console.warn('  ' + w));
+}
 
 if (errors.length) {
     console.error(`✗ content validation failed (${errors.length}):`);

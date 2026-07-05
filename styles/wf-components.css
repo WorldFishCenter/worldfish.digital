@@ -1570,25 +1570,19 @@ a.wfMetaPill:hover {
   transform: translateX(3px);
 }
 
-/* --- Relationship diagram (node-link lineage) --- */
-.wfRelDiagram {
+/* --- Relationship diagram (multi-hop lineage graph) --- */
+.wfRelWrap {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.wfRelGraph {
   position: relative;
-  display: grid;
+  display: flex;
   align-items: center;
-  gap: 40px 60px;
-  max-width: 940px;
-}
-
-.wfRelDiagram--both {
-  grid-template-columns: 1fr auto 1fr;
-}
-
-.wfRelDiagram--upOnly {
-  grid-template-columns: 1fr auto;
-}
-
-.wfRelDiagram--downOnly {
-  grid-template-columns: auto 1fr;
+  gap: 68px;
+  min-width: min-content;
+  padding: 10px 4px;
 }
 
 .wfRelSvg {
@@ -1601,83 +1595,71 @@ a.wfMetaPill:hover {
 
 .wfRelPath {
   fill: none;
-  stroke: var(--wf-color-accent);
   stroke-width: 1.5;
-  opacity: 0.5;
+  transition:
+    stroke 0.2s ease,
+    stroke-width 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.wfRelCol {
+/* Edge touching the active node — emphasized. */
+.wfRelPath--on {
+  stroke: var(--wf-color-accent);
+  stroke-width: 2;
+  opacity: 1;
+}
+
+/* Edge not connected to the active node — faded to context. */
+.wfRelPath--off {
+  stroke: var(--wf-border-medium);
+  opacity: 0.4;
+}
+
+/* Initiative grouping container (compound-graph boundary, drawn behind the graph). */
+.wfRelGroupBox {
+  fill: rgba(87, 179, 209, 0.045);
+  stroke: var(--wf-border-accent-soft);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+}
+
+.wfRelGroupLabel {
+  fill: var(--wf-color-accent);
+  font-family: var(--wf-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  opacity: 0.85;
+}
+
+.wfRelColumn {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  min-width: 0;
-}
-
-.wfRelColUp {
-  align-items: flex-end;
-  text-align: right;
-}
-
-.wfRelColDown {
-  align-items: flex-start;
-}
-
-.wfRelColCenter {
-  align-items: center;
-}
-
-.wfRelLane {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.wfRelColUp .wfRelLane {
-  align-items: flex-end;
-}
-
-.wfRelLaneLabel {
-  font-family: var(--wf-font-mono);
-  font-size: 11px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--wf-text-slate-400);
-}
-
-.wfRelCount {
-  color: var(--wf-color-accent);
-  margin-left: 6px;
-}
-
-.wfRelNodes {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.wfRelColUp .wfRelNodes {
-  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
 }
 
 .wfRelNode {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 11px 16px;
+  gap: 5px;
+  padding: 12px 16px;
+  min-width: 172px;
   border: 1px solid var(--wf-border-medium);
+  border-left-width: 3px;
   border-radius: 10px;
   background-color: var(--wf-surface-deep);
   text-decoration: none;
   transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .wfRelNode:hover {
-  border-color: var(--wf-border-accent-medium);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .wfRelNodeName {
@@ -1688,6 +1670,9 @@ a.wfMetaPill:hover {
 }
 
 .wfRelNodeType {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--wf-font-mono);
   font-size: 10px;
   letter-spacing: 0.04em;
@@ -1695,71 +1680,61 @@ a.wfMetaPill:hover {
   color: var(--wf-text-slate-400);
 }
 
-.wfRelHub {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 16px 24px;
-  border: 1px solid var(--wf-border-accent-medium);
-  border-radius: 12px;
-  background-color: var(--wf-surface-panel);
-  background-image: radial-gradient(ellipse at top left, rgba(87, 179, 209, 0.16), transparent 60%);
-  box-shadow: 0 0 34px rgba(87, 179, 209, 0.12);
-  text-align: center;
-  align-items: center;
+.wfRelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
-.wfRelHubName {
+.wfRelNode--focus {
+  box-shadow:
+    0 0 0 1px var(--wf-color-accent),
+    0 0 30px rgba(87, 179, 209, 0.22);
+  background-image: radial-gradient(ellipse at top left, rgba(87, 179, 209, 0.14), transparent 60%);
+}
+
+.wfRelNode--focus .wfRelNodeName {
   color: var(--wf-text-on-dark);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
 }
 
-.wfRelHubType {
+/* Node not connected to the active node — faded to context. */
+.wfRelNode--dim {
+  opacity: 0.3;
+}
+
+.wfRelHere {
   font-family: var(--wf-font-mono);
-  font-size: 10px;
-  letter-spacing: 0.05em;
+  font-size: 9px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--wf-color-accent);
+  margin-top: 2px;
 }
 
-@media (max-width: 720px) {
-  .wfRelDiagram,
-  .wfRelDiagram--both,
-  .wfRelDiagram--upOnly,
-  .wfRelDiagram--downOnly {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    max-width: none;
-  }
+.wfRelLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-top: 30px;
+}
 
-  .wfRelCol {
-    gap: 18px;
-  }
+.wfRelLegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--wf-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+}
 
-  .wfRelColUp,
-  .wfRelColDown,
-  .wfRelColCenter {
-    align-items: stretch;
-    text-align: left;
-  }
-
-  .wfRelColUp .wfRelLane,
-  .wfRelColUp .wfRelNodes {
-    align-items: stretch;
-  }
-
-  .wfRelHub {
-    align-items: center;
-  }
-
-  .wfRelNode {
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-  }
+.wfRelLegendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 /* --- Editorial index (work-area themes as typographic rows) --- */

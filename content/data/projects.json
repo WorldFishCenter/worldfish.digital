@@ -1,94 +1,326 @@
 {
   "projects": [
     {
-      "slug": "aabs",
-      "name": "AABS",
-      "status": "Active",
-      "lead": "j.schmidt@cgiar.org",
-      "countrySlugs": ["kenya", "zanzibar", "mozambique"],
-      "leadProductSlugs": ["zanzibar-data-pipeline", "coasts-data-pipeline", "mozambique-data-pipeline", "kenya-data-pipeline", "peskas-api", "wcs-wf-app", "zanzibar-app", "coasts-app", "validation-app", "tracks-app", "fishing-gear-prediction", "tracks-effort-model"],
-      "themeSlugs": ["small-scale-fisheries"],
-      "donorSlugs": ["dfat-australia"],
+      "slug": "gates",
+      "name": "Gates",
+      "status": "Pipeline",
+      "lead": "a.tilley@cgiar.org",
+      "countrySlugs": [
+        "global"
+      ],
+      "leadProductSlugs": [
+        "fishbasepro"
+      ],
+      "themeSlugs": [
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "gates-foundation"
+      ],
+      "partnerSlugs": [],
       "archived": false,
-      "fullName": "Asia-Africa BlueTech Superhighway",
+      "fullName": null,
       "programme": "Standalone",
-      "thematicAreas": ["Fisheries"],
-      "impactAreas": ["Sustainable Fisheries"]
+      "thematicAreas": [
+        "Digital & AI"
+      ],
+      "impactAreas": []
+    },
+    {
+      "slug": "uae",
+      "name": "UAE",
+      "status": "Pipeline",
+      "lead": "a.tilley@cgiar.org",
+      "countrySlugs": [
+        "global"
+      ],
+      "leadProductSlugs": [],
+      "themeSlugs": [
+        "climate-adaptation"
+      ],
+      "donorSlugs": [
+        "uae-govt"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Climate"
+      ],
+      "impactAreas": [
+        "Climate Adaptation"
+      ]
+    },
+    {
+      "slug": "fssp2",
+      "name": "FSSP2",
+      "status": "Completed",
+      "lead": "a.tilley@cgiar.org",
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "leadProductSlugs": [
+        "peskas"
+      ],
+      "themeSlugs": [
+        "small-scale-fisheries",
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "norway-norad",
+        "minderoo-foundation",
+        "aciar",
+        "swedbio"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": null,
+      "programme": "Peskas ecosystem",
+      "thematicAreas": [
+        "Fisheries",
+        "Digital & AI"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ],
+      "whatItWas": "Second phase of the Norway/NORAD-funded Timor-Leste Fisheries Support Program (FSSP) that piloted and scaled PeskAAS, PDS vessel tracking, and ODK-based surveys from 2015-2022. Also received support from Minderoo Foundation (Global Fishing Index case study), ACIAR, and Swedbio.",
+      "initiative": "peskas-ecosystem"
     },
     {
       "slug": "casa",
       "name": "CASA",
       "status": "Active",
       "lead": "j.nyongesa@cgiar.org",
-      "countrySlugs": ["kenya"],
-      "leadProductSlugs": ["casa-app"],
-      "themeSlugs": ["aquaculture"],
-      "donorSlugs": ["nanmo-fcdo"],
+      "countrySlugs": [
+        "kenya"
+      ],
+      "leadProductSlugs": [
+        "casa-app"
+      ],
+      "themeSlugs": [
+        "aquaculture"
+      ],
+      "donorSlugs": [
+        "nanmo-fcdo"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": "Climate-Resilient Aquaculture Systems for Africa",
       "programme": "Standalone",
-      "thematicAreas": ["Aquaculture"],
-      "impactAreas": ["Productive Aquaculture"]
+      "thematicAreas": [
+        "Aquaculture"
+      ],
+      "impactAreas": [
+        "Productive Aquaculture"
+      ]
+    },
+    {
+      "slug": "ict4ssf",
+      "name": "ICT4SSF",
+      "status": "Completed",
+      "lead": null,
+      "countrySlugs": [
+        "global"
+      ],
+      "leadProductSlugs": [],
+      "themeSlugs": [
+        "data-infrastructure",
+        "small-scale-fisheries"
+      ],
+      "donorSlugs": [
+        "fao"
+      ],
+      "partnerSlugs": [],
+      "archived": true,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Digital & AI",
+        "Fisheries"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ],
+      "whatItWas": "FAO MoU research and policy project (~2020-2022) on information and communication technologies for small-scale fisheries, producing a published report featuring Peskas as a case study chapter.",
+      "productsCreated": [
+        "ICT4SSF published report (Peskas chapter)"
+      ]
+    },
+    {
+      "slug": "fishbase-consortium",
+      "name": "FishBase Consortium",
+      "status": "Active",
+      "lead": null,
+      "countrySlugs": [
+        "global"
+      ],
+      "leadProductSlugs": [],
+      "themeSlugs": [
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "worldfish-cgiar"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Digital & AI"
+      ],
+      "impactAreas": []
     },
     {
       "slug": "ikanadapt",
       "name": "IkanAdapt",
       "status": "Active",
       "lead": "d.mills@cgiar.org",
-      "countrySlugs": ["timor-leste"],
-      "leadProductSlugs": ["peskas-app"],
-      "themeSlugs": ["small-scale-fisheries", "climate-adaptation"],
-      "donorSlugs": ["dfat-australia"],
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "leadProductSlugs": [
+        "peskas-app"
+      ],
+      "themeSlugs": [
+        "small-scale-fisheries",
+        "climate-adaptation"
+      ],
+      "donorSlugs": [
+        "dfat-australia"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": "IKAN Adapt: Strengthening the Adaptive Capacity, Resilience and Biodiversity Conservation Ability of Fisheries and Aquaculture-Dependent Livelihoods in Timor-Leste",
       "programme": "Standalone",
-      "thematicAreas": ["Fisheries", "Climate"],
-      "impactAreas": ["Sustainable Fisheries", "Climate Adaptation"]
+      "thematicAreas": [
+        "Fisheries",
+        "Climate"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries",
+        "Climate Adaptation"
+      ]
     },
     {
       "slug": "nsfm",
       "name": "NSFM",
       "status": "Completed",
       "lead": "d.mills@cgiar.org",
-      "countrySlugs": ["timor-leste"],
-      "leadProductSlugs": ["nutrient-profiles"],
-      "themeSlugs": ["nutrition-food-systems"],
-      "donorSlugs": ["dfat-australia"],
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "leadProductSlugs": [
+        "nutrient-profiles"
+      ],
+      "themeSlugs": [
+        "nutrition-food-systems"
+      ],
+      "donorSlugs": [
+        "dfat-australia"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": null,
       "programme": "Standalone",
-      "thematicAreas": ["Nutrition"],
-      "impactAreas": ["Nutrition Security"]
+      "thematicAreas": [
+        "Nutrition"
+      ],
+      "impactAreas": [
+        "Nutrition Security"
+      ]
     },
     {
       "slug": "fasa",
       "name": "FASA",
       "status": "Active",
       "lead": "m.owen@cgiar.org",
-      "countrySlugs": ["kenya", "nigeria", "zambia"],
-      "leadProductSlugs": ["fasa-feed-formulation-app"],
-      "themeSlugs": ["aquaculture", "climate-adaptation"],
-      "donorSlugs": ["nanmo-fcdo"],
+      "countrySlugs": [
+        "kenya",
+        "nigeria",
+        "zambia"
+      ],
+      "leadProductSlugs": [
+        "fasa-feed-formulation-app"
+      ],
+      "themeSlugs": [
+        "aquaculture",
+        "climate-adaptation"
+      ],
+      "donorSlugs": [
+        "nanmo-fcdo"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": "Development and Scaling of Sustainable Feeds for Resilient Aquatic Food Systems in Sub-Saharan Africa",
       "programme": "Standalone",
-      "thematicAreas": ["Aquaculture", "Climate"],
-      "impactAreas": ["Productive Aquaculture", "Climate Adaptation"]
+      "thematicAreas": [
+        "Aquaculture",
+        "Climate"
+      ],
+      "impactAreas": [
+        "Productive Aquaculture",
+        "Climate Adaptation"
+      ]
     },
     {
       "slug": "profishblue",
       "name": "ProFishBlue",
       "status": "Completed",
       "lead": "P.Hossain@cgiar.org",
-      "countrySlugs": ["malawi"],
-      "leadProductSlugs": ["malawi-ssf-data-pipeline", "peskas-training-course"],
-      "themeSlugs": ["small-scale-fisheries"],
-      "donorSlugs": ["world-bank-afdb"],
+      "countrySlugs": [
+        "malawi"
+      ],
+      "leadProductSlugs": [
+        "malawi-ssf-data-pipeline",
+        "peskas-training-course"
+      ],
+      "themeSlugs": [
+        "small-scale-fisheries"
+      ],
+      "donorSlugs": [
+        "world-bank-afdb"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": "Programme for Improving Fisheries Governance and Blue Economy Trade Corridors in the SADC Region",
       "programme": "Standalone",
-      "thematicAreas": ["Fisheries"],
-      "impactAreas": ["Sustainable Fisheries"]
+      "thematicAreas": [
+        "Fisheries"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ]
+    },
+    {
+      "slug": "eritrea-peskas-assessment",
+      "name": "Eritrea Peskas Assessment",
+      "status": "Completed",
+      "lead": null,
+      "countrySlugs": [
+        "eritrea"
+      ],
+      "leadProductSlugs": [],
+      "themeSlugs": [
+        "small-scale-fisheries",
+        "data-infrastructure"
+      ],
+      "donorSlugs": [],
+      "partnerSlugs": [],
+      "archived": true,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Fisheries",
+        "Digital & AI"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ],
+      "whatItWas": "Assessment of Peskas deployment potential for Eritrean inland fisheries.",
+      "productsCreated": [
+        "Peskas evaluation report"
+      ]
     },
     {
       "slug": "saaf",
@@ -96,14 +328,67 @@
       "status": "Active",
       "lead": "c.rossignoli@cgiar.org",
       "countrySlugs": [],
-      "leadProductSlugs": ["aquadata"],
-      "themeSlugs": ["small-scale-fisheries"],
-      "donorSlugs": ["eu-cgiar"],
+      "leadProductSlugs": [
+        "aquadata"
+      ],
+      "themeSlugs": [
+        "small-scale-fisheries"
+      ],
+      "donorSlugs": [
+        "eu-cgiar"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": "Sustainable Animal and Aquatic Foods",
       "programme": "Standalone",
-      "thematicAreas": ["Fisheries"],
-      "impactAreas": ["Sustainable Fisheries"]
+      "thematicAreas": [
+        "Fisheries"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ]
+    },
+    {
+      "slug": "raqfs-aquadata-initiative",
+      "name": "RAqFS / AQUADATA Initiative",
+      "status": "Completed",
+      "lead": null,
+      "countrySlugs": [
+        "global",
+        "ghana"
+      ],
+      "leadProductSlugs": [
+        "aquadata-portal",
+        "aquatic-food-ontology"
+      ],
+      "themeSlugs": [
+        "data-infrastructure",
+        "small-scale-fisheries",
+        "aquaculture"
+      ],
+      "donorSlugs": [
+        "cgiar-raqfs"
+      ],
+      "partnerSlugs": [],
+      "archived": true,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Digital & AI",
+        "Fisheries",
+        "Aquaculture"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries",
+        "Productive Aquaculture"
+      ],
+      "whatItWas": "CGIAR Resilient Aquatic Food Systems Initiative WP1 (~2021-2024) — data and digital infrastructure for aquatic food systems, and the direct predecessor program to the current Data & Digital work area.\n\nNote: Key document: \"Digital Innovations in RAqFS\" publication.",
+      "productsCreated": [
+        "AquaData Portal (evolved into Aquadata)",
+        "MEL Dashboard",
+        "AgUnity app integration",
+        "Aquatic Food Ontology"
+      ]
     },
     {
       "slug": "dd-science-team",
@@ -112,207 +397,221 @@
       "lead": "a.tilley@cgiar.org",
       "countrySlugs": [],
       "leadProductSlugs": [],
-      "themeSlugs": ["data-infrastructure"],
-      "donorSlugs": ["worldfish-cgiar"],
+      "themeSlugs": [
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "worldfish-cgiar"
+      ],
+      "partnerSlugs": [],
       "archived": false,
       "fullName": null,
       "programme": "Digital Aquatic Food Systems Program",
-      "thematicAreas": ["Digital & AI"],
-      "impactAreas": []
-    },
-    {
-      "slug": "dta",
-      "name": "DTA",
-      "status": "Active",
-      "lead": "a.tilley@cgiar.org",
-      "countrySlugs": ["global"],
-      "leadProductSlugs": ["pondcube", "phenofish"],
-      "themeSlugs": ["aquaculture", "data-infrastructure"],
-      "donorSlugs": ["worldfish-cgiar"],
-      "archived": false,
-      "fullName": "Digital Transformation Accelerator",
-      "programme": "Digital Aquatic Food Systems Program",
-      "thematicAreas": ["Aquaculture", "Digital & AI"],
-      "impactAreas": ["Productive Aquaculture"]
-    },
-    {
-      "slug": "peskas-service",
-      "name": "Peskas Service",
-      "status": "Completed",
-      "lead": "a.tilley@cgiar.org",
-      "countrySlugs": ["timor-leste"],
-      "leadProductSlugs": ["peskas"],
-      "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
-      "donorSlugs": ["norway-norad"],
-      "archived": false,
-      "fullName": null,
-      "programme": "Peskas ecosystem",
-      "thematicAreas": ["Fisheries", "Digital & AI"],
-      "impactAreas": ["Sustainable Fisheries"]
-    },
-    {
-      "slug": "ikan-ba-futuru",
-      "name": "Ikan Ba Futuru",
-      "status": "Active",
-      "lead": "d.mills@cgiar.org",
-      "countrySlugs": ["timor-leste"],
-      "leadProductSlugs": [],
-      "themeSlugs": ["small-scale-fisheries", "nutrition-food-systems"],
-      "donorSlugs": ["dfat-australia"],
-      "archived": false,
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Fisheries", "Nutrition"],
-      "impactAreas": ["Sustainable Fisheries", "Nutrition Security"]
-    },
-    {
-      "slug": "gates",
-      "name": "Gates",
-      "status": "Pipeline",
-      "lead": "a.tilley@cgiar.org",
-      "countrySlugs": ["global"],
-      "leadProductSlugs": ["fishbasepro"],
-      "themeSlugs": ["data-infrastructure"],
-      "donorSlugs": ["gates-foundation"],
-      "archived": false,
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Digital & AI"],
-      "impactAreas": []
-    },
-    {
-      "slug": "uae",
-      "name": "UAE",
-      "status": "Pipeline",
-      "lead": "a.tilley@cgiar.org",
-      "countrySlugs": ["global"],
-      "leadProductSlugs": [],
-      "themeSlugs": ["climate-adaptation"],
-      "donorSlugs": ["uae-govt"],
-      "archived": false,
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Climate"],
-      "impactAreas": ["Climate Adaptation"]
-    },
-    {
-      "slug": "fssp2",
-      "name": "FSSP2",
-      "status": "Completed",
-      "lead": "a.tilley@cgiar.org",
-      "countrySlugs": ["timor-leste"],
-      "leadProductSlugs": ["peskas"],
-      "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
-      "donorSlugs": ["norway-norad", "minderoo-foundation", "aciar", "swedbio"],
-      "archived": false,
-      "historicalNote": "Second phase of the Norway/NORAD-funded Timor-Leste Fisheries Support Program (FSSP) that piloted and scaled PeskAAS, PDS vessel tracking, and ODK-based surveys from 2015-2022. Also received support from Minderoo Foundation (Global Fishing Index case study), ACIAR, and Swedbio.",
-      "fullName": null,
-      "programme": "Peskas ecosystem",
-      "thematicAreas": ["Fisheries", "Digital & AI"],
-      "impactAreas": ["Sustainable Fisheries"]
-    },
-    {
-      "slug": "fishbase-consortium",
-      "name": "FishBase Consortium",
-      "status": "Active",
-      "lead": null,
-      "countrySlugs": ["global"],
-      "leadProductSlugs": [],
-      "themeSlugs": ["data-infrastructure"],
-      "donorSlugs": ["worldfish-cgiar"],
-      "archived": false,
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Digital & AI"],
-      "impactAreas": []
-    },
-    {
-      "slug": "raqfs-aquadata-initiative",
-      "name": "RAqFS / AQUADATA Initiative",
-      "status": "Completed",
-      "lead": null,
-      "countrySlugs": ["global", "ghana"],
-      "leadProductSlugs": ["aquadata-portal", "aquatic-food-ontology"],
-      "themeSlugs": ["data-infrastructure", "small-scale-fisheries", "aquaculture"],
-      "donorSlugs": ["cgiar-raqfs"],
-      "archived": true,
-      "whatItWas": "CGIAR Resilient Aquatic Food Systems Initiative WP1 (~2021-2024) — data and digital infrastructure for aquatic food systems, and the direct predecessor program to the current Data & Digital work area.",
-      "productsCreated": ["AquaData Portal (evolved into Aquadata)", "MEL Dashboard", "AgUnity app integration", "Aquatic Food Ontology"],
-      "note": "Key document: \"Digital Innovations in RAqFS\" publication.",
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Digital & AI", "Fisheries", "Aquaculture"],
-      "impactAreas": ["Sustainable Fisheries", "Productive Aquaculture"]
-    },
-    {
-      "slug": "ssf-voice",
-      "name": "SSF Voice / Swiss Philanthropy Project",
-      "status": "Completed",
-      "lead": null,
-      "countrySlugs": ["malaysia", "nigeria", "west-africa-caopa", "colombia"],
-      "leadProductSlugs": [],
-      "themeSlugs": ["small-scale-fisheries"],
-      "donorSlugs": ["swiss-philanthropy-foundation", "oak-foundation"],
-      "archived": true,
-      "whatItWas": "A digital advocacy project (~2021-2023) using social media, video, and communications tools to amplify small-scale fisher voices on issues like bottom trawling and inshore exclusion zones.",
-      "productsCreated": ["4 advocacy videos", "Social media template packs (Malaysia/JARING, Nigeria)", "IEZ digital publishing outputs"],
-      "note": "Not a \"digital tool\" in the Peskas sense, but relevant to a broader WorldFish Digital narrative that includes communications/advocacy work.",
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Fisheries"],
-      "impactAreas": ["Sustainable Fisheries"]
-    },
-    {
-      "slug": "ict4ssf",
-      "name": "ICT4SSF",
-      "status": "Completed",
-      "lead": null,
-      "countrySlugs": ["global"],
-      "leadProductSlugs": [],
-      "themeSlugs": ["data-infrastructure", "small-scale-fisheries"],
-      "donorSlugs": ["fao"],
-      "archived": true,
-      "whatItWas": "FAO MoU research and policy project (~2020-2022) on information and communication technologies for small-scale fisheries, producing a published report featuring Peskas as a case study chapter.",
-      "productsCreated": ["ICT4SSF published report (Peskas chapter)"],
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Digital & AI", "Fisheries"],
-      "impactAreas": ["Sustainable Fisheries"]
-    },
-    {
-      "slug": "eritrea-peskas-assessment",
-      "name": "Eritrea Peskas Assessment",
-      "status": "Completed",
-      "lead": null,
-      "countrySlugs": ["eritrea"],
-      "leadProductSlugs": [],
-      "themeSlugs": ["small-scale-fisheries", "data-infrastructure"],
-      "donorSlugs": [],
-      "archived": true,
-      "whatItWas": "Assessment of Peskas deployment potential for Eritrean inland fisheries.",
-      "productsCreated": ["Peskas evaluation report"],
-      "fullName": null,
-      "programme": "Standalone",
-      "thematicAreas": ["Fisheries", "Digital & AI"],
-      "impactAreas": ["Sustainable Fisheries"]
+      "thematicAreas": [
+        "Digital & AI"
+      ],
+      "impactAreas": [],
+      "initiative": "dafs-program"
     },
     {
       "slug": "aquatic-food-ontology-project",
       "name": "Aquatic Food Ontology / Fish Ontology Project",
       "status": "Completed",
       "lead": null,
-      "countrySlugs": ["global"],
-      "leadProductSlugs": ["aquatic-food-ontology"],
-      "themeSlugs": ["data-infrastructure"],
-      "donorSlugs": ["cgiar-raqfs"],
+      "countrySlugs": [
+        "global"
+      ],
+      "leadProductSlugs": [
+        "aquatic-food-ontology"
+      ],
+      "themeSlugs": [
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "cgiar-raqfs"
+      ],
+      "partnerSlugs": [],
       "archived": true,
-      "whatItWas": "Multi-year project (~2021-2022) to build a machine-readable controlled vocabulary for fisheries and aquaculture data systems, iterating from SSF Ontology to Fish Ontology to Aquatic Food Ontology. Contracted with Quantitative Aquatics and Alliance Bioversity-CIAT.",
-      "productsCreated": ["Aquatic Food Ontology (data product)", "\"The Digital Language of Fisheries and Aquaculture\" report"],
-      "note": "A genuine digital public good, positioned in the Data Infrastructure theme alongside FishBasePro.",
       "fullName": null,
       "programme": "Standalone",
-      "thematicAreas": ["Digital & AI"],
-      "impactAreas": []
+      "thematicAreas": [
+        "Digital & AI"
+      ],
+      "impactAreas": [],
+      "whatItWas": "Multi-year project (~2021-2022) to build a machine-readable controlled vocabulary for fisheries and aquaculture data systems, iterating from SSF Ontology to Fish Ontology to Aquatic Food Ontology. Contracted with Quantitative Aquatics and Alliance Bioversity-CIAT.\n\nNote: A genuine digital public good, positioned in the Data Infrastructure theme alongside FishBasePro.",
+      "productsCreated": [
+        "Aquatic Food Ontology (data product)",
+        "\"The Digital Language of Fisheries and Aquaculture\" report"
+      ]
+    },
+    {
+      "slug": "dta",
+      "name": "DTA",
+      "status": "Active",
+      "lead": "a.tilley@cgiar.org",
+      "countrySlugs": [
+        "global"
+      ],
+      "leadProductSlugs": [
+        "pondcube",
+        "phenofish"
+      ],
+      "themeSlugs": [
+        "aquaculture",
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "worldfish-cgiar"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": "Digital Transformation Accelerator",
+      "programme": "Digital Aquatic Food Systems Program",
+      "thematicAreas": [
+        "Aquaculture",
+        "Digital & AI"
+      ],
+      "impactAreas": [
+        "Productive Aquaculture"
+      ],
+      "initiative": "dafs-program"
+    },
+    {
+      "slug": "ssf-voice",
+      "name": "SSF Voice / Swiss Philanthropy Project",
+      "status": "Completed",
+      "lead": null,
+      "countrySlugs": [
+        "malaysia",
+        "nigeria",
+        "west-africa-caopa",
+        "colombia"
+      ],
+      "leadProductSlugs": [],
+      "themeSlugs": [
+        "small-scale-fisheries"
+      ],
+      "donorSlugs": [
+        "swiss-philanthropy-foundation",
+        "oak-foundation"
+      ],
+      "partnerSlugs": [],
+      "archived": true,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Fisheries"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ],
+      "whatItWas": "A digital advocacy project (~2021-2023) using social media, video, and communications tools to amplify small-scale fisher voices on issues like bottom trawling and inshore exclusion zones.\n\nNote: Not a \"digital tool\" in the Peskas sense, but relevant to a broader WorldFish Digital narrative that includes communications/advocacy work.",
+      "productsCreated": [
+        "4 advocacy videos",
+        "Social media template packs (Malaysia/JARING, Nigeria)",
+        "IEZ digital publishing outputs"
+      ]
+    },
+    {
+      "slug": "peskas-service",
+      "name": "Peskas Service",
+      "status": "Completed",
+      "lead": "a.tilley@cgiar.org",
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "leadProductSlugs": [
+        "peskas"
+      ],
+      "themeSlugs": [
+        "small-scale-fisheries",
+        "data-infrastructure"
+      ],
+      "donorSlugs": [
+        "norway-norad"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": null,
+      "programme": "Peskas ecosystem",
+      "thematicAreas": [
+        "Fisheries",
+        "Digital & AI"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ],
+      "initiative": "peskas-ecosystem"
+    },
+    {
+      "slug": "ikan-ba-futuru",
+      "name": "Ikan Ba Futuru",
+      "status": "Active",
+      "lead": "d.mills@cgiar.org",
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "leadProductSlugs": [],
+      "themeSlugs": [
+        "small-scale-fisheries",
+        "nutrition-food-systems"
+      ],
+      "donorSlugs": [
+        "dfat-australia"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": null,
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Fisheries",
+        "Nutrition"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries",
+        "Nutrition Security"
+      ]
+    },
+    {
+      "slug": "aabs",
+      "name": "AABS",
+      "status": "Active",
+      "lead": "j.schmidt@cgiar.org",
+      "countrySlugs": [
+        "kenya",
+        "zanzibar",
+        "mozambique"
+      ],
+      "leadProductSlugs": [
+        "zanzibar-data-pipeline",
+        "coasts-data-pipeline",
+        "mozambique-data-pipeline",
+        "kenya-data-pipeline",
+        "peskas-api",
+        "wcs-wf-app",
+        "zanzibar-app",
+        "coasts-app",
+        "validation-app",
+        "tracks-app",
+        "fishing-gear-prediction",
+        "tracks-effort-model"
+      ],
+      "themeSlugs": [
+        "small-scale-fisheries"
+      ],
+      "donorSlugs": [
+        "dfat-australia"
+      ],
+      "partnerSlugs": [],
+      "archived": false,
+      "fullName": "Asia-Africa BlueTech Superhighway",
+      "programme": "Standalone",
+      "thematicAreas": [
+        "Fisheries"
+      ],
+      "impactAreas": [
+        "Sustainable Fisheries"
+      ]
     }
   ]
 }

@@ -26,49 +26,53 @@ export function statusVariant(status) {
     return 'muted';
 }
 
-/** Group products by component type, ordered by COMPONENT_TYPE_ORDER.
- *  Returns [{ title, items }] with empty groups omitted. */
-export function groupProductsByType(products) {
-    const byType = new Map();
-    products.forEach((product) => {
-        const type = product.type || 'Other';
-        if (!byType.has(type)) byType.set(type, []);
-        byType.get(type).push(product);
-    });
-
-    const rank = (type) => {
-        const i = COMPONENT_TYPE_ORDER.indexOf(type);
-        return i === -1 ? COMPONENT_TYPE_ORDER.length : i;
-    };
-
-    return [...byType.entries()]
-        .sort((a, b) => rank(a[0]) - rank(b[0]))
-        .map(([title, items]) => ({ title, items }));
-}
-
 /** Display order for project statuses (active work first, closed last). */
 export const PROJECT_STATUS_ORDER = ['Active', 'Pipeline', 'Planned', 'Completed', 'Cancelled'];
 
-/** Group projects by status, ordered by PROJECT_STATUS_ORDER. Returns [{ title, items }]. */
-export function groupProjectsByStatus(projects) {
-    const byStatus = new Map();
-    projects.forEach((project) => {
-        const status = project.status || 'Other';
-        if (!byStatus.has(status)) byStatus.set(status, []);
-        byStatus.get(status).push(project);
+/** Bucket `items` by a key, ordered by `order` (unknown keys fall to the end);
+ *  a missing key collapses to `fallback`. Returns [{ title, items }]. */
+function groupOrdered(items, keyOf, order, fallback = 'Other') {
+    const byKey = new Map();
+    items.forEach((item) => {
+        const key = keyOf(item) || fallback;
+        if (!byKey.has(key)) byKey.set(key, []);
+        byKey.get(key).push(item);
     });
-
-    const rank = (status) => {
-        const i = PROJECT_STATUS_ORDER.indexOf(status);
-        return i === -1 ? PROJECT_STATUS_ORDER.length : i;
+    const rank = (key) => {
+        const i = order.indexOf(key);
+        return i === -1 ? order.length : i;
     };
-
-    return [...byStatus.entries()]
+    return [...byKey.entries()]
         .sort((a, b) => rank(a[0]) - rank(b[0]))
-        .map(([title, items]) => ({ title, items }));
+        .map(([title, groupItems]) => ({ title, items: groupItems }));
 }
+
+/** Group products by component type, ordered by COMPONENT_TYPE_ORDER. */
+export const groupProductsByType = (products) =>
+    groupOrdered(products, (p) => p.type, COMPONENT_TYPE_ORDER);
+
+/** Group projects by status, ordered by PROJECT_STATUS_ORDER. */
+export const groupProjectsByStatus = (projects) =>
+    groupOrdered(projects, (p) => p.status, PROJECT_STATUS_ORDER);
 
 /** Pluralize a label by count: (2, 'tool') -> '2 tools'. */
 export function countLabel(n, singular, plural) {
     return `${n} ${n === 1 ? singular : plural || `${singular}s`}`;
 }
+
+/** Categorical colours for the relationship diagram, keyed by product component type.
+ *  Distinct hues chosen to read on the dark surface; swap freely. */
+export const TYPE_COLOR = {
+    Platform: '#57b3d1',
+    Application: '#a78bfa',
+    Dashboard: '#60a5fa',
+    API: '#4ade80',
+    'Data Pipeline': '#fbbf24',
+    'Data Product': '#f472b6',
+    Model: '#fb923c',
+    Algorithm: '#22d3ee',
+    Module: '#e2e8f0',
+    Other: '#94a3b8',
+};
+
+export const typeColor = (type) => TYPE_COLOR[type] || TYPE_COLOR.Other;

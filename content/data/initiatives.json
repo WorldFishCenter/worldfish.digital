@@ -1,0 +1,46 @@
+{
+  "initiatives": [
+    {
+      "slug": "peskas-ecosystem",
+      "name": "Peskas ecosystem",
+      "description": "The Peskas open-source small-scale-fisheries data ecosystem — country data pipelines, the shared peskas.coasts library, the Peskas API, and the dashboards and apps built on top.",
+      "productSlugs": [
+        "coasts-app",
+        "tracks-app",
+        "peskas",
+        "wcs-wf-app",
+        "validation-app",
+        "kenya-data-pipeline",
+        "tracks-effort-model",
+        "coasts-data-pipeline",
+        "peskas-api",
+        "fishing-gear-prediction",
+        "mozambique-app",
+        "mozambique-data-pipeline",
+        "malawi-ssf-data-pipeline",
+        "peskas-app",
+        "kenya-app",
+        "zanzibar-data-pipeline",
+        "peskas-training-course",
+        "zanzibar-app"
+      ],
+      "projectSlugs": [
+        "fssp2",
+        "peskas-service"
+      ]
+    },
+    {
+      "slug": "dafs-program",
+      "name": "Digital Aquatic Food Systems Program",
+      "description": "WorldFish's Digital Aquatic Food Systems Program — cross-cutting digital and data-science R&D initiatives.",
+      "productSlugs": [
+        "phenofish",
+        "pondcube"
+      ],
+      "projectSlugs": [
+        "dd-science-team",
+        "dta"
+      ]
+    }
+  ]
+}

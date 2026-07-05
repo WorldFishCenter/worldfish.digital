@@ -1,0 +1,103 @@
+name: Release from package.json + NEWS.md
+
+# On every push to main, publish a GitHub Release when package.json carries a
+# version that doesn't have a tag yet. package.json `version` is the single
+# source of truth; NEWS.md must contain a matching `# worldfish.digital X.Y.Z`
+# block, whose bullets become the release notes. Idempotent: reruns skip once
+# the tag exists, so ordinary pushes that don't bump the version do nothing.
+
+on:
+  push:
+    branches:
+      - main
+
+# Never run two releases at once for the same ref.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write # needed to create the tag + GitHub Release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so tag checks are accurate
+
+      - name: Read version and changelog
+        id: changelog
+        run: |
+          # Version comes from package.json (the single source of truth).
+          version=$(node -p "require('./package.json').version")
+
+          if [ -z "$version" ]; then
+            echo "::error::No version found in package.json"
+            exit 1
+          fi
+          echo "Version from package.json: $version"
+
+          # Pull the matching block out of NEWS.md: everything after the
+          # "# worldfish.digital <version>" header, up to the next such header.
+          changelog=$(awk -v ver="$version" '
+            /^# worldfish\.digital / {
+              if (capture) exit          # reached the next release block
+              if ($3 == ver) { capture=1; next }
+            }
+            capture { print }
+          ' NEWS.md)
+
+          # Trim leading and trailing blank lines (keep internal spacing).
+          changelog=$(printf '%s\n' "$changelog" | awk '
+            /[^[:space:]]/ { last = NR }
+            { line[NR] = $0 }
+            END {
+              for (i = 1; i <= NR && !first; i++) if (line[i] ~ /[^[:space:]]/) first = i
+              for (i = first; i <= last; i++) print line[i]
+            }
+          ')
+
+          if [ -z "$changelog" ]; then
+            echo "::error::NEWS.md has no '# worldfish.digital $version' section. Add one before releasing."
+            exit 1
+          fi
+
+          echo "tag_name=v$version" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          {
+            echo "changelog<<CHANGELOG_EOF"
+            echo "$changelog"
+            echo "CHANGELOG_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          tag_name="${{ steps.changelog.outputs.tag_name }}"
+          if git tag -l | grep -qx "$tag_name"; then
+            echo "Tag $tag_name already exists — nothing to release."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Tag $tag_name does not exist — will create a release."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag_name }}
+          name: worldfish.digital ${{ steps.changelog.outputs.version }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Skip release creation
+        if: steps.check_tag.outputs.exists == 'true'
+        run: echo "Release ${{ steps.changelog.outputs.tag_name }} already exists. Skipping."

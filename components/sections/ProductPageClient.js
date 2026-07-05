@@ -16,11 +16,11 @@ import FactSheet from '../detail/FactSheet';
 import RelationshipDiagram from '../detail/RelationshipDiagram';
 import { StatusPill, MetaPill, TagList, LinkTagList } from '../detail/Pills';
 
-function ConnectionsBlock({ product, related }) {
-    if (!related || related.length === 0) return null;
+function ConnectionsBlock({ graph }) {
+    if (!graph) return null;
     return (
         <DetailBlock kicker="Ecosystem" title="How this connects">
-            <RelationshipDiagram product={product} related={related} />
+            <RelationshipDiagram key={graph.focus} graph={graph} />
         </DetailBlock>
     );
 }
@@ -60,7 +60,7 @@ function ThinProductHero({ product }) {
     );
 }
 
-function ThinProductBody({ product, themes, countries, projects, related }) {
+function ThinProductBody({ product, themes, countries, projects, graph }) {
     const factRows = [
         { label: 'Lead developer', value: product.leadDev || null },
         {
@@ -99,13 +99,13 @@ function ThinProductBody({ product, themes, countries, projects, related }) {
                 <div className="wfDetailBlock">
                     <FactSheet rows={factRows} variant="strip" />
                 </div>
-                <ConnectionsBlock product={product} related={related} />
+                <ConnectionsBlock graph={graph} />
             </div>
         </section>
     );
 }
 
-export default function ProductPageClient({ product, latestPosts, related, themes, countries, projects }) {
+export default function ProductPageClient({ product, latestPosts, graph, themes, countries, projects }) {
     const [modal, setModal] = useState(false);
     const [videoLoading, setVideoLoading] = useState(true);
     const rich = product.rich;
@@ -123,7 +123,7 @@ export default function ProductPageClient({ product, latestPosts, related, theme
                     themes={themes}
                     countries={countries}
                     projects={projects}
-                    related={related}
+                    graph={graph}
                 />
             </Layout>
         );
@@ -154,10 +154,10 @@ export default function ProductPageClient({ product, latestPosts, related, theme
                     youtubeId={rich.videoYoutubeId}
                 />
             )}
-            {related && related.length > 0 && (
+            {graph && (
                 <section className="section-box wfSectionDark wfPadSection">
                     <div className="container">
-                        <ConnectionsBlock product={product} related={related} />
+                        <ConnectionsBlock graph={graph} />
                     </div>
                 </section>
             )}

@@ -3,7 +3,7 @@ import ProductPageClient from '@/components/sections/ProductPageClient';
 import {
     getProduct,
     getProducts,
-    getRelatedProducts,
+    getRelationshipGraph,
     getTheme,
     getCountry,
     getProject,
@@ -35,7 +35,7 @@ export default async function ProductPage({ params }) {
     const latestPosts = product.rich?.blogSection?.channel
         ? getLatestPostsByChannel(product.rich.blogSection.channel, BLOG_PESKAS.latestPostsCount)
         : [];
-    const related = getRelatedProducts(product.slug);
+    const graph = getRelationshipGraph(product.slug);
     const themes = (product.themeSlugs || []).map(getTheme).filter(Boolean);
     const countries = (product.countrySlugs || []).map(getCountry).filter(Boolean);
     const projects = (product.projectSlugs || []).map(getProject).filter(Boolean);
@@ -44,7 +44,7 @@ export default async function ProductPage({ params }) {
         <ProductPageClient
             product={product}
             latestPosts={latestPosts}
-            related={related}
+            graph={graph}
             themes={themes}
             countries={countries}
             projects={projects}
