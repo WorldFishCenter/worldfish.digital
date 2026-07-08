@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
+import CountriesGlobe from './CountriesGlobe';
+import { getCountryMarkers } from '@/lib/content';
 
 function toItems(countries, themeBySlug) {
     return countries.map((country) => ({
@@ -31,6 +33,10 @@ export default function CountriesIndexClient({ countries, themeBySlug }) {
         { title: 'Pilot & emerging', items: toItems(emerging, themeBySlug) },
     ].filter((group) => group.items.length > 0);
 
+    // Markers for the globe come from the data layer; cross-cutting entries
+    // (e.g. Global) have no coordinates and stay in the list below only.
+    const markers = getCountryMarkers();
+
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
@@ -46,6 +52,13 @@ export default function CountriesIndexClient({ countries, themeBySlug }) {
                     </div>
                 </div>
             </section>
+            {markers.length > 0 && (
+                <section className="section-box wfSectionDark wfPadSection">
+                    <div className="container">
+                        <CountriesGlobe markers={markers} />
+                    </div>
+                </section>
+            )}
             <section className="section-box wfSectionDark wfPadSection">
                 <div className="container">
                     <div className="row">

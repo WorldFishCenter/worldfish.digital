@@ -1862,3 +1862,329 @@ a.wfMetaPill:hover {
 .wfProse p:last-child {
   margin-bottom: 0;
 }
+
+/* ============================================================= */
+/* Countries globe — interactive orthographic map explorer        */
+/* ============================================================= */
+.wfGlobeExplorer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.wfGlobeStageWrap {
+  min-width: 0;
+}
+
+.wfGlobeStage {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.wfGlobeStage.is-ready {
+  opacity: 1;
+}
+
+/* faint sphere placeholder while the world geometry loads.
+   pointer-events:none is essential — otherwise this overlay sits above the
+   canvas and swallows every hover/drag/click even at opacity 0. */
+.wfGlobeStage::before {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 34% 32%,
+    rgba(87, 179, 209, 0.10),
+    rgba(2, 8, 19, 0) 68%
+  );
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.wfGlobeStage.is-ready::before {
+  opacity: 0;
+}
+
+.wfGlobeCanvas {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wfGlobeCanvas:active {
+  cursor: grabbing;
+}
+
+.wfGlobeHintMobile {
+  display: none;
+  margin-top: 16px;
+  text-align: center;
+  font-family: var(--wf-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--wf-text-slate-400);
+}
+
+/* --- contextual side panel --- */
+.wfGlobePanel {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.wfGlobeIntroLead {
+  color: var(--wf-text-slate-200);
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-bottom: 26px;
+}
+
+.wfGlobeLegend {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wfGlobeLegend li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--wf-text-slate-300);
+}
+
+.wfGlobeSwatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wfGlobeSwatch.is-active {
+  background: var(--wf-color-accent);
+  box-shadow: 0 0 10px 1px rgba(87, 179, 209, 0.55);
+}
+
+.wfGlobeSwatch.is-pilot {
+  background: #8ba3ba;
+  box-shadow: 0 0 8px 1px rgba(150, 172, 194, 0.4);
+}
+
+.wfGlobeLegendCount {
+  margin-left: auto;
+  font-family: var(--wf-font-mono);
+  font-size: 13px;
+  color: var(--wf-text-slate-400);
+}
+
+.wfGlobeIntroHint {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--wf-text-slate-400);
+  max-width: 34ch;
+}
+
+/* --- focused country card --- */
+.wfGlobeCard {
+  position: relative;
+  animation: wfGlobeCardIn 0.35s ease;
+}
+
+/* When pinned, give the card a subtle surface so it reads as "held open".
+   The negative margin offsets the padding so the content doesn't shift when a
+   preview becomes pinned. */
+.wfGlobeCard.is-pinned {
+  padding: 24px 26px;
+  margin: -24px -26px;
+  background: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-card);
+  border-radius: 16px;
+}
+
+.wfGlobeCard.is-pinned .wfGlobeCardHead {
+  padding-right: 34px; /* keep the title clear of the dismiss button */
+}
+
+.wfGlobeCardClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--wf-text-slate-400);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--wf-border-medium);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.wfGlobeCardClose:hover {
+  color: var(--wf-text-on-dark);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--wf-border-accent-medium);
+}
+
+@keyframes wfGlobeCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wfGlobeCardHead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.wfGlobeCardFlag {
+  border-radius: 3px;
+  border: 1px solid var(--wf-border-image);
+  flex-shrink: 0;
+}
+
+.wfGlobeCardName {
+  color: var(--wf-text-on-dark);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Badge & theme tags reuse the shared .wfMetaPill / .wfMetaPill--plain pills
+   (see components/detail/Pills.js); only the "active" tint is bespoke. */
+.wfGlobeBadge.is-active {
+  color: #bfe6f2;
+  background: rgba(87, 179, 209, 0.12);
+  border-color: var(--wf-border-accent-medium);
+}
+
+.wfGlobeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.wfGlobeCardStats {
+  margin: 20px 0 0;
+  font-family: var(--wf-font-mono);
+  font-size: 14px;
+  color: var(--wf-text-slate-400);
+  display: flex;
+  gap: 8px;
+}
+
+.wfGlobeCardStats strong {
+  color: var(--wf-color-accent);
+  font-weight: 600;
+}
+
+.wfGlobeDot {
+  color: var(--wf-border-strong);
+}
+
+.wfGlobeCardLink {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--wf-color-accent);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.wfGlobeCardLink:hover {
+  color: #bfe6f2;
+  transform: translateX(3px);
+}
+
+@media (max-width: 991px) {
+  .wfGlobeExplorer {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .wfGlobeStage {
+    max-width: 420px;
+  }
+
+  .wfGlobeHintMobile {
+    display: block;
+  }
+
+  .wfGlobePanel {
+    min-height: 0;
+    margin-top: 24px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .wfGlobeLegend li {
+    justify-content: center;
+  }
+
+  .wfGlobeLegendCount {
+    margin-left: 8px;
+  }
+
+  .wfGlobeIntroHint,
+  .wfGlobeTags,
+  .wfGlobeCardStats {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wfGlobeCardHead {
+    justify-content: center;
+  }
+
+  /* No horizontal bleed once the panel is stacked and centred. */
+  .wfGlobeCard.is-pinned {
+    margin: 0;
+  }
+
+  .wfGlobeCard.is-pinned .wfGlobeCardHead {
+    padding-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wfGlobeStage,
+  .wfGlobeCard,
+  .wfGlobeCardLink {
+    transition: none;
+    animation: none;
+  }
+}
