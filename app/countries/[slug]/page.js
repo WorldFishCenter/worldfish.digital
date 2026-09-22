@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import CountryDetailClient from '@/components/sections/CountryDetailClient';
-import { getCountry, getCountries, getTheme, getProduct, getProject } from '@/lib/content';
+import { getCountry, getCountries } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
 export function generateStaticParams() {
@@ -24,9 +24,5 @@ export default async function CountryPage({ params }) {
     const country = getCountry(slug);
     if (!country) notFound();
 
-    const themes = country.themeSlugs.map(getTheme).filter(Boolean);
-    const products = country.productSlugs.map(getProduct).filter(Boolean);
-    const projects = country.projectSlugs.map(getProject).filter(Boolean);
-
-    return <CountryDetailClient country={country} themes={themes} products={products} projects={projects} />;
+    return <CountryDetailClient country={country} />;
 }

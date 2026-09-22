@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { productHref, themeHref } from '@/lib/routes.mjs';
 
 export default function PersonaRouter({ personas }) {
     return (
@@ -15,8 +16,8 @@ export default function PersonaRouter({ personas }) {
                 <div className="row">
                     {personas.map((persona) => {
                         const href = persona.keyProductSlugs[0]
-                            ? `/products/${persona.keyProductSlugs[0]}`
-                            : `/our-work/${persona.themeSlugs[0]}`;
+                            ? productHref(persona.keyProductSlugs[0])
+                            : themeHref(persona.themeSlugs[0]);
 
                         return (
                             <div key={persona.slug} className="col-lg-3 col-md-4 col-sm-6 mb-30 d-flex">

@@ -3,6 +3,7 @@ import Layout from '@/components/layout/Layout';
 import BlogCoverImage from '@/components/content/BlogCoverImage';
 import { getAllPosts } from '@/lib/posts';
 import { BLOG_WORLD_FISH, WORLD_FISH_SITE } from '@/lib/constants';
+import { postHref } from '@/lib/routes.mjs';
 
 export const metadata = {
     title: `${BLOG_WORLD_FISH.title} | ${WORLD_FISH_SITE.name}`,
@@ -57,7 +58,7 @@ export default async function Blog() {
                                                 })}
                                             </span>
                                         )}
-                                        <Link href={`/blog/${post.slug}`} className="text-heading-4">
+                                        <Link href={postHref(post.slug)} className="text-heading-4">
                                             {post.title}
                                         </Link>
                                         {post.description && (
@@ -65,7 +66,7 @@ export default async function Blog() {
                                         )}
                                         {post.coverImage && (
                                             <div className="grid-4-img">
-                                                <Link href={`/blog/${post.slug}`}>
+                                                <Link href={postHref(post.slug)}>
                                                     <BlogCoverImage
                                                         src={post.coverImage}
                                                         alt={post.title}

@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
 import { groupProductsByType } from '../detail/meta';
+import { productHref } from '@/lib/routes.mjs';
 
 const ALL = 'All';
 
@@ -28,7 +29,7 @@ function FilterGroup({ label, options, active, onChange }) {
 }
 
 const productItem = (product) => ({
-    href: `/products/${product.slug}`,
+    href: productHref(product.slug),
     name: product.name,
     sub: product.description || null,
     status: product.status,

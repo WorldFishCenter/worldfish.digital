@@ -2,6 +2,7 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { typeColor } from './meta';
+import { productHref } from '@/lib/routes.mjs';
 
 // Edge types that flow "forward" (source produces/enables target). The others
 // ('depends on', 'pilot of') are reversed for layout so the prerequisite/parent
@@ -272,7 +273,7 @@ export default function RelationshipDiagram({ graph }) {
                                 return (
                                     <Link
                                         key={node.slug}
-                                        href={`/products/${node.slug}`}
+                                        href={productHref(node.slug)}
                                         ref={setRef(node.slug)}
                                         className={`wfRelNode${isFocus ? ' wfRelNode--focus' : ''}${dim ? ' wfRelNode--dim' : ''}`}
                                         style={{ borderLeftColor: color }}

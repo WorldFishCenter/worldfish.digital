@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
 import CountriesGlobe from './CountriesGlobe';
-import { getCountryMarkers } from '@/lib/content';
+import { countryHref } from '@/lib/routes.mjs';
 
 function toItems(countries, themeBySlug) {
     return countries.map((country) => ({
-        href: `/countries/${country.slug}`,
+        href: countryHref(country.slug),
         name: country.name,
         sub:
             country.themeSlugs.map((slug) => themeBySlug.get(slug)).filter(Boolean).join(' · ') || null,
@@ -22,7 +22,7 @@ function toItems(countries, themeBySlug) {
     }));
 }
 
-export default function CountriesIndexClient({ countries, themeBySlug }) {
+export default function CountriesIndexClient({ countries, themeBySlug, markers }) {
     // A country is an active engagement once it has tools deployed; everything else
     // is a pilot, assessment, or emerging geography.
     const active = countries.filter((c) => (c.productSlugs || []).length > 0);
@@ -32,10 +32,6 @@ export default function CountriesIndexClient({ countries, themeBySlug }) {
         { title: 'Active engagements', items: toItems(active, themeBySlug) },
         { title: 'Pilot & emerging', items: toItems(emerging, themeBySlug) },
     ].filter((group) => group.items.length > 0);
-
-    // Markers for the globe come from the data layer; cross-cutting entries
-    // (e.g. Global) have no coordinates and stay in the list below only.
-    const markers = getCountryMarkers();
 
     return (
         <Layout>

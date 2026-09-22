@@ -7,7 +7,7 @@ import PersonaRouter from '../sections/PersonaRouter';
 import BlogSection from '../sections/BlogSection';
 import Layout from '../layout/Layout';
 import ThemeIndexList from '../detail/ThemeIndexList';
-import { getPersonas, getThemes } from '@/lib/content';
+import { getPersonas, getThemes } from '@/lib/portfolio';
 
 export default function HomePageClient({ latestPosts, homepage }) {
     return (

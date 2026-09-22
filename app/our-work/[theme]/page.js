@@ -1,14 +1,6 @@
 import { notFound } from 'next/navigation';
 import ThemeDetailClient from '@/components/sections/ThemeDetailClient';
-import {
-    getTheme,
-    getThemes,
-    getProjectsByTheme,
-    getProductsByTheme,
-    getCountriesByTheme,
-    getPersonasByTheme,
-    getDonorsByTheme,
-} from '@/lib/content';
+import { getTheme, getThemes } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
 export function generateStaticParams() {
@@ -32,14 +24,5 @@ export default async function ThemePage({ params }) {
     const theme = getTheme(themeSlug);
     if (!theme) notFound();
 
-    return (
-        <ThemeDetailClient
-            theme={theme}
-            projects={getProjectsByTheme(theme.slug)}
-            products={getProductsByTheme(theme.slug)}
-            countries={getCountriesByTheme(theme.slug)}
-            personas={getPersonasByTheme(theme.slug)}
-            donors={getDonorsByTheme(theme.slug)}
-        />
-    );
+    return <ThemeDetailClient theme={theme} />;
 }

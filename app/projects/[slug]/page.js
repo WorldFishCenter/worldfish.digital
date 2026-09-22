@@ -1,13 +1,6 @@
 import { notFound } from 'next/navigation';
 import ProjectDetailClient from '@/components/sections/ProjectDetailClient';
-import {
-    getProject,
-    getProjects,
-    getTheme,
-    getCountry,
-    getProductsForProject,
-    getDonorsForProject,
-} from '@/lib/content';
+import { getProject, getProjects } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
 export function generateStaticParams() {
@@ -31,18 +24,5 @@ export default async function ProjectPage({ params }) {
     const project = getProject(slug);
     if (!project) notFound();
 
-    const themes = project.themeSlugs.map(getTheme).filter(Boolean);
-    const countries = project.countrySlugs.map(getCountry).filter(Boolean);
-    const products = getProductsForProject(project.slug);
-    const donors = getDonorsForProject(project.slug);
-
-    return (
-        <ProjectDetailClient
-            project={project}
-            themes={themes}
-            countries={countries}
-            products={products}
-            donors={donors}
-        />
-    );
+    return <ProjectDetailClient project={project} />;
 }

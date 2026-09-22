@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { geoOrthographic, geoPath, geoGraticule, geoDistance } from 'd3-geo';
 import { feature } from 'topojson-client';
+import { countryHref } from '@/lib/routes.mjs';
 
 // Palette mirrors the SCSS design tokens (canvas can't read CSS custom props).
 // Keep in sync with abstracts/_tokens-root.scss if the brand colours change.
@@ -552,7 +553,7 @@ export default function CountriesGlobe({ markers }) {
                                 )}
                             </p>
                         )}
-                        <Link href={`/countries/${shown.slug}`} className="wfGlobeCardLink">
+                        <Link href={countryHref(shown.slug)} className="wfGlobeCardLink">
                             View {shown.name} →
                         </Link>
                     </div>

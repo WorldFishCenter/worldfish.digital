@@ -1,5 +1,5 @@
 import ProjectsIndexClient from '@/components/sections/ProjectsIndexClient';
-import { getProjects } from '@/lib/content';
+import { getProjects } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
 export const metadata = {

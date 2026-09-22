@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import RichText from '../content/RichText';
 import BlogCoverImage from '../content/BlogCoverImage';
+import { postHref } from '@/lib/routes.mjs';
 
 function BlogSection({ latestPosts, data, viewAllHref = '/blog' }) {
     const { title, subtitle, ctaLabel } = data;
@@ -36,7 +37,7 @@ function BlogSection({ latestPosts, data, viewAllHref = '/blog' }) {
                         latestPosts.map((post) => (
                             <div key={post.slug} className="pr-30 mb-40">
                                 <Link
-                                    href={`/blog/${post.slug}`}
+                                    href={postHref(post.slug)}
                                     className="wfLinkBlog"
                                     data-analytics-event="blog_post_click"
                                     data-analytics-category="blog"

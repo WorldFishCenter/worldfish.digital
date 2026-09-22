@@ -15,6 +15,10 @@
   · **FIX** (something that was broken now works).
 -->
 
+# worldfish.digital 7.0.1
+
+* **FIX** The whole portfolio is now discoverable by search engines. Every project, product, country, and work-area page was missing from the sitemap; all of them are now listed, and anything published from now on is added automatically.
+
 # worldfish.digital 7.0.0
 
 * **NEW** A connected portfolio. The site now presents WorldFish's digital work as one linked collection — projects, products, themes, countries, donors, and teams — instead of a set of standalone pages. Everything is cross-referenced, so from any project you can jump to the products it uses, the countries it runs in, and the themes it belongs to.

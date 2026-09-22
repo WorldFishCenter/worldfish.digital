@@ -1,13 +1,6 @@
 import { notFound } from 'next/navigation';
 import ProductPageClient from '@/components/sections/ProductPageClient';
-import {
-    getProduct,
-    getProducts,
-    getRelationshipGraph,
-    getTheme,
-    getCountry,
-    getProject,
-} from '@/lib/content';
+import { getProduct, getProducts } from '@/lib/portfolio';
 import { getLatestPostsByChannel } from '@/lib/posts';
 import { DEFAULT_METADATA, BLOG_PESKAS } from '@/lib/constants';
 
@@ -35,19 +28,6 @@ export default async function ProductPage({ params }) {
     const latestPosts = product.rich?.blogSection?.channel
         ? getLatestPostsByChannel(product.rich.blogSection.channel, BLOG_PESKAS.latestPostsCount)
         : [];
-    const graph = getRelationshipGraph(product.slug);
-    const themes = (product.themeSlugs || []).map(getTheme).filter(Boolean);
-    const countries = (product.countrySlugs || []).map(getCountry).filter(Boolean);
-    const projects = (product.projectSlugs || []).map(getProject).filter(Boolean);
 
-    return (
-        <ProductPageClient
-            product={product}
-            latestPosts={latestPosts}
-            graph={graph}
-            themes={themes}
-            countries={countries}
-            projects={projects}
-        />
-    );
+    return <ProductPageClient product={product} latestPosts={latestPosts} />;
 }

@@ -1,5 +1,5 @@
 import TeamPageClient from '@/components/sections/TeamPageClient';
-import { getTeam } from '@/lib/content';
+import { getTeam } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
 export const metadata = {

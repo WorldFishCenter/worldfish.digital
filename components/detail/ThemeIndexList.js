@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { themeHref } from '@/lib/routes.mjs';
 
 const ArrowIcon = () => (
     <svg
@@ -34,7 +35,7 @@ export default function ThemeIndexList({ themes, showStats = false }) {
 
                 return (
                     <li key={theme.slug} className="wfIndexRow">
-                        <Link href={`/our-work/${theme.slug}`} className="wfIndexLink">
+                        <Link href={themeHref(theme.slug)} className="wfIndexLink">
                             <span className="wfIndexNum">{String(i + 1).padStart(2, '0')}</span>
                             <span className="wfIndexMain">
                                 <span className="wfIndexName">{theme.name}</span>

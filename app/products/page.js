@@ -1,5 +1,5 @@
 import ProductsCatalogClient from '@/components/sections/ProductsCatalogClient';
-import { getProducts, getThemes } from '@/lib/content';
+import { getProducts, getThemes } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
 export const metadata = {

@@ -1,12 +1,13 @@
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
 import { groupProjectsByStatus } from '../detail/meta';
+import { projectHref } from '@/lib/routes.mjs';
 
 export default function ProjectsIndexClient({ projects }) {
     const groups = groupProjectsByStatus(projects).map((group) => ({
         title: group.title,
         items: group.items.map((project) => ({
-            href: `/projects/${project.slug}`,
+            href: projectHref(project.slug),
             name: project.name,
             sub: project.fullName || project.programme || null,
             status: null, // status is the group header — no need to repeat it per row

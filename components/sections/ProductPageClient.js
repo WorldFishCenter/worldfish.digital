@@ -15,6 +15,7 @@ import DetailBlock from '../detail/DetailBlock';
 import FactSheet from '../detail/FactSheet';
 import RelationshipDiagram from '../detail/RelationshipDiagram';
 import { StatusPill, MetaPill, TagList, LinkTagList } from '../detail/Pills';
+import { countryHref, projectHref, themeHref } from '@/lib/routes.mjs';
 
 function ConnectionsBlock({ graph }) {
     if (!graph) return null;
@@ -60,27 +61,28 @@ function ThinProductHero({ product }) {
     );
 }
 
-function ThinProductBody({ product, themes, countries, projects, graph }) {
+function ThinProductBody({ product }) {
+    const { themes, countries, projects, graph } = product;
     const factRows = [
         { label: 'Lead developer', value: product.leadDev || null },
         {
             label: 'Work areas',
             value: themes?.length ? (
-                <LinkTagList items={themes.map((t) => ({ href: `/our-work/${t.slug}`, label: t.name }))} />
+                <LinkTagList items={themes.map((t) => ({ href: themeHref(t.slug), label: t.name }))} />
             ) : null,
         },
         {
             label: 'Countries',
             value: countries?.length ? (
                 <LinkTagList
-                    items={countries.map((c) => ({ href: `/countries/${c.slug}`, label: c.name }))}
+                    items={countries.map((c) => ({ href: countryHref(c.slug), label: c.name }))}
                 />
             ) : null,
         },
         {
             label: 'In projects',
             value: projects?.length ? (
-                <LinkTagList items={projects.map((p) => ({ href: `/projects/${p.slug}`, label: p.name }))} />
+                <LinkTagList items={projects.map((p) => ({ href: projectHref(p.slug), label: p.name }))} />
             ) : null,
         },
         {
@@ -105,7 +107,7 @@ function ThinProductBody({ product, themes, countries, projects, graph }) {
     );
 }
 
-export default function ProductPageClient({ product, latestPosts, graph, themes, countries, projects }) {
+export default function ProductPageClient({ product, latestPosts }) {
     const [modal, setModal] = useState(false);
     const [videoLoading, setVideoLoading] = useState(true);
     const rich = product.rich;
@@ -118,13 +120,7 @@ export default function ProductPageClient({ product, latestPosts, graph, themes,
         return (
             <Layout>
                 <ThinProductHero product={product} />
-                <ThinProductBody
-                    product={product}
-                    themes={themes}
-                    countries={countries}
-                    projects={projects}
-                    graph={graph}
-                />
+                <ThinProductBody product={product} />
             </Layout>
         );
     }
@@ -154,10 +150,10 @@ export default function ProductPageClient({ product, latestPosts, graph, themes,
                     youtubeId={rich.videoYoutubeId}
                 />
             )}
-            {graph && (
+            {product.graph && (
                 <section className="section-box wfSectionDark wfPadSection">
                     <div className="container">
-                        <ConnectionsBlock graph={graph} />
+                        <ConnectionsBlock graph={product.graph} />
                     </div>
                 </section>
             )}

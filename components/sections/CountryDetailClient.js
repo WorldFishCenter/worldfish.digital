@@ -6,8 +6,10 @@ import FactSheet from '../detail/FactSheet';
 import { LinkTagList } from '../detail/Pills';
 import { groupProductsByType, countLabel } from '../detail/meta';
 import { publicAssetUrl } from '@/lib/publicAssetUrl';
+import { productHref, projectHref, themeHref } from '@/lib/routes.mjs';
 
-export default function CountryDetailClient({ country, themes, products, projects }) {
+export default function CountryDetailClient({ country }) {
+    const { themes, products, projects } = country;
     const hasProducts = products.length > 0;
     const hasProjects = projects.length > 0;
     const hasMain = hasProducts || hasProjects;
@@ -15,7 +17,7 @@ export default function CountryDetailClient({ country, themes, products, project
     const productGroups = groupProductsByType(products).map((group) => ({
         title: group.title,
         items: group.items.map((product) => ({
-            href: `/products/${product.slug}`,
+            href: productHref(product.slug),
             name: product.name,
             sub: product.description || null,
             status: product.status,
@@ -23,7 +25,7 @@ export default function CountryDetailClient({ country, themes, products, project
     }));
 
     const projectItems = projects.map((project) => ({
-        href: `/projects/${project.slug}`,
+        href: projectHref(project.slug),
         name: project.name,
         sub: project.fullName || project.programme || null,
         status: project.status,
@@ -34,7 +36,7 @@ export default function CountryDetailClient({ country, themes, products, project
         {
             label: 'Work areas',
             value: themes.length ? (
-                <LinkTagList items={themes.map((t) => ({ href: `/our-work/${t.slug}`, label: t.name }))} />
+                <LinkTagList items={themes.map((t) => ({ href: themeHref(t.slug), label: t.name }))} />
             ) : null,
         },
     ];

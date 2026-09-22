@@ -1,5 +1,5 @@
 import ForPartnersClient from '@/components/sections/ForPartnersClient';
-import { getThemes, getDonors } from '@/lib/content';
+import { getThemes, getDonors } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 import settingsData from '@/content/global/settings.json';
 

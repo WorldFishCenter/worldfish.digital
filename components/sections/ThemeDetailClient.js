@@ -4,33 +4,33 @@ import EntityLinkList from '../detail/EntityLinkList';
 import FactSheet from '../detail/FactSheet';
 import { TagList, LinkTagList } from '../detail/Pills';
 import { groupProductsByType, countLabel } from '../detail/meta';
+import { countryHref, productHref, projectHref } from '@/lib/routes.mjs';
 
 const productItem = (product) => ({
-    href: `/products/${product.slug}`,
+    href: productHref(product.slug),
     name: product.name,
     sub: product.description || null,
     status: product.status,
 });
 
-export default function ThemeDetailClient({ theme, projects, products, countries, personas, donors = [] }) {
-    // Climate theme flags a handful of products as featured; lead with those,
-    // then group the remainder by component type.
-    const featuredSlugs = theme.featuredProductSlugs;
-    const featured = featuredSlugs
-        ? featuredSlugs.map((slug) => products.find((p) => p.slug === slug)).filter(Boolean)
-        : [];
-    const rest = featuredSlugs ? products.filter((p) => !featuredSlugs.includes(p.slug)) : products;
+export default function ThemeDetailClient({ theme }) {
+    const { projects, products, countries, personas, donors, featuredProducts, otherProducts } =
+        theme;
 
+    // A theme may flag a handful of products as featured; lead with those, then group the
+    // remainder by component type. The split itself is resolved in lib/portfolio.
     const productGroups = [
-        ...(featured.length > 0 ? [{ title: 'Featured', items: featured.map(productItem) }] : []),
-        ...groupProductsByType(rest).map((group) => ({
+        ...(featuredProducts.length > 0
+            ? [{ title: 'Featured', items: featuredProducts.map(productItem) }]
+            : []),
+        ...groupProductsByType(otherProducts).map((group) => ({
             title: group.title,
             items: group.items.map(productItem),
         })),
     ];
 
     const projectItems = projects.map((project) => ({
-        href: `/projects/${project.slug}`,
+        href: projectHref(project.slug),
         name: project.name,
         sub: project.fullName || project.programme || null,
         status: project.status,
@@ -42,7 +42,7 @@ export default function ThemeDetailClient({ theme, projects, products, countries
             label: 'Countries',
             value: countries.length ? (
                 <LinkTagList
-                    items={countries.map((c) => ({ href: `/countries/${c.slug}`, label: c.name }))}
+                    items={countries.map((c) => ({ href: countryHref(c.slug), label: c.name }))}
                 />
             ) : null,
         },
