@@ -15,6 +15,11 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Every `quality` a next/image call uses must be listed here (Next 16 no longer
+    // allows arbitrary values). 68 = blog thumbnails, 72 = blog grid cards (both in
+    // components/content/BlogCoverImage.js); 75 is next/image's default, used by every
+    // <Image> that doesn't set one.
+    qualities: [68, 72, 75],
     minimumCacheTTL: 60,
   },
 
