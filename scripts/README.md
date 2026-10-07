@@ -1,112 +1,122 @@
 # Content data: Airtable → site
 
-The site's portfolio data (themes, projects, products, countries, donors, personas,
-team, partners, relationships) lives in **Airtable** and is synced down into
-`content/data/*.json`, which is what the site actually builds from.
+The portfolio — tools, initiatives, outcomes and the connections between tools — lives in
+the **Airtable intake base** and is synced down into `content/data/`, which is what the site
+builds from.
 
-**Airtable is the source of truth. Do not hand-edit `content/data/*.json`** — your
-changes will be overwritten on the next sync. Edit in Airtable, then run the sync.
+- **Base:** `appjLGt1IWscYAV3i` (the intake base — not the old `Products` base)
+- **Sync:** [`sync-airtable.js`](./sync-airtable.js) · **Validator:** [`validate-content.js`](./validate-content.js) (its rules: `lib/snapshot-check.mjs`)
+- **Schema, as code:** [`create-intake-schema.mjs`](./create-intake-schema.mjs) · rationale in `docs/INTAKE_SCHEMA.md`
 
-- **Base:** `Products` (`appwOB0tczOVKXuQL`)
-- **Sync script:** [`sync-airtable.js`](./sync-airtable.js)
-- **Validator:** [`validate-content.js`](./validate-content.js)
+## The one rule
 
----
+**Only records with `Publication state = Live` reach the site.** That applies to all four
+tables. Under review, Needs more info and Archived never leave Airtable. If nothing is Live,
+the site is empty — every index page says so — and that is correct, not a bug.
+
+A link only counts when both ends are Live: a tool's initiative, an outcome's tool, a
+connection's two tools. The sync lists the connections it left out for that reason.
 
 ## Everyday workflow
 
 ```
-edit in Airtable  →  npm run sync  →  review git diff + commit  →  push (Vercel builds)
+mark records Live in Airtable  →  npm run sync  →  review git diff  →  commit  →  push
 ```
-
-This is the "committed snapshot" model: the JSON is versioned in git, builds are fast
-and offline-safe, and every content change shows up as a reviewable diff.
 
 ```bash
-AIRTABLE_TOKEN=pat_xxx npm run sync   # regenerate content/data/*.json from Airtable
-git diff content/data/                # review what changed
-npm run validate                      # optional; also runs automatically before build
-git add content/data/ && git commit   # commit the snapshot
+npm run sync              # pull Live records, download their attachments
+git status                # content/data/*.json and public/assets/portfolio/
+npm run validate          # also runs automatically before every build
 ```
 
----
+`sync` is deliberately **not** part of the build: Vercel builds from the committed snapshot
+and needs no token. To publish an Airtable change, run `sync` and commit what it wrote.
 
-## One-time setup: Airtable Personal Access Token
+## What the sync writes, and what it only reads
 
-The sync needs a token (the Claude/MCP connection can't be used by the CLI or CI).
+| File | Source | Edit where? |
+|---|---|---|
+| `products.json` | WFD Tools | Airtable |
+| `projects.json` | WFD Initiatives | Airtable |
+| `outcomes.json` | WFD Outcomes | Airtable |
+| `relationships.json` | WFD Connections | Airtable |
+| `public/assets/portfolio/` | every attachment on the above | Airtable |
+| `themes.json` | the impact areas (+ one cross-cutting entry) | **here, by hand** |
+| `countries.json` | country names, flags, descriptions | **here, by hand** |
+| `taxonomy.json` | the select-option vocabularies | **here, by hand** |
+| `team.json` | the team page | **here, by hand** |
 
-1. Go to **https://airtable.com/create/tokens** → **Create new token**
-2. Name: `worldfish.digital sync`
-3. **Scopes:** `data.records:read`, `schema.bases:read`
-4. **Access:** add the **Products** base
-5. Create and copy the `pat…` token (shown only once)
+The four generated files and the assets folder are rewritten whole on every run — never
+hand-edit them. The sync never writes the hand-maintained ones.
 
-You can provide the token three ways (any one works):
+In code a tool is a `product` and an initiative is a `project` (the routes are `/products`
+and `/projects`); the UI says Tool and Initiative.
 
-- **Inline:** `AIRTABLE_TOKEN=pat_xxx npm run sync` — stored nowhere.
-- **`.env` file** (recommended if you'll sync often): create `.env` in the repo root with
-  `AIRTABLE_TOKEN=pat_xxx`, then just run `npm run sync`. The script auto-loads `.env`,
-  and `.env` is already git-ignored. **Never commit the token.**
-- **Shell export:** `export AIRTABLE_TOKEN=pat_xxx` for the current terminal session.
+### How select values become pages
+
+- **Impact area(s)** → matched by name against `themes.json`. A tool or initiative with
+  *no* impact area is filed under the entry marked `crossCutting` (Shared Infrastructure).
+- **Country / region** → matched by name against `countries.json`. `Other` is ignored.
+  A country only gets a page while something Live is tagged to it.
+- A value the sync does not recognise **fails the run by name** — add the area or country
+  to the reference file first. Nothing is silently dropped.
+
+### Attachments
+
+Airtable attachment URLs expire within hours, so the sync **downloads** every file and writes
+a local path. Names are deterministic (`tools/<slug>-hero.jpg`, `-shot-1.jpg`, `-logo.png`,
+`-demo.mp4`), so a re-sync overwrites instead of accumulating; the folder is replaced whole,
+so a removed attachment disappears too.
+
+- Images are re-encoded: max 2400px wide, JPEG. Logos stay PNG (transparency), max 800px.
+  SVGs are rasterised.
+- Demo videos are compressed to a silent 720p MP4. This needs **`ffmpeg`** on the machine
+  running the sync; without it the video is skipped with a warning.
+- Supporting documents on outcomes are copied as they are (`.pdf .docx .xlsx .csv` only).
+- **Media credit** is written beside every image and printed under it on the page. The sync
+  warns when a record has images and no credit.
+
+## One-time setup: the token
+
+1. **https://airtable.com/create/tokens** → create or edit a token
+2. **Scopes:** `data.records:read`, `schema.bases:read` (the sync never writes to Airtable)
+3. **Access:** add the intake base
+4. Put it in `.env` in the repo root as `AIRTABLE_TOKEN=pat…`. `.env` is git-ignored.
 
 | Env var | Required | Default |
 |---|---|---|
-| `AIRTABLE_TOKEN` | yes, to sync | — (if unset, `sync` no-ops so builds use committed JSON) |
-| `AIRTABLE_BASE_ID` | no | `appwOB0tczOVKXuQL` |
+| `AIRTABLE_TOKEN` | yes, to sync | — (if unset, `sync` no-ops) |
+| `AIRTABLE_BASE_ID` | no | `appjLGt1IWscYAV3i` |
 
----
+A token only sees the bases listed under its **Access** — owning a base is not enough.
 
-## npm scripts
+## Changing the schema
 
-| Command | Does |
-|---|---|
-| `npm run sync` | Pull Airtable → write `content/data/*.json`. No-ops (exit 0) if `AIRTABLE_TOKEN` is unset. |
-| `npm run validate` | Referential integrity + taxonomy conformance check. Fails non-zero on any problem. |
-| `npm run build` | Runs `prebuild` (`validate` → `sass:build`) then the Next.js build. The validator is a gate: bad data fails the build instead of shipping. |
+Every column the sync reads is named once, in `FIELDS` at the top of `sync-airtable.js`.
+Before reading any record the sync checks each name against the base and **fails naming the
+missing column** — so a rename in Airtable cannot silently empty a field on the site.
 
-`sync` is intentionally **not** part of `prebuild`, so Vercel builds from the committed
-JSON (no token needed in CI). To publish Airtable edits, run `sync` and commit.
-
----
-
-## What the tables map to
-
-| Airtable table | File | Notes |
-|---|---|---|
-| Themes | `themes.json` | 5 work areas; drives `/our-work`, nav, footer |
-| PRODUCTS | `products.json` | `Slug` = URL id; `Type`/`Status` are the dropdowns |
-| Projects | `projects.json` | `Programme`, `Archived`, `Background note`, links |
-| Countries | `countries.json` | `CTA label`/`CTA href` = the country-page button |
-| Donors | `donors.json` | funders (linked from Projects) |
-| Partners | `partners.json` | implementing/research orgs — **distinct from donors** |
-| Personas | `personas.json` | audiences |
-| Team | `team.json` | people |
-| Relationships | `relationships.json` | the product↔product graph (`From → type → To`) |
-
-**Not synced** (stay in the repo): `taxonomy.json`, `content/pages/*`, blog posts, and
-the **Project Intake** table (that's the curation funnel, not published data).
-
-### Editing tips
-- **Slug** is the page's permanent URL id. Set it once; changing it changes the URL.
-  Every record needs one — the sync fails loudly if any are missing.
-- **Relationships:** edit the *Relationships* table (that's where the connection type
-  lives), not the mirror columns on PRODUCTS.
-- **Product types / statuses / taxonomy:** edit the dropdown options on the field
-  (column header → *Edit field*). New taxonomy values must also be added to
-  `content/data/taxonomy.json`, or `validate` will reject them.
-
-### Content kept in the repo, merged back by slug
-The sync preserves these (they aren't modelled in Airtable):
-- `products[].rich` — the Peskas microsite block
-- `themes[].featuredProductSlugs`
-- `team[].bio`, `team[].initials`
-
----
+- **Renamed a column** → change its name in `FIELDS`.
+- **New column** → add a line to `FIELDS`, a line in `transform()`, and render it.
+- **New select option** → add it to `taxonomy.json` (or `themes.json` / `countries.json`)
+  first. The sync runs the build's checks on what it is about to write, and stops with
+  nothing written if a value is not listed.
+- **New relationship type** → also give it a direction in `FORWARD` in `lib/relationships.mjs`.
 
 ## Troubleshooting
 
-- **`sync` says "skipping"** — `AIRTABLE_TOKEN` isn't set.
-- **`sync` fails with a slug error** — a record in Airtable has no `Slug`; add one.
-- **`validate` fails after a sync** — usually a taxonomy value used in Airtable that
-  isn't in `taxonomy.json`, or a broken link. The message names the record and field.
-- **Build fails in `prebuild`** — run `npm run validate` locally to see the same error.
+- **"I marked it Live and it is not on the site"** — every run starts by printing how many
+  records are in each publication state, per table. Each table has its own state: making an
+  initiative Live does not publish its tools, and a connection only appears once the tool at
+  both of its ends is Live.
+- **"Nothing is marked Live yet"** — expected until records are flipped in Airtable.
+- **403 / 404 from Airtable** — the token does not list the base under Access, or lacks a scope.
+- **"no field named …"** — a column was renamed or removed; update `FIELDS`.
+- **"country … is not in content/data/countries.json"** — add the country there.
+- **"is Live with no Evidence status"** — every published outcome must say how well it is
+  evidenced; set the status or take the record out of Live.
+- **"The snapshot would fail `npm run validate`"** — the sync found a problem the build
+  would reject, listed by record. Nothing was written; fix the record or the vocabulary
+  and re-run.
+- **`validate` says a media file is missing** — the JSON was committed without
+  `public/assets/portfolio/`; re-run `sync` and commit both.

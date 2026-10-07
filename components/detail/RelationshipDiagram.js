@@ -3,41 +3,7 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { typeColor } from './meta';
 import { productHref } from '@/lib/routes.mjs';
-
-// Edge types that flow "forward" (source produces/enables target). The others
-// ('depends on', 'pilot of') are reversed for layout so the prerequisite/parent
-// sits upstream — every edge then runs left → right.
-const FORWARD = new Set(['feeds into', 'enables']);
-
-/** Normalize edges to a left→right flow and assign each node a column (layer)
- *  via longest-path from the sources. Cycle-safe (capped at node count). */
-function buildLayout(graph) {
-    const { nodes } = graph;
-    const dEdges = graph.edges.map((e) => {
-        const forward = FORWARD.has(e.type);
-        return { source: forward ? e.from : e.to, target: forward ? e.to : e.from, type: e.type };
-    });
-
-    const layer = new Map(nodes.map((n) => [n.slug, 0]));
-    for (let i = 0; i < nodes.length; i++) {
-        let changed = false;
-        for (const e of dEdges) {
-            const cand = (layer.get(e.source) ?? 0) + 1;
-            if (cand > (layer.get(e.target) ?? 0)) {
-                layer.set(e.target, cand);
-                changed = true;
-            }
-        }
-        if (!changed) break;
-    }
-
-    const maxLayer = Math.max(0, ...nodes.map((n) => layer.get(n.slug) || 0));
-    const columns = [];
-    for (let l = 0; l <= maxLayer; l++) {
-        columns.push(nodes.filter((n) => (layer.get(n.slug) || 0) === l));
-    }
-    return { dEdges, columns };
-}
+import { layout, pathThrough } from '@/lib/relationships.mjs';
 
 const Arrow = ({ id, color }) => (
     <marker id={id} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -55,6 +21,8 @@ const Arrow = ({ id, color }) => (
  * - Focus + context: the active node (default: the current product) highlights its
  *   whole upstream→downstream PATH — every ancestor and descendant — while parallel
  *   branches fade. Hovering any node re-focuses on it.
+ * - A graph with no `focus` renders undimmed and unmarked. That is how an initiative page
+ *   uses it: the subject is the whole programme, not one tool inside it.
  */
 export default function RelationshipDiagram({ graph }) {
     const containerRef = useRef(null);
@@ -62,63 +30,28 @@ export default function RelationshipDiagram({ graph }) {
     const [paths, setPaths] = useState([]);
     const [groups, setGroups] = useState([]);
     const [dims, setDims] = useState({ w: 0, h: 0 });
-    const [active, setActive] = useState(graph?.focus);
+    // Null when the graph has no focal tool (an initiative's own lineage), which turns off
+    // both the "You are here" marker and the dimming of everything off the focal path.
+    const [active, setActive] = useState(graph?.focus || null);
 
     const hasGraph = Boolean(graph && graph.edges && graph.edges.length);
 
-    const { dEdges, columns } = useMemo(
-        () => (hasGraph ? buildLayout(graph) : { dEdges: [], columns: [] }),
+    const { flow, columns } = useMemo(
+        () => (hasGraph ? layout(graph) : { flow: [], columns: [] }),
         [graph, hasGraph]
     );
 
-    // Directed adjacency, both directions, for path (ancestor/descendant) highlighting.
-    const flow = useMemo(() => {
-        const down = new Map();
-        const up = new Map();
-        const push = (m, a, b) => {
-            if (!m.has(a)) m.set(a, []);
-            m.get(a).push(b);
-        };
-        dEdges.forEach((e) => {
-            push(down, e.source, e.target);
-            push(up, e.target, e.source);
-        });
-        return { down, up };
-    }, [dEdges]);
-
     // Active node + all nodes on a directed path through it (ancestors + descendants),
-    // scoped by country: when a path runs through a shared hub (e.g. one API fed by many
-    // country pipelines), only follow the branch that shares the focused node's country,
-    // so a country app traces back to its OWN pipeline, not its siblings'.
-    const highlighted = useMemo(() => {
-        const countryOf = new Map(graph.nodes.map((n) => [n.slug, n.countrySlugs || []]));
-        const activeCountries = countryOf.get(active) || [];
-        const sharesCountry = (slug) => {
-            if (!activeCountries.length) return true; // focused node is global/untagged
-            const c = countryOf.get(slug) || [];
-            if (!c.length) return true; // shared/global node — always part of the flow
-            return c.some((x) => activeCountries.includes(x));
-        };
-        const set = new Set([active]);
-        const walk = (m, start) => {
-            const q = [[start, 0]];
-            while (q.length) {
-                const [n, depth] = q.shift();
-                (m.get(n) || []).forEach((x) => {
-                    // Always keep the focused node's DIRECT neighbours (a real 1-hop
-                    // dependency, even cross-country); only country-scope deeper hops,
-                    // which are the ones that fan out through a shared hub.
-                    if (!set.has(x) && (depth === 0 || sharesCountry(x))) {
-                        set.add(x);
-                        q.push([x, depth + 1]);
-                    }
-                });
-            }
-        };
-        walk(flow.down, active);
-        walk(flow.up, active);
-        return set;
-    }, [active, flow, graph]);
+    // scoped by country — see pathThrough.
+    //
+    // With no active node nothing is dimmed. That is the initiative view: the graph is the
+    // whole of one programme's lineage and no tool in it is "where you are", so singling one
+    // out would be a lie and fading the rest would hide the thing the reader came to see.
+    // Hovering still focuses a path.
+    const highlighted = useMemo(
+        () => (active ? pathThrough(graph.nodes, flow, active) : null),
+        [active, flow, graph]
+    );
 
     const setRef = useCallback(
         (slug) => (el) => {
@@ -151,7 +84,7 @@ export default function RelationshipDiagram({ graph }) {
         });
 
         const nextPaths = [];
-        dEdges.forEach((e, i) => {
+        flow.forEach((e, i) => {
             const a = rects.get(e.source);
             const b = rects.get(e.target);
             if (!a || !b) return;
@@ -200,7 +133,7 @@ export default function RelationshipDiagram({ graph }) {
 
         setPaths(nextPaths);
         setGroups(nextGroups);
-    }, [dEdges, graph]);
+    }, [flow, graph]);
 
     useLayoutEffect(() => {
         measure();
@@ -252,7 +185,9 @@ export default function RelationshipDiagram({ graph }) {
                         {paths.map((p) => {
                             // An edge is on the highlighted flow when BOTH its endpoints are
                             // on the active node's path (matches the node highlighting).
-                            const on = highlighted.has(p.source) && highlighted.has(p.target);
+                            const on =
+                                !highlighted ||
+                                (highlighted.has(p.source) && highlighted.has(p.target));
                             return (
                                 <path
                                     key={p.key}
@@ -268,8 +203,8 @@ export default function RelationshipDiagram({ graph }) {
                         <div className="wfRelColumn" key={ci}>
                             {col.map((node) => {
                                 const color = typeColor(node.type);
-                                const isFocus = node.slug === graph.focus;
-                                const dim = !highlighted.has(node.slug);
+                                const isFocus = Boolean(graph.focus) && node.slug === graph.focus;
+                                const dim = Boolean(highlighted) && !highlighted.has(node.slug);
                                 return (
                                     <Link
                                         key={node.slug}
@@ -278,7 +213,7 @@ export default function RelationshipDiagram({ graph }) {
                                         className={`wfRelNode${isFocus ? ' wfRelNode--focus' : ''}${dim ? ' wfRelNode--dim' : ''}`}
                                         style={{ borderLeftColor: color }}
                                         onMouseEnter={() => setActive(node.slug)}
-                                        onMouseLeave={() => setActive(graph.focus)}
+                                        onMouseLeave={() => setActive(graph.focus || null)}
                                     >
                                         <span className="wfRelNodeName">{node.name}</span>
                                         {node.type && (

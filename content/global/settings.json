@@ -1,4 +1,5 @@
 {
+  "_comment": "Footer columns mirror the primary navigation, one for one. They deliberately do NOT enumerate impact areas or countries: those come from the portfolio database and change whenever a record goes Live, so listing them here guarantees the footer goes stale. The index pages do the enumerating. `legal` sits in the bottom bar, away from portfolio navigation, because it is not portfolio content.",
   "footer": {
     "copyright": "WorldFish Digital 2026",
     "contactEmails": [
@@ -7,39 +8,57 @@
     ],
     "columns": [
       {
-        "title": "Our Work",
+        "title": "Our work",
         "links": [
-          { "label": "Small-Scale Fisheries", "href": "/our-work/small-scale-fisheries" },
-          { "label": "Aquaculture", "href": "/our-work/aquaculture" },
-          { "label": "Better Diets & Nutrition Security", "href": "/our-work/nutrition-food-systems" },
-          { "label": "Climate Adaptation", "href": "/our-work/climate-adaptation" },
-          { "label": "Data Infrastructure", "href": "/our-work/data-infrastructure" }
+          {
+            "label": "By impact area",
+            "href": "/our-work"
+          },
+          {
+            "label": "By country",
+            "href": "/countries"
+          },
+          {
+            "label": "Impact",
+            "href": "/impact"
+          }
         ]
       },
       {
-        "title": "Tools & Products",
+        "title": "Portfolio",
         "links": [
-          { "label": "All products", "href": "/products" },
-          { "label": "Projects", "href": "/projects" },
-          { "label": "Peskas", "href": "/products/peskas" },
-          { "label": "Countries", "href": "/countries" },
-          { "label": "For Partners", "href": "/for-partners" }
+          {
+            "label": "Initiatives",
+            "href": "/projects"
+          },
+          {
+            "label": "Tools",
+            "href": "/products"
+          }
         ]
       },
       {
-        "title": "Company",
+        "title": "About",
         "links": [
-          { "label": "Team", "href": "/team" }
+          {
+            "label": "Funding & partnership",
+            "href": "/for-partners"
+          },
+          {
+            "label": "Team",
+            "href": "/team"
+          },
+          {
+            "label": "Updates",
+            "href": "/blog"
+          }
         ]
-      },
+      }
+    ],
+    "legal": [
       {
-        "title": "Resources",
-        "links": [
-          { "label": "Our Blog", "href": "/blog" },
-          { "label": "How it works", "href": "/how-it-works" },
-          { "label": "Publications and data", "href": "/data-resources" },
-          { "label": "Terms and policies", "href": "/page-terms" }
-        ]
+        "label": "Taseguru app privacy policy",
+        "href": "/taseguru-privacy"
       }
     ]
   }

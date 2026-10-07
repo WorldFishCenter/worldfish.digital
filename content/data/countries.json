@@ -1,4 +1,5 @@
 {
+  "_comment": "HAND-MAINTAINED reference list — the sync reads this, it never writes it. `name` must match the option text of the `Country / region` field in Airtable exactly; the sync fails by name on a country that is not listed here. A country only gets a page while something Live is tagged to it. Which tools, initiatives and outcomes belong to a country is derived from the Live records, not stored here.",
   "countries": [
     {
       "slug": "malawi",
@@ -7,18 +8,7 @@
       "image": "/assets/imgs/page/homepage1/malawi-dash.png",
       "description": "Extending Peskas to inland fisheries, Malawi represents an important expansion into freshwater aquatic food systems. The Lake Malawi implementation adapts the platform's methodologies for inland small-scale fisheries, addressing unique challenges of freshwater ecosystems and community-based fisheries management.",
       "ctaLabel": "Open dashboard",
-      "ctaHref": "https://malawi.peskas.org/",
-      "themeSlugs": [
-        "small-scale-fisheries"
-      ],
-      "productSlugs": [
-        "malawi-ssf-data-pipeline",
-        "peskas-training-course"
-      ],
-      "projectSlugs": [
-        "profishblue"
-      ],
-      "airtableCountry": "Malawi"
+      "ctaHref": "https://malawi.peskas.org/"
     },
     {
       "slug": "zanzibar",
@@ -27,25 +17,7 @@
       "image": "/assets/imgs/page/homepage1/zanzibar-dash.png",
       "description": "Leveraging Zanzibar's strategic importance in Indian Ocean fisheries, Peskas is being adapted to support the island's vibrant fishing communities. The implementation emphasizes community-based resource management and the integration of traditional fishing knowledge with modern data collection techniques.",
       "ctaLabel": "Open dashboard",
-      "ctaHref": "https://zanzibar.peskas.org",
-      "themeSlugs": [
-        "small-scale-fisheries",
-        "data-infrastructure"
-      ],
-      "productSlugs": [
-        "coasts-app",
-        "tracks-app",
-        "validation-app",
-        "tracks-effort-model",
-        "coasts-data-pipeline",
-        "peskas-api",
-        "zanzibar-data-pipeline",
-        "zanzibar-app"
-      ],
-      "projectSlugs": [
-        "aabs"
-      ],
-      "airtableCountry": "Zanzibar"
+      "ctaHref": "https://zanzibar.peskas.org"
     },
     {
       "slug": "namibia",
@@ -54,12 +26,7 @@
       "image": null,
       "description": "A pipeline geography for small-scale fisheries digital advocacy work.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [],
-      "productSlugs": [],
-      "projectSlugs": [],
-      "airtableCountry": "Other",
-      "pipeline": true
+      "ctaHref": ""
     },
     {
       "slug": "global",
@@ -68,28 +35,7 @@
       "image": null,
       "description": "Global public goods and data infrastructure work — standards, ontologies, APIs, and modeling infrastructure shared across every theme, plus pipeline climate-services work with UAE partners.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "data-infrastructure",
-        "climate-adaptation",
-        "small-scale-fisheries",
-        "aquaculture"
-      ],
-      "productSlugs": [
-        "aquadata-portal",
-        "aquatic-food-ontology",
-        "fishbasepro"
-      ],
-      "projectSlugs": [
-        "gates",
-        "uae",
-        "ict4ssf",
-        "fishbase-consortium",
-        "raqfs-aquadata-initiative",
-        "aquatic-food-ontology-project",
-        "dta"
-      ],
-      "airtableCountry": "Global"
+      "ctaHref": ""
     },
     {
       "slug": "mozambique",
@@ -98,25 +44,7 @@
       "image": "/assets/imgs/page/homepage1/mozambique-dash.png",
       "description": "Mozambique's extensive coastline and significant small-scale fisheries sector make it a key location for Peskas expansion. The implementation focuses on supporting artisanal fishing communities while building local capacity for sustainable fisheries management and marine resource conservation.",
       "ctaLabel": "Open dashboard",
-      "ctaHref": "https://peskas-dashboard-mozambique.vercel.app",
-      "themeSlugs": [
-        "small-scale-fisheries",
-        "data-infrastructure"
-      ],
-      "productSlugs": [
-        "coasts-app",
-        "tracks-app",
-        "validation-app",
-        "tracks-effort-model",
-        "coasts-data-pipeline",
-        "peskas-api",
-        "mozambique-app",
-        "mozambique-data-pipeline"
-      ],
-      "projectSlugs": [
-        "aabs"
-      ],
-      "airtableCountry": "Mozambique"
+      "ctaHref": "https://peskas-dashboard-mozambique.vercel.app"
     },
     {
       "slug": "eritrea",
@@ -125,16 +53,7 @@
       "image": null,
       "description": "An assessment explored Peskas deployment potential for Eritrean inland fisheries; no active deployment to date.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "small-scale-fisheries",
-        "data-infrastructure"
-      ],
-      "productSlugs": [],
-      "projectSlugs": [
-        "eritrea-peskas-assessment"
-      ],
-      "airtableCountry": "Other"
+      "ctaHref": ""
     },
     {
       "slug": "west-africa-caopa",
@@ -143,15 +62,7 @@
       "image": null,
       "description": "Regional digital advocacy work with the African Confederation of Professional Artisanal Fishing Organisations (CAOPA) network.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "small-scale-fisheries"
-      ],
-      "productSlugs": [],
-      "projectSlugs": [
-        "ssf-voice"
-      ],
-      "airtableCountry": "Other"
+      "ctaHref": ""
     },
     {
       "slug": "malaysia",
@@ -160,18 +71,7 @@
       "image": null,
       "description": "Peskas is being adapted for Malaysia's diverse coastal and marine fisheries systems. Building on lessons learned from Timor-Leste, the Malaysian implementation focuses on integrating with existing fisheries management frameworks while maintaining the platform's core open-source principles and user-centered design approach.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "data-infrastructure",
-        "small-scale-fisheries"
-      ],
-      "productSlugs": [
-        "lo2s-model"
-      ],
-      "projectSlugs": [
-        "ssf-voice"
-      ],
-      "airtableCountry": "Malaysia"
+      "ctaHref": ""
     },
     {
       "slug": "solomon-islands",
@@ -180,11 +80,7 @@
       "image": null,
       "description": "An emerging geography in the WorldFish Digital portfolio, not yet linked to an active theme or product.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [],
-      "productSlugs": [],
-      "projectSlugs": [],
-      "airtableCountry": "Other"
+      "ctaHref": ""
     },
     {
       "slug": "ghana",
@@ -193,19 +89,7 @@
       "image": null,
       "description": "A pilot site for the CGIAR RAqFS/AquaData Initiative, the direct predecessor to the current Data & Digital work area.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "data-infrastructure",
-        "small-scale-fisheries",
-        "aquaculture"
-      ],
-      "productSlugs": [
-        "aquadata-portal"
-      ],
-      "projectSlugs": [
-        "raqfs-aquadata-initiative"
-      ],
-      "airtableCountry": "Other"
+      "ctaHref": ""
     },
     {
       "slug": "zambia",
@@ -214,20 +98,7 @@
       "image": null,
       "description": "Aquaculture and data infrastructure work in Zambia includes feed formulation tools and pond phenotyping models supporting smallholder producers.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "aquaculture",
-        "climate-adaptation",
-        "data-infrastructure"
-      ],
-      "productSlugs": [
-        "fasa-feed-formulation-app",
-        "phenofish"
-      ],
-      "projectSlugs": [
-        "fasa"
-      ],
-      "airtableCountry": "Zambia"
+      "ctaHref": ""
     },
     {
       "slug": "kenya",
@@ -236,31 +107,7 @@
       "image": "/assets/imgs/page/homepage1/kenya-dash.png",
       "description": "Part of Peskas' East African expansion, the Kenya implementation focuses on coastal small-scale fisheries. Working with local communities and government partners, this initiative aims to improve fisheries data collection and management practices along Kenya's rich coastal waters, supporting both food security and sustainable livelihoods. The second most theme-dense country after Timor-Leste, spanning fisheries, aquaculture, and climate work.",
       "ctaLabel": "Open dashboard",
-      "ctaHref": "https://digitalfisheries.kenya.peskas.org/en",
-      "themeSlugs": [
-        "small-scale-fisheries",
-        "aquaculture",
-        "climate-adaptation",
-        "data-infrastructure"
-      ],
-      "productSlugs": [
-        "coasts-app",
-        "tracks-app",
-        "fasa-feed-formulation-app",
-        "wcs-wf-app",
-        "validation-app",
-        "kenya-data-pipeline",
-        "tracks-effort-model",
-        "coasts-data-pipeline",
-        "peskas-api",
-        "kenya-app"
-      ],
-      "projectSlugs": [
-        "casa",
-        "fasa",
-        "aabs"
-      ],
-      "airtableCountry": "Kenya"
+      "ctaHref": "https://digitalfisheries.kenya.peskas.org/en"
     },
     {
       "slug": "nigeria",
@@ -269,20 +116,7 @@
       "image": null,
       "description": "Aquaculture and climate adaptation work in Nigeria centers on feed formulation and extension tools for smallholder farmers, alongside digital advocacy for small-scale fishing communities.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "aquaculture",
-        "climate-adaptation",
-        "small-scale-fisheries"
-      ],
-      "productSlugs": [
-        "fasa-feed-formulation-app"
-      ],
-      "projectSlugs": [
-        "fasa",
-        "ssf-voice"
-      ],
-      "airtableCountry": "Nigeria"
+      "ctaHref": ""
     },
     {
       "slug": "timor-leste",
@@ -291,26 +125,7 @@
       "image": "/assets/imgs/page/homepage1/timor-dash.png",
       "description": "The flagship implementation of Peskas since 2016, officially adopted as the national fisheries monitoring system in 2019. In partnership with the Ministry of Agriculture and Fisheries, Peskas has collected over 59,000 fishing trips and 298 tonnes of catch data, enabling the first national fisheries production estimates and supporting evidence-based policy development for sustainable small-scale fisheries management. The most theme-dense country in the portfolio, spanning fisheries, nutrition, climate, and aquaculture work.",
       "ctaLabel": "Open dashboard",
-      "ctaHref": "https://timor.peskas.org/",
-      "themeSlugs": [
-        "small-scale-fisheries",
-        "data-infrastructure",
-        "nutrition-food-systems",
-        "climate-adaptation"
-      ],
-      "productSlugs": [
-        "peskas",
-        "nutrient-profiles",
-        "peskas-app"
-      ],
-      "projectSlugs": [
-        "fssp2",
-        "ikanadapt",
-        "nsfm",
-        "peskas-service",
-        "ikan-ba-futuru"
-      ],
-      "airtableCountry": "Timor-Leste"
+      "ctaHref": "https://timor.peskas.org/"
     },
     {
       "slug": "guatemala",
@@ -319,12 +134,7 @@
       "image": null,
       "description": "A pipeline geography for small-scale fisheries monitoring expansion.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [],
-      "productSlugs": [],
-      "projectSlugs": [],
-      "airtableCountry": "Other",
-      "pipeline": true
+      "ctaHref": ""
     },
     {
       "slug": "colombia",
@@ -333,16 +143,7 @@
       "image": null,
       "description": "A pipeline geography for small-scale fisheries digital advocacy work.",
       "ctaLabel": "",
-      "ctaHref": "",
-      "themeSlugs": [
-        "small-scale-fisheries"
-      ],
-      "productSlugs": [],
-      "projectSlugs": [
-        "ssf-voice"
-      ],
-      "airtableCountry": "Other",
-      "pipeline": true
+      "ctaHref": ""
     }
   ]
 }

@@ -1,162 +1,167 @@
-'use client'
-import { useState } from 'react';
 import Link from 'next/link';
-import HeroSection from './HeroSection';
-import StatsSection from './StatsSection';
-import RegionsSection from './RegionsSection';
-import CTASection from './CTASection';
-import FeaturesSection from './FeaturesSection';
-import TracksHeroSection from './TracksHeroSection';
-import AboutSection from './AboutSection';
-import BlogSection from './BlogSection';
-import VideoModal from './VideoModal';
 import Layout from '../layout/Layout';
 import DetailBlock from '../detail/DetailBlock';
-import FactSheet from '../detail/FactSheet';
+import DetailHero from '../detail/DetailHero';
+import DetailFacts from '../detail/DetailFacts';
+import EntityMedia from '../detail/EntityMedia';
+import Prose from '../detail/Prose';
 import RelationshipDiagram from '../detail/RelationshipDiagram';
-import { StatusPill, MetaPill, TagList, LinkTagList } from '../detail/Pills';
+import ResultsSection from './ResultsSection';
+import AreaTags from '../detail/AreaTags';
+import { StatusPill, MetaPill } from '../detail/Pills';
 import { countryHref, projectHref, themeHref } from '@/lib/routes.mjs';
 
-function ConnectionsBlock({ graph }) {
-    if (!graph) return null;
-    return (
-        <DetailBlock kicker="Ecosystem" title="How this connects">
-            <RelationshipDiagram key={graph.focus} graph={graph} />
-        </DetailBlock>
-    );
-}
+const External = ({ href, className, children }) => (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        {children} ↗
+    </a>
+);
 
-function ThinProductHero({ product }) {
-    return (
-        <section className="section-box wfSectionDark wfPadHeroSm">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-9">
-                        <p className="wfSectionKicker">Product</p>
-                        <div className="wfKickerRow">
-                            <MetaPill>{product.type}</MetaPill>
-                            <StatusPill status={product.status} />
-                        </div>
-                        <h1 className="display-3 wfTitleHero">{product.name}</h1>
-                        {product.description && <p className="wfLead wfLeadMt">{product.description}</p>}
-                        <div className="mt-40 d-flex flex-wrap gap-3">
-                            {product.url && (
-                                <a
-                                    href={product.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="wfBtnPrimary"
-                                >
-                                    Visit {product.name} ↗
-                                </a>
-                            )}
-                            <Link href="/products" className="wfBtnGhost">
-                                Back to all products ↗
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
+/**
+ * A tool — one WFD Tools record.
+ *
+ * Same order as every other entity page (see docs/IA.md):
+ *
+ *   what it is → what is in it → how it connects → what it changed → full reference
+ *
+ * "What is in it" for a tool is what it does, how to reuse it and what it cannot do. Reuse
+ * sits high on purpose: the primary reader is a WorldFish researcher asking "can I build on
+ * this", and the reuse note and the known limitations are the two fields written to answer
+ * exactly that.
+ *
+ * The initiative, where it runs and how ready it is go in the hero rather than the fact
+ * block at the foot: they are the context for everything below, and a reader should not have
+ * to reach the bottom of the page to learn which programme a tool belongs to.
+ */
+export default function ProductPageClient({ product }) {
+    const { themes, countries, projects, graph, outcomes } = product;
+    const hasMedia = product.hero || product.video || product.screenshots.length > 0;
+    const hasBody = product.description || product.reuse || product.limitations || hasMedia;
 
-function ThinProductBody({ product }) {
-    const { themes, countries, projects, graph } = product;
+    const list = (values) => (values && values.length ? values.join(', ') : null);
+
+    // The hero carries what is needed to read the rest; the rest waits for the full record.
+    const heroFacts = [
+        { label: 'Part of', value: list(projects.map((p) => p.name)) },
+        { label: 'Running in', value: list(countries.map((c) => c.name)) },
+        { label: 'Readiness', value: product.readiness },
+        { label: 'Code', value: product.openSource ? 'Open source' : null },
+    ];
+
     const factRows = [
-        { label: 'Lead developer', value: product.leadDev || null },
         {
-            label: 'Work areas',
-            value: themes?.length ? (
-                <LinkTagList items={themes.map((t) => ({ href: themeHref(t.slug), label: t.name }))} />
-            ) : null,
+            label: 'Part of',
+            value: projects.map((p) => ({ href: projectHref(p.slug), label: p.name })),
+        },
+        {
+            label: 'Impact areas',
+            value: themes.map((t) => ({ href: themeHref(t.slug), label: t.name })),
         },
         {
             label: 'Countries',
-            value: countries?.length ? (
-                <LinkTagList
-                    items={countries.map((c) => ({ href: countryHref(c.slug), label: c.name }))}
-                />
-            ) : null,
+            value: countries.map((c) => ({ href: countryHref(c.slug), label: c.name })),
         },
+        { label: 'Who uses it', value: product.audiences.join(', ') },
+        { label: 'Lead developer', value: product.leadDev },
         {
-            label: 'In projects',
-            value: projects?.length ? (
-                <LinkTagList items={projects.map((p) => ({ href: projectHref(p.slug), label: p.name }))} />
-            ) : null,
+            label: 'Contact',
+            value: product.contactEmail && [
+                { href: `mailto:${product.contactEmail}`, label: product.contactEmail },
+            ],
         },
+        { label: 'Licence', value: product.licence },
+        { label: 'Data', value: product.dataAvailability },
         {
-            label: 'Thematic',
-            value: product.thematicAreas?.length ? <TagList items={product.thematicAreas} /> : null,
+            label: 'Dataset',
+            value: product.datasetUrl && [{ href: product.datasetUrl, label: product.datasetUrl }],
         },
-        {
-            label: 'Impact',
-            value: product.impactAreas?.length ? <TagList items={product.impactAreas} /> : null,
-        },
+        { label: 'Publications', value: product.publications },
+        { label: 'SDGs', value: product.sdgs.join(', ') },
+        { label: 'Thematic', value: product.thematicAreas.join(', ') },
     ];
 
     return (
-        <section className="section-box wfSectionDark wfPadSection">
-            <div className="container">
-                <div className="wfDetailBlock">
-                    <FactSheet rows={factRows} variant="strip" />
-                </div>
-                <ConnectionsBlock graph={graph} />
-            </div>
-        </section>
-    );
-}
-
-export default function ProductPageClient({ product, latestPosts }) {
-    const [modal, setModal] = useState(false);
-    const [videoLoading, setVideoLoading] = useState(true);
-    const rich = product.rich;
-
-    const openModal = () => setModal(true);
-    const closeModal = () => setModal(false);
-    const onVideoLoad = () => setVideoLoading(false);
-
-    if (!rich) {
-        return (
-            <Layout>
-                <ThinProductHero product={product} />
-                <ThinProductBody product={product} />
-            </Layout>
-        );
-    }
-
-    return (
         <Layout>
-            <HeroSection data={rich.hero} onWatchVideo={openModal} />
-            {rich.stats && <StatsSection stats={rich.stats} />}
-            {rich.regions && <RegionsSection regions={rich.regions} section={rich.regionsSection} />}
-            {rich.cta && <CTASection data={rich.cta} />}
-            {rich.features && <FeaturesSection features={rich.features} />}
-            {rich.tracks && <TracksHeroSection data={rich.tracks} />}
-            {rich.about && <AboutSection data={rich.about} />}
-            {rich.blogSection && (
-                <BlogSection
-                    latestPosts={latestPosts}
-                    data={rich.blogSection}
-                    viewAllHref={`/blog/${rich.blogSection.channel}`}
-                />
-            )}
-            {rich.videoYoutubeId && (
-                <VideoModal
-                    isOpen={modal}
-                    onClose={closeModal}
-                    videoLoading={videoLoading}
-                    onVideoLoad={onVideoLoad}
-                    youtubeId={rich.videoYoutubeId}
-                />
-            )}
-            {product.graph && (
-                <section className="section-box wfSectionDark wfPadSection">
+            <DetailHero
+                kicker="Tool"
+                title={product.name}
+                lead={product.summary}
+                facts={heroFacts}
+            >
+                <div className="wfKickerRow mt-20">
+                    <MetaPill>{product.type}</MetaPill>
+                    <StatusPill status={product.status} />
+                </div>
+                <AreaTags areas={themes} className="wfAreaTagsSpaced" />
+                <div className="mt-30 d-flex flex-wrap gap-3">
+                    {product.url && (
+                        <External href={product.url} className="wfBtnPrimary">
+                            Open {product.name}
+                        </External>
+                    )}
+                    {product.repoUrl && (
+                        <External href={product.repoUrl} className="wfBtnGhost">
+                            Code
+                        </External>
+                    )}
+                    {product.docsUrl && (
+                        <External href={product.docsUrl} className="wfBtnGhost">
+                            Documentation
+                        </External>
+                    )}
+                    <Link href="/products" className="wfBtnGhost">
+                        All tools
+                    </Link>
+                </div>
+            </DetailHero>
+
+            {hasBody && (
+                <section className="section-box wfSectionPaper wfPadSection">
                     <div className="container">
-                        <ConnectionsBlock graph={product.graph} />
+                        <p className="wfPaperKicker">What it is</p>
+                        <EntityMedia
+                            name={product.name}
+                            hero={product.hero}
+                            screenshots={product.screenshots}
+                            video={product.video}
+                        />
+                        <div className="wfProseColumn">
+                            {product.description && (
+                                <DetailBlock title="What it does">
+                                    <Prose text={product.description} />
+                                </DetailBlock>
+                            )}
+                            {product.reuse && (
+                                <DetailBlock title="How it can be reused">
+                                    <Prose text={product.reuse} />
+                                </DetailBlock>
+                            )}
+                            {product.limitations && (
+                                <DetailBlock title="Known limitations">
+                                    <Prose text={product.limitations} />
+                                </DetailBlock>
+                            )}
+                        </div>
                     </div>
                 </section>
             )}
+
+            {graph && (
+                <section className="section-box wfSectionDark wfPadSection">
+                    <div className="container">
+                        <DetailBlock kicker="Ecosystem" title="How this connects">
+                            <RelationshipDiagram key={graph.focus} graph={graph} />
+                        </DetailBlock>
+                    </div>
+                </section>
+            )}
+
+            <ResultsSection
+                heading={{ kicker: 'Outcomes', title: `What ${product.name} has changed` }}
+                outcomes={outcomes}
+            />
+
+            <DetailFacts rows={factRows} />
         </Layout>
     );
 }

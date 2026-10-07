@@ -17,9 +17,10 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Every `quality` a next/image call uses must be listed here (Next 16 no longer
     // allows arbitrary values). 68 = blog thumbnails, 72 = blog grid cards (both in
-    // components/content/BlogCoverImage.js); 75 is next/image's default, used by every
-    // <Image> that doesn't set one.
-    qualities: [68, 72, 75],
+    // components/content/BlogCoverImage.js); 70 = dashboard screenshots in
+    // ToolsShowcase; 74 = the homepage featured cards; 75 is next/image's default,
+    // used by every <Image> that doesn't set one.
+    qualities: [68, 70, 72, 74, 75],
     minimumCacheTTL: 60,
   },
 

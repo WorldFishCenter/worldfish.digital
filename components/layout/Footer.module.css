@@ -6,3 +6,32 @@
 .brandLink:hover {
   color: var(--wf-color-accent);
 }
+
+.legalList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.legalList a {
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--wf-text-slate-400);
+  text-decoration: none;
+}
+
+.legalList a:hover {
+  color: var(--wf-color-accent);
+}
+
+@media (max-width: 767px) {
+  .legalList {
+    justify-content: center;
+    margin-top: 12px;
+  }
+}

@@ -1,20 +1,15 @@
 import BlogPostClient from "@/components/sections/BlogPostClient";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/posts";
 import { notFound } from "next/navigation";
-import { POST_CHANNELS, WORLD_FISH_SITE, PESKAS_PRODUCT } from "@/lib/constants";
+import { WORLD_FISH_SITE } from "@/lib/constants";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
     if (!post || post.draft) return { title: 'Post Not Found' };
 
-    const titleSuffix =
-        post.channel === POST_CHANNELS.peskas
-            ? `${PESKAS_PRODUCT.name} — ${WORLD_FISH_SITE.name}`
-            : WORLD_FISH_SITE.name;
-
     return {
-        title: `${post.title} | ${titleSuffix}`,
+        title: `${post.title} | ${WORLD_FISH_SITE.name}`,
         description: post.description || post.content?.substring(0, 160),
         authors: post.author ? [{ name: post.author }] : [],
         robots: {

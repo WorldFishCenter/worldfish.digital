@@ -1,7 +1,7 @@
 import '../public/assets/css/style.css'
 import '../styles/app.css'
 import '../styles/wf-components.css'
-import { Chivo, Noto_Sans } from 'next/font/google'
+import { Chivo, Source_Serif_4 } from 'next/font/google'
 import Script from 'next/script'
 import WowInit from '@/components/elements/WowInit'
 import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
@@ -23,10 +23,14 @@ const chivo = Chivo({
     variable: "--chivo",
     display: 'swap',
 })
-const noto = Noto_Sans({
-    weight: ['300', '400', '500', '600', '700'],
+// Editorial serif for display headings and long-form reading. Chosen over the
+// previous Noto Sans to move the site out of the product-launch register and
+// into the institutional/research one the funder audience expects.
+const sourceSerif = Source_Serif_4({
+    weight: ['300', '400', '600', '700'],
+    style: ['normal', 'italic'],
     subsets: ['latin'],
-    variable: "--noto",
+    variable: "--serif",
     display: 'swap',
 })
 
@@ -37,7 +41,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={`${chivo.variable} ${noto.variable}`}>
+        <html lang="en" className={`${chivo.variable} ${sourceSerif.variable}`}>
             <head>
                 {GA_ENABLED ? (
                     <>

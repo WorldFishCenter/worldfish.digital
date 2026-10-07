@@ -10,7 +10,6 @@
 			li {
 				float: left;
 				padding: 0px 0px 0px 30px;
-				background: url(../imgs/page/single-product/right-arrow.svg) no-repeat 10px 5px;
 				a {
 					color: $color-gray-500;
 					font-size: 14px;
@@ -21,7 +20,6 @@
 				}
 			}
 			li.home {
-				background: url(../imgs/page/single-product/home.svg) no-repeat 0px 0px;
 			}
 		}
 	}
@@ -33,7 +31,6 @@
 	position: absolute;
 	top: 15px;
 	right: 15px;
-	background: url(../imgs/page/single-product/zoom-in.svg) no-repeat center;
 	height: 29px;
 	width: 29px;
 	background-size: 26px;
@@ -88,7 +85,6 @@
 		bottom: -57px;
 		right: 40px;
 		z-index: 1245;
-		background: url(../imgs/page/single-product/up.svg) no-repeat center;
 		height: 45px;
 		width: 45px;
 		border: 0px;
@@ -98,7 +94,6 @@
 		bottom: -57px;
 		left: 40px;
 		z-index: 1245;
-		background: url(../imgs/page/single-product/down.svg) no-repeat center;
 		height: 45px;
 		width: 45px;
 		border: 0px;
@@ -227,7 +222,6 @@
 	line-height: 28px;
 }
 .product-rate {
-	background-image: url(../imgs/page/single-product/rating-stars.png);
 	background-position: 0 -12px;
 	background-repeat: repeat-x;
 	height: 12px;
@@ -238,7 +232,6 @@
 .product-rating {
 	height: 12px;
 	background-repeat: repeat-x;
-	background-image: url(../imgs/page/single-product/rating-stars.png);
 	background-position: 0 0;
 }
 .progress {
@@ -447,11 +440,9 @@ strong {
 	}
 	>a.qty-down {
 		bottom: 1px;
-		background: url(../imgs/page/single-product/arrow-down.svg) no-repeat center;
 	}
 	>a.qty-up {
 		top: 1px;
-		background: url(../imgs/page/single-product/arrow-up.svg) no-repeat center;
 	}
 }
 input.qty-val {
@@ -534,7 +525,6 @@ input.qty-val {
 		width: 3px;
 		right: 8px;
 		height: 12px;
-		background: url(../imgs/page/single-product/dot.svg) no-repeat center;
 	}
 	&:last-child {
 		&::before {

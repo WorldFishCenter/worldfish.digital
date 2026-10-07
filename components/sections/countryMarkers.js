@@ -10,9 +10,7 @@ import { getCountryCoordinates } from '@/lib/countryCoordinates';
  * there on why the points are an app-layer concern), and `tools`/`projects`/`active` are
  * display counts rather than entity relations.
  */
-export function buildCountryMarkers(countries, themes) {
-    const themeName = new Map(themes.map((theme) => [theme.slug, theme.name]));
-
+export function buildCountryMarkers(countries) {
     return countries
         .map((country) => {
             const coords = getCountryCoordinates(country.slug);
@@ -25,9 +23,7 @@ export function buildCountryMarkers(countries, themes) {
                 lat: coords.lat,
                 lon: coords.lon,
                 active: productSlugs.length > 0,
-                themes: (country.themeSlugs || [])
-                    .map((slug) => themeName.get(slug))
-                    .filter(Boolean),
+                themes: country.themes.map((theme) => theme.name),
                 tools: productSlugs.length,
                 projects: (country.projectSlugs || []).length,
             };

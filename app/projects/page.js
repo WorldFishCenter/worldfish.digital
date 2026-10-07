@@ -4,7 +4,7 @@ import { DEFAULT_METADATA } from '@/lib/constants';
 
 export const metadata = {
     ...DEFAULT_METADATA,
-    title: 'Projects - WorldFish Digital',
+    title: 'Initiatives - WorldFish Digital',
 };
 
 export default function ProjectsPage() {

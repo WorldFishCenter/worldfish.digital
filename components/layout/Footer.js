@@ -46,9 +46,21 @@ const Footer = () => {
                         ))}
                     </div>
                     <div className="footer-bottom mt-20">
-                        <div className="row">
+                        <div className="row align-items-center">
                             <div className="col-md-6">
                                 <span className="color-gray-400 text-body-lead">{footer.copyright}</span>
+                            </div>
+                            {/* Legal notices sit apart from portfolio navigation: they are
+                                published here because something external needs the URL, not
+                                because they are part of the work. */}
+                            <div className="col-md-6 text-md-end">
+                                <ul className={styles.legalList}>
+                                    {(footer.legal || []).map((link) => (
+                                        <li key={link.href}>
+                                            <Link href={link.href}>{link.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </div>

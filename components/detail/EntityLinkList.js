@@ -19,7 +19,7 @@ const ArrowIcon = () => (
     </svg>
 );
 
-function EntityRow({ href, name, sub, status, leading }) {
+function EntityRow({ href, name, sub, meta, status, leading, tags }) {
     return (
         <li className="wfEntityItem">
             <Link href={href} className="wfEntityLink">
@@ -28,6 +28,15 @@ function EntityRow({ href, name, sub, status, leading }) {
                     <span className="wfEntityMain">
                         <span className="wfEntityName">{name}</span>
                         {sub && <span className="wfEntitySub">{sub}</span>}
+                        {/* Derived facts — where it runs, which ecosystem it belongs to.
+                            Most products still have no description, so without this a row
+                            is just a name, which tells a reader nothing about whether it
+                            is worth opening. */}
+                        {meta && <span className="wfEntityMeta">{meta}</span>}
+                        {/* Impact-area tags, where the row is something a reader is choosing
+                            between. Rendered outside the link's text flow so the tags stay
+                            their own links. */}
+                        {tags}
                     </span>
                 </span>
                 <span className="wfEntityRight">
@@ -42,7 +51,9 @@ function EntityRow({ href, name, sub, status, leading }) {
 /**
  * A dense, scannable list of linked entities (products, projects…).
  * Pass a flat `items` list, or `groups` of [{ title, count?, items }] to
- * organize by (e.g.) component type. Each item: { href, name, sub?, status? }.
+ * organize by (e.g.) component type.
+ * Each item: { href, name, sub?, meta?, status?, leading?, tags? } — `sub` is authored copy,
+ * `meta` is derived facts (countries, initiative), `tags` a node such as <AreaTags/>.
  */
 export default function EntityLinkList({ items, groups }) {
     if (groups) {

@@ -19,8 +19,11 @@ const ArrowIcon = () => (
     </svg>
 );
 
+const count = (n, singular, plural = `${singular}s`) =>
+    `${n} ${n === 1 ? singular : plural}`;
+
 /**
- * Editorial numbered index of the work-area themes — typographic rows instead
+ * Editorial numbered index of the impact areas — typographic rows instead
  * of a card grid. Used on the homepage, /our-work, and For Partners.
  * When `showStats`, the meta line reports portfolio counts; otherwise it shows
  * the theme tagline.
@@ -29,9 +32,16 @@ export default function ThemeIndexList({ themes, showStats = false }) {
     return (
         <ol className="wfIndexList">
             {themes.map((theme, i) => {
-                const meta = showStats
-                    ? `${theme.projectSlugs.length} projects · ${theme.productSlugs.length} tools · ${theme.countrySlugs.length} countries`
-                    : theme.tagline;
+                const empty = !theme.productSlugs.length && !theme.projectSlugs.length;
+                const meta = !showStats
+                    ? theme.tagline
+                    : empty
+                      ? 'Nothing tagged to this area yet'
+                      : [
+                            count(theme.projectSlugs.length, 'initiative'),
+                            count(theme.productSlugs.length, 'tool'),
+                            count(theme.countrySlugs.length, 'country', 'countries'),
+                        ].join(' · ');
 
                 return (
                     <li key={theme.slug} className="wfIndexRow">

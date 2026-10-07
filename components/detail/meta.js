@@ -55,10 +55,43 @@ export const groupProductsByType = (products) =>
 export const groupProjectsByStatus = (projects) =>
     groupOrdered(projects, (p) => p.status, PROJECT_STATUS_ORDER);
 
+/**
+ * Separators in a row's meta line, used the same way on every index and list:
+ *   ' · '  between items of the same kind   — "Kenya · Zanzibar", "1 initiative · 7 tools"
+ *   ' — '  between kinds                    — "Peskas — Kenya · Zanzibar"
+ * Every index row states three things: what it is called, what it is, and how much of it
+ * there is. Without the third a row is a name.
+ */
+export const SAME_KIND = ' · ';
+export const BETWEEN_KINDS = ' — ';
+
 /** Pluralize a label by count: (2, 'tool') -> '2 tools'. */
 export function countLabel(n, singular, plural) {
     return `${n} ${n === 1 ? singular : plural || `${singular}s`}`;
 }
+
+/**
+ * Categorical colours for the impact areas, keyed by theme slug.
+ *
+ * The colour is a recognition aid, never the message: an area tag always prints its name
+ * beside the dot, so the tags work in greyscale, in print and for a colourblind reader. Hues
+ * are muted and mid-value so seven of them still read as one family rather than a rainbow
+ * against the site's deep navy and paper.
+ *
+ * Keyed by slug and falling back to neutral, so an impact area added in Airtable renders
+ * correctly — in grey — the moment it goes Live, without anyone touching this file.
+ */
+export const AREA_COLOR = {
+    'sustainable-fisheries': '#3e96b0', // water — the house accent
+    'productive-aquaculture': '#4f9e6e', // farming
+    'nutrition-security': '#c4603a', // food
+    'climate-adaptation': '#c9a52b', // heat
+    'resilient-livelihoods': '#9079b5', // people
+    'better-governance': '#5580c0', // institutions
+    'shared-infrastructure': '#8fa0b0', // cross-cutting: deliberately neutral
+};
+
+export const areaColor = (slug) => AREA_COLOR[slug] || '#8fa0b0';
 
 /** Categorical colours for the relationship diagram, keyed by product component type.
  *  Distinct hues chosen to read on the dark surface; swap freely. */

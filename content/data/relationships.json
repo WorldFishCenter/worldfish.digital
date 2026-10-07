@@ -1,70 +1,119 @@
 {
-  "_comment": "Generated from the Airtable Relationships table by scripts/sync-airtable.js. Edit in Airtable, not here.",
+  "_comment": "Generated from Airtable by scripts/sync-airtable.js. Edit in Airtable, not here.",
   "relationships": [
     {
-      "from": "zanzibar-data-pipeline",
-      "type": "enables",
-      "to": "validation-app"
-    },
-    {
-      "from": "mozambique-data-pipeline",
-      "type": "enables",
-      "to": "validation-app"
-    },
-    {
       "from": "kenya-data-pipeline",
-      "type": "enables",
-      "to": "validation-app"
+      "type": "depends on",
+      "to": "coasts-data-pipeline",
+      "note": "Installs coasts from GitHub with a version floor; a breaking change ships as a coasts release first, then the pipeline bumps to it."
     },
     {
       "from": "zanzibar-data-pipeline",
       "type": "feeds into",
-      "to": "peskas-api"
-    },
-    {
-      "from": "zanzibar-data-pipeline",
-      "type": "feeds into",
-      "to": "coasts-data-pipeline"
+      "to": "peskas-api",
+      "note": "Writes versioned trips parquet to the API bucket."
     },
     {
       "from": "kenya-data-pipeline",
       "type": "feeds into",
-      "to": "peskas-api"
-    },
-    {
-      "from": "kenya-data-pipeline",
-      "type": "feeds into",
-      "to": "coasts-data-pipeline"
-    },
-    {
-      "from": "mozambique-data-pipeline",
-      "type": "feeds into",
-      "to": "peskas-api"
+      "to": "peskas-api",
+      "note": "Writes versioned trips parquet to the API bucket; the landings schema is agreed across all four country pipelines."
     },
     {
       "from": "coasts-data-pipeline",
       "type": "enables",
-      "to": "coasts-app"
+      "to": "tracks-app",
+      "note": "Writes the tracks-app collections the fisher-facing app reads."
+    },
+    {
+      "from": "fasa-feed-formulation-app",
+      "type": "depends on",
+      "to": "ficd-ingredient-composition",
+      "note": "Bundled as an app asset; supplies what each candidate ingredient contributes. A 101-entry mapping joins ASNS codes to FICD keys."
+    },
+    {
+      "from": "kenya-data-pipeline",
+      "type": "enables",
+      "to": "wcs-wf-app",
+      "note": "Writes the app collections the BMU dashboard schemas read directly — not through the shared portal schema."
+    },
+    {
+      "from": "mozambique-data-pipeline",
+      "type": "depends on",
+      "to": "coasts-data-pipeline",
+      "note": "Installs coasts from GitHub with a version floor."
+    },
+    {
+      "from": "peskas-api",
+      "type": "enables",
+      "to": "validation-app",
+      "note": "The management portal reads trip data through the API; its data-explorer lessons hard-code the landings schema, so a column change touches both."
+    },
+    {
+      "from": "coasts-data-pipeline",
+      "type": "enables",
+      "to": "coasts-app",
+      "note": "Two daily workflows fetch the collections and files coasts writes, then commit JSON which redeploys the site. Renaming a prefix breaks it at the next fetch."
+    },
+    {
+      "from": "fasa-feed-formulation-app",
+      "type": "depends on",
+      "to": "paff-feed-formulations",
+      "note": "Provides reference formulations and their calculated composition — the check that a solver result resembles something a feed mill would actually produce."
+    },
+    {
+      "from": "fasa-feed-formulation-app",
+      "type": "depends on",
+      "to": "asns-nutrition-specifications",
+      "note": "Bundled as an app asset and parsed at runtime; supplies the nutrient targets the formulation solver optimises against."
+    },
+    {
+      "from": "validation-app",
+      "type": "feeds into",
+      "to": "kenya-data-pipeline",
+      "note": "Reviewer decisions are written back and re-read by the pipeline on the next run. This loop is why renaming a validation field silently drops reviewers' work."
     },
     {
       "from": "mozambique-data-pipeline",
       "type": "feeds into",
-      "to": "coasts-data-pipeline"
+      "to": "peskas-api",
+      "note": "Writes versioned trips parquet to the API bucket."
     },
     {
-      "from": "peskas-api",
+      "from": "coasts-data-pipeline",
       "type": "enables",
-      "to": "mozambique-app"
+      "to": "peskas-dashboard",
+      "note": "export_portal writes the portal collections the dashboard reads. Renaming a column or collection is a dashboard change too."
     },
     {
-      "from": "peskas-api",
-      "type": "enables",
-      "to": "zanzibar-app"
+      "from": "timor-data-pipeline",
+      "type": "feeds into",
+      "to": "peskas-api",
+      "note": "Shares the agreed landings schema with the other three country pipelines."
     },
     {
-      "from": "peskas-api",
+      "from": "timor-data-pipeline",
       "type": "enables",
-      "to": "kenya-app"
+      "to": "timor-portal",
+      "note": "Publishes to the public Timor bucket, which the portal fetches. Separate route from the Coasts portal's Timor data."
+    },
+    {
+      "from": "validation-app",
+      "type": "feeds into",
+      "to": "zanzibar-data-pipeline",
+      "note": "Reviewer decisions are written back and re-read by the pipeline on the next run."
+    },
+    {
+      "from": "validation-app",
+      "type": "feeds into",
+      "to": "mozambique-data-pipeline",
+      "note": "Reviewer decisions are written back and re-read by the pipeline on the next run."
+    },
+    {
+      "from": "zanzibar-data-pipeline",
+      "type": "depends on",
+      "to": "coasts-data-pipeline",
+      "note": "Installs coasts from GitHub with a version floor."
     }
   ]
 }

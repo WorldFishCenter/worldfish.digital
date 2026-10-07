@@ -6,8 +6,9 @@
     url("../fonts/uicons/uicons-regular-rounded.woff2") format("woff2"),
     url("../fonts/uicons/uicons-regular-rounded.woff") format("woff");
 }
-// Fonts: loaded via next/font in app/layout.js (--chivo, --noto on <html>).
-$font-heading: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+// Fonts: loaded via next/font in app/layout.js (--chivo, --serif on <html>).
+// Headings are an editorial serif (Source Serif 4); UI/body stays a grotesque.
+$font-heading: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
 $font-text: var(--chivo), "Chivo", ui-sans-serif, system-ui, sans-serif;
 $font-3xs: 10px;
 $font-xxs: 12px;

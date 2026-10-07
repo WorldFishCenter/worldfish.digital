@@ -1,49 +1,89 @@
 {
+  "_comment": "Audience order (Sept 2026 transcripts): WorldFish researchers first — finding what other teams built and what can be reused — then external research partners, then funders. Scope is aquatic food systems as a whole. The page reads as the front of a register: what we do → which areas → what that looks like → who built what (initiatives, each carrying its tools) → what the rest is built on → where it runs → what it changed → what is new. The order follows the schema: initiatives contain tools, so they lead; tool↔tool connections cut across initiatives, so the shared layer follows. Each section is the database rendered, not copy about it. The old 'Built once, then reused' essay is gone: the arrangement makes that argument now. A featured card's `href` names where its story belongs and `fallback` is used only while that target has nothing to show — app/page.js switches back on its own. Standing rule: publish no figure that cannot be traced to a source.",
   "hero": {
-    "headline": "Digital Innovation for",
-    "headlineHighlight": "Aquatic Food Systems",
-    "subtitle": "Leveraging cutting edge digital innovation and data science to improve lives and sustainability in Aquatic Food Systems",
-    "ctaLabel": "Explore Data Infrastructure"
-  },
-  "stats": [
-    {
-      "count": 6,
-      "suffix": "",
-      "label": "Countries deployed"
-    },
-    {
-      "count": 140,
-      "suffix": "k",
-      "label": "Fisheries monitored"
-    },
-    {
-      "count": 100,
-      "suffix": "+",
-      "label": "Data streams integrated"
-    }
-  ],
-  "about": {
-    "title": "Platforms & Infrastructure",
-    "subtitle": "Asia Digital Hub & Digital Lab. Our digital architecture empowers partnerships by providing open, secure, and standardized data pipelines for research, governments, and small-scale fishing communities.",
-    "image": "/assets/imgs/page/homepage1/fishing.png",
-    "features": [
+    "headline": "We build the digital systems behind decisions in aquatic food systems.",
+    "subline": "Most of those systems are managed with whatever data exists. Usually not much. This is everything we have built to change that — what each thing does, where it runs, and what it depends on.",
+    "poster": "/assets/video/tl-tracks-poster.jpg",
+    "posterCredit": "Vessel tracks, Timor-Leste · © Mapbox © OpenStreetMap © Maxar",
+    "sources": [
       {
-        "title": "Digital Architecture",
-        "description": "APIs, cloud infrastructure and data pipelines for seamless integration."
+        "src": "/assets/video/tl-tracks.webm",
+        "type": "video/webm"
       },
       {
-        "title": "Data Standards",
-        "description": "Compliant with Open ArtFish, FAO, and Agrovoc ontologies, ensuring data interoperability."
-      },
-      {
-        "title": "AI & Analytics",
-        "description": "AI-ready machine learning pipelines and automated decision-support systems."
+        "src": "/assets/video/tl-tracks.mp4",
+        "type": "video/mp4"
       }
     ]
   },
+  "featuredKicker": "In practice",
+  "featured": [
+    {
+      "kicker": "Western Indian Ocean",
+      "title": "Monitoring that fisheries officers actually use",
+      "description": "In Zanzibar, Kenya and Mozambique the same pipeline turns vessel tracks and catch records into a current picture of fleet activity — not a retrospective one.",
+      "image": "/assets/imgs/page/blog/zanzibar_fishers_horizon.jpg",
+      "imageAlt": "Fishers and dhows in shallow water off Zanzibar at dusk",
+      "tone": "mono",
+      "href": "/impact",
+      "cta": "See the evidence",
+      "focus": "center 58%",
+      "credit": "Photo: Lorenzo Longobardi / WorldFish",
+      "fallback": {
+        "href": "/our-work/sustainable-fisheries",
+        "cta": "The tools behind it"
+      }
+    },
+    {
+      "kicker": "Tracks",
+      "title": "Where small-scale fishers actually go",
+      "description": "Vessel GPS, self-reported catch and bathymetry combined into a picture of fishing effort that has never existed for small-scale fleets.",
+      "image": "/assets/imgs/page/blog/tracksapp-map-screenshot.png",
+      "imageAlt": "Tracks map showing fishing visit frequency over coastal bathymetry",
+      "tone": "colour",
+      "href": "/products/tracks-app",
+      "cta": "About Tracks",
+      "credit": "Tracks · © Mapbox © OpenStreetMap"
+    },
+    {
+      "kicker": "Nutrition",
+      "title": "From what is caught to what is eaten",
+      "description": "Catch composition carries nutrient content. Linking the two turns fisheries data into evidence for nutrition policy — including from gleaning, which most statistics miss entirely.",
+      "image": "/assets/imgs/page/blog/gleaners.jpg",
+      "imageAlt": "Women and children gleaning on a tidal flat at low tide",
+      "tone": "mono",
+      "href": "/blog/nutrients",
+      "cta": "Read the work",
+      "focus": "center 68%",
+      "credit": "Photo: WorldFish",
+      "fallback": {
+        "href": "/our-work/nutrition-security"
+      }
+    }
+  ],
+  "portfolio": {
+    "standaloneTitle": "Standalone tools",
+    "standaloneLead": "Built outside a single funded initiative, or carried across several.",
+    "allLabel": "The whole portfolio"
+  },
+  "sharedLayer": {
+    "kicker": "What the rest is built on",
+    "title": "The pieces that carry the others",
+    "lead": "Tools ranked by how many other tools are built on top of them. These are the pieces that cross initiatives — the reason a new deployment costs less than the last one, and the shortest answer to “is there already something I can use”."
+  },
+  "showcase": {
+    "kicker": "Where it runs",
+    "title": "The same system, one country at a time",
+    "lead": "Each of these is the shared pipeline and API above, configured for a different fishery and run with a different national institution. Not four systems — one, four times."
+  },
+  "results": {
+    "kicker": "What changed",
+    "title": "Outcomes, with their evidence",
+    "lead": "Each entry names the place, the institution we worked with, what changed, and how well that change is evidenced. Where no independent assessment exists yet, it says so."
+  },
   "blogSection": {
-    "title": "News",
-    "subtitle": "Updates across WorldFish Digital and Peskas—releases, partnerships, pilots, and platform work.",
-    "ctaLabel": "View all news"
+    "title": "Latest",
+    "subtitle": "Releases, partnerships, pilots and field notes from across the portfolio.",
+    "ctaLabel": "All updates"
   }
 }

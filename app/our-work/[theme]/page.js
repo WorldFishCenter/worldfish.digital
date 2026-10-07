@@ -3,6 +3,10 @@ import ThemeDetailClient from '@/components/sections/ThemeDetailClient';
 import { getTheme, getThemes } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
+// The pages that exist are exactly the ones in the committed snapshot. Anything else —
+// including a record that is no longer Live — is a real 404, not a rendered "not found".
+export const dynamicParams = false;
+
 export function generateStaticParams() {
     return getThemes().map((theme) => ({ theme: theme.slug }));
 }

@@ -81,30 +81,42 @@ TABLE CONTENT
   --wf-bg-gray-100: #F2F4F7;
   --wf-bg-gray-900: #101828;
   --wf-bg-gray-900-50: rgba(16, 24, 40, 0.5);
-  --wf-surface-header: rgba(6, 10, 16, 0.65);
-  --wf-surface-header-scrolled: rgba(10, 14, 22, 0.88);
-  --wf-surface-header-blur: blur(20px) saturate(160%);
-  --wf-border-header: rgba(255, 255, 255, 0.07);
-  --wf-border-header-scrolled: rgba(255, 255, 255, 0.12);
-  --wf-surface-submenu: rgba(14, 18, 28, 0.92);
-  --wf-surface-deep: #00050a;
-  --wf-surface-panel: #020813;
-  --wf-color-accent: #57b3d1;
+  --wf-surface-header: rgba(8, 21, 35, 0.72);
+  --wf-surface-header-scrolled: rgba(10, 26, 43, 0.92);
+  --wf-surface-header-blur: blur(18px) saturate(140%);
+  --wf-border-header: rgba(255, 255, 255, 0.08);
+  --wf-border-header-scrolled: rgba(255, 255, 255, 0.14);
+  --wf-surface-submenu: rgba(16, 38, 58, 0.96);
+  --wf-surface-deep: #0a1a2b;
+  --wf-surface-panel: #10263a;
+  --wf-surface-raised: #17334a;
+  --wf-header-height: 77px;
+  --wf-surface-paper: #fbfaf7;
+  --wf-surface-paper-alt: #f1eee8;
+  --wf-text-ink: #16232e;
+  --wf-text-ink-soft: #4a5a68;
+  --wf-border-ink-subtle: rgba(22, 35, 46, 0.12);
+  --wf-border-ink-medium: rgba(22, 35, 46, 0.22);
+  --wf-color-accent: #3e96b0;
+  --wf-color-accent-strong: #2c7c95;
+  --wf-color-accent-on-light: #1f6a82;
+  --wf-color-signal: #c86b3c;
+  --wf-color-signal-on-light: #a2502a;
   --wf-text-slate-50: #f8fafc;
   --wf-text-slate-200: #e2e8f0;
-  --wf-text-slate-300: #cbd5e1;
-  --wf-text-slate-400: #94a3b8;
-  --wf-border-subtle: rgba(255, 255, 255, 0.05);
-  --wf-border-medium: rgba(255, 255, 255, 0.12);
-  --wf-border-control: rgba(255, 255, 255, 0.15);
-  --wf-border-strong: rgba(255, 255, 255, 0.2);
-  --wf-border-card: rgba(255, 255, 255, 0.08);
-  --wf-border-image: rgba(255, 255, 255, 0.1);
-  --wf-border-accent-soft: rgba(87, 179, 209, 0.15);
-  --wf-border-accent-medium: rgba(87, 179, 209, 0.4);
-  --wf-glow-accent: rgba(87, 179, 209, 0.15);
-  --wf-shadow-hero-media: 0 30px 60px rgba(0, 0, 0, 0.5);
-  --wf-gradient-hero: linear-gradient(180deg, #020813 0%, #00050a 100%);
+  --wf-text-slate-300: #ccd7e1;
+  --wf-text-slate-400: #93a5b6;
+  --wf-border-subtle: rgba(255, 255, 255, 0.06);
+  --wf-border-medium: rgba(255, 255, 255, 0.13);
+  --wf-border-control: rgba(255, 255, 255, 0.16);
+  --wf-border-strong: rgba(255, 255, 255, 0.22);
+  --wf-border-card: rgba(255, 255, 255, 0.09);
+  --wf-border-image: rgba(255, 255, 255, 0.11);
+  --wf-border-accent-soft: rgba(62, 150, 176, 0.18);
+  --wf-border-accent-medium: rgba(62, 150, 176, 0.45);
+  --wf-glow-accent: rgba(62, 150, 176, 0.1);
+  --wf-shadow-hero-media: 0 30px 60px rgba(0, 0, 0, 0.45);
+  --wf-gradient-hero: linear-gradient(180deg, #10263a 0%, #0a1a2b 100%);
   --wf-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --wf-text-on-dark-muted: rgba(248, 250, 252, 0.88);
   --wf-text-on-dark: #ffffff;
@@ -123,8 +135,9 @@ TABLE CONTENT
   --wf-radius-sm: 8px;
   --wf-radius-md: 12px;
   --wf-radius-pill: 999px;
-  --wf-font-heading: var(--noto), ui-sans-serif, system-ui, sans-serif;
+  --wf-font-heading: var(--serif), "Source Serif 4", Georgia, serif;
   --wf-font-body: var(--chivo), ui-sans-serif, system-ui, sans-serif;
+  --wf-font-label: var(--chivo), ui-sans-serif, system-ui, sans-serif;
 }
 
 /*import vendors*/
@@ -449,42 +462,42 @@ a {
 }
 
 .text-body-lead {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
 }
 
 .text-body-excerpt {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
 }
 
 .text-body-text {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400 !important;
   font-size: 16px;
   line-height: 28px;
 }
 
 .text-body-quote {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
 }
 
 .text-body-normal {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
 }
 
 .text-body-capitalized {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
@@ -492,28 +505,28 @@ a {
 }
 
 .text-body-small {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
 }
 
 .text-body-tiny {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 600;
   font-size: 10px;
   line-height: 14px;
 }
 
 .text-body-lead-large {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
 }
 
 .text-body-text-md {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
@@ -609,7 +622,7 @@ a {
 }
 
 .text-bold {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-size: 14px;
   line-height: 14px;
   font-weight: bold;
@@ -733,7 +746,7 @@ a {
 
 .text-billed {
   font-weight: 400;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-size: 16px;
   line-height: 28px;
   display: inline-block;
@@ -766,7 +779,7 @@ a:hover {
 .content-detail p {
   margin-bottom: 15px;
   font-size: 16px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   color: #101828;
   line-height: 28px;
 }
@@ -775,7 +788,7 @@ a:hover {
   color: #101828;
   padding-left: 20px;
   font-size: 16px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   line-height: 28px;
 }
 
@@ -1009,7 +1022,7 @@ h6,
 .display-2,
 .heading-lg,
 .heading-sm-1 {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   color: #101828;
   font-weight: 700;
   line-height: 1.2;
@@ -1058,7 +1071,7 @@ h6 {
   line-height: 24px;
   color: #101828;
   font-weight: 500;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 .heading-sm {
@@ -1083,7 +1096,7 @@ h6 {
   font-size: 16px;
   line-height: 20px;
   font-weight: bold;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 .medium-heading {
@@ -1091,7 +1104,7 @@ h6 {
   color: #101828;
   line-height: 22px;
   font-weight: 600;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 .display-block {
@@ -1255,7 +1268,7 @@ h6 {
   border-radius: 50px;
   font-size: 18px;
   line-height: 22px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: bold;
 }
 .btn.btn-black.icon-arrow-right-white:hover {
@@ -1348,7 +1361,7 @@ h6 {
 .btn.btn-tag {
   background-color: #E4E7EC;
   color: #101828;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
@@ -1387,10 +1400,9 @@ h6 {
   color: #57B3D1;
   padding: 5px 25px 5px 15px;
   border-radius: 8px;
-  background-image: url(../imgs/page/homepage5/icon-plus.svg);
   background-repeat: no-repeat;
   background-position: center right 10px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
@@ -1403,10 +1415,9 @@ h6 {
   color: #57B3D1;
   padding: 5px 32px 5px 15px;
   border-radius: 8px;
-  background-image: url(../imgs/page/homepage8/icon-arrow-green.svg);
   background-repeat: no-repeat;
   background-position: center right 12px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
@@ -1806,7 +1817,7 @@ label {
   color: #98A2B3;
   font-size: 20px;
   line-height: 27px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   min-height: 150px;
 }
@@ -2443,7 +2454,7 @@ label {
 .block-pricing .box-info-price .text-price {
   font-size: 36px;
   color: #101828;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   line-height: 46px;
   font-weight: 600;
   margin-right: 15px;
@@ -2551,7 +2562,7 @@ label {
   font-size: 16px;
   line-height: 28px;
   color: #ffffff;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 400;
   background: url(../imgs/template/icons/icon-untick.svg) no-repeat right 15px top 1px;
 }
@@ -2709,7 +2720,7 @@ label {
   font-size: 12px;
   line-height: 16px;
   color: #57B3D1;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: bold;
   text-decoration: none;
 }
@@ -2812,14 +2823,12 @@ label {
   overflow: hidden;
 }
 .product-item-2 .box-quick-view .quick-view .like-product {
-  background: #ffffff url(../imgs/page/homepage5/like.svg) no-repeat center;
   padding: 10px;
   width: 33.33%;
   display: inline-block;
   height: 46px;
 }
 .product-item-2 .box-quick-view .quick-view .shuffle-product {
-  background: #ffffff url(../imgs/page/homepage5/shuffle.svg) no-repeat center;
   padding: 10px;
   width: 33.33%;
   display: inline-block;
@@ -2828,7 +2837,6 @@ label {
   border-left: 1px solid #E4E7EC;
 }
 .product-item-2 .box-quick-view .quick-view .view-product {
-  background: #ffffff url(../imgs/page/homepage5/view.svg) no-repeat center;
   padding: 10px;
   width: 34%;
   display: inline-block;
@@ -2869,7 +2877,7 @@ label {
 }
 .product-item-2 .product-info .box-prices .price-regular {
   font-size: 22px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   line-height: 24px;
   font-weight: bold;
   color: #57B3D1;
@@ -2918,17 +2926,13 @@ label {
   font-size: 12px;
   line-height: 16px;
   color: #667085;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
   padding: 0px 0px 0px 16px;
 }
-.product-item-3 .location-icon {
-  background: url(../imgs/page/homepage8/location.svg) no-repeat 0px 0px;
-}
 .product-item-3 .calendar-icon {
-  background: url(../imgs/page/homepage8/calendar.svg) no-repeat 0px 0px;
   padding-left: 20px;
 }
 
@@ -2949,7 +2953,7 @@ label {
   border-radius: 8px;
   background: transparent;
   border: 0px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 500;
   transition-duration: 0.2s;
 }
@@ -2997,7 +3001,7 @@ label {
   color: #98A2B3;
 }
 .box-newsletter .box-form-newsletter form .font-heading {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-weight: 500;
 }
 .box-newsletter .btn-send {
@@ -3758,7 +3762,7 @@ label {
   width: 100%;
 }
 .header .text-link-bd-btom {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3863,7 +3867,7 @@ label {
   padding: 10px 0px;
 }
 .header-top span {
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
@@ -4435,7 +4439,7 @@ label {
 }
 .footer .menu-footer li a {
   color: #667085;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-size: 16px;
   line-height: 28px;
   text-decoration: none;
@@ -6136,7 +6140,7 @@ label {
 .tag-dot {
   font-size: 12px;
   line-height: 16px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   color: #667085;
   background: url(../imgs/template/icons/dot.svg) no-repeat left center;
   display: block;
@@ -6279,7 +6283,7 @@ label {
 
 .text-summary {
   font-weight: bold;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 32px;
   color: #667085;
@@ -6288,7 +6292,7 @@ label {
 .single-detail p {
   margin-bottom: 15px;
   font-size: 18px;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   color: #667085;
   line-height: 32px;
   font-weight: 400;
@@ -6436,7 +6440,6 @@ label {
 .nav-breadcrums .breadcrumb ul li {
   float: left;
   padding: 0px 0px 0px 30px;
-  background: url(../imgs/page/single-product/right-arrow.svg) no-repeat 10px 5px;
 }
 .nav-breadcrums .breadcrumb ul li a {
   color: #667085;
@@ -6446,10 +6449,6 @@ label {
 .nav-breadcrums .breadcrumb ul li a:hover {
   color: #57B3D1;
 }
-.nav-breadcrums .breadcrumb ul li.home {
-  background: url(../imgs/page/single-product/home.svg) no-repeat 0px 0px;
-}
-
 .detail-gallery {
   position: relative;
 }
@@ -6458,7 +6457,6 @@ label {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: url(../imgs/page/single-product/zoom-in.svg) no-repeat center;
   height: 29px;
   width: 29px;
   background-size: 26px;
@@ -6514,7 +6512,6 @@ label {
   bottom: -57px;
   right: 40px;
   z-index: 1245;
-  background: url(../imgs/page/single-product/up.svg) no-repeat center;
   height: 45px;
   width: 45px;
   border: 0px;
@@ -6524,7 +6521,6 @@ label {
   bottom: -57px;
   left: 40px;
   z-index: 1245;
-  background: url(../imgs/page/single-product/down.svg) no-repeat center;
   height: 45px;
   width: 45px;
   border: 0px;
@@ -6553,7 +6549,7 @@ label {
   line-height: 16px;
   color: #667085;
   font-weight: bold;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 .box-price {
@@ -6584,7 +6580,7 @@ label {
   line-height: 28px;
   color: #667085;
   font-weight: 400;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 .font-bold {
@@ -6661,7 +6657,6 @@ label {
 }
 
 .product-rate {
-  background-image: url(../imgs/page/single-product/rating-stars.png);
   background-position: 0 -12px;
   background-repeat: repeat-x;
   height: 12px;
@@ -6673,7 +6668,6 @@ label {
 .product-rating {
   height: 12px;
   background-repeat: repeat-x;
-  background-image: url(../imgs/page/single-product/rating-stars.png);
   background-position: 0 0;
 }
 
@@ -6875,11 +6869,9 @@ strong {
 }
 .detail-qty > a.qty-down {
   bottom: 1px;
-  background: url(../imgs/page/single-product/arrow-down.svg) no-repeat center;
 }
 .detail-qty > a.qty-up {
   top: 1px;
-  background: url(../imgs/page/single-product/arrow-up.svg) no-repeat center;
 }
 
 input.qty-val {
@@ -6965,7 +6957,6 @@ input.qty-val {
   width: 3px;
   right: 8px;
   height: 12px;
-  background: url(../imgs/page/single-product/dot.svg) no-repeat center;
 }
 .countdown-section:last-child::before {
   display: none;
@@ -6994,7 +6985,7 @@ input.qty-val {
   font-size: 10px;
   line-height: 14px;
   font-weight: 600;
-  font-family: var(--noto), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--serif), "Source Serif 4", Georgia, "Times New Roman", serif;
   margin-top: 4px;
 }
 

@@ -1,0 +1,32 @@
+{
+  "_comment": "Page copy for /impact. The outcomes themselves are not here: they come from the WFD Outcomes table via content/data/outcomes.json, and only once a record is marked Live.",
+  "results": {
+    "kicker": "Where this is working",
+    "title": "Digital systems only matter when a decision changes",
+    "lead": "Each entry names the place, the institution we work with, what changed, and how well that change is evidenced. Where a study exists we link it. Where one does not, we say so rather than substitute a number — a practice we would rather be held to.",
+    "empty": "No outcomes are published yet. Each one is recorded with a named counterpart institution and an evidence status, and appears here once it has been reviewed."
+  },
+  "methodology": {
+    "kicker": "How to read this",
+    "title": "What counts as evidence here",
+    "lead": "Every outcome on this site states what the work changed, who it was done with, and how well that change is actually evidenced. The third part is the one usually left out.",
+    "notes": [
+      {
+        "term": "Independent study",
+        "body": "A study designed and carried out by someone other than the team that built the tool, published where it can be read and argued with. Where one exists it is linked; where one is still in review, the entry says so."
+      },
+      {
+        "term": "Internal M&E only",
+        "body": "Monitoring and evaluation records kept by the team that did the work. Useful, and not independent — so it is labelled as what it is rather than presented as proof."
+      },
+      {
+        "term": "No assessment yet",
+        "body": "That a system runs in a national institution is a fact we can demonstrate. That it changed a decision, a policy or a livelihood is a claim requiring evidence. Entries that can only support the first say that plainly rather than implying the second."
+      },
+      {
+        "term": "Why there are no headline totals",
+        "body": "Aggregate figures — trips recorded, people reached — are easy to produce and hard to interpret, and readers discount them accordingly. We would rather publish a few traceable statements than one large number nobody can check."
+      }
+    ]
+  }
+}

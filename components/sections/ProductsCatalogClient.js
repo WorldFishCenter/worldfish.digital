@@ -2,7 +2,8 @@
 import { useMemo, useState } from 'react';
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
-import { groupProductsByType } from '../detail/meta';
+import AreaTags from '../detail/AreaTags';
+import { groupProductsByType, countLabel } from '../detail/meta';
 import { productHref } from '@/lib/routes.mjs';
 
 const ALL = 'All';
@@ -31,27 +32,33 @@ function FilterGroup({ label, options, active, onChange }) {
 const productItem = (product) => ({
     href: productHref(product.slug),
     name: product.name,
-    sub: product.description || null,
+    sub: product.summary,
+    // Where it runs and what produced it — the same meta line every other tool list on the
+    // site carries. Without it the catalogue is the one place a tool row says less.
+    meta:
+        [product.initiatives.join(' · '), product.countries.join(' · ')]
+            .filter(Boolean)
+            .join(' — ') || null,
+    tags: <AreaTags areas={product.areas} className="wfAreaTagsRow" />,
     status: product.status,
 });
 
-export default function ProductsCatalogClient({ products, themes }) {
+export default function ProductsCatalogClient({ products, themes, initiatives = [], facts = [] }) {
     const [type, setType] = useState(ALL);
     const [theme, setTheme] = useState(ALL);
+    // The initiative facet matters most as the portfolio grows: it is the axis the work is
+    // actually organised on, and the homepage leads with it.
+    const [initiative, setInitiative] = useState(ALL);
 
     const types = useMemo(
         () => [...new Set(products.map((p) => p.type).filter(Boolean))].sort(),
         [products]
     );
-    const themeOptions = useMemo(() => themes.map((t) => t.name), [themes]);
-    const themeBySlug = useMemo(() => new Map(themes.map((t) => [t.slug, t.name])), [themes]);
 
     const filtered = products.filter((product) => {
         if (type !== ALL && product.type !== type) return false;
-        if (theme !== ALL) {
-            const productThemeNames = product.themeSlugs.map((slug) => themeBySlug.get(slug));
-            if (!productThemeNames.includes(theme)) return false;
-        }
+        if (theme !== ALL && !product.themes.includes(theme)) return false;
+        if (initiative !== ALL && !(product.initiatives || []).includes(initiative)) return false;
         return true;
     });
 
@@ -71,26 +78,61 @@ export default function ProductsCatalogClient({ products, themes }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">
-                            <h1 className="display-3 wfTitleHero">Tools &amp; Products</h1>
+                            <h1 className="display-3 wfTitleHero">Tools</h1>
                             <p className="wfLead wfLeadMt">
-                                Every digital tool, platform, and data asset built across WorldFish Digital&apos;s
-                                portfolio — filter by type or theme to find what fits your work.
+                                Every tool in the portfolio, filterable by the initiative that
+                                produced it, by what kind of component it is, and by impact area.
+                                Work that is archived or still at concept stage is listed too, with
+                                its status, so this reads as a record rather than a shop window.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="section-box wfSectionDark wfPadSection">
+            <section className="section-box wfSectionDark wfPadSectionMd">
                 <div className="container">
-                    <FilterGroup label="Type" options={types} active={type} onChange={setType} />
-                    <FilterGroup label="Theme" options={themeOptions} active={theme} onChange={setTheme} />
-
-                    <p className="wfMuted mt-30 mb-30">{filtered.length} products</p>
-
-                    {groups ? (
-                        <EntityLinkList groups={groups} />
+                    {products.length === 0 ? (
+                        <p className="wfMutedLg">
+                            No tools are published yet. Each one appears here once its record
+                            in the portfolio database has been reviewed and marked Live.
+                        </p>
                     ) : (
-                        <EntityLinkList items={filtered.map(productItem)} />
+                        <>
+                            {facts.length > 0 && (
+                                <ul className="wfFactLine wfFactLineDark mb-40">
+                                    {facts.map((fact) => (
+                                        <li key={fact.label}>
+                                            <span className="wfFactStatic">{fact.label}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                            {initiatives.length > 0 && (
+                                <FilterGroup
+                                    label="Initiative"
+                                    options={initiatives}
+                                    active={initiative}
+                                    onChange={setInitiative}
+                                />
+                            )}
+                            <FilterGroup label="Type" options={types} active={type} onChange={setType} />
+                            <FilterGroup
+                                label="Impact area"
+                                options={themes}
+                                active={theme}
+                                onChange={setTheme}
+                            />
+
+                            <p className="wfMuted mt-30 mb-30">
+                                {countLabel(filtered.length, 'tool')}
+                            </p>
+
+                            {groups ? (
+                                <EntityLinkList groups={groups} />
+                            ) : (
+                                <EntityLinkList items={filtered.map(productItem)} />
+                            )}
+                        </>
                     )}
                 </div>
             </section>

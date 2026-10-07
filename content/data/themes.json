@@ -1,264 +1,48 @@
 {
+  "_comment": "HAND-MAINTAINED reference list — the sync reads this, it never writes it. The browse axis of the site: the six canonical impact areas plus one cross-cutting entry. `name` must match the option text of the `Impact area(s)` field in Airtable exactly. A tool or initiative with no impact area is filed under the entry marked `crossCutting`. Which tools, initiatives, countries and outcomes belong to an area is derived from the Live records, not stored here.",
   "themes": [
+    {
+      "slug": "sustainable-fisheries",
+      "name": "Sustainable Fisheries",
+      "tagline": "Catch and effort monitoring, coastal surveillance, stock and fleet evidence",
+      "description": "Turning what fishers land and where they go into evidence that fisheries authorities can act on — from mobile reporting at landing sites through to national dashboards."
+    },
+    {
+      "slug": "productive-aquaculture",
+      "name": "Productive Aquaculture",
+      "tagline": "Pond management, feeds, genetics and extension",
+      "description": "Tools for smallholder fish farming: what to feed, when to harvest, which strain to stock, and how extension services reach the farmers who need that advice."
+    },
+    {
+      "slug": "nutrition-security",
+      "name": "Nutrition Security",
+      "tagline": "Nutrient composition, post-harvest loss, value chains",
+      "description": "Connecting what comes out of the water to what people actually eat — nutrient profiles, post-harvest handling, and the value chains in between."
+    },
     {
       "slug": "climate-adaptation",
       "name": "Climate Adaptation",
-      "tagline": "Adaptive management, climate information services, resilience",
-      "description": "Adaptive management and climate information tools helping fishers and farmers plan around a changing climate.",
-      "projectSlugs": [
-        "uae",
-        "ikanadapt",
-        "fasa"
-      ],
-      "productSlugs": [
-        "adaptation-solution-bank",
-        "fasa-feed-formulation-app",
-        "innovation-database",
-        "climate-resilience-scoring-tool",
-        "peskas-app",
-        "climate-risk-profiles"
-      ],
-      "countrySlugs": [
-        "global",
-        "timor-leste",
-        "kenya",
-        "nigeria",
-        "zambia"
-      ],
-      "donorSlugs": [
-        "uae-govt",
-        "dfat-australia",
-        "nanmo-fcdo"
-      ],
-      "personaSlugs": [
-        "donor-investor",
-        "aquaculture-farmer",
-        "extension-officer",
-        "government-fisheries-officer"
-      ],
-      "thematicAreas": [
-        "Climate"
-      ],
-      "impactAreas": [
-        "Climate Adaptation"
-      ],
-      "featuredProductSlugs": [
-        "adaptation-solution-bank",
-        "innovation-database",
-        "climate-resilience-scoring-tool",
-        "climate-risk-profiles"
-      ]
+      "tagline": "Climate information services, risk profiling, adaptive management",
+      "description": "Helping fishers and farmers plan against a shifting climate: risk profiles, adaptation options, and management that can change as conditions do."
     },
     {
-      "slug": "small-scale-fisheries",
-      "name": "Small-Scale Fisheries",
-      "tagline": "Monitoring, catch data, MCS, coastal surveillance",
-      "description": "Digital tools that turn landing-site and vessel data into decision-ready evidence for small-scale fisheries management, from mobile catch reporting to national dashboards.",
-      "projectSlugs": [
-        "fssp2",
-        "ict4ssf",
-        "ikanadapt",
-        "profishblue",
-        "eritrea-peskas-assessment",
-        "saaf",
-        "raqfs-aquadata-initiative",
-        "ssf-voice",
-        "peskas-service",
-        "ikan-ba-futuru",
-        "aabs"
-      ],
-      "productSlugs": [
-        "coasts-app",
-        "tracks-app",
-        "peskas",
-        "wcs-wf-app",
-        "validation-app",
-        "kenya-data-pipeline",
-        "aquadata",
-        "coasts-data-pipeline",
-        "peskas-api",
-        "mozambique-app",
-        "mozambique-data-pipeline",
-        "malawi-ssf-data-pipeline",
-        "peskas-app",
-        "kenya-app",
-        "zanzibar-data-pipeline",
-        "peskas-training-course",
-        "zanzibar-app"
-      ],
-      "countrySlugs": [
-        "timor-leste",
-        "global",
-        "malawi",
-        "eritrea",
-        "ghana",
-        "malaysia",
-        "nigeria",
-        "west-africa-caopa",
-        "colombia",
-        "kenya",
-        "zanzibar",
-        "mozambique"
-      ],
-      "donorSlugs": [
-        "norway-norad",
-        "minderoo-foundation",
-        "aciar",
-        "swedbio",
-        "fao",
-        "dfat-australia",
-        "world-bank-afdb",
-        "eu-cgiar",
-        "cgiar-raqfs",
-        "swiss-philanthropy-foundation",
-        "oak-foundation"
-      ],
-      "personaSlugs": [
-        "donor-investor",
-        "field-enumerator",
-        "government-fisheries-officer",
-        "researcher-scientist"
-      ],
-      "thematicAreas": [
-        "Fisheries"
-      ],
-      "impactAreas": [
-        "Sustainable Fisheries"
-      ]
+      "slug": "resilient-livelihoods",
+      "name": "Resilient Livelihoods",
+      "tagline": "Incomes, equity and household resilience in aquatic food systems",
+      "description": "Work on the livelihoods that aquatic food systems support — income stability, equitable access, and the social dimensions of who benefits."
     },
     {
-      "slug": "data-infrastructure",
-      "name": "Data Infrastructure",
-      "tagline": "FishBase, global data standards, data interoperability, data science R&D, global public goods",
-      "description": "Global public goods for aquatic food systems data: standards, ontologies, APIs, and modeling infrastructure shared across every other theme.",
-      "projectSlugs": [
-        "gates",
-        "fssp2",
-        "ict4ssf",
-        "fishbase-consortium",
-        "eritrea-peskas-assessment",
-        "raqfs-aquadata-initiative",
-        "dd-science-team",
-        "aquatic-food-ontology-project",
-        "dta",
-        "peskas-service"
-      ],
-      "productSlugs": [
-        "peskas",
-        "tracks-effort-model",
-        "lo2s-model",
-        "peskas-api",
-        "fishing-gear-prediction",
-        "phenofish",
-        "aquadata-portal",
-        "aquatic-food-ontology",
-        "pondcube",
-        "fishbasepro"
-      ],
-      "countrySlugs": [
-        "global",
-        "timor-leste",
-        "eritrea",
-        "ghana",
-        "zanzibar",
-        "kenya",
-        "mozambique",
-        "malaysia",
-        "zambia"
-      ],
-      "donorSlugs": [
-        "gates-foundation",
-        "norway-norad",
-        "minderoo-foundation",
-        "aciar",
-        "swedbio",
-        "fao",
-        "worldfish-cgiar",
-        "cgiar-raqfs"
-      ],
-      "personaSlugs": [
-        "donor-investor",
-        "government-fisheries-officer",
-        "researcher-scientist",
-        "private-sector"
-      ],
-      "thematicAreas": [
-        "Digital & AI"
-      ],
-      "impactAreas": []
+      "slug": "better-governance",
+      "name": "Better Governance",
+      "tagline": "Policy evidence, co-management, institutional capacity",
+      "description": "Evidence and systems that help institutions govern shared aquatic resources — policy inputs, co-management support, and the data underneath both."
     },
     {
-      "slug": "aquaculture",
-      "name": "Aquaculture",
-      "tagline": "Production, GIFT genetics, feeds, extension, pond management",
-      "description": "Tools supporting smallholder aquaculture production, feed formulation, pond management, and extension service delivery.",
-      "projectSlugs": [
-        "casa",
-        "fasa",
-        "raqfs-aquadata-initiative",
-        "dta"
-      ],
-      "productSlugs": [
-        "fasa-feed-formulation-app",
-        "casa-app",
-        "phenofish",
-        "pondcube"
-      ],
-      "countrySlugs": [
-        "kenya",
-        "nigeria",
-        "zambia",
-        "global",
-        "ghana"
-      ],
-      "donorSlugs": [
-        "nanmo-fcdo",
-        "cgiar-raqfs",
-        "worldfish-cgiar"
-      ],
-      "personaSlugs": [
-        "donor-investor",
-        "aquaculture-farmer",
-        "field-enumerator",
-        "extension-officer",
-        "researcher-scientist",
-        "private-sector"
-      ],
-      "thematicAreas": [
-        "Aquaculture"
-      ],
-      "impactAreas": [
-        "Productive Aquaculture"
-      ]
-    },
-    {
-      "slug": "nutrition-food-systems",
-      "name": "Better Diets & Nutrition Security",
-      "tagline": "Post-harvest, nutrient data, value chains, gender equity",
-      "description": "Data products connecting fisheries and aquaculture output to nutrition outcomes, post-harvest value chains, and gender-equitable food systems.",
-      "projectSlugs": [
-        "nsfm",
-        "ikan-ba-futuru"
-      ],
-      "productSlugs": [
-        "nutrient-profiles"
-      ],
-      "countrySlugs": [
-        "timor-leste"
-      ],
-      "donorSlugs": [
-        "dfat-australia"
-      ],
-      "personaSlugs": [
-        "donor-investor",
-        "extension-officer"
-      ],
-      "thematicAreas": [
-        "Nutrition"
-      ],
-      "impactAreas": [
-        "Nutrition Security"
-      ]
+      "slug": "shared-infrastructure",
+      "name": "Shared Infrastructure",
+      "crossCutting": true,
+      "tagline": "Pipelines, models, standards and platforms reused across every area",
+      "description": "The layer underneath the rest of the portfolio: processing pipelines, models, ontologies and open platforms built once and reused. Work here rarely belongs to a single impact area, which is the point of it."
     }
   ]
 }

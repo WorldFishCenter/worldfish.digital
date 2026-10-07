@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { POST_CHANNELS } from "@/lib/constants";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -137,17 +136,14 @@ export default function BlogPostClient({ post }) {
 
     if (!post) return null;
 
-    const listHref = post.channel === POST_CHANNELS.peskas ? '/blog/peskas' : '/blog';
-    const listLabel = post.channel === POST_CHANNELS.peskas ? '← Back to Peskas news' : '← Back to News';
-
     return (
         <Layout>
             <section className="section-box wfSectionDark wfPadHeroSm">
                 <div className="container text-center">
                     <div className="row">
                         <div className="col-lg-10 mx-auto">
-                            <Link href={listHref} className="wfLinkMono mb-20 d-inline-block">
-                                {listLabel}
+                            <Link href="/blog" className="wfLinkMono mb-20 d-inline-block">
+                                ← Back to News
                             </Link>
                             <h1 className="display-3 wfTitleHeroTight wfTitleHeroMb">{post.title}</h1>
                             <div className="wfLeadMdStatic mb-20">
@@ -229,8 +225,8 @@ export default function BlogPostClient({ post }) {
                                 </div>
                             )}
                             <div className="mt-40 pt-40 bd-top">
-                                <Link href={listHref} className="btn btn-black icon-arrow-right-white">
-                                    {post.channel === POST_CHANNELS.peskas ? 'Back to Peskas news' : 'Back to News'}
+                                <Link href="/blog" className="btn btn-black icon-arrow-right-white">
+                                    Back to News
                                 </Link>
                             </div>
                         </div>

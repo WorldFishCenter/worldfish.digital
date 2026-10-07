@@ -3,6 +3,10 @@ import CountryDetailClient from '@/components/sections/CountryDetailClient';
 import { getCountry, getCountries } from '@/lib/portfolio';
 import { DEFAULT_METADATA } from '@/lib/constants';
 
+// The pages that exist are exactly the ones in the committed snapshot. Anything else —
+// including a record that is no longer Live — is a real 404, not a rendered "not found".
+export const dynamicParams = false;
+
 export function generateStaticParams() {
     return getCountries().map((country) => ({ slug: country.slug }));
 }

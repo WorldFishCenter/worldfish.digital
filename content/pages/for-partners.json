@@ -1,0 +1,25 @@
+{
+  "_comment": "Page copy for /for-partners. `unlocks` was drafted as placeholder text and has not been reviewed by the team — check it before treating it as final. Funders and audiences on the page are not here: they are read from the Live initiatives and tools.",
+  "unlocks": {
+    "kicker": "What further investment changes",
+    "title": "Where additional funding would go",
+    "lead": "The constraint is not ideas but evidence and coverage: proving what the systems already running actually change, extending them to the places and domains asking for them, and sustaining the shared layer everything else depends on.",
+    "items": [
+      {
+        "horizon": "Nearest term",
+        "title": "Independent impact assessment",
+        "body": "Commission the studies that would let the claims above carry citations rather than caveats — repeating the Timor-Leste assessment design across the Western Indian Ocean deployments and extending it to the aquaculture work."
+      },
+      {
+        "horizon": "Next",
+        "title": "Extend across domains, not only countries",
+        "body": "The monitoring and modelling stack was built for fisheries and is already partly reused for aquaculture and climate work. Completing that crossover — and connecting it to nutrition and genetics — is cheaper than building each domain its own system, but it is not free."
+      },
+      {
+        "horizon": "Ongoing",
+        "title": "Keep the public goods public",
+        "body": "The standards, ontologies and open platforms underneath the portfolio are used well beyond WorldFish and generate no revenue. They need sustaining funding rather than project funding."
+      }
+    ]
+  }
+}

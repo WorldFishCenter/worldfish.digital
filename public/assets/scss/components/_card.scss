@@ -806,7 +806,6 @@
             overflow: hidden;
             .like-product
             {
-                background: $background-white url(../imgs/page/homepage5/like.svg) no-repeat center;
                 padding: 10px;
                 width: 33.33%;
                 display: inline-block;
@@ -814,7 +813,6 @@
             }
             .shuffle-product
             {
-                background: $background-white url(../imgs/page/homepage5/shuffle.svg) no-repeat center;
                 padding: 10px;
                 width: 33.33%;
                 display: inline-block;
@@ -824,7 +822,6 @@
             }
             .view-product
             {
-                background: $background-white url(../imgs/page/homepage5/view.svg) no-repeat center;
                 padding: 10px;
                 width: 34%;
                 display: inline-block;
@@ -949,11 +946,9 @@
     }
     .location-icon
     {
-        background: url(../imgs/page/homepage8/location.svg) no-repeat 0px 0px;
     }
     .calendar-icon
     {
-        background: url(../imgs/page/homepage8/calendar.svg) no-repeat 0px 0px;
         padding-left: 20px;
     }
 }

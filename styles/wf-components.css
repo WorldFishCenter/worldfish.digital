@@ -19,10 +19,6 @@
   border-bottom: 1px solid var(--wf-border-subtle);
 }
 
-.wfPadHero {
-  padding: 180px 0 100px 0;
-}
-
 .wfPadHeroSm {
   padding: 160px 0 60px 0;
 }
@@ -39,12 +35,8 @@
   padding: 80px 0 120px 0;
 }
 
-.wfPadTight {
-  padding: 60px 0;
-}
-
 .wfPadPlatforms {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 /* --- Typography --- */
@@ -63,12 +55,6 @@
 
 .wfTitleHeroMb {
   margin-bottom: 20px;
-}
-
-.wfAccentLine {
-  color: var(--wf-color-accent);
-  display: block;
-  margin-top: 10px;
 }
 
 .wfAccentLineTight {
@@ -98,10 +84,6 @@
   color: var(--wf-text-slate-300);
   font-size: 18px;
   line-height: 1.6;
-}
-
-.wfMbBottomLg {
-  margin-bottom: 40px;
 }
 
 .wfBody {
@@ -157,13 +139,6 @@
   margin-bottom: 20px;
 }
 
-.wfHeading5 {
-  color: var(--wf-text-slate-50);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
 .wfHeadingFeature {
   color: var(--wf-text-on-dark);
   font-size: 18px;
@@ -178,20 +153,6 @@
   font-weight: 600;
   margin-bottom: 15px;
   letter-spacing: -0.01em;
-}
-
-.wfHeadingTracks {
-  color: var(--wf-text-slate-50);
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.wfHeadingRegion {
-  color: var(--wf-text-slate-50);
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
 }
 
 .wfTitleWhite {
@@ -218,7 +179,7 @@
 .wfBlogMeta {
   color: var(--wf-color-accent);
   font-size: 13px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   display: block;
   margin-bottom: 15px;
 }
@@ -232,7 +193,7 @@
 
 .wfEcosystemKicker {
   color: var(--wf-color-accent);
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 14px;
   letter-spacing: 0.05em;
 }
@@ -250,8 +211,12 @@
   font-size: 15px;
   border: none;
   transition: opacity 0.2s ease;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   cursor: pointer;
+}
+
+.wfBtnPrimary {
+  text-decoration: none;
 }
 
 .wfBtnPrimary:hover {
@@ -272,7 +237,7 @@
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   text-decoration: none;
 }
 
@@ -282,6 +247,10 @@
 }
 
 .wfBtnGhostAlt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   background-color: transparent;
   color: var(--wf-text-slate-200);
   padding: 13px 28px;
@@ -292,7 +261,7 @@
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   cursor: pointer;
 }
 
@@ -302,7 +271,7 @@
 }
 
 .wfLinkOutline {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   color: var(--wf-text-slate-200);
   border: 1px solid var(--wf-border-strong);
   padding: 12px 24px;
@@ -322,7 +291,7 @@
 
 .wfLinkMono {
   color: var(--wf-color-accent);
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   text-decoration: none;
 }
 
@@ -335,7 +304,7 @@
   color: var(--wf-text-slate-200);
   padding: 12px 24px;
   border-radius: 6px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 14px;
   text-decoration: none;
   transition:
@@ -355,20 +324,6 @@
 }
 
 /* --- Media / frames --- */
-.wfMediaFrame {
-  padding: 10px;
-  background-color: var(--wf-surface-panel);
-  border: 1px solid var(--wf-border-medium);
-  border-radius: 24px;
-  box-shadow: var(--wf-shadow-hero-media);
-}
-
-.wfMediaInner {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  display: block;
-}
 
 .wfCover {
   width: 100%;
@@ -382,44 +337,9 @@
   border: 1px solid var(--wf-border-image);
 }
 
-.wfDivider {
-  height: 1px;
-  background-color: var(--wf-border-image);
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-/* --- Ecosystem hero --- */
-.wfEcosystemHero {
-  padding: 160px 0 100px 0;
-  background: var(--wf-gradient-hero);
-  border-bottom: 1px solid var(--wf-border-subtle);
-  position: relative;
-  overflow: hidden;
-}
-
-.wfEcosystemGlow {
-  position: absolute;
-  top: 0;
-  right: -20%;
-  width: 70%;
-  height: 100%;
-  background-image: radial-gradient(ellipse at center, var(--wf-glow-accent), transparent 60%);
-  opacity: 0.8;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.wfEcosystemGrid {
-  position: absolute;
-  inset: 0;
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  z-index: 1;
-  pointer-events: none;
-}
+/* Retained as no-op hooks: the radial glow and engineering-grid overlays were
+   the strongest "developer tool" signals in the hero. Depth now comes from the
+   gradient on .wfEcosystemHero alone. */
 
 .wfEcosystemContent {
   position: relative;
@@ -439,8 +359,8 @@
 
 .wfDisplay2 {
   font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
   color: var(--wf-text-on-dark);
 }
 
@@ -449,6 +369,47 @@
   line-height: 1.6;
   font-size: 20px;
   color: var(--wf-text-slate-300);
+}
+
+/* Hero: statement left, explanation and routes right. A single left-aligned
+   column left the right half of a desktop viewport empty, which read as an
+   unfinished landing page rather than a considered one. */
+.wfHeroSplit {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 40px 80px;
+  align-items: end;
+}
+
+.wfHeroStatement {
+  font-size: clamp(38px, 4.6vw, 62px);
+  margin: 0;
+  max-width: 15ch;
+}
+
+.wfHeroAside {
+  padding-bottom: 8px;
+}
+
+.wfHeroAside .wfSubtitleWide {
+  font-size: 18px;
+  max-width: 48ch;
+  margin-bottom: 34px;
+}
+
+@media (max-width: 991px) {
+  .wfHeroSplit {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .wfHeroStatement {
+    max-width: 18ch;
+  }
+
+  .wfHeroAside {
+    padding-bottom: 0;
+  }
 }
 
 /* --- CTA band --- */
@@ -462,31 +423,13 @@
   box-shadow: var(--wf-shadow-hero-media);
 }
 
-.wfCtaPanel {
-  background-color: var(--wf-surface-panel);
-  border-radius: 24px;
-  padding: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid var(--wf-border-accent-medium);
-  box-shadow: 0 0 40px rgba(87, 179, 209, 0.1);
-  background-image: radial-gradient(ellipse at top left, rgba(87, 179, 209, 0.1), transparent 50%);
-}
-
-.wfCtaMax {
-  max-width: 600px;
-  margin-bottom: 20px;
-}
-
 .wfCtaBtn {
   background-color: var(--wf-text-on-dark);
   color: var(--wf-surface-deep);
   padding: 14px 30px;
   border-radius: 6px;
   font-weight: 600;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 15px;
   border: none;
   transition: opacity 0.2s ease;
@@ -496,113 +439,6 @@
 
 .wfCtaBtn:hover {
   opacity: 0.9;
-}
-
-.wfCtaBtnLg {
-  background-color: var(--wf-text-on-dark);
-  color: var(--wf-surface-deep);
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
-  font-family: var(--wf-font-mono);
-  text-decoration: none;
-  display: inline-block;
-}
-
-.wfCtaBtnLg:hover {
-  opacity: 0.9;
-}
-
-.wfCtaBtnMd {
-  background-color: var(--wf-text-on-dark);
-  color: var(--wf-surface-deep);
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 15px;
-  border: none;
-  text-decoration: none;
-  display: inline-block;
-  font-family: var(--wf-font-mono);
-}
-
-.wfCtaBtnMd:hover {
-  opacity: 0.9;
-}
-
-/* --- About / cards --- */
-.wfAboutCard {
-  padding: 25px;
-  height: 100%;
-  background-color: var(--wf-surface-panel);
-  border-radius: 16px;
-  border: 1px solid var(--wf-border-card);
-}
-
-.wfAboutBody {
-  color: var(--wf-text-slate-300);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.wfIconInline {
-  margin-right: 8px;
-  vertical-align: text-bottom;
-  stroke: var(--wf-color-accent);
-}
-
-/* --- Tracks hero (banner + map) --- */
-.wfTracksBanner {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  min-height: 520px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-  max-width: 1200px;
-  margin: 0 auto;
-  border: 1px solid var(--wf-border-card);
-}
-
-.wfTracksBannerBg {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(
-      90deg,
-      rgba(0, 5, 10, 0.95) 0%,
-      rgba(0, 5, 10, 0.7) 50%,
-      rgba(0, 5, 10, 0.2) 80%
-    ),
-    url('/assets/imgs/page/homepage1/tracksapp-map-screenshot.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 0;
-}
-
-.wfTracksBannerInner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 60px;
-}
-
-.wfTracksGlass {
-  max-width: 700px;
-  background: rgba(2, 8, 19, 0.8);
-  backdrop-filter: blur(12px);
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid var(--wf-border-image);
-}
-
-.wfTracksLead {
-  color: var(--wf-text-slate-300);
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
 }
 
 /* --- Tracks hero (simple gradient variant) --- */
@@ -644,40 +480,17 @@
   }
 }
 
-.wfListPlain {
-  list-style: none;
-  padding: 0;
-}
-
-.wfListItem {
-  color: var(--wf-text-slate-300);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.wfCheck {
-  color: var(--wf-color-accent);
-  margin-right: 10px;
-}
-
 .wfTracksLink {
   margin-top: 30px;
   display: inline-flex;
   align-items: center;
   color: var(--wf-color-accent);
   text-decoration: none;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 14px;
 }
 
 /* --- Regions --- */
-.wfRegionPrompt {
-  color: var(--wf-text-slate-50);
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 15px;
-}
 
 .wfRegionSelect {
   width: 100%;
@@ -696,18 +509,13 @@
 .wfChipList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* Left, not centred. Both callers — the tool catalogue's filters and the funder list on
+     /for-partners — sit under a left-aligned label, and centred chips under a left-aligned
+     label read as a different element entirely. */
+  justify-content: flex-start;
   gap: 15px;
   padding: 0;
   list-style: none;
-}
-
-.wfRegionDesc :where(p) {
-  color: var(--wf-text-slate-300);
-}
-
-.wfRegionDesc :where(p:last-child) {
-  margin-bottom: 0;
 }
 
 .wfChip {
@@ -747,70 +555,6 @@
   text-align: center;
 }
 
-.wfRegionMap {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  min-height: 460px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid var(--wf-border-card);
-}
-
-.wfRegionMapOverlay {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  min-height: 460px;
-  padding: 60px;
-}
-
-.wfRegionGlass {
-  max-width: 600px;
-  background: rgba(2, 8, 19, 0.8);
-  backdrop-filter: blur(12px);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid var(--wf-border-image);
-  line-height: 1.6;
-}
-
-.wfRegionDesc {
-  color: var(--wf-text-slate-300);
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-/* --- Stats --- */
-.wfStatsBand {
-  background-color: var(--wf-surface-deep);
-  padding: 80px 0;
-  border-bottom: 1px solid var(--wf-border-subtle);
-}
-
-.wfStatCellDivider {
-  border-left: 1px solid var(--wf-border-medium);
-}
-
-.wfStatValue {
-  font-size: 48px;
-  color: var(--wf-text-slate-50);
-  font-weight: 600;
-  font-family: var(--wf-font-mono);
-}
-
-.wfStatLabel {
-  color: var(--wf-text-slate-300);
-  font-size: 14px;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: var(--wf-font-mono);
-}
-
 /* Impact stats — 3 cols */
 .wfImpactBand {
   background-color: var(--wf-surface-deep);
@@ -830,7 +574,7 @@
   font-size: 56px;
   color: var(--wf-text-on-dark);
   font-weight: 600;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
 }
 
 /* --- Blog grid --- */
@@ -1033,13 +777,6 @@
 .wfBackToTop {
   position: fixed;
   z-index: 2147483647;
-}
-
-.wfUnderConstructionIcon {
-  width: 17%;
-  height: auto;
-  margin-right: 5px;
-  vertical-align: middle;
 }
 
 .wfErrorDetails {
@@ -1268,7 +1005,7 @@ body.mobile-menu-active .wf-mobile-nav-backdrop {
 }
 
 .wfSectionKicker {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1277,11 +1014,55 @@ body.mobile-menu-active .wf-mobile-nav-backdrop {
 }
 
 .wfSectionTitle {
+  font-family: var(--wf-font-heading);
   color: var(--wf-text-slate-50);
-  font-size: 26px;
+  font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 26px;
+  letter-spacing: -0.015em;
+  line-height: 1.18;
+  margin-bottom: 34px;
+  max-width: 24ch;
+}
+
+/* Dark-surface twin of .wfPaperHead, so dark and light sections share one
+   header rhythm instead of drifting apart. */
+.wfDarkHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 20px 72px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.wfDarkHeadStacked {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.wfDarkHeadStacked .wfDarkHeadLead {
+  padding-top: 0;
+  max-width: 54ch;
+}
+
+.wfDarkHead .wfSectionTitle {
+  margin-bottom: 0;
+}
+
+.wfDarkHeadLead {
+  padding-top: 8px;
+  font-family: var(--wf-font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--wf-text-slate-300);
+  max-width: 58ch;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .wfDarkHead {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 /* --- Meta pills (type, programme) + status dot --- */
@@ -1297,7 +1078,7 @@ body.mobile-menu-active .wf-mobile-nav-backdrop {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1350,7 +1131,7 @@ a.wfMetaPill:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 12px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -1379,7 +1160,7 @@ a.wfMetaPill:hover {
 }
 
 .wfInlineStatValue {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 30px;
   font-weight: 600;
   color: var(--wf-text-slate-50);
@@ -1389,7 +1170,7 @@ a.wfMetaPill:hover {
 .wfInlineStatLabel {
   display: block;
   margin-top: 9px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1418,7 +1199,7 @@ a.wfMetaPill:hover {
 }
 
 .wfFactLabel {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 11px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -1455,7 +1236,7 @@ a.wfMetaPill:hover {
 }
 
 .wfFactCellLabel {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 11px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -1482,7 +1263,7 @@ a.wfMetaPill:hover {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1625,7 +1406,7 @@ a.wfMetaPill:hover {
 
 .wfRelGroupLabel {
   fill: var(--wf-color-accent);
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 11px;
   letter-spacing: 0.07em;
   opacity: 0.85;
@@ -1673,7 +1454,7 @@ a.wfMetaPill:hover {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 10px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1704,7 +1485,7 @@ a.wfMetaPill:hover {
 }
 
 .wfRelHere {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 9px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1723,7 +1504,7 @@ a.wfMetaPill:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 11px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -1770,7 +1551,7 @@ a.wfMetaPill:hover {
 }
 
 .wfIndexNum {
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--wf-text-slate-400);
@@ -1787,10 +1568,11 @@ a.wfMetaPill:hover {
 
 .wfIndexName {
   display: block;
+  font-family: var(--wf-font-heading);
   color: var(--wf-text-slate-50);
   font-size: 30px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   line-height: 1.15;
   transition: color 0.2s ease;
 }
@@ -1932,7 +1714,7 @@ a.wfMetaPill:hover {
   display: none;
   margin-top: 16px;
   text-align: center;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--wf-text-slate-400);
@@ -1989,7 +1771,7 @@ a.wfMetaPill:hover {
 
 .wfGlobeLegendCount {
   margin-left: auto;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 13px;
   color: var(--wf-text-slate-400);
 }
@@ -2098,7 +1880,7 @@ a.wfMetaPill:hover {
 
 .wfGlobeCardStats {
   margin: 20px 0 0;
-  font-family: var(--wf-font-mono);
+  font-family: var(--wf-font-label);
   font-size: 14px;
   color: var(--wf-text-slate-400);
   display: flex;
@@ -2186,5 +1968,1608 @@ a.wfMetaPill:hover {
   .wfGlobeCardLink {
     transition: none;
     animation: none;
+  }
+}
+
+/* ==========================================================================
+   Funder-facing layer (2026-09)
+   --------------------------------------------------------------------------
+   Added for the audience refactor: the site's primary readers are funders and
+   research partners, so the front door leads with evidenced outcomes rather
+   than platform capability. Two ideas drive everything below:
+
+   1. A LIGHT EDITORIAL SURFACE (.wfSectionPaper). An uninterrupted dark shell
+      reads as a product site whatever the palette. Institutional references
+      (World Bank, Global Fishing Watch article pages) alternate dark chrome
+      with light reading surfaces; this is that layer.
+
+   2. EVIDENCE OVER FIGURES. There is no headline stat band. Every claim is a
+      sentence tied to a place, a named partner and either a citation or an
+      explicit "assessment in progress" state. Unattributed aggregate numbers
+      were removed deliberately — they are the pattern funders discount.
+   ========================================================================== */
+
+/* --- Light editorial surface --- */
+.wfSectionPaper {
+  background-color: var(--wf-surface-paper);
+  color: var(--wf-text-ink);
+  padding: 110px 0;
+}
+
+.wfSectionPaperAlt {
+  background-color: var(--wf-surface-paper-alt);
+}
+
+/* Outrank `body.wf-site h1..h6 { color: var(--wf-text-on-dark) }` (0,0,1,2). */
+body.wf-site .wfSectionPaper h1,
+body.wf-site .wfSectionPaper h2,
+body.wf-site .wfSectionPaper h3,
+body.wf-site .wfSectionPaper h4,
+body.wf-site .wfSectionPaper h5,
+body.wf-site .wfSectionPaper h6 {
+  color: var(--wf-text-ink);
+}
+
+.wfPaperKicker {
+  font-family: var(--wf-font-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wf-color-signal-on-light);
+  margin-bottom: 18px;
+}
+
+.wfPaperHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 24px 72px;
+  align-items: start;
+}
+
+.wfPaperTitle {
+  font-family: var(--wf-font-heading);
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  margin: 0;
+  max-width: 24ch;
+}
+
+.wfPaperLead {
+  padding-top: 8px;
+  font-family: var(--wf-font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--wf-text-ink-soft);
+  max-width: 58ch;
+  margin-bottom: 0;
+}
+
+.wfPaperRule {
+  border: 0;
+  border-top: 1px solid var(--wf-border-ink-subtle);
+  margin: 56px 0 0;
+}
+
+/* --- Results list: one evidenced outcome per row (never a card grid) --- */
+.wfResultList {
+  list-style: none;
+  margin: 56px 0 0;
+  padding: 0;
+}
+
+.wfResultRow {
+  display: grid;
+  grid-template-columns: minmax(130px, 170px) minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 48px;
+  padding: 40px 0;
+  border-top: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfResultRow:last-child {
+  border-bottom: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfResultPlace {
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wf-color-accent-on-light);
+  padding-top: 6px;
+}
+
+.wfResultPlaceSince {
+  display: block;
+  margin-top: 8px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--wf-text-ink-soft);
+}
+
+.wfResultClaim {
+  font-family: var(--wf-font-heading);
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--wf-text-ink);
+  margin: 0 0 16px;
+}
+
+.wfResultDetail {
+  font-family: var(--wf-font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--wf-text-ink-soft);
+  margin: 0;
+}
+
+.wfResultMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-family: var(--wf-font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  padding-top: 6px;
+}
+
+.wfResultMetaLabel {
+  display: block;
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wf-text-ink-soft);
+  margin-bottom: 5px;
+}
+
+.wfResultMetaValue {
+  color: var(--wf-text-ink);
+}
+
+/* Provenance. A result either cites something or says plainly that it doesn't
+   yet — never an unsourced assertion. */
+.wfEvidenceLink {
+  color: var(--wf-color-accent-on-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.wfEvidenceLink:hover {
+  color: var(--wf-color-signal-on-light);
+}
+
+.wfEvidencePending {
+  color: var(--wf-text-ink-soft);
+  font-style: italic;
+}
+
+/* --- Controls on the light surface --- */
+.wfBtnInk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--wf-text-ink);
+  color: var(--wf-surface-paper);
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--wf-radius-sm);
+  border: 1px solid var(--wf-text-ink);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.wfBtnInk:hover {
+  background-color: transparent;
+  color: var(--wf-text-ink);
+}
+
+.wfBtnInkGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--wf-text-ink);
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--wf-radius-sm);
+  border: 1px solid var(--wf-border-ink-medium);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.wfBtnInkGhost:hover {
+  border-color: var(--wf-text-ink);
+}
+
+/* --- "What further investment unlocks" ---------------------------------
+   The meeting was explicit that this should be central rather than a footnote:
+   funders want the forward ask, not only the back catalogue. */
+.wfUnlockList {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background-color: var(--wf-border-ink-subtle);
+  border-top: 1px solid var(--wf-border-ink-subtle);
+  border-bottom: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfUnlockItem {
+  background-color: var(--wf-surface-paper);
+  padding: 34px 0;
+  display: grid;
+  /* Two columns, not three: unlocks carry no provenance column, so a third
+     track just left dead space. The rail width matches .wfResultRow so the
+     two lists align down the page. */
+  grid-template-columns: minmax(130px, 170px) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.wfSectionPaperAlt .wfUnlockItem {
+  background-color: var(--wf-surface-paper-alt);
+}
+
+.wfUnlockHorizon {
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wf-color-signal-on-light);
+  padding-top: 4px;
+}
+
+.wfUnlockTitle {
+  font-family: var(--wf-font-heading);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.wfUnlockBody {
+  font-family: var(--wf-font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--wf-text-ink-soft);
+  max-width: 72ch;
+  margin: 0;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .wfResultRow,
+  .wfUnlockItem {
+    grid-template-columns: minmax(130px, 170px) minmax(0, 1fr);
+    gap: 20px 40px;
+  }
+
+  .wfResultMeta {
+    grid-column: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 40px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .wfSectionPaper {
+    padding: 72px 0;
+  }
+
+  .wfResultRow,
+  .wfUnlockItem {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .wfPaperHead {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .wfResultMeta {
+    padding-top: 0;
+  }
+
+  .wfResultPlace,
+  .wfUnlockHorizon {
+    padding-top: 0;
+  }
+}
+
+/* --- Pillar band: three uniform text blocks, divided rather than carded ---
+   Replaces the previous .wfPlatformCard grid. Cards imply independently
+   navigable objects; these are three facets of one argument. */
+.wfPillarBand {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--wf-border-subtle);
+  border-top: 1px solid var(--wf-border-medium);
+}
+
+.wfPillar {
+  background-color: var(--wf-surface-deep);
+  padding: 40px 32px 8px 0;
+}
+
+.wfPillar + .wfPillar {
+  padding-left: 32px;
+}
+
+.wfPillarTitle {
+  font-family: var(--wf-font-heading);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--wf-text-slate-50);
+  margin: 0 0 14px;
+}
+
+.wfPillarBody {
+  font-family: var(--wf-font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--wf-text-slate-300);
+  margin: 0;
+}
+
+/* The evidence link under a pillar: the count of records backing the claim above it.
+   Styled as a link rather than a figure on purpose — the number is only worth printing
+   because it is clickable, and a bare large numeral is the headline-stat pattern the
+   team ruled out. */
+.wfPillarEvidence {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--wf-font-label);
+  font-size: 13.5px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--wf-color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.wfPillarEvidence:hover,
+.wfPillarEvidence:focus-visible {
+  color: var(--wf-color-accent);
+  border-bottom-color: currentColor;
+}
+
+/* Paper variant. The band's own 1px grid gap is what draws the dividing rules, so the
+   pillars repaint to the paper surface and the gap colour goes with them. */
+.wfPillarBandPaper {
+  background-color: var(--wf-border-ink-subtle);
+  border-top-color: var(--wf-border-ink-medium);
+}
+
+.wfPillarBandPaper .wfPillar {
+  background-color: var(--wf-surface-paper);
+}
+
+body.wf-site .wfPillarBandPaper .wfPillarTitle {
+  color: var(--wf-text-ink);
+}
+
+.wfPillarBandPaper .wfPillarBody {
+  color: var(--wf-text-ink-soft);
+}
+
+.wfPillarBandPaper .wfPillarEvidence {
+  color: var(--wf-color-signal-on-light);
+}
+
+@media (max-width: 991px) {
+  .wfPillarBand {
+    grid-template-columns: 1fr;
+  }
+
+  .wfPillar,
+  .wfPillar + .wfPillar {
+    padding: 32px 0;
+  }
+}
+
+/* ==========================================================================
+   Homepage first screen (2026-09-25)
+   --------------------------------------------------------------------------
+   The brief: a visitor must grasp what we do, which areas, and that the work is
+   digital — without scrolling, and without those being three stacked sections.
+   The resolution is layered rather than sequential:
+
+     video      → shows the digital nature; no text on it but the headline
+     strip      → names the areas, on solid ground so it stays scannable
+     cards      → show range, overlapping the strip like the GFW pattern
+
+   No CTA buttons: the strip and the cards are the navigation, and buttons would
+   be the fourth call to action in one viewport.
+   ========================================================================== */
+
+.wfHeroBand {
+  position: relative;
+  /* Sized so the hero, the areas strip and the top of the cards all land within a
+     laptop viewport — the strip is the orientation layer and is worth nothing below
+     the fold. */
+  min-height: clamp(460px, 58vh, 600px);
+  display: flex;
+  align-items: flex-end;
+  padding: 150px 0 56px;
+  background-color: var(--wf-surface-deep);
+  overflow: hidden;
+}
+
+.wfHeroMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.wfHeroPoster,
+.wfHeroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* The video sits over the poster, so a failed or slow load leaves the still in place. */
+.wfHeroVideo {
+  z-index: 1;
+}
+
+/* Legibility floor for white type over footage: a vertical wash plus a left-weighted
+   one, because the track data sits right of centre and the copy sits left. */
+.wfHeroScrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      to top,
+      var(--wf-surface-deep) 0%,
+      rgba(10, 26, 43, 0.62) 26%,
+      rgba(10, 26, 43, 0.12) 62%,
+      rgba(10, 26, 43, 0.4) 100%
+    ),
+    linear-gradient(to right, rgba(10, 26, 43, 0.8) 0%, rgba(10, 26, 43, 0.34) 42%, rgba(10, 26, 43, 0) 72%);
+}
+
+.wfHeroCopy {
+  position: relative;
+  z-index: 3;
+}
+
+.wfHeroHeadline {
+  font-family: var(--wf-font-heading);
+  font-size: clamp(32px, 3.7vw, 50px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--wf-text-on-dark);
+  max-width: 19ch;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+
+.wfHeroSubline {
+  font-family: var(--wf-font-body);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.55;
+  color: var(--wf-text-slate-200);
+  max-width: 46ch;
+  margin: 0;
+}
+
+.wfHeroCredit {
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+  margin: 26px 0 0;
+}
+
+/* --- Areas strip: browse the portfolio by impact area ---
+   Pinned under the fixed site header so the control stays with the reader all the way
+   down the list it governs. Click filters; hover only says "this is clickable". */
+.wfAreasStrip {
+  position: sticky;
+  top: var(--wf-header-height, 77px);
+  z-index: 5;
+  background-color: color-mix(in srgb, var(--wf-surface-panel) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--wf-border-subtle);
+  padding: 22px 0 20px;
+  transition:
+    padding 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Once pinned it tightens and lifts, so it reads as a control floating over the list
+   rather than part of it. */
+.wfAreasStripStuck {
+  padding: 12px 0 11px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+.wfAreasStripStuck .wfAreasLabel {
+  display: none;
+}
+
+.wfAreasLabel {
+  margin: 0 0 14px;
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+}
+
+/* The sentinel sits immediately above the bar; when it leaves the viewport the bar is
+   pinned. Cheaper and smoother than a scroll listener. */
+.wfStickySentinel {
+  height: 1px;
+  margin-bottom: -1px;
+}
+
+.wfAreasList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wfAreaChip {
+  display: inline-flex;
+  align-items: center;
+  /* Sized so "All" plus the six impact areas hold one row at desktop width. */
+  gap: 7px;
+  padding: 10px 12px 10px 11px;
+  border: 1px solid var(--wf-border-medium);
+  border-radius: var(--wf-radius-pill);
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Hover only says "this is clickable". It used to preview the filter, which fought with
+   the click that pinned it; now there is one input and one meaning. */
+.wfAreaChip:hover {
+  border-color: var(--wf-border-control);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* A visible focus ring is not optional: these chips are the only way to reach this
+   filter from a keyboard. */
+.wfAreaChip:focus-visible {
+  outline: 2px solid var(--wf-area-accent, var(--wf-color-accent));
+  outline-offset: 2px;
+}
+
+/* "All" leads the row so there is always a visible way back, rather than a reset the
+   reader has to hunt for. */
+.wfAreaChipAll {
+  font-family: var(--wf-font-label);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-200);
+  padding: 10px 15px;
+}
+
+.wfAreaChipAll.wfAreaChipActive {
+  border-color: var(--wf-text-slate-200);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--wf-text-slate-50);
+  box-shadow: none;
+}
+
+/* The selected chip takes its own area's colour, which the panel below repeats on its top
+   rule and in its heading dot — one thing for the eye to follow from control to result.
+   It has to be unmistakable, because it is the only indication of what is being shown. */
+.wfAreaChipActive,
+.wfAreaChip:hover.wfAreaChipActive {
+  border-color: var(--wf-area-accent, var(--wf-color-accent));
+  background-color: color-mix(in srgb, var(--wf-area-accent, #3e96b0) 26%, transparent);
+  box-shadow: inset 0 0 0 1px var(--wf-area-accent, var(--wf-color-accent));
+}
+
+.wfAreaChipActive .wfAreaName {
+  color: var(--wf-text-slate-50);
+  font-weight: 600;
+}
+
+.wfAreaChipActive .wfAreaCount {
+  color: var(--wf-text-slate-50);
+}
+
+.wfAreaChipActive .wfAreaChipDot {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wf-area-accent, #3e96b0) 35%, transparent);
+}
+
+.wfAreaChipDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wfAreaName {
+  font-family: var(--wf-font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--wf-text-slate-200);
+}
+
+.wfAreaCount {
+  font-family: var(--wf-font-label);
+  font-size: 12px;
+  color: var(--wf-color-accent);
+}
+
+.wfSrOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Featured stories: the one justified card grid on the site ---
+   Cards earn their form here because each is carried by its own image. Everything
+   else on the site that is a uniform list stays a list. */
+.wfFeatured {
+  background-color: var(--wf-surface-deep);
+  padding: 92px 0;
+  /* Its own band now, between the portfolio above and the shared layer below — both of
+     which share this background, so it needs a rule rather than only space. */
+  border-bottom: 1px solid var(--wf-border-subtle);
+}
+
+.wfFeaturedGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  position: relative;
+  z-index: 5;
+}
+
+.wfFeaturedCard {
+  display: flex;
+}
+
+.wfFeaturedLink {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--wf-surface-panel);
+  border: 1px solid var(--wf-border-card);
+  border-radius: var(--wf-radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.wfFeaturedLink:hover {
+  transform: translateY(-4px);
+  border-color: var(--wf-border-accent-medium);
+}
+
+.wfFeaturedMedia {
+  display: block;
+  aspect-ratio: 11 / 7;
+  overflow: hidden;
+  background-color: var(--wf-surface-raised);
+}
+
+.wfFeaturedImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Photography renders monochrome so it matches the Zanzibar shot, which is already
+   black-and-white and cannot be un-converted. Interface imagery keeps its colour,
+   which makes the digital artefact the thing the eye lands on. */
+.wfFeaturedImgMono {
+  filter: grayscale(1) contrast(1.04);
+}
+
+.wfFeaturedLink:hover .wfFeaturedImg {
+  transform: scale(1.03);
+}
+
+.wfFeaturedBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 26px 26px 28px;
+}
+
+.wfFeaturedKicker {
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--wf-color-accent);
+  margin-bottom: 12px;
+}
+
+.wfFeaturedTitle {
+  font-family: var(--wf-font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: var(--wf-text-slate-50);
+  margin-bottom: 12px;
+}
+
+.wfFeaturedText {
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--wf-text-slate-300);
+  margin-bottom: 22px;
+}
+
+.wfFeaturedMore {
+  margin-top: auto;
+  font-family: var(--wf-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wf-color-accent);
+}
+
+/* --- Tools showcase: the reuse claim, evidenced --- */
+.wfShowcase {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  /* One row, however many deployments there are. auto-fit wrapped an orphan onto a
+     second row; a hard column count went stale the moment a country was added or a
+     dashboard came down. The component sets --wf-showcase-n from the data. */
+  grid-template-columns: repeat(var(--wf-showcase-n, 4), minmax(0, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 1199px) {
+  .wfShowcase {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .wfShowcase {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+.wfShowcaseLink {
+  display: block;
+  text-decoration: none;
+}
+
+.wfShowcaseShot {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--wf-border-card);
+  border-radius: var(--wf-radius-sm);
+  background-color: var(--wf-surface-panel);
+  transition: border-color 0.25s ease;
+}
+
+.wfShowcaseImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.wfShowcaseLink:hover .wfShowcaseShot {
+  border-color: var(--wf-border-accent-medium);
+}
+
+.wfShowcaseMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 2px 0;
+}
+
+.wfShowcaseName {
+  font-family: var(--wf-font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--wf-text-slate-50);
+}
+
+.wfShowcaseArrow {
+  color: var(--wf-text-slate-400);
+  transition: color 0.2s ease;
+}
+
+.wfShowcaseLink:hover .wfShowcaseArrow {
+  color: var(--wf-color-accent);
+}
+
+@media (max-width: 1199px) {
+  .wfFeaturedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .wfHeroBand {
+    min-height: 0;
+    padding: 130px 0 52px;
+  }
+
+  .wfFeaturedGrid {
+    grid-template-columns: 1fr;
+    margin-top: -40px;
+    gap: 20px;
+  }
+
+  .wfFeatured {
+    padding-bottom: 64px;
+  }
+
+  .wfAreasStrip {
+    padding: 16px 0 14px;
+  }
+
+  .wfAreaChip {
+    padding: 9px 12px 9px 10px;
+  }
+}
+
+/* Photo credit. Required on any photograph taken from the WorldFish archive — each
+   image there names a photographer, and the attribution travels with the picture. */
+.wfFeaturedCredit {
+  display: block;
+  padding: 10px 26px 0;
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--wf-text-slate-400);
+}
+
+.wfFeaturedCredit + .wfFeaturedBody {
+  padding-top: 14px;
+}
+
+/* Quiet counts line on a detail hero. The counts are traceable and worth showing, but
+   they are not what the page is about — they used to be three large numerals. */
+.wfDetailMeta {
+  margin: 26px 0 0;
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--wf-text-slate-400);
+}
+
+/* Derived facts under an entity name — where it runs, which ecosystem it belongs to.
+   Distinct from .wfEntitySub, which is authored description. */
+.wfEntityMeta {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--wf-font-label);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: var(--wf-text-slate-400);
+}
+
+/* Synced media on tool and initiative pages. The credit sits directly under its image:
+   a credit that travels separately from its photo gets lost. */
+.wfMedia {
+  margin: 0 0 40px;
+}
+
+.wfMedia img,
+.wfMedia video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--wf-border-image);
+}
+
+.wfMediaCredit {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--wf-text-slate-400);
+}
+
+.wfMediaList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 767px) {
+  .wfMediaList {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Homepage register (2026-10-07)
+   --------------------------------------------------------------------------
+   The homepage stopped arguing and started listing. These are the three
+   elements that replaced the "Built once, then reused" pillar band: a label
+   for the featured cards, a line of counted facts above the inventory, and
+   the shared-layer ranking.
+   ========================================================================== */
+
+.wfFeaturedLabel {
+  margin: 0 0 26px;
+  font-family: var(--wf-font-label);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+}
+
+/* Counted facts beside the catalogue they describe. A quiet line of links, not a
+   band of numerals: the figure is only worth printing because it is checkable. */
+.wfFactLine {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+
+.wfFactLink {
+  font-family: var(--wf-font-label);
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+  color: var(--wf-color-signal-on-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.wfFactLink:hover,
+.wfFactLink:focus-visible {
+  color: var(--wf-color-signal-on-light);
+  border-bottom-color: currentColor;
+}
+
+.wfPortfolioList {
+  margin-top: 44px;
+}
+
+/* --- The shared layer: tools ranked by how many others build on them --- */
+.wfReuseList {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--wf-border-medium);
+}
+
+.wfReuseRow {
+  border-bottom: 1px solid var(--wf-border-subtle);
+}
+
+.wfReuseLink {
+  display: grid;
+  /* The count sits in its own rail so the numbers line up down the page and the
+     ranking is readable without counting rows. Matches .wfResultRow's rail. */
+  grid-template-columns: minmax(130px, 170px) minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: baseline;
+  padding: 26px 0;
+  text-decoration: none;
+  transition: background-color 0.18s ease;
+}
+
+.wfReuseLink:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.wfReuseCount {
+  display: block;
+  font-family: var(--wf-font-heading);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--wf-color-accent);
+}
+
+.wfReuseCountLabel {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+}
+
+.wfReuseName {
+  display: block;
+  font-family: var(--wf-font-heading);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--wf-text-slate-50);
+}
+
+.wfReuseSub {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--wf-font-body);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--wf-text-slate-300);
+  max-width: 68ch;
+}
+
+.wfReuseType {
+  font-family: var(--wf-font-label);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+  white-space: nowrap;
+}
+
+.wfReuseFoot {
+  margin: 34px 0 0;
+  font-family: var(--wf-font-body);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--wf-text-slate-300);
+  max-width: 76ch;
+}
+
+@media (max-width: 767px) {
+  .wfReuseLink {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .wfReuseCount {
+    font-size: 26px;
+  }
+
+  .wfReuseCountLabel {
+    display: inline;
+    margin-left: 8px;
+  }
+}
+
+/* --- EntityLinkList on the light editorial surface ---
+   The list was written for the dark sections, where near-white names read correctly.
+   On paper those names disappear, so every colour it sets is repointed at the ink
+   tokens here. Scoped to .wfSectionPaper rather than forked into a second component:
+   the markup is identical and only the palette differs. */
+.wfSectionPaper .wfEntityList {
+  border-top-color: var(--wf-border-ink-subtle);
+}
+
+.wfSectionPaper .wfEntityItem {
+  border-bottom-color: var(--wf-border-ink-subtle);
+}
+
+.wfSectionPaper .wfEntityName {
+  color: var(--wf-text-ink);
+}
+
+.wfSectionPaper .wfEntityLink:hover .wfEntityName {
+  color: var(--wf-color-accent-on-light);
+}
+
+.wfSectionPaper .wfEntitySub,
+.wfSectionPaper .wfEntityMeta,
+.wfSectionPaper .wfEntityGroupTitle,
+.wfSectionPaper .wfEntityArrow,
+.wfSectionPaper .wfStatusTag {
+  color: var(--wf-text-ink-soft);
+}
+
+.wfSectionPaper .wfEntityGroupCount {
+  color: var(--wf-color-accent-on-light);
+}
+
+.wfSectionPaper .wfEntityLink:hover {
+  border-left-color: var(--wf-color-accent-on-light);
+  background: linear-gradient(90deg, rgba(31, 106, 130, 0.07), transparent 70%);
+}
+
+.wfSectionPaper .wfEntityLink:hover .wfEntityArrow {
+  color: var(--wf-color-accent-on-light);
+}
+
+/* --- The portfolio by initiative (homepage) ---
+   An initiative is a block: who did the work on the left, what came out of it on the
+   right. The two-column split is what keeps the section scannable as initiatives are
+   added — a reader skims the left rail and stops at the one they want. */
+.wfInitList {
+  margin-top: 48px;
+  border-top: 1px solid var(--wf-border-ink-medium);
+}
+
+/* Inside the browser panel the head already closes with a rule, so the list must not
+   draw a second one two pixels under it. */
+.wfPortfolioPanel .wfInitList {
+  margin-top: 0;
+  border-top: none;
+}
+
+.wfInitBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
+  gap: 56px;
+  padding: 46px 0;
+  border-bottom: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfInitName {
+  font-family: var(--wf-font-heading);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+body.wf-site .wfSectionPaper .wfInitName,
+body.wf-site .wfSectionPaper .wfInitNameLink {
+  color: var(--wf-text-ink);
+}
+
+.wfInitNameLink {
+  text-decoration: none;
+  border-bottom: 1px solid var(--wf-border-ink-medium);
+  transition: border-color 0.18s ease;
+}
+
+.wfInitNameLink:hover {
+  border-bottom-color: var(--wf-color-accent-on-light);
+}
+
+.wfInitSummary {
+  font-family: var(--wf-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--wf-text-ink-soft);
+  margin: 0 0 16px;
+  max-width: 46ch;
+}
+
+.wfInitMeta {
+  font-family: var(--wf-font-label);
+  font-size: 12.5px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--wf-text-ink-soft);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.wfInitMore {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  color: var(--wf-color-signal-on-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.wfInitMore:hover {
+  color: var(--wf-color-signal-on-light);
+  border-bottom-color: currentColor;
+}
+
+/* Tools as names under their component type: dense enough that the next initiative
+   stays visible, which full description rows would prevent. Descriptions live on the
+   tool page and in the filterable catalogue. */
+.wfInitTools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 40px;
+  align-content: start;
+}
+
+.wfInitToolType {
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wf-text-ink-soft);
+  opacity: 0.75;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfInitToolList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.wfInitToolLink {
+  font-family: var(--wf-font-body);
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--wf-text-ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.16s ease, color 0.16s ease;
+}
+
+.wfInitToolLink:hover {
+  color: var(--wf-color-accent-on-light);
+  border-bottom-color: currentColor;
+}
+
+/* The openness figures on /products, which is a dark surface. */
+.wfFactLineDark .wfFactStatic {
+  font-family: var(--wf-font-label);
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+  color: var(--wf-text-slate-400);
+}
+
+@media (max-width: 991px) {
+  .wfInitBlock {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .wfInitTools {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Entity page grammar (2026-10-07)
+   --------------------------------------------------------------------------
+   All four entity types — initiative, tool, impact area, country — read in one
+   order: what it is → what is in it → how it connects → what changed → the full
+   record. Reading content sits on the paper surface, structural content (hero,
+   lineage graph) on dark. These are the pieces that order needs.
+   ========================================================================== */
+
+/* The orienting facts in the hero: where it runs, when, who funds it. They are
+   the context for everything below, so they sit under the title rather than in
+   the record at the foot of the page. A row at desktop width, stacked on phones. */
+.wfHeroFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 56px;
+  margin: 44px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--wf-border-subtle);
+}
+
+.wfHeroFact {
+  min-width: 0;
+  max-width: 44ch;
+}
+
+.wfHeroFactLabel {
+  margin: 0 0 6px;
+  font-family: var(--wf-font-label);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+}
+
+.wfHeroFactValue {
+  margin: 0;
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--wf-text-slate-200);
+}
+
+/* Reading column for authored prose. Measure matters more here than on a list:
+   these are the paragraphs someone actually reads start to finish. */
+.wfProseColumn {
+  margin-top: 36px;
+  max-width: 72ch;
+}
+
+/* Prose and detail blocks were written for the dark sections. On paper their
+   greys vanish, so every colour is repointed — the same fix EntityLinkList needed. */
+.wfSectionPaper .wfProse {
+  color: var(--wf-text-ink-soft);
+}
+
+body.wf-site .wfSectionPaper .wfDetailBlock .wfSectionTitle,
+body.wf-site .wfSectionPaper .wfDetailBlock h2,
+body.wf-site .wfSectionPaper .wfDetailBlock h3 {
+  color: var(--wf-text-ink);
+}
+
+.wfSectionPaper .wfDetailBlock .wfSectionKicker {
+  color: var(--wf-color-signal-on-light);
+}
+
+.wfSectionPaper .wfMediaCredit,
+.wfSectionPaper .wfMuted {
+  color: var(--wf-text-ink-soft);
+}
+
+@media (max-width: 767px) {
+  .wfHeroFacts {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+/* Two sections running on the same surface need a hairline between them, or they read as
+   one long block. The entity grammar makes this unavoidable in places — "what it is" and
+   "what it built" are both reading content and both belong on paper — so the rule is
+   general rather than a per-page override. PaperAlt already differs in background, so it
+   is excluded. */
+.wfSectionPaper + .wfSectionPaper:not(.wfSectionPaperAlt) {
+  border-top: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfSectionDark + .wfSectionDark {
+  border-top: 1px solid var(--wf-border-subtle);
+}
+
+/* --- Initiatives with their tools, on the filtered pages (impact area, country) ---
+   The initiative heads the block its tools sit under, because it is what produced them.
+   Previously these pages listed tools by component type and put the initiatives below as
+   a thin list of names, which told a reader nothing about the work behind the tools. */
+.wfInitGroup + .wfInitGroup {
+  margin-top: 64px;
+  padding-top: 56px;
+  border-top: 1px solid var(--wf-border-ink-subtle);
+}
+
+.wfInitGroupHead {
+  margin-bottom: 30px;
+  max-width: 62ch;
+}
+
+.wfInitGroupName {
+  font-family: var(--wf-font-heading);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+body.wf-site .wfSectionPaper .wfInitGroupName,
+body.wf-site .wfSectionPaper .wfInitGroupName .wfInitNameLink {
+  color: var(--wf-text-ink);
+}
+
+.wfInitGroupSummary {
+  font-family: var(--wf-font-body);
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--wf-text-ink-soft);
+  margin: 0 0 12px;
+}
+
+.wfInitGroupMeta {
+  font-family: var(--wf-font-label);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--wf-text-ink-soft);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* --- Impact-area tags ---
+   A dot plus the area name, linked to that area. The dot is a recognition aid: the name is
+   always present, so the tag survives greyscale, print and colourblindness. Works on both
+   surfaces, so the colour comes from an inline style and the chrome from the surface. */
+.wfAreaTags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wfAreaTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 10px;
+  border: 1px solid var(--wf-border-medium);
+  border-radius: var(--wf-radius-pill);
+  font-family: var(--wf-font-label);
+  font-size: 12px;
+  letter-spacing: 0.015em;
+  line-height: 1.3;
+  color: var(--wf-text-slate-200);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.wfAreaTag:hover {
+  border-color: var(--wf-color-accent);
+  background-color: rgba(62, 150, 176, 0.1);
+  color: var(--wf-text-slate-50);
+}
+
+.wfAreaTagDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wfSectionPaper .wfAreaTag {
+  border-color: var(--wf-border-ink-medium);
+  color: var(--wf-text-ink-soft);
+}
+
+.wfSectionPaper .wfAreaTag:hover {
+  border-color: var(--wf-color-accent-on-light);
+  background-color: rgba(31, 106, 130, 0.07);
+  color: var(--wf-text-ink);
+}
+
+.wfAreaTagsSpaced {
+  margin-top: 16px;
+}
+
+/* Tags inside a list row sit under the meta line, tighter than in a page head. */
+.wfAreaTagsRow {
+  margin-top: 10px;
+  gap: 6px;
+}
+
+.wfAreaTagsRow .wfAreaTag {
+  padding: 3px 10px 3px 8px;
+  font-size: 11px;
+}
+
+/* --- The portfolio browser: intro → chips → panel ---
+   The three sit directly on top of each other so the chips govern something visible. The
+   intro and the strip share the panel surface and read as one band; the panel below is the
+   result, and carries the focused area's colour on its top rule. */
+.wfPortfolioPanel {
+  padding: 0 0 100px;
+  /* Scroll anchoring must not apply here. Selecting an area changes this panel's height and
+     Chrome compensates by nudging scrollY to keep the view stable, which fights the scroll
+     this component performs itself and leaves the panel head in an unpredictable place.
+     (It was worse when hover drove the filter: the nudge re-fired pointer boundary events,
+     so a stationary pointer produced an endless mouseout/mouseover loop — 34 pairs measured.) */
+  overflow-anchor: none;
+  /* Cleared by the header plus the pinned bar, so a click scrolls the panel head into
+     view rather than under the control that triggered it. */
+  scroll-margin-top: calc(var(--wf-header-height, 77px) + 104px);
+  border-top: 3px solid var(--wf-area-accent, transparent);
+  transition: border-color 0.2s ease;
+}
+
+.wfPanelHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 24px;
+  padding: 34px 0 40px;
+  border-bottom: 1px solid var(--wf-border-ink-subtle);
+  margin-bottom: 48px;
+}
+
+.wfPanelTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0;
+  font-family: var(--wf-font-heading);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body.wf-site .wfSectionPaper .wfPanelTitle {
+  color: var(--wf-text-ink);
+}
+
+.wfPanelDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wfPanelCount {
+  margin: 0;
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--wf-text-ink-soft);
+}
+
+.wfPanelLink {
+  margin-left: auto;
+  font-family: var(--wf-font-label);
+  font-size: 13px;
+  color: var(--wf-color-signal-on-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.wfPanelLink:hover {
+  border-bottom-color: currentColor;
+}
+
+@media (max-width: 767px) {
+  .wfPanelLink {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wfPortfolioPanel {
+    transition: none;
   }
 }
