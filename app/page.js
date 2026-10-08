@@ -29,7 +29,7 @@ export default async function Home() {
     const outcomes = getOutcomes();
     const relationships = relationshipsData.relationships;
 
-    // The strip carries only areas with work tagged to them — see AreasStrip.
+    // The tabs carry only areas with work tagged to them — see AreaTabs.
     const withWork = themes.filter((t) => t.productSlugs.length > 0 || t.projectSlugs.length > 0);
 
     // Deployments shown as screenshots. Derived, not listed: a country joins the row when

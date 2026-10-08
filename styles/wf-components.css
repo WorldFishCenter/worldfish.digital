@@ -2487,153 +2487,6 @@ body.wf-site .wfPillarBandPaper .wfPillarTitle {
   margin: 26px 0 0;
 }
 
-/* --- Areas strip: browse the portfolio by impact area ---
-   Pinned under the fixed site header so the control stays with the reader all the way
-   down the list it governs. Click filters; hover only says "this is clickable". */
-.wfAreasStrip {
-  position: sticky;
-  top: var(--wf-header-height, 77px);
-  z-index: 5;
-  background-color: color-mix(in srgb, var(--wf-surface-panel) 92%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--wf-border-subtle);
-  padding: 22px 0 20px;
-  transition:
-    padding 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-/* Once pinned it tightens and lifts, so it reads as a control floating over the list
-   rather than part of it. */
-.wfAreasStripStuck {
-  padding: 12px 0 11px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
-}
-
-.wfAreasStripStuck .wfAreasLabel {
-  display: none;
-}
-
-.wfAreasLabel {
-  margin: 0 0 14px;
-  font-family: var(--wf-font-label);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--wf-text-slate-400);
-}
-
-/* The sentinel sits immediately above the bar; when it leaves the viewport the bar is
-   pinned. Cheaper and smoother than a scroll listener. */
-.wfStickySentinel {
-  height: 1px;
-  margin-bottom: -1px;
-}
-
-.wfAreasList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.wfAreaChip {
-  display: inline-flex;
-  align-items: center;
-  /* Sized so "All" plus the six impact areas hold one row at desktop width. */
-  gap: 7px;
-  padding: 10px 12px 10px 11px;
-  border: 1px solid var(--wf-border-medium);
-  border-radius: var(--wf-radius-pill);
-  background: none;
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
-}
-
-/* Hover only says "this is clickable". It used to preview the filter, which fought with
-   the click that pinned it; now there is one input and one meaning. */
-.wfAreaChip:hover {
-  border-color: var(--wf-border-control);
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-/* A visible focus ring is not optional: these chips are the only way to reach this
-   filter from a keyboard. */
-.wfAreaChip:focus-visible {
-  outline: 2px solid var(--wf-area-accent, var(--wf-color-accent));
-  outline-offset: 2px;
-}
-
-/* "All" leads the row so there is always a visible way back, rather than a reset the
-   reader has to hunt for. */
-.wfAreaChipAll {
-  font-family: var(--wf-font-label);
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--wf-text-slate-200);
-  padding: 10px 15px;
-}
-
-.wfAreaChipAll.wfAreaChipActive {
-  border-color: var(--wf-text-slate-200);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--wf-text-slate-50);
-  box-shadow: none;
-}
-
-/* The selected chip takes its own area's colour, which the panel below repeats on its top
-   rule and in its heading dot — one thing for the eye to follow from control to result.
-   It has to be unmistakable, because it is the only indication of what is being shown. */
-.wfAreaChipActive,
-.wfAreaChip:hover.wfAreaChipActive {
-  border-color: var(--wf-area-accent, var(--wf-color-accent));
-  background-color: color-mix(in srgb, var(--wf-area-accent, #3e96b0) 26%, transparent);
-  box-shadow: inset 0 0 0 1px var(--wf-area-accent, var(--wf-color-accent));
-}
-
-.wfAreaChipActive .wfAreaName {
-  color: var(--wf-text-slate-50);
-  font-weight: 600;
-}
-
-.wfAreaChipActive .wfAreaCount {
-  color: var(--wf-text-slate-50);
-}
-
-.wfAreaChipActive .wfAreaChipDot {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wf-area-accent, #3e96b0) 35%, transparent);
-}
-
-.wfAreaChipDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.wfAreaName {
-  font-family: var(--wf-font-body);
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--wf-text-slate-200);
-}
-
-.wfAreaCount {
-  font-family: var(--wf-font-label);
-  font-size: 12px;
-  color: var(--wf-color-accent);
-}
-
 .wfSrOnly {
   position: absolute;
   width: 1px;
@@ -2858,12 +2711,12 @@ body.wf-site .wfPillarBandPaper .wfPillarTitle {
     padding-bottom: 64px;
   }
 
-  .wfAreasStrip {
-    padding: 16px 0 14px;
+  .wfAreaTabs {
+    padding: 16px 0 0;
   }
 
-  .wfAreaChip {
-    padding: 9px 12px 9px 10px;
+  .wfTab {
+    padding: 9px 10px 14px;
   }
 }
 
@@ -3570,6 +3423,189 @@ body.wf-site .wfSectionPaper .wfPanelTitle {
 
 @media (prefers-reduced-motion: reduce) {
   .wfPortfolioPanel {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Impact-area tabs, and the bridge to the panel they govern (2026-10-07)
+   --------------------------------------------------------------------------
+   One selection revealing one panel is a tab interface, not a filter — chips
+   are for multi-select refinement. The selected area's colour runs from the
+   tab through a sliding indicator and its caret into the panel below, so the
+   control and its result read as one thing.
+   ========================================================================== */
+.wfAreaTabs {
+  position: sticky;
+  top: var(--wf-header-height, 77px);
+  z-index: 5;
+  background-color: color-mix(in srgb, var(--wf-surface-panel) 93%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 22px 0 0;
+  transition:
+    padding 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Pinned: tighten and lift, so it reads as a control floating over the list. */
+.wfAreaTabsStuck {
+  padding: 10px 0 0;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+}
+
+.wfAreaTabsStuck .wfAreaTabsLabel {
+  display: none;
+}
+
+.wfAreaTabsLabel {
+  margin: 0 0 12px;
+  font-family: var(--wf-font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--wf-text-slate-400);
+}
+
+.wfTabList {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4px;
+  border-bottom: 1px solid var(--wf-border-subtle);
+}
+
+/* Tabs carry no border or fill: the sliding indicator is the selection marker, which is
+   what keeps seven of them from reading as seven competing buttons. */
+.wfTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px 16px;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.18s ease;
+}
+
+.wfTab:focus-visible {
+  outline: 2px solid var(--wf-area-accent, var(--wf-color-accent));
+  outline-offset: -4px;
+  border-radius: 6px;
+}
+
+.wfTabName {
+  font-family: var(--wf-font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--wf-text-slate-400);
+  transition: color 0.18s ease;
+}
+
+.wfTabAll .wfTabName {
+  font-family: var(--wf-font-label);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wfTab:hover .wfTabName,
+.wfTab[aria-selected='true'] .wfTabName {
+  color: var(--wf-text-slate-50);
+}
+
+.wfTab[aria-selected='true'] .wfTabName {
+  font-weight: 600;
+}
+
+.wfTabDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.55;
+  transition: opacity 0.18s ease, box-shadow 0.18s ease;
+}
+
+.wfTab:hover .wfTabDot,
+.wfTab[aria-selected='true'] .wfTabDot {
+  opacity: 1;
+}
+
+.wfTab[aria-selected='true'] .wfTabDot {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wf-area-accent, #3e96b0) 30%, transparent);
+}
+
+.wfTabCount {
+  font-family: var(--wf-font-label);
+  font-size: 12px;
+  color: var(--wf-text-slate-400);
+  transition: color 0.18s ease;
+}
+
+.wfTab[aria-selected='true'] .wfTabCount {
+  color: var(--wf-area-accent, var(--wf-color-accent));
+}
+
+/* The bridge. One object that travels between tabs — position and width animate rather
+   than fading, so it reads as a single thing moving instead of seven lighting up. */
+.wfTabMarker {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 3px;
+  background-color: var(--wf-area-accent);
+  border-radius: 2px 2px 0 0;
+  pointer-events: none;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.2s ease;
+}
+
+/* …and the caret that points out of it, into the panel it governs. */
+.wfTabCaret {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 11px;
+  height: 11px;
+  margin-left: -5.5px;
+  background-color: var(--wf-area-accent);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+/* The panel repeats the colour: a rule along the top, and a wash fading out of it so the
+   tint belongs to the whole surface rather than sitting on it as a stripe. */
+.wfPortfolioPanelTinted {
+  border-top-color: var(--wf-area-accent);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--wf-area-accent) 9%, transparent),
+    transparent 220px
+  );
+}
+
+.wfPortfolioPanelTinted .wfPanelLink {
+  color: var(--wf-area-accent);
+  filter: saturate(1.15) brightness(0.72);
+}
+
+@media (max-width: 767px) {
+  .wfTabList {
+    gap: 0 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wfTabMarker,
+  .wfTab,
+  .wfTabName,
+  .wfTabDot {
     transition: none;
   }
 }

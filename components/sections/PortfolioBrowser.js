@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import AreasStrip from './AreasStrip';
+import AreaTabs from './AreaTabs';
 import InitiativeList from './InitiativeList';
 import { areaColor, countLabel } from '../detail/meta';
 import { themeHref } from '@/lib/routes.mjs';
@@ -23,9 +23,12 @@ import { themeHref } from '@/lib/routes.mjs';
  * Colour carries the connection: the chip, the rule across the top of the panel and the dot
  * beside the panel's heading are all the area's own colour.
  *
- * One selection, set by hovering, focusing or tapping a chip — and it **stays** until another
- * is chosen or "All" clears it, so you can leave the bar and go read the result. See
- * AreasStrip.
+ * One selection, set by hovering, focusing or tapping a tab — and it **stays** until another
+ * is chosen or "All" clears it, so you can leave the bar and go read the result. See AreaTabs.
+ *
+ * The selected area's colour runs the whole way through: the tab, the sliding indicator and
+ * its caret, the rule along the top of the panel, a wash that fades out of that rule, the
+ * heading dot and the link out. One colour, one thing being looked at.
  *
  * Only a tap scrolls the panel under the pinned bar. Hover must not move the page: it would
  * slide the chip out from under the pointer, and it is what WCAG 2.2.2 and the
@@ -41,6 +44,9 @@ function scope(group, slug) {
     // work rather than an empty block.
     return (group.initiative?.themeSlugs || []).includes(slug) ? group.tools : [];
 }
+
+/** Ties each tab to the panel it controls, for `aria-controls` / `aria-labelledby`. */
+const PANEL_ID = 'wf-portfolio-panel';
 
 export default function PortfolioBrowser({ areas, groups, data, countryName }) {
     const [active, setActive] = useState(null);
@@ -92,19 +98,25 @@ export default function PortfolioBrowser({ areas, groups, data, countryName }) {
         <>
             <div ref={sentinelRef} aria-hidden="true" className="wfStickySentinel" />
 
-            <AreasStrip
+            <AreaTabs
                 areas={areas}
                 active={active}
                 stuck={stuck}
+                panelId={PANEL_ID}
                 onSelect={select}
                 onClear={() => setActive(null)}
             />
 
             <section
                 ref={panelRef}
-                className="section-box wfSectionPaper wfPortfolioPanel"
+                id={PANEL_ID}
+                role="tabpanel"
+                aria-labelledby={`${PANEL_ID}-tab-${active ?? '__all__'}`}
+                tabIndex={-1}
+                className={`section-box wfSectionPaper wfPortfolioPanel${
+                    area ? ' wfPortfolioPanelTinted' : ''
+                }`}
                 style={area ? { '--wf-area-accent': areaColor(area.slug) } : undefined}
-                aria-live="polite"
             >
                 <div className="container">
                     <div className="wfPanelHead">
