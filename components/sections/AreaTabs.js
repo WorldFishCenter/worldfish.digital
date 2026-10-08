@@ -103,11 +103,12 @@ export default function AreaTabs({ areas, active, panelId, onSelect, onClear, st
     return (
         <nav className={`wfAreaTabs${stuck ? ' wfAreaTabsStuck' : ''}`}>
             <div className="container">
-                <p className="wfAreaTabsLabel">Browse by impact area</p>
+                {/* No visible heading: it cost a row and the tabs say what they are. The
+                    accessible name lives on the tablist instead. */}
                 <div
                     className="wfTabList"
                     role="tablist"
-                    aria-label="Impact areas"
+                    aria-label="Browse the portfolio by impact area"
                     ref={listRef}
                     onKeyDown={onKeyDown}
                 >
