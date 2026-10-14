@@ -5,6 +5,12 @@ For how the data gets here, see [`scripts/README.md`](scripts/README.md).
 
 ## Terms
 
+> **Renamed 2026-10-14.** What this file calls a *product or service* was called a **tool**
+> until a colleague pointed out that not everything here is one — a curated dataset or a
+> hosted service is not a tool. The Airtable table, the UI copy and the `Product lead` field
+> all follow. Code and URLs still say `product` (`products.json`, `getProduct`, `/products`),
+> which now matches rather than conflicts.
+
 **Portfolio** — the linked graph of what WorldFish Digital builds and runs: tools,
 initiatives, outcomes, impact areas and countries. It lives in `content/data/*.json` and is
 read through `lib/portfolio.js`. Distinct from *content*, which is page copy
@@ -13,7 +19,7 @@ read through `lib/portfolio.js`. Distinct from *content*, which is page copy
 **Live** — `Publication state = Live` in Airtable. The only records the sync pulls. The
 site shows nothing else, so an intake base with nothing Live is an empty site, by design.
 
-**Tool** — one record in the `WFD Tools` table: a platform, pipeline, dashboard, model or
+**Product or service** — one record in the `WFD Products & Services` table: a platform, pipeline, dashboard, model or
 data product. Called a **product** in code and URLs (`products.json`, `getProduct`,
 `/products/[slug]`).
 

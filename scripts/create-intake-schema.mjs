@@ -3,7 +3,7 @@
  * Creates the four worldfish.digital intake tables in the Airtable intake base
  * (appjLGt1IWscYAV3i by default — the purpose-made base, not the live Products base).
  *
- *   WFD Tools        — the digital things, one record each
+ *   WFD Products & Services        — the digital things, one record each
  *   WFD Initiatives  — the funded bodies of work that pay for them
  *   WFD Outcomes     — one evidenced claim each, with provenance
  *   WFD Connections  — typed tool → tool links
@@ -108,7 +108,7 @@ const curationTail = () => [
 /* ----------------------------------------------------------------- the tables */
 
 const TOOLS = {
-    name: 'WFD Tools',
+    name: 'WFD Products & Services',
     description:
         'Digital tools, platforms, pipelines, models and data products — ONE RECORD EACH. This is the table the website is weakest on today: the old intake collected tool names in a text box, which is why most tools show on the site as a bare name with no description. Only Publication state = Live is pulled onto the site.',
     fields: [
@@ -124,7 +124,7 @@ const TOOLS = {
         sel('Who uses it', AUDIENCE, 'The people who actually open it or consume its output.', true),
         sel('Innovation readiness level', IRL, 'CGIAR / NASA scale 0–9. An honest answer is more useful than a flattering one, and this is the same scale PRMS innovation reporting uses — filling it here saves repeating it there.'),
         sel('SDG alignment', SDG, 'Only those it genuinely contributes to.', true),
-        txt('Lead developer', 'Who to ask about it. A name is enough.'),
+        txt('Product lead', 'Who to ask about it. A name is enough. Not necessarily a developer — for a dataset or a service this is often the initiative\'s lead scientist.'),
         { name: 'Contact email', type: 'email', description: 'Where a colleague wanting to reuse this should write.' },
         url('Live URL', 'Where the running tool lives, if it is public.'),
         url('Code repository', 'GitHub or equivalent. Central to the reuse argument — if the code is public, say where.'),
@@ -264,12 +264,12 @@ async function run() {
     // once that table does. Airtable auto-creates the symmetric field on the other side,
     // so each relation is declared once.
     const links = [
-        ['WFD Tools', 'Part of initiative', 'WFD Initiatives',
+        ['WFD Products & Services', 'Part of initiative', 'WFD Initiatives',
             'Which funded work this tool came out of. A tool usually outlives the project that paid for it.'],
-        ['WFD Outcomes', 'Tool', 'WFD Tools', 'The tool this outcome is attributed to.'],
+        ['WFD Outcomes', 'Tool', 'WFD Products & Services', 'The tool this outcome is attributed to.'],
         ['WFD Outcomes', 'Initiative', 'WFD Initiatives', 'The initiative this outcome is attributed to.'],
-        ['WFD Connections', 'From tool', 'WFD Tools', 'The tool the arrow starts at.'],
-        ['WFD Connections', 'To tool', 'WFD Tools', 'The tool the arrow points to.'],
+        ['WFD Connections', 'From tool', 'WFD Products & Services', 'The tool the arrow starts at.'],
+        ['WFD Connections', 'To tool', 'WFD Products & Services', 'The tool the arrow points to.'],
     ];
 
     for (const [tableName, fieldName, targetName, description] of links) {

@@ -6,7 +6,7 @@ import relationshipsData from '@/content/data/relationships.json';
 
 export const metadata = {
     ...DEFAULT_METADATA,
-    title: 'Tools - WorldFish Digital',
+    title: 'Products & services — WorldFish Digital',
 };
 
 export default function ProductsPage() {

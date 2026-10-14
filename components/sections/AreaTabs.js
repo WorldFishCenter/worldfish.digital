@@ -133,7 +133,7 @@ export default function AreaTabs({ areas, active, panelId, onSelect, onClear, st
                             {area.productSlugs.length > 0 && (
                                 <span className="wfTabCount">
                                     {area.productSlugs.length}
-                                    <span className="wfSrOnly"> tools</span>
+                                    <span className="wfSrOnly"> products &amp; services</span>
                                 </span>
                             )}
                         </button>

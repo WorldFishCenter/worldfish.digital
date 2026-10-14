@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { itemCount } from './meta';
 import { themeHref } from '@/lib/routes.mjs';
 
 const ArrowIcon = () => (
@@ -39,7 +40,7 @@ export default function ThemeIndexList({ themes, showStats = false }) {
                       ? 'Nothing tagged to this area yet'
                       : [
                             count(theme.projectSlugs.length, 'initiative'),
-                            count(theme.productSlugs.length, 'tool'),
+                            itemCount(theme.productSlugs.length),
                             count(theme.countrySlugs.length, 'country', 'countries'),
                         ].join(' · ');
 

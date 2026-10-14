@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
 import AreaTags from '../detail/AreaTags';
-import { groupProductsByType, countLabel } from '../detail/meta';
+import { groupProductsByType, itemCount } from '../detail/meta';
 import { productHref } from '@/lib/routes.mjs';
 
 const ALL = 'All';
@@ -78,12 +78,12 @@ export default function ProductsCatalogClient({ products, themes, initiatives = 
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">
-                            <h1 className="display-3 wfTitleHero">Tools</h1>
+                            <h1 className="display-3 wfTitleHero">Products &amp; services</h1>
                             <p className="wfLead wfLeadMt">
-                                Every tool in the portfolio, filterable by the initiative that
+                                Everything in the portfolio, filterable by the initiative that
                                 produced it, by what kind of component it is, and by impact area.
-                                Work that is archived or still at concept stage is listed too, with
-                                its status, so this reads as a record rather than a shop window.
+                                Prototypes and retired work are listed too, each with its status, so
+                                this reads as a record rather than a shop window.
                             </p>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ export default function ProductsCatalogClient({ products, themes, initiatives = 
                 <div className="container">
                     {products.length === 0 ? (
                         <p className="wfMutedLg">
-                            No tools are published yet. Each one appears here once its record
+                            Nothing is published yet. Each entry appears here once its record
                             in the portfolio database has been reviewed and marked Live.
                         </p>
                     ) : (
@@ -124,7 +124,7 @@ export default function ProductsCatalogClient({ products, themes, initiatives = 
                             />
 
                             <p className="wfMuted mt-30 mb-30">
-                                {countLabel(filtered.length, 'tool')}
+                                {itemCount(filtered.length)}
                             </p>
 
                             {groups ? (

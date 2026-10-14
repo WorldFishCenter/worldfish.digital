@@ -36,7 +36,7 @@ export default function SharedLayer({ data, entries, crossCutting, connectionCou
                                 <span className="wfReuseCount">
                                     {dependants}
                                     <span className="wfReuseCountLabel">
-                                        {dependants === 1 ? 'tool' : 'tools'} build on this
+                                        {dependants === 1 ? 'other' : 'others'} build on this
                                     </span>
                                 </span>
                                 <span className="wfReuseMain">
@@ -52,8 +52,8 @@ export default function SharedLayer({ data, entries, crossCutting, connectionCou
                 </ol>
 
                 <p className="wfReuseFoot">
-                    {countLabel(connectionCount, 'connection')} between tools are recorded, and
-                    each tool&rsquo;s page draws the ones it sits in.
+                    {countLabel(connectionCount, 'connection')} between them are recorded, and
+                    each entry&rsquo;s page draws the ones it sits in.
                     {crossCutting && (
                         <>
                             {' '}

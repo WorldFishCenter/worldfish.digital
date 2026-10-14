@@ -1,5 +1,5 @@
 {
-  "_comment": "HAND-MAINTAINED controlled vocabularies, mirroring the select options of the Airtable intake base (see scripts/create-intake-schema.mjs). `npm run validate` rejects any synced value that is not listed here, so a new option added in Airtable must be added here too. Impact areas and countries are not listed: themes.json and countries.json are their vocabularies.",
+  "_comment": "HAND-MAINTAINED controlled vocabularies, mirroring the select options of the Airtable intake base (see scripts/create-intake-schema.mjs). `npm run validate` rejects any synced value that is not listed here, so a new option added in Airtable must be added here too. Impact areas and countries are not listed: themes.json and countries.json are their vocabularies. Product statuses are three readiness levels — Prototype → Being piloted → Available for use — plus Retired, a terminal state: a portfolio that cannot mark something dead sends people to reuse abandoned work.",
   "thematicAreas": [
     "Climate",
     "Fisheries",
@@ -32,11 +32,10 @@
     "Cancelled"
   ],
   "productStatuses": [
-    "Ideation",
-    "Draft",
-    "Published",
-    "Retired",
-    "Archived"
+    "Prototype",
+    "Being piloted",
+    "Available for use",
+    "Retired"
   ],
   "audiences": [
     "Government Fisheries Officer",

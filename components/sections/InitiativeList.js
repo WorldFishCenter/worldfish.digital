@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import AreaTags from '../detail/AreaTags';
-import { groupProductsByType, countLabel } from '../detail/meta';
+import { groupProductsByType, itemCount } from '../detail/meta';
 import { productHref, projectHref } from '@/lib/routes.mjs';
 
 /**
@@ -68,7 +68,7 @@ export default function InitiativeList({ groups, countryName, standalone }) {
                         </p>
                         <p className="wfInitMeta">
                             {[
-                                countLabel(tools.length, 'tool'),
+                                itemCount(tools.length),
                                 initiative && places(initiative.countrySlugs),
                                 initiative && (initiative.funders || []).join(', '),
                             ]

@@ -40,21 +40,21 @@ const relationships = [
 
 test('counts are reported against the whole catalogue, not just the qualifying rows', () => {
     const { openCode } = reuseEvidence({ products, relationships, themes });
-    assert.match(openCode.label, /^2 of 3 tools/);
+    assert.match(openCode.label, /^2 of 3 products & services/);
 });
 
-test('a tool needs both the open-source flag and a repository to count', () => {
+test('an entry needs both the open-source flag and a repository to count', () => {
     const { openCode } = reuseEvidence({
         products: [{ slug: 'x', openSource: true, repoUrl: null }, ...products],
         relationships,
         themes,
     });
-    assert.match(openCode.label, /^2 of 4 tools/, 'the flag alone must not count');
+    assert.match(openCode.label, /^2 of 4 products & services/, 'the flag alone must not count');
 });
 
 test('cross-area connections are counted, and a link to shared infrastructure is found by flag', () => {
     const { connections } = reuseEvidence({ products, relationships, themes });
-    assert.match(connections.label, /2 recorded dependencies between tools, 1 crossing/);
+    assert.match(connections.label, /2 recorded dependencies between them, 1 crossing/);
     assert.equal(connections.href, '/our-work/shared');
 });
 
@@ -73,7 +73,7 @@ test('singular reads as singular', () => {
         relationships: [relationships[1]],
         themes,
     });
-    assert.match(connections.label, /^1 recorded dependency between tools$/);
+    assert.match(connections.label, /^1 recorded dependency between them$/);
 });
 
 test('an empty database prints nothing at all rather than zeros', () => {
@@ -100,7 +100,7 @@ test('the data claim holds even before any dataset is open', () => {
         relationships,
         themes,
     });
-    assert.equal(openData.label, 'Every tool states what its data allows');
+    assert.equal(openData.label, 'Every entry states what its data allows');
 });
 
 test('every figure that is printed carries a link to the records behind it', () => {

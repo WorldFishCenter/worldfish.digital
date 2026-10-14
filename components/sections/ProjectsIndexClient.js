@@ -1,7 +1,7 @@
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
 import AreaTags from '../detail/AreaTags';
-import { groupProjectsByStatus, countLabel } from '../detail/meta';
+import { groupProjectsByStatus, itemCount } from '../detail/meta';
 import { projectHref } from '@/lib/routes.mjs';
 
 export default function ProjectsIndexClient({ projects }) {
@@ -15,7 +15,7 @@ export default function ProjectsIndexClient({ projects }) {
             // whether this initiative is worth opening. Without them a row is a name.
             meta:
                 [
-                    countLabel(project.productSlugs.length, 'tool'),
+                    itemCount(project.productSlugs.length),
                     project.countries.map((country) => country.name).join(' · '),
                 ]
                     .filter(Boolean)

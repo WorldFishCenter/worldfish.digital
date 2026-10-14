@@ -7,7 +7,7 @@
       "summary": "An Android app that works out the cheapest feed mix meeting a species' nutritional needs from the ingredients a farmer can actually get locally.",
       "description": "Least-cost feed formulation is a constrained optimisation problem — hit the nutrient targets, respect the inclusion limits, minimise cost — normally solved by a feed nutritionist with specialist software. The app solves it on a phone, using a simplex solver over three reference databases bundled with it.\n\nIt also carries a simpler daily feed-ration calculator: stock count and average fish weight in, feed quantity out, using species- and weight-banded feeding schedules.\n\nBuilt in Flutter for Android, which is the realistic device for the intended user.",
       "type": "Application",
-      "status": "Ideation",
+      "status": "Prototype",
       "impactAreas": [
         "Productive Aquaculture",
         "Climate Adaptation"
@@ -36,7 +36,7 @@
       ],
       "readiness": "3 — Validated in lab",
       "sdgs": [],
-      "leadDev": "Mountain Dev",
+      "productLead": "Mountain Dev",
       "contactEmail": null,
       "url": null,
       "repoUrl": null,
@@ -59,7 +59,7 @@
       "summary": "What is actually in each feed ingredient — the nutrient composition of the raw materials a feed can be built from.",
       "description": "Around 222,000 rows of ingredient-by-nutrient quantities. Paired with the species specifications, this is the other half of what a formulation engine needs: what you are aiming for, and what you have to aim with.\n\nIngredients are keyed by code, which is what lets the app map between the specification side and the composition side.",
       "type": "Data Product",
-      "status": "Draft",
+      "status": "Prototype",
       "impactAreas": [
         "Productive Aquaculture"
       ],
@@ -79,7 +79,7 @@
       ],
       "readiness": "4 — Validated in controlled field conditions",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": null,
@@ -102,7 +102,7 @@
       "summary": "The public home of the Peskas platform — what it is, how it works, and the way in to every country portal.",
       "description": "Carries the platform's own explanation of itself plus the blog, and links to every country deployment. It reads no Peskas data of its own, which keeps it independent of pipeline changes.",
       "type": "Platform",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries"
       ],
@@ -126,7 +126,7 @@
       ],
       "readiness": "9 — Widely used and sustained",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": "https://peskas.org/",
       "repoUrl": "https://github.com/WorldFishCenter/peskas.show",
@@ -149,7 +149,7 @@
       "summary": "Where fisheries staff review flagged survey records and decide what is good data — the human check between collection and publication.",
       "description": "Country pipelines flag suspect survey records and score enumerators; this portal presents those flags to a reviewer, records their decision, and writes it back to both the database and KoboToolbox so the pipelines respect it on the next run.\n\nIt is the reason Peskas numbers can be defended: every published figure has passed a named reviewer, and the decision is stored rather than applied once and forgotten.",
       "type": "Application",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -176,7 +176,7 @@
       ],
       "readiness": "7 — Proven in several settings",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.zanzibar.validation",
@@ -199,7 +199,7 @@
       "summary": "Timor-Leste's national fisheries portal — the public face of the country's catch and effort statistics.",
       "description": "A separate portal from the multi-country dashboard, reflecting that Timor-Leste was the first deployment and has its own data route and public bucket. Version 2, replacing the original Shiny application.",
       "type": "Dashboard",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -225,7 +225,7 @@
       ],
       "readiness": "9 — Widely used and sustained",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": "https://timor.peskas.org/",
       "repoUrl": "https://github.com/WorldFishCenter/peskas.timor.portal.v2",
@@ -248,7 +248,7 @@
       "summary": "Processes Mozambique's landing surveys into validated fisheries data, run with the national fisheries authority DINAPA.",
       "description": "Handles the DINAPA and Lurio survey form chains. Built on the shared Coasts library, which is why Mozambique could be stood up without building a monitoring system from scratch.\n\nDINAPA is Mozambique's National Directorate of Fisheries and Aquaculture; it replaced ADNAP, and the old name survives in code identifiers while published text says DINAPA.",
       "type": "Data Pipeline",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -273,7 +273,7 @@
       ],
       "readiness": "7 — Proven in several settings",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.mozambique.data.pipeline",
@@ -296,7 +296,7 @@
       "summary": "Worked feed formulations for farmed species, with the resulting nutrient composition — known-good recipes to check an optimiser against.",
       "description": "Holds ingredient inclusion percentages per species and growth stage, keyed to IAFFD ingredient codes, alongside the calculated nutrient composition each formulation produces.\n\nIts role is validation: a solver can produce a mathematically optimal mix that no feed mill would actually make. Worked formulations are the sanity check.\n\nUse of IAFFD codes matters — it means the formulations are expressed in a vocabulary used outside WorldFish.",
       "type": "Data Product",
-      "status": "Draft",
+      "status": "Prototype",
       "impactAreas": [
         "Productive Aquaculture"
       ],
@@ -317,7 +317,7 @@
       ],
       "readiness": "4 — Validated in controlled field conditions",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": null,
@@ -340,7 +340,7 @@
       "summary": "A mobile app that shows fishers their own trips — where they went, how long they fished — giving the data back to the people who generate it.",
       "description": "Built on the GPS tracks collected by boat-mounted units, combined with self-reported catch and seabed depth. Fishers can see which grounds are most productive, review their own performance, and use the record as evidence of their livelihood when dealing with buyers, government schemes or financial services.\n\nMost fisheries monitoring extracts data from fishers. This returns it.",
       "type": "Application",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Resilient Livelihoods"
@@ -367,7 +367,7 @@
       ],
       "readiness": "7 — Proven in several settings",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": "https://tracks.peskas.org/",
       "repoUrl": "https://github.com/WorldFishCenter/tracks-explorer",
@@ -395,7 +395,7 @@
       "summary": "Processes Kenya's catch, price and landing surveys into validated fisheries data for national institutions and the BMU dashboard.",
       "description": "Handles the WCS catch and price surveys and the KEFS survey programme, each with its own KoboToolbox form chain. Built on the shared Coasts library, so improvements made for Zanzibar or Mozambique arrive here too.",
       "type": "Data Pipeline",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -420,7 +420,7 @@
       ],
       "readiness": "8 — Fully proven and available",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.kenya.data.pipeline",
@@ -443,7 +443,7 @@
       "summary": "What each farmed aquatic species needs nutritionally, broken down by production system and growth stage — the target any feed formulation has to hit.",
       "description": "Around 50,000 rows covering species from carp and tilapia to salmon, shrimp, abalone and eel, each with nutrient specifications by production system and stage weight, expressed as minimum, maximum or exact restrictions.\n\nThis is the constraint set in a least-cost formulation: without it, optimising feed cost has nothing to optimise against.",
       "type": "Data Product",
-      "status": "Draft",
+      "status": "Prototype",
       "impactAreas": [
         "Productive Aquaculture"
       ],
@@ -464,7 +464,7 @@
       ],
       "readiness": "4 — Validated in controlled field conditions",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": null,
@@ -487,7 +487,7 @@
       "summary": "A regional view of Western Indian Ocean small-scale fisheries, so countries can be seen together rather than one at a time.",
       "description": "Aggregates fisheries metrics across the Western Indian Ocean using FAO administrative boundaries, alongside fishing effort and fishing grounds derived from GPS tracks.\n\nThe data is committed daily as static JSON, so the site has no backend — a deliberate choice for something that must stay cheap to run.\n\nDistinct from the Coasts shared library, which is what produces this data.",
       "type": "Dashboard",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -516,7 +516,7 @@
       ],
       "readiness": "7 — Proven in several settings",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": "https://coasts.peskas.org/",
       "repoUrl": "https://github.com/WorldFishCenter/coasts",
@@ -539,7 +539,7 @@
       "summary": "Turns Timor-Leste's landing surveys and boat GPS tracks into the validated catch and effort data behind the country's national fisheries statistics.",
       "description": "The original Peskas pipeline, and the one the rest of the platform grew out of. Ingests KoboToolbox landing surveys and Pelagic Data Systems GPS tracks, publishes public data and deposits datasets to Dataverse.\n\nIt predates the shared Coasts library, so it carries more of its own machinery than the later country pipelines do.",
       "type": "Data Pipeline",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -564,7 +564,7 @@
       ],
       "readiness": "9 — Widely used and sustained",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.timor.data.pipeline",
@@ -587,7 +587,7 @@
       "summary": "Turns handwritten pond log books into tidy, documented datasets — so what farms and hatcheries already record every day becomes something you can actually analyse.",
       "description": "Aquaculture facilities record water quality by hand: dissolved oxygen, temperature, pH, ammonia, nitrate and nitrite, morning and afternoon, tank by tank. It ends up in paper books or ad-hoc spreadsheets that cannot be queried, compared between sites, or used to train anything.\n\nPondCube defines a harmonised way to hold that data and provides a reproducible conversion from the source workbooks. It outputs a tidy long table (one row per measurement), a wide table for dashboards and human review, a tank reference list, and — importantly — a data-quality log of every problem found on the way in.\n\nThe quality log is the part that matters. Converting the July 2025 source found pivot sheets with corrupted headers and blank readings coerced to zero, which would have meant publishing a dissolved oxygen of 0 mg/L in a tank with live fish. The conversion excludes derived sheets and records why.",
       "type": "Data Pipeline",
-      "status": "Draft",
+      "status": "Prototype",
       "impactAreas": [
         "Productive Aquaculture"
       ],
@@ -607,7 +607,7 @@
       ],
       "readiness": "3 — Validated in lab",
       "sdgs": [],
-      "leadDev": "Lorenzo Longobardi",
+      "productLead": "Lorenzo Longobardi",
       "contactEmail": null,
       "url": null,
       "repoUrl": null,
@@ -630,7 +630,7 @@
       "summary": "A public API that serves validated and raw fishing trip data, so other tools and researchers can query Peskas data without touching the pipelines.",
       "description": "Serves the `trips-*` parquet files from Google Cloud Storage over HTTP. The landings schema — column names and order — is agreed across all four country pipelines and declared here, so the API is the contract that keeps them interoperable.\n\nIt is what lets a question be asked once across several countries rather than once per country.",
       "type": "API",
-      "status": "Draft",
+      "status": "Being piloted",
       "impactAreas": [
         "Sustainable Fisheries"
       ],
@@ -655,7 +655,7 @@
       ],
       "readiness": "6 — Demonstrated at scale in one setting",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas-api",
@@ -678,7 +678,7 @@
       "summary": "The shared R library every Peskas country pipeline is built on — storage, survey ingestion, GPS processing and portal exports in one place.",
       "description": "Package name `coasts`, repo `peskas.coasts`. It holds the helpers for Google Cloud Storage, MongoDB, KoboToolbox and Airtable, ingests Pelagic Data Systems GPS tracks, produces the Western Indian Ocean regional portal data, and feeds the Tracks app.\n\nThis is the single clearest example of reuse in the portfolio: a fix made here reaches Kenya, Zanzibar and Mozambique at once. Country pipelines install it from GitHub and declare a version floor, so a breaking change ships as a coasts release first and each pipeline then bumps to it.\n\nNot to be confused with the Coasts portal, which is the website this library produces data for.",
       "type": "Module",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [],
       "thematicAreas": [
         "Fisheries",
@@ -700,7 +700,7 @@
       ],
       "readiness": "8 — Fully proven and available",
       "sdgs": [],
-      "leadDev": "Lorenzo Longobardi",
+      "productLead": "Lorenzo Longobardi",
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.coasts",
@@ -723,7 +723,7 @@
       "summary": "Processes Zanzibar's landing and gleaning surveys into validated fisheries data for the Department of Fisheries Development.",
       "description": "Handles the WCS, WorldFish, Blue Alliance and gleaning survey chains. Notably includes gleaning — the shore-based collection, largely done by women, that most fisheries statistics miss entirely.\n\nBuilt on the shared Coasts library.",
       "type": "Data Pipeline",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Nutrition Security",
@@ -751,7 +751,7 @@
       ],
       "readiness": "8 — Fully proven and available",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.zanzibar.data.pipeline",
@@ -774,7 +774,7 @@
       "summary": "The national fisheries dashboard — one codebase, deployed separately for Zanzibar, Kenya and Mozambique with each country's own data.",
       "description": "Shows catch, effort, revenue, species and gear summaries by district and month, including both estimation methods side by side: the GPS tracker method and FAO's ARTFISH method.\n\nThis is one repository, not three. Each country gets its own deployment driven by a country code, which is precisely the reuse argument the portfolio rests on — a new country is a configuration, not a rebuild.",
       "type": "Dashboard",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -803,7 +803,7 @@
       ],
       "readiness": "8 — Fully proven and available",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.dashboard",
@@ -826,7 +826,7 @@
       "summary": "A dashboard for Kenya's Beach Management Units, with role-based access so WCS and WorldFish staff see what is theirs to see.",
       "description": "Separate from the multi-country dashboard, serving the Beach Management Unit co-management structure specifically. Reads the Kenya pipeline's own database rather than the shared portal collections.",
       "type": "Dashboard",
-      "status": "Published",
+      "status": "Available for use",
       "impactAreas": [
         "Sustainable Fisheries",
         "Better Governance"
@@ -852,7 +852,7 @@
       ],
       "readiness": "7 — Proven in several settings",
       "sdgs": [],
-      "leadDev": null,
+      "productLead": null,
       "contactEmail": null,
       "url": null,
       "repoUrl": "https://github.com/WorldFishCenter/peskas.kenya.bmu.dashboard",

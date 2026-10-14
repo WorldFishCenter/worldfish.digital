@@ -43,7 +43,7 @@ export default function ForPartnersClient({ themes, funders, audiences, contactE
                         <h2 className="wfPaperTitle">A working portfolio, not a prospectus</h2>
                         <p className="wfPaperLead">
                             Most of what follows is already running in partner institutions. Some of it
-                            is early, and marked as such. We publish the tools that are live, the
+                            is early, and marked as such. We publish what is live, the
                             initiatives funding them and the countries they run in, so the state of the
                             work can be judged directly rather than taken on description.
                         </p>
@@ -53,7 +53,7 @@ export default function ForPartnersClient({ themes, funders, audiences, contactE
                             Where it runs
                         </Link>
                         <Link href="/products" className="wfBtnInkGhost">
-                            Browse the tools
+                            Browse everything
                         </Link>
                     </div>
                 </div>
@@ -69,8 +69,8 @@ export default function ForPartnersClient({ themes, funders, audiences, contactE
 
             <DetailFacts
                 kicker="Who uses this"
-                title="The tools, by who opens them"
-                lead="Each tool records the people who actually use it or consume its output. These are the shortest routes in."
+                title="The portfolio, by who opens it"
+                lead="Each entry records the people who actually use it or consume its output. These are the shortest routes in."
                 rows={audiences}
             />
 

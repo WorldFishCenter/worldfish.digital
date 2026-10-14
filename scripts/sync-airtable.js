@@ -12,7 +12,7 @@
  * base with nothing Live yet produces an empty site. That is the intended behaviour.
  *
  * Writes (and owns — do not hand-edit):
- *   content/data/products.json       <- WFD Tools
+ *   content/data/products.json       <- WFD Products & Services
  *   content/data/projects.json       <- WFD Initiatives
  *   content/data/outcomes.json       <- WFD Outcomes
  *   content/data/relationships.json  <- WFD Connections
@@ -70,7 +70,7 @@ const FIELDS = {
         audiences: 'Who uses it',
         readiness: 'Innovation readiness level',
         sdgs: 'SDG alignment',
-        leadDev: 'Lead developer',
+        productLead: 'Product lead',
         contactEmail: 'Contact email',
         url: 'Live URL',
         repoUrl: 'Code repository',
@@ -254,7 +254,7 @@ function transform(raw, ref) {
             audiences: f[F.audiences] || [],
             readiness: f[F.readiness] || null,
             sdgs: f[F.sdgs] || [],
-            leadDev: f[F.leadDev] || null,
+            productLead: f[F.productLead] || null,
             contactEmail: f[F.contactEmail] || null,
             url: f[F.url] || null,
             repoUrl: f[F.repoUrl] || null,

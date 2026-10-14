@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import AreaTabs from './AreaTabs';
 import InitiativeList from './InitiativeList';
-import { areaColor, countLabel } from '../detail/meta';
+import { areaColor, countLabel, itemCount } from '../detail/meta';
 import { themeHref } from '@/lib/routes.mjs';
 
 /**
@@ -91,7 +91,7 @@ export default function PortfolioBrowser({ areas, groups, data, countryName }) {
         .map((group) => ({ ...group, tools: scope(group, active) }))
         .filter((group) => group.tools.length > 0);
 
-    const toolCount = visible.reduce((n, group) => n + group.tools.length, 0);
+    const itemTotal = visible.reduce((n, group) => n + group.tools.length, 0);
     const initiativeCount = visible.filter((group) => group.initiative).length;
 
     return (
@@ -137,7 +137,7 @@ export default function PortfolioBrowser({ areas, groups, data, countryName }) {
                         <p className="wfPanelCount">
                             {[
                                 initiativeCount > 0 && countLabel(initiativeCount, 'initiative'),
-                                countLabel(toolCount, 'tool'),
+                                itemCount(itemTotal),
                             ]
                                 .filter(Boolean)
                                 .join(' · ')}

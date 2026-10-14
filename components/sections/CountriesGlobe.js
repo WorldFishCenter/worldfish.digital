@@ -523,7 +523,7 @@ export default function CountriesGlobe({ markers }) {
                         <span
                             className={`wfMetaPill wfGlobeBadge${shown.active ? ' is-active' : ''}`}
                         >
-                            {shown.active ? 'Tools deployed' : 'No tools published yet'}
+                            {shown.active ? 'Deployed here' : 'Nothing published yet'}
                         </span>
                         {shown.themes.length > 0 && (
                             <div className="wfGlobeTags">
@@ -539,7 +539,7 @@ export default function CountriesGlobe({ markers }) {
                                 {shown.tools > 0 && (
                                     <span>
                                         <strong>{shown.tools}</strong>{' '}
-                                        {shown.tools === 1 ? 'tool' : 'tools'}
+                                        {shown.tools === 1 ? 'product or service' : 'products & services'}
                                     </span>
                                 )}
                                 {shown.tools > 0 && shown.projects > 0 && (
@@ -561,18 +561,18 @@ export default function CountriesGlobe({ markers }) {
                     <div className="wfGlobeIntro">
                         <p className="wfSectionKicker">The portfolio, mapped</p>
                         <p className="wfGlobeIntroLead">
-                            Where published WorldFish Digital tools and initiatives reach the
+                            Where published WorldFish Digital work and initiatives reach the
                             water.
                         </p>
                         <ul className="wfGlobeLegend">
                             <li>
                                 <span className="wfGlobeSwatch is-active" />
-                                Tools deployed
+                                Deployed here
                                 <span className="wfGlobeLegendCount">{active.length}</span>
                             </li>
                             <li>
                                 <span className="wfGlobeSwatch is-pilot" />
-                                No tools published yet
+                                Nothing published yet
                                 <span className="wfGlobeLegendCount">{pilot.length}</span>
                             </li>
                         </ul>

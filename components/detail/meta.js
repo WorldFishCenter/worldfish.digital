@@ -18,11 +18,16 @@ export const COMPONENT_TYPE_ORDER = [
     'Other',
 ];
 
-/** Collapse the many project/product statuses into three visual buckets. */
+/**
+ * Collapse the initiative and product statuses into three visual buckets.
+ *
+ * Initiatives still use their own words (Active, Pipeline, Planned…); products and services
+ * use the three readiness levels plus Retired.
+ */
 export function statusVariant(status) {
     const s = (status || '').toLowerCase();
-    if (s === 'active' || s === 'published') return 'live';
-    if (s === 'pipeline' || s === 'planned' || s === 'ideation' || s === 'draft') return 'progress';
+    if (s === 'active' || s === 'available for use') return 'live';
+    if (['pipeline', 'planned', 'prototype', 'being piloted'].includes(s)) return 'progress';
     return 'muted';
 }
 
@@ -64,6 +69,20 @@ export const groupProjectsByStatus = (projects) =>
  */
 export const SAME_KIND = ' · ';
 export const BETWEEN_KINDS = ' — ';
+
+/**
+ * What one record of the portfolio is called in user-facing copy.
+ *
+ * Defined once so the word changes in one edit. It was "tool" until a colleague pointed out
+ * that not everything here is one: a curated dataset, a public API or a hosted service
+ * belongs in the catalogue just as much as a calculator does. The Airtable table is named
+ * to match — WFD Products & Services.
+ */
+export const ITEM_ONE = 'product or service';
+export const ITEM_MANY = 'products & services';
+
+/** "1 product or service" / "13 products & services". */
+export const itemCount = (n) => countLabel(n, ITEM_ONE, ITEM_MANY);
 
 /** Pluralize a label by count: (2, 'tool') -> '2 tools'. */
 export function countLabel(n, singular, plural) {

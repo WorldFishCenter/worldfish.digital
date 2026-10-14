@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Layout from '../layout/Layout';
 import EntityLinkList from '../detail/EntityLinkList';
 import CountriesGlobe from './CountriesGlobe';
-import { countLabel } from '../detail/meta';
+import { countLabel, itemCount } from '../detail/meta';
 import { countryHref } from '@/lib/routes.mjs';
 
 /** Every index row on the site states the same three things: what it is called, what it is,
@@ -16,7 +16,7 @@ function toItems(countries) {
             [
                 country.projectSlugs.length &&
                     countLabel(country.projectSlugs.length, 'initiative'),
-                country.productSlugs.length && countLabel(country.productSlugs.length, 'tool'),
+                country.productSlugs.length && itemCount(country.productSlugs.length),
             ]
                 .filter(Boolean)
                 .join(' · ') || null,
@@ -42,7 +42,7 @@ export default function CountriesIndexClient({ countries, markers }) {
                         <div className="col-lg-8">
                             <h1 className="display-3 wfTitleHero">Where we work</h1>
                             <p className="wfLead wfLeadMt">
-                                Countries where a published tool or initiative in the portfolio runs,
+                                Countries where a published product, service or initiative in the portfolio runs,
                                 with the impact areas that work contributes to.
                             </p>
                         </div>
@@ -63,7 +63,7 @@ export default function CountriesIndexClient({ countries, markers }) {
                             {countries.length === 0 ? (
                                 <p className="wfMutedLg">
                                     No countries are listed yet. A country appears here once a
-                                    tool, initiative or outcome tagged to it has been reviewed and
+                                    product, service, initiative or outcome tagged to it has been reviewed and
                                     marked Live.
                                 </p>
                             ) : (

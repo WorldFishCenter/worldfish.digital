@@ -55,8 +55,32 @@
         "SDG 17 – Partnerships"
       ],
       "url": "https://peskas.org/",
-      "hero": null,
-      "screenshots": [],
+      "hero": {
+        "src": "/assets/portfolio/initiatives/peskas-hero.jpg",
+        "width": 2400,
+        "height": 1600,
+        "credit": null
+      },
+      "screenshots": [
+        {
+          "src": "/assets/portfolio/initiatives/peskas-shot-1.jpg",
+          "width": 2110,
+          "height": 1038,
+          "credit": null
+        },
+        {
+          "src": "/assets/portfolio/initiatives/peskas-shot-2.jpg",
+          "width": 2130,
+          "height": 1110,
+          "credit": null
+        },
+        {
+          "src": "/assets/portfolio/initiatives/peskas-shot-3.jpg",
+          "width": 2136,
+          "height": 1184,
+          "credit": null
+        }
+      ],
       "logo": null,
       "publications": [
         {
@@ -132,8 +156,20 @@
         "SDG 13 – Climate Action"
       ],
       "url": null,
-      "hero": null,
-      "screenshots": [],
+      "hero": {
+        "src": "/assets/portfolio/initiatives/fasa-hero.jpg",
+        "width": 1016,
+        "height": 571,
+        "credit": null
+      },
+      "screenshots": [
+        {
+          "src": "/assets/portfolio/initiatives/fasa-shot-1.jpg",
+          "width": 2136,
+          "height": 1184,
+          "credit": null
+        }
+      ],
       "logo": null,
       "publications": []
     }

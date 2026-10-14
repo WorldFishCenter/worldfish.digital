@@ -31,7 +31,7 @@
       "credit": "Photo: Lorenzo Longobardi / WorldFish",
       "fallback": {
         "href": "/our-work/sustainable-fisheries",
-        "cta": "The tools behind it"
+        "cta": "What we built for it"
       }
     },
     {
@@ -62,14 +62,14 @@
     }
   ],
   "portfolio": {
-    "standaloneTitle": "Standalone tools",
+    "standaloneTitle": "Standalone",
     "standaloneLead": "Built outside a single funded initiative, or carried across several.",
     "allLabel": "The whole portfolio"
   },
   "sharedLayer": {
     "kicker": "What the rest is built on",
     "title": "The pieces that carry the others",
-    "lead": "Tools ranked by how many other tools are built on top of them. These are the pieces that cross initiatives — the reason a new deployment costs less than the last one, and the shortest answer to “is there already something I can use”."
+    "lead": "Ranked by how many other things are built on top of them. These are the pieces that cross initiatives — the reason a new deployment costs less than the last one, and the shortest answer to “is there already something I can use”."
   },
   "showcase": {
     "kicker": "Where it runs",

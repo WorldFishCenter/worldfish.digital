@@ -36,7 +36,7 @@ and needs no token. To publish an Airtable change, run `sync` and commit what it
 
 | File | Source | Edit where? |
 |---|---|---|
-| `products.json` | WFD Tools | Airtable |
+| `products.json` | WFD Products & Services | Airtable |
 | `projects.json` | WFD Initiatives | Airtable |
 | `outcomes.json` | WFD Outcomes | Airtable |
 | `relationships.json` | WFD Connections | Airtable |

@@ -4,7 +4,7 @@ import DetailHero from '../detail/DetailHero';
 import InitiativeGroups from '../detail/InitiativeGroups';
 import DetailFacts from '../detail/DetailFacts';
 import ResultsSection from './ResultsSection';
-import { countLabel } from '../detail/meta';
+import { countLabel, itemCount } from '../detail/meta';
 import { toolsByInitiative } from '@/lib/portfolio-stats.mjs';
 import { publicAssetUrl } from '@/lib/publicAssetUrl';
 import { productHref, projectHref, themeHref } from '@/lib/routes.mjs';
@@ -34,7 +34,7 @@ export default function CountryDetailClient({ country }) {
                 lead={country.description}
                 facts={[
                     { label: 'Initiatives', value: projects.length || null },
-                    { label: 'Tools', value: products.length || null },
+                    { label: 'Products & services', value: products.length || null },
                     {
                         label: 'Impact areas',
                         value: themes.map((t) => t.name).join(', ') || null,
@@ -84,7 +84,7 @@ export default function CountryDetailClient({ country }) {
                         <p className="wfPaperKicker">
                             {[
                                 hasProjects && countLabel(projects.length, 'initiative'),
-                                countLabel(products.length, 'tool'),
+                                itemCount(products.length),
                             ]
                                 .filter(Boolean)
                                 .join(' · ')}
@@ -92,7 +92,7 @@ export default function CountryDetailClient({ country }) {
                         <div className="wfPaperHead">
                             <h2 className="wfPaperTitle">The work in {country.name}</h2>
                             <p className="wfPaperLead">
-                                Each initiative operating here, with the tools it runs in this
+                                Each initiative operating here, with what it runs in this
                                 country. Most are shared portfolio components configured for
                                 {' '}
                                 {country.name} rather than anything built only for it.
@@ -103,7 +103,7 @@ export default function CountryDetailClient({ country }) {
                                 groups={groups}
                                 showCountries={false}
                                 standalone={{
-                                    title: 'Standalone tools',
+                                    title: 'Standalone',
                                     lead: 'Built outside a single funded initiative, or carried across several.',
                                 }}
                             />

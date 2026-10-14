@@ -18,7 +18,7 @@ const External = ({ href, className, children }) => (
 );
 
 /**
- * A tool — one WFD Tools record.
+ * A product or service — one WFD Products & Services record.
  *
  * Same order as every other entity page (see docs/IA.md):
  *
@@ -62,7 +62,7 @@ export default function ProductPageClient({ product }) {
             value: countries.map((c) => ({ href: countryHref(c.slug), label: c.name })),
         },
         { label: 'Who uses it', value: product.audiences.join(', ') },
-        { label: 'Lead developer', value: product.leadDev },
+        { label: 'Product lead', value: product.productLead },
         {
             label: 'Contact',
             value: product.contactEmail && [
@@ -110,7 +110,7 @@ export default function ProductPageClient({ product }) {
                         </External>
                     )}
                     <Link href="/products" className="wfBtnGhost">
-                        All tools
+                        All products &amp; services
                     </Link>
                 </div>
             </DetailHero>

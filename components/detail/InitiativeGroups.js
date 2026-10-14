@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import EntityLinkList from './EntityLinkList';
 import AreaTags from './AreaTags';
-import { groupProductsByType, countLabel } from './meta';
+import { groupProductsByType, itemCount } from './meta';
 import { productHref, projectHref } from '@/lib/routes.mjs';
 
 /**
@@ -51,7 +51,7 @@ export default function InitiativeGroups({
 
                 const meta = initiative
                     ? [
-                          countLabel(tools.length, 'tool'),
+                          itemCount(tools.length),
                           showCountries &&
                               (initiative.countries || [])
                                   .map((c) => c.name)
@@ -61,7 +61,7 @@ export default function InitiativeGroups({
                       ]
                           .filter(Boolean)
                           .join(' · ')
-                    : countLabel(tools.length, 'tool');
+                    : itemCount(tools.length);
 
                 return (
                     <section

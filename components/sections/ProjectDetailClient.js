@@ -10,7 +10,7 @@ import RelationshipDiagram from '../detail/RelationshipDiagram';
 import Link from 'next/link';
 import AreaTags from '../detail/AreaTags';
 import { StatusPill } from '../detail/Pills';
-import { groupProductsByType, countLabel } from '../detail/meta';
+import { groupProductsByType, itemCount } from '../detail/meta';
 import { countryHref, productHref, themeHref } from '@/lib/routes.mjs';
 
 const year = (date) => (date ? date.slice(0, 4) : null);
@@ -138,7 +138,7 @@ export default function ProjectDetailClient({ project }) {
             {products.length > 0 && (
                 <section className="section-box wfSectionPaper wfPadSection">
                     <div className="container">
-                        <p className="wfPaperKicker">{countLabel(products.length, 'tool')}</p>
+                        <p className="wfPaperKicker">{itemCount(products.length)}</p>
                         <div className="wfPaperHead">
                             <h2 className="wfPaperTitle">What {project.name} built</h2>
                             <p className="wfPaperLead">

@@ -3,6 +3,7 @@ import DetailHero from '../detail/DetailHero';
 import DetailFacts from '../detail/DetailFacts';
 import InitiativeGroups from '../detail/InitiativeGroups';
 import ResultsSection from './ResultsSection';
+import { itemCount } from '../detail/meta';
 import { toolsByInitiative } from '@/lib/portfolio-stats.mjs';
 import { countryHref } from '@/lib/routes.mjs';
 
@@ -37,7 +38,7 @@ export default function ThemeDetailClient({ theme }) {
               // `String(0)` is truthy, so a zero would print as a fact. Counts that are
               // zero drop out instead; the area still says it is empty via the lead.
               { label: 'Initiatives', value: projects.length || null },
-              { label: 'Tools', value: products.length || null },
+              { label: 'Products & services', value: products.length || null },
               {
                   label: 'Running in',
                   value: countries.map((c) => c.name).join(', ') || null,
@@ -61,7 +62,7 @@ export default function ThemeDetailClient({ theme }) {
                         <p className="wfPaperKicker">
                             {[
                                 projects.length && count(projects.length, 'initiative'),
-                                products.length && count(products.length, 'tool'),
+                                products.length && itemCount(products.length),
                             ]
                                 .filter(Boolean)
                                 .join(' · ')}
@@ -72,8 +73,8 @@ export default function ThemeDetailClient({ theme }) {
                             </h2>
                             <p className="wfPaperLead">
                                 {projects.length > 0
-                                    ? 'Each funded initiative contributing here, with the tools it produced. All of it is open to reuse — that is the point of listing it rather than rebuilding it.'
-                                    : 'The tools tagged to this area. All of it is open to reuse — that is the point of listing it rather than rebuilding it.'}
+                                    ? 'Each funded initiative contributing here, with what it produced. All of it is open to reuse — that is the point of listing it rather than rebuilding it.'
+                                    : 'Everything tagged to this area. All of it is open to reuse — that is the point of listing it rather than rebuilding it.'}
                             </p>
                         </div>
                         <div className="wfPortfolioList">
@@ -81,7 +82,7 @@ export default function ThemeDetailClient({ theme }) {
                                 groups={groups}
                                 excludeArea={theme.slug}
                                 standalone={{
-                                    title: 'Standalone tools',
+                                    title: 'Standalone',
                                     lead: 'Built outside a single funded initiative, or carried across several.',
                                 }}
                             />
