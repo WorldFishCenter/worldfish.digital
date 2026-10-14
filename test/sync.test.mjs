@@ -153,7 +153,10 @@ test('an outcome cannot go Live without an evidence status', () => {
     assert.throws(() => transform(data, ref), /Live with no Evidence status/);
 });
 
-test('the media credit travels with each image, and its absence is reported', () => {
+test('the media credit travels with each image', () => {
+    // transform() attaches the credit; REPORTING a missing one is snapshot-check's job, so
+    // that it fires for `npm run validate` on the committed JSON too and not only on a sync.
+    // See test/snapshot-check.test.mjs.
     const out = transform(raw(), ref);
     assert.deepEqual(out.products[0].hero, {
         src: '/assets/portfolio/tools/peskas-api-hero.jpg',
@@ -165,9 +168,7 @@ test('the media credit travels with each image, and its absence is reported', ()
 
     const data = raw();
     delete data.tools[0].fields[FIELDS.tools.mediaCredit];
-    const uncredited = transform(data, ref);
-    assert.equal(uncredited.products[0].hero.credit, null);
-    assert.ok(uncredited.warnings.some((w) => w.includes('peskas-api') && w.includes('Media credit')));
+    assert.equal(transform(data, ref).products[0].hero.credit, null);
 });
 
 test('one-per-line text fields become lists', () => {

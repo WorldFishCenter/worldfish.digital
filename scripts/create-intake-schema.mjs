@@ -51,14 +51,19 @@ if (!TOKEN) {
 const COUNTRIES = ['Global', 'Timor-Leste', 'Kenya', 'Zanzibar', 'Mozambique', 'Malawi',
     'Zambia', 'Nigeria', 'Ghana', 'Malaysia', 'Namibia', 'Eritrea', 'Solomon Islands',
     'West Africa / CAOPA', 'Guatemala', 'Colombia', 'Other'];
+// 'Shared infrastructure' is an explicit choice, not an inference from a blank cell. The
+// name must match the `crossCutting` entry in content/data/themes.json exactly — that is
+// what maps it to an area slug. A blank still falls back to it, and the build warns when
+// a record relies on that fallback.
 const IMPACT = ['Sustainable Fisheries', 'Productive Aquaculture', 'Nutrition Security',
-    'Climate Adaptation', 'Resilient Livelihoods', 'Better Governance'];
+    'Climate Adaptation', 'Resilient Livelihoods', 'Better Governance',
+    'Shared Infrastructure'];
 const THEMATIC = ['Climate', 'Fisheries', 'Aquaculture', 'Livestock', 'Nutrition',
     'Biosciences & Genetics', 'Gender & Social Inclusion', 'Policy', 'Digital & AI', 'Other'];
 const TOOL_TYPES = ['Platform', 'Application', 'Dashboard', 'API', 'Data Pipeline', 'Model',
     'Algorithm', 'Module', 'Data Product', 'Other'];
-const TOOL_STATUS = ['Ideation', 'Draft', 'Published', 'Retired', 'Archived'];
-const PROJECT_STATUS = ['Pipeline', 'Planned', 'Active', 'Completed', 'Cancelled'];
+const TOOL_STATUS = ['Prototype', 'Being piloted', 'Available for use', 'Retired'];
+const PROJECT_STATUS = ['Planned', 'Active', 'Completed', 'Cancelled'];
 const AUDIENCE = ['Government Fisheries Officer', 'Researcher / Scientist',
     'Field Enumerator / Data Collector', 'Extension Officer / NGO', 'Aquaculture Farmer',
     'Private Sector', 'Donor / Investor'];
@@ -117,8 +122,8 @@ const TOOLS = {
         txt('What it is', 'ONE plain sentence a colleague outside your team would understand: what it does and who for, not what it is built with. THE most important field here — without it the tool appears on the site as a name and nothing else.'),
         long('Full description', 'Two or three sentences of context: the problem it addresses, how it works in practice, and how it differs from similarly-named tools (e.g. how the Mozambique pipeline differs from the Mozambique app).'),
         sel('Type', TOOL_TYPES, 'What kind of thing it is. Groups the tool on the site.'),
-        sel('Status', TOOL_STATUS, "Where it is in its life. 'Published' means someone else could use it today."),
-        sel('Impact area(s)', IMPACT, 'Which CGIAR impact area(s) it contributes to. Drives where it appears on the site. Leave blank only if it is genuinely cross-cutting infrastructure serving all of them.', true),
+        sel('Status', TOOL_STATUS, 'Where it is in its life. Prototype — built, not yet used in the field (readiness 1–4). Being piloted — in real use with partners, still being proven (5–6). Available for use — someone outside the team could pick it up today (7–9). Retired — no longer maintained; say so rather than leaving it looking current. Keep this consistent with Innovation readiness level: the build flags them when they disagree.'),
+        sel('Impact area(s)', IMPACT, 'Which CGIAR impact area(s) it contributes to. Drives where it appears on the site. If it serves all of them rather than any one, choose Shared Infrastructure — do not leave this blank to mean the same thing.', true),
         sel('Thematic area(s)', THEMATIC, 'The subject domains it touches.', true),
         sel('Country / region', COUNTRIES, 'Everywhere it actually runs or has run. Global for worldwide public goods.', true),
         sel('Who uses it', AUDIENCE, 'The people who actually open it or consume its output.', true),
@@ -129,7 +134,7 @@ const TOOLS = {
         url('Live URL', 'Where the running tool lives, if it is public.'),
         url('Code repository', 'GitHub or equivalent. Central to the reuse argument — if the code is public, say where.'),
         url('Documentation URL', 'Anything that would let someone unfamiliar set it up and run it.'),
-        { name: 'Open source?', type: 'checkbox', description: 'Tick if the code carries an OSI-approved open licence.', options: { icon: 'check', color: 'greenBright' } },
+        { name: 'Open source', type: 'checkbox', description: 'Tick if the code carries an OSI-approved open licence.', options: { icon: 'check', color: 'greenBright' } },
         txt('Code licence', 'e.g. MIT, GPL-3.0, Apache-2.0. Blank if not open.'),
         sel('Data availability', ['Open / Public', 'Restricted — on request', 'Internal only', 'Not applicable'],
             'Who can get at the data behind it. Partner-owned data is usually Restricted.'),
@@ -139,7 +144,7 @@ const TOOLS = {
         { name: 'Hero image', type: 'multipleAttachments', description: 'ONE wide landscape image that represents this work — a field photo or a striking screenshot. Used large on the site, so at least 2000px wide. It gets cropped to roughly 3:2 for cards and 2.3:1 for page banners, so keep the subject away from the very top and bottom.' },
         { name: 'Logo', type: 'multipleAttachments', description: 'If the tool has its own mark. PNG or SVG with a transparent background.' },
         { name: 'Demo video / screen recording', type: 'multipleAttachments', description: 'A short silent clip of the tool in use — 10–20 seconds is plenty. Raw screen recordings are fine; we compress them. Do not worry about file size here, but do trim it to the interesting part.' },
-        txt('Media credit', "Photographer or source for everything above, e.g. 'Photo: Jane Doe / WorldFish'. Required if you upload anything — the credit has to travel with the picture, and we cannot reconstruct it later."),
+        txt('Media credit', "Photographer or source for everything above, e.g. 'Photo: Jane Doe / WorldFish'. REQUIRED whenever you attach anything: the credit has to travel with the picture and cannot be reconstructed later. The form makes this conditional on an attachment, and the build warns about any image published without it."),
         long('Publications & reports', 'Papers, reports or blog posts about this tool. One URL per line, with a title if you have one. These become the evidence trail on the site.'),
         url('Dataset / DOI', 'A permanent link to the data behind it — Dataverse, Zenodo, a DOI. Not a folder on a shared drive.'),
         ...curationTail(),
@@ -156,24 +161,23 @@ const INITIATIVES = {
         txt('Full title', 'The formal title, spelled out.'),
         txt('What it is', 'ONE plain sentence: what this initiative is trying to change, and where.'),
         long('Description', 'Two or three sentences of context — the problem, the approach, the partners.'),
-        sel('Status', PROJECT_STATUS, 'Where the work stands.'),
+        sel('Status', PROJECT_STATUS, 'Where the work stands. Planned — funded, not yet started. Active — running. Completed — finished. Cancelled — stopped before finishing.'),
         sel('Impact area(s)', IMPACT, 'Which CGIAR impact area(s) it contributes to.', true),
         sel('Thematic area(s)', THEMATIC, 'The subject domains it covers.', true),
         sel('Country / region', COUNTRIES, 'Where the work happens.', true),
         { name: 'Start date', type: 'date', description: 'When it began.', options: { dateFormat: { name: 'iso' } } },
         { name: 'End date', type: 'date', description: 'When it ends or ended. Blank if ongoing.', options: { dateFormat: { name: 'iso' } } },
-        txt('Lead — name', 'Who leads this work.'),
-        { name: 'Lead — email', type: 'email', description: 'Contact for questions about the initiative.' },
+        txt('Initiative lead', 'Who leads this work.'),
+        { name: 'Contact email', type: 'email', description: 'Contact for questions about the initiative.' },
         long('Funder(s)', 'One per line. Use the funder\'s own name for itself.'),
         { name: 'Budget (USD)', type: 'currency', description: 'Approximate total. Optional — leave blank if it is sensitive.', options: { precision: 0, symbol: '$' } },
         long('Partner organizations', 'One per line. The institutions you actually work with, not everyone cc\'d.'),
-        sel('Innovation readiness level', IRL, 'CGIAR / NASA scale 0–9 for the initiative as a whole.'),
         sel('SDG alignment', SDG, 'Only those it genuinely contributes to.', true),
         url('Project page / website', 'An external page about this work, if one exists.'),
         { name: 'Hero image', type: 'multipleAttachments', description: 'ONE wide landscape image representing this initiative — ideally people, place or work in progress rather than a meeting room. At least 2000px wide; cropped to about 3:2, so keep the subject off the very top and bottom edges.' },
         { name: 'Screenshots / media', type: 'multipleAttachments', description: 'Field photos, maps, event images. Several is better than one.' },
         { name: 'Logo', type: 'multipleAttachments', description: 'Project or programme mark, if it has one. PNG or SVG, transparent background.' },
-        txt('Media credit', "Photographer or source for everything above, e.g. 'Photo: Jane Doe / WorldFish'. Required if you upload anything."),
+        txt('Media credit', "Photographer or source for everything above, e.g. 'Photo: Jane Doe / WorldFish'. REQUIRED whenever you attach anything: the credit has to travel with the picture and cannot be reconstructed later. The form makes this conditional on an attachment, and the build warns about any image published without it."),
         long('Publications & reports', 'Papers, reports, briefs or blog posts from this work. One URL per line, with a title if you have one.'),
         ...curationTail(),
     ],
@@ -266,10 +270,10 @@ async function run() {
     const links = [
         ['WFD Products & Services', 'Part of initiative', 'WFD Initiatives',
             'Which funded work this tool came out of. A tool usually outlives the project that paid for it.'],
-        ['WFD Outcomes', 'Tool', 'WFD Products & Services', 'The tool this outcome is attributed to.'],
+        ['WFD Outcomes', 'Product or service', 'WFD Products & Services', 'The product or service this outcome is attributed to.'],
         ['WFD Outcomes', 'Initiative', 'WFD Initiatives', 'The initiative this outcome is attributed to.'],
-        ['WFD Connections', 'From tool', 'WFD Products & Services', 'The tool the arrow starts at.'],
-        ['WFD Connections', 'To tool', 'WFD Products & Services', 'The tool the arrow points to.'],
+        ['WFD Connections', 'From', 'WFD Products & Services', 'The product or service the arrow starts at.'],
+        ['WFD Connections', 'To', 'WFD Products & Services', 'The product or service the arrow points to.'],
     ];
 
     for (const [tableName, fieldName, targetName, description] of links) {

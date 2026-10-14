@@ -22,9 +22,7 @@ import('../lib/snapshot-check.mjs').then(({ checkSnapshot }) => {
     );
 
     if (warnings.length) {
-        console.warn(
-            `⚠ ${warnings.length} redundant "shortcut" relationship(s) — implied by a longer path, consider removing in Airtable:`
-        );
+        console.warn(`⚠ ${warnings.length} thing(s) to look at in Airtable (not blocking):`);
         warnings.forEach((w) => console.warn('  ' + w));
     }
 

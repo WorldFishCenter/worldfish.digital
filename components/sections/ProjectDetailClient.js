@@ -82,7 +82,6 @@ export default function ProjectDetailClient({ project }) {
                 { href: `mailto:${project.leadEmail}`, label: project.leadEmail },
             ],
         },
-        { label: 'Innovation readiness', value: project.readiness },
         { label: 'Publications', value: project.publications },
         { label: 'SDGs', value: list(project.sdgs) },
         { label: 'Thematic', value: list(project.thematicAreas) },

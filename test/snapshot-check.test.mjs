@@ -46,11 +46,11 @@ const snapshot = () => ({
             thematicAreas: ['Fisheries'],
             themeSlugs: ['fisheries'],
             countrySlugs: ['kenya'],
-            hero: { src: HERO },
+            hero: { src: HERO, credit: 'Photo: WorldFish' },
             screenshots: [],
         },
     ],
-    products: [tool('api', 'API', { screenshots: [{ src: SHOT }] }), tool('pipe', 'Data Pipeline')],
+    products: [tool('api', 'API', { screenshots: [{ src: SHOT, credit: 'Photo: WorldFish' }] }), tool('pipe', 'Data Pipeline')],
     outcomes: [
         {
             id: 'o1',
@@ -135,5 +135,62 @@ test('a shortcut relationship is a warning, not an error', () => {
         { from: 'api', type: 'feeds into', to: 'app' },
         { from: 'app', type: 'depends on', to: 'pipe' }
     );
-    assert.deepEqual(check(data), { errors: [], warnings: ['"app" depends on "pipe"'] });
+    assert.deepEqual(check(data), {
+        errors: [],
+        warnings: [
+            'redundant "shortcut" relationship, implied by a longer path: "app" depends on "pipe"',
+        ],
+    });
+});
+
+
+/* --- warnings: true of the data, but a judgement rather than a breakage --- */
+
+test('a status that contradicts the readiness level is flagged', () => {
+    // Status and Innovation readiness both describe maturity and nothing in Airtable stops
+    // them disagreeing, so the build is the only place this can be caught.
+    const data = snapshot();
+    data.products[0].status = 'Available for use';
+    data.products[0].readiness = '2 — Proof of concept';
+    const { errors, warnings } = check(data, [HERO, SHOT, DOC], {
+        ...tax,
+        productStatuses: ['Published', 'Available for use'],
+    });
+    assert.deepEqual(errors, []);
+    assert.match(warnings[0], /^product\/api: status "Available for use" expects readiness 7–9, but it is 2/);
+});
+
+test('a status and readiness that agree say nothing', () => {
+    const data = snapshot();
+    data.products[0].status = 'Available for use';
+    data.products[0].readiness = '8 — Fully proven and available';
+    const { warnings } = check(data, [HERO, SHOT, DOC], {
+        ...tax,
+        productStatuses: ['Published', 'Available for use'],
+    });
+    assert.deepEqual(warnings, []);
+});
+
+test('a record filed under cross-cutting because its impact area was blank is flagged', () => {
+    const data = snapshot();
+    data.themes = [{ slug: 'fisheries' }, { slug: 'shared', crossCutting: true }];
+    data.products[0].impactAreas = [];
+    data.products[0].themeSlugs = ['shared'];
+    assert.match(check(data).warnings[0], /^product\/api: no impact area set, so it is filed under shared by default/);
+});
+
+test('a record that names its impact area is not flagged, even a cross-cutting one', () => {
+    const data = snapshot();
+    data.themes = [{ slug: 'fisheries' }, { slug: 'shared', crossCutting: true }];
+    data.products[0].impactAreas = ['Shared Infrastructure'];
+    data.products[0].themeSlugs = ['shared'];
+    assert.deepEqual(check(data).warnings, []);
+});
+
+test('an image published with no credit is flagged, on either table', () => {
+    const data = snapshot();
+    data.projects[0].hero = { src: HERO };
+    assert.deepEqual(check(data).warnings, [
+        'project/peskas: images published with no Media credit. Set one in Airtable.',
+    ]);
 });

@@ -75,7 +75,7 @@ const FIELDS = {
         url: 'Live URL',
         repoUrl: 'Code repository',
         docsUrl: 'Documentation URL',
-        openSource: 'Open source?',
+        openSource: 'Open source',
         licence: 'Code licence',
         dataAvailability: 'Data availability',
         reuse: 'How it can be reused',
@@ -102,11 +102,10 @@ const FIELDS = {
         countries: 'Country / region',
         startDate: 'Start date',
         endDate: 'End date',
-        lead: 'Lead — name',
-        leadEmail: 'Lead — email',
+        lead: 'Initiative lead',
+        leadEmail: 'Contact email',
         funders: 'Funder(s)',
         partners: 'Partner organizations',
-        readiness: 'Innovation readiness level',
         sdgs: 'SDG alignment',
         url: 'Project page / website',
         hero: 'Hero image',
@@ -127,7 +126,7 @@ const FIELDS = {
         evidenceLabel: 'Evidence label',
         evidenceUrl: 'Evidence URL',
         document: 'Supporting document',
-        tools: 'Tool',
+        tools: 'Product or service',
         initiatives: 'Initiative',
     },
     connections: {
@@ -135,8 +134,8 @@ const FIELDS = {
         label: 'Label',
         type: 'Relationship',
         note: 'Note',
-        from: 'From tool',
-        to: 'To tool',
+        from: 'From',
+        to: 'To',
     },
 };
 
@@ -225,12 +224,10 @@ function transform(raw, ref) {
     const link = (table, ids) => (ids || []).map((id) => slugOf[table].get(id)).filter(Boolean);
 
     const credited = (file, credit) => (file ? { ...file, credit: credit || null } : null);
-    const media = (f, F, where) => {
+    const media = (f, F) => {
         const credit = f[F.mediaCredit] || null;
         const hero = credited((f[F.hero] || [])[0], credit);
         const screenshots = (f[F.screenshots] || []).map((file) => credited(file, credit));
-        if (!credit && (hero || screenshots.length))
-            warnings.push(`${where}: has images but no Media credit — they will publish uncredited.`);
         return { hero, screenshots, logo: (f[F.logo] || [])[0] || null };
     };
 
@@ -264,7 +261,7 @@ function transform(raw, ref) {
             dataAvailability: f[F.dataAvailability] || null,
             reuse: f[F.reuse] || null,
             limitations: f[F.limitations] || null,
-            ...media(f, F, where),
+            ...media(f, F),
             video: (f[F.video] || [])[0] || null,
             publications: references(f[F.publications]),
             datasetUrl: f[F.datasetUrl] || null,
@@ -292,10 +289,9 @@ function transform(raw, ref) {
             leadEmail: f[F.leadEmail] || null,
             funders: lines(f[F.funders]),
             partners: lines(f[F.partners]),
-            readiness: f[F.readiness] || null,
             sdgs: f[F.sdgs] || [],
             url: f[F.url] || null,
-            ...media(f, F, where),
+            ...media(f, F),
             publications: references(f[F.publications]),
         };
     });
@@ -574,9 +570,7 @@ async function main() {
         throw new Error(
             `The snapshot would fail \`npm run validate\`:\n  ${check.errors.join('\n  ')}`
         );
-    warnings.push(
-        ...check.warnings.map((w) => `redundant "shortcut" connection, implied by a longer path: ${w}`)
-    );
+    warnings.push(...check.warnings);
 
     // Only reached if nothing above threw: swap the assets in, then write the JSON.
     fs.rmSync(ASSETS, { recursive: true, force: true });
