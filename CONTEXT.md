@@ -23,9 +23,10 @@ site shows nothing else, so an intake base with nothing Live is an empty site, b
 data product. Called a **product** in code and URLs (`products.json`, `getProduct`,
 `/products/[slug]`).
 
-**Initiative** — one record in `WFD Initiatives`: the funded body of work that pays for and
-contains tools. Called a **project** in code and URLs (`projects.json`, `getProject`,
-`/projects/[slug]`). Every initiative renders through the same template — Peskas included;
+**Initiative** — one record in `WFD Initiatives`: a funded project or programme, which pays
+for and contains products and services. Called a **project** in code and URLs
+(`projects.json`, `getProject`, `/projects/[slug]`), and *project* is the word the intake
+forms use too, because that is what the people filling them in call their own work. Every initiative renders through the same template — Peskas included;
 its own site is peskas.org.
 
 **Outcome** — one evidenced claim from `WFD Outcomes`, with a counterpart institution and an
