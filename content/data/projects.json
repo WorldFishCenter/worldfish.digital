@@ -2,6 +2,57 @@
   "_comment": "Generated from Airtable by scripts/sync-airtable.js. Edit in Airtable, not here.",
   "projects": [
     {
+      "slug": "ikanadapt",
+      "name": "IkanAdapt",
+      "fullName": "IkanAdapt — Enabling fisheries and aquaculture stakeholders in Timor-Leste to adapt to climate change, increase resilience and conserve biodiversity",
+      "summary": "Helps fishing and fish-farming communities in Timor-Leste adapt to climate change and build resilience using nature-based solutions that also protect biodiversity.",
+      "description": "Timor-Leste faces significant challenges in addressing climate change impacts, protecting biodiversity and sustainably managing its aquatic and coastal resources. Contributing factors include weak governance, limited organizational and technical capacity and knowledge, and limited resources for developing and implementing adaptation and biodiversity plans.\n\nIkanAdapt aims to support fishery- and aquaculture-dependent communities to become more resilient to climate variability and change, using nature-based solutions that benefit both communities and biodiversity. It directly addresses five of the seven priorities in the National Adaptation Plan: risk management capacity-building, addressing the needs of vulnerable communities, ecosystem-based coastal disaster risk reduction, sustainable land management, and climate-resilient livelihoods.\n\nThe project builds on existing government and partner programmes and emerging good practice, applying the Ecosystem Approach to Fisheries and Aquaculture (EAF/EAA) and Ecosystem-based Adaptation (EbA) following the principles of Nature-based Solutions. Implementation is led by WorldFish in close collaboration with the Timor-Leste Directorate for Fisheries, Aquaculture and Marine Resources Management and FAO.\n\nIt works through three outcome areas:\n1. Enabling national fisheries and aquaculture policies, programmes, legal frameworks and local management institutions to address climate change, current variability and biodiversity conservation.\n2. Enhancing climate change adaptation and biodiversity conservation capacity and practices in fishing and fish-farming communities (coastal and inland).\n3. Strengthening institutional capacity through climate- and biodiversity-related information systems, information management and monitoring operations.",
+      "status": "Active",
+      "impactAreas": [
+        "Climate Adaptation",
+        "Resilient Livelihoods",
+        "Sustainable Fisheries",
+        "Productive Aquaculture"
+      ],
+      "thematicAreas": [
+        "Climate",
+        "Fisheries",
+        "Aquaculture",
+        "Policy"
+      ],
+      "themeSlugs": [
+        "climate-adaptation",
+        "resilient-livelihoods",
+        "sustainable-fisheries",
+        "productive-aquaculture"
+      ],
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "startDate": "2022-04-01",
+      "endDate": "2026-12-31",
+      "lead": "David Jonathan Mills",
+      "leadEmail": null,
+      "funders": [
+        "Global Environment Facility (GEF)",
+        "Food and Agriculture Organization of the United Nations (FAO)"
+      ],
+      "partners": [
+        "Timor-Leste Directorate for Fisheries, Aquaculture and Marine Resources Management",
+        "Food and Agriculture Organization of the United Nations (FAO)"
+      ],
+      "sdgs": [
+        "SDG 5 – Gender Equality",
+        "SDG 8 – Decent Work",
+        "SDG 13 – Climate Action"
+      ],
+      "url": "https://worldfishcenter.org/project/ikanadapt",
+      "hero": null,
+      "screenshots": [],
+      "logo": null,
+      "publications": []
+    },
+    {
       "slug": "peskas",
       "name": "Peskas",
       "fullName": "Peskas — open-source digital platform for small-scale fisheries",

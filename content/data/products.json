@@ -534,6 +534,62 @@
       "datasetUrl": null
     },
     {
+      "slug": "taseguru",
+      "name": "Taseguru",
+      "summary": "A safety-at-sea app for fishers in Timor-Leste that provides 3-day weather forecasts, video tutorials, incident reporting, and government fisheries bulletins and announcements",
+      "description": "Taseguru is a mobile app for fishers in Timor-Leste managed by the government . It provides functions for safety at sea, such as 3-day weather forecasts and video tutorials of best practise and what to do in case of various incidents at sea. It provides a bulletin board for notifications of new rules and news from the fisheries sector. And it provides a communication mechanism for connecting fishers and communities with government extension services and support. ",
+      "type": "Application",
+      "status": "Being piloted",
+      "impactAreas": [
+        "Sustainable Fisheries",
+        "Resilient Livelihoods"
+      ],
+      "thematicAreas": [
+        "Fisheries",
+        "Digital & AI"
+      ],
+      "themeSlugs": [
+        "sustainable-fisheries",
+        "resilient-livelihoods"
+      ],
+      "countrySlugs": [
+        "timor-leste"
+      ],
+      "projectSlugs": [
+        "ikanadapt"
+      ],
+      "audiences": [
+        "Government Fisheries Officer"
+      ],
+      "readiness": "5 — Piloted in a real setting",
+      "sdgs": [
+        "SDG 8 – Decent Work"
+      ],
+      "productLead": "Alex Tilley",
+      "contactEmail": "a.tilley@cgiar.org",
+      "url": "https://play.google.com/store/apps/details?id=com.mountaindev.peskasikan&pcampaignid=web_share",
+      "repoUrl": null,
+      "docsUrl": null,
+      "openSource": false,
+      "licence": null,
+      "dataAvailability": null,
+      "reuse": "This app was built specifically for Timor-Leste by an app developer through extensive consultation and testing with WorldFish and Timor fishers. The app could be used as a foundation for similar applications in other countries. ",
+      "limitations": "The limitation of the potential impact of this app is on the government side in finding a team that will be accountable for it and proactive in updating information and responding to queries. ",
+      "hero": null,
+      "screenshots": [
+        {
+          "src": "/assets/portfolio/tools/taseguru-shot-1.jpg",
+          "width": 1179,
+          "height": 2556,
+          "credit": null
+        }
+      ],
+      "logo": null,
+      "video": null,
+      "publications": [],
+      "datasetUrl": null
+    },
+    {
       "slug": "timor-data-pipeline",
       "name": "Peskas Timor-Leste data pipeline",
       "summary": "Turns Timor-Leste's landing surveys and boat GPS tracks into the validated catch and effort data behind the country's national fisheries statistics.",
@@ -576,6 +632,77 @@
       "limitations": "Predates the shared Coasts library and keeps some of its own storage code, so it diverges from the newer pipelines.",
       "hero": null,
       "screenshots": [],
+      "logo": null,
+      "video": null,
+      "publications": [],
+      "datasetUrl": null
+    },
+    {
+      "slug": "fishmix",
+      "name": "FishMix",
+      "summary": "An app that calculated the lowest cost viable fish feed based on available local ingredients",
+      "description": "A formulation engine that combines fish feed ingredients and nutritional information from IAFFD and WorldFish data to calculate recipes for fish feed based on locally available ingredients. Countries currently available are Kenya, Nigeria and Zambia. ",
+      "type": "Application",
+      "status": "Prototype",
+      "impactAreas": [
+        "Productive Aquaculture",
+        "Resilient Livelihoods"
+      ],
+      "thematicAreas": [
+        "Aquaculture"
+      ],
+      "themeSlugs": [
+        "productive-aquaculture",
+        "resilient-livelihoods"
+      ],
+      "countrySlugs": [
+        "kenya",
+        "zambia",
+        "nigeria"
+      ],
+      "projectSlugs": [
+        "fasa"
+      ],
+      "audiences": [
+        "Extension Officer / NGO",
+        "Aquaculture Farmer",
+        "Private Sector"
+      ],
+      "readiness": "2 — Proof of concept",
+      "sdgs": [
+        "SDG 2 – Zero Hunger",
+        "SDG 14 – Life Below Water"
+      ],
+      "productLead": "Matthew Owen",
+      "contactEmail": "m.owen@cgiar.org",
+      "url": null,
+      "repoUrl": "https://github.com/WorldFishCenter/FasaEngine",
+      "docsUrl": null,
+      "openSource": false,
+      "licence": null,
+      "dataAvailability": null,
+      "reuse": "New aquaculture species and countries could use this app as a foundation on which to build contextualised feed formulation tools. To do so, the list of ingredients and their nutritional composition properties and related constraints would need to be added to the calculator. ",
+      "limitations": "The feed formulation will only ever be as good as the data it draws upon, and given the complexity of interactions between feeds it does not replace the local experience and expertise of a feed technician.",
+      "hero": {
+        "src": "/assets/portfolio/tools/fishmix-hero.jpg",
+        "width": 2048,
+        "height": 1365,
+        "credit": null
+      },
+      "screenshots": [
+        {
+          "src": "/assets/portfolio/tools/fishmix-shot-1.jpg",
+          "width": 2400,
+          "height": 1391,
+          "credit": null
+        },
+        {
+          "src": "/assets/portfolio/tools/fishmix-shot-2.jpg",
+          "width": 2400,
+          "height": 1379,
+          "credit": null
+        }
+      ],
       "logo": null,
       "video": null,
       "publications": [],
